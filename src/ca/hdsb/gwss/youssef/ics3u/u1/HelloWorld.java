@@ -1,7 +1,7 @@
 /*
  * Name: Youssef Mohamed
  * Date: Feb 15th, 2017
- * Version: 0.2
+ * Version: 1.2
  * Description: The program will display 'HelloWorld'
  *                  to the console
  */
