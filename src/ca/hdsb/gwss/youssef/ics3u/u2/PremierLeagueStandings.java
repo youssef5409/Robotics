@@ -39,10 +39,10 @@ public class PremierLeagueStandings {
         
         //Table of standings version 2
         System.out.format("%-10s | %4s | %4s | %4s \n", "Cavaliers", "Wins", "Losses", "Win Percentage");
-        System.out.format("%-10s | %4s | %4s | %4s", "Celtics", "Wins", "Losses", "Win Percentage");
-        System.out.format("%-10s | %4s | %4s | %4s", "Wizards", "Wins", "Losses", "Win Percentage");
-        System.out.format("%-10s | %4s | %4s | %4s", "Raptors", "Wins", "Losses", "Win Percentage");
-        System.out.format("%-10s | %4s | %4s | %4s", "Hawks", "Wins", "Losses", "Win Percentage");
+        System.out.format("%-10s | %4s | %4s | %4s \n", "Celtics", "Wins", "Losses", "Win Percentage");
+        System.out.format("%-10s | %4s | %4s | %4s \n", "Wizards", "Wins", "Losses", "Win Percentage");
+        System.out.format("%-10s | %4s | %4s | %4s \n", "Raptors", "Wins", "Losses", "Win Percentage");
+        System.out.format("%-10s | %4s | %4s | %4s \n", "Hawks", "Wins", "Losses", "Win Percentage");
     }
     
 }
