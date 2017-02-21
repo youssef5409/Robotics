@@ -7,6 +7,7 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u2;
 
+import java.util.Scanner;
 /**
  *
  * @author 1mohamedyou
@@ -16,7 +17,8 @@ public class PremierLeagueStandings {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {        
+    public static void main(String[] args) {    
+        Scanner death = new Scanner(System.in);
         // Program introduction
         //Table of standings version 1.0
         System.out.println("   ***********************************************");
@@ -38,11 +40,27 @@ public class PremierLeagueStandings {
         System.out.println("       ---------------------------------------");
         
         //Table of standings version 2
-        System.out.format("%-10s | %4s | %4s | %4s \n", "Cavaliers", "Wins", "Losses", "Win Percentage");
-        System.out.format("%-10s | %4s | %4s | %4s \n", "Celtics", "Wins", "Losses", "Win Percentage");
-        System.out.format("%-10s | %4s | %4s | %4s \n", "Wizards", "Wins", "Losses", "Win Percentage");
-        System.out.format("%-10s | %4s | %4s | %4s \n", "Raptors", "Wins", "Losses", "Win Percentage");
-        System.out.format("%-10s | %4s | %4s | %4s \n", "Hawks", "Wins", "Losses", "Win Percentage");
+        System.out.format("%-10s | %4s | %6s | %14s \n", "Team", "Wins", "Losses", "Win Percentage");
+        System.out.format("%-10s | %4s | %6s | %14s \n", "Cavaliers", "39", "16", "70.9%");
+        System.out.format("%-10s | %4s | %6s | %14s \n", "Celtics", "37", "20", "64.9%");
+        System.out.format("%-10s | %4s | %6s | %14s \n", "Wizards", "34", "21", "61.8%");
+        System.out.format("%-10s | %4s | %6s | %14s \n", "Raptors", "33", "24", "57.9%");
+        System.out.format("%-10s | %4s | %6s | %14s \n", "Hawks", "32", "24", "57.1%");  
+        
+        
+        
+        int i = 0;
+        while (i < 5) {
+        for (i = 0; i < 1; i++) {
+        String angomples = death.nextLine();
+        float x = death.nextFloat();
+        System.out.println(angomples);
+        }
+        }
+                
     }
     
 }
+
+
+//datatype identifierName = value;
