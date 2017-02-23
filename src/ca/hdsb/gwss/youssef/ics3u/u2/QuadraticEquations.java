@@ -6,7 +6,6 @@
 package ca.hdsb.gwss.youssef.ics3u.u2;
 import static java.lang.Math.sqrt;
 import java.util.Scanner;
-double root1;
 
 public class QuadraticEquations {
 
@@ -23,7 +22,11 @@ public class QuadraticEquations {
         System.out.println("Enter the C value");
         double c = ask.nextDouble();
         
-        double root1 = ((b*-1) + );
+        double root1 = ((b*-1) + sqrt((b*b)- 4 * (a) * (c)));
+        double root2 = ((b*-1) - sqrt((b*b)- 4 * (a) * (c)));
+        
+        System.out.println("Root 1 is " + root1);
+        System.out.println("Root 2 is " + root2);
         
     }
     
