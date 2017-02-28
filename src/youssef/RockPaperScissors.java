@@ -63,7 +63,7 @@ public class RockPaperScissors extends javax.swing.JFrame {
 
         jLabel1.setText("Rock Paper Scissors");
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("Result");
 
         jLabel5.setText("Computer");
 
