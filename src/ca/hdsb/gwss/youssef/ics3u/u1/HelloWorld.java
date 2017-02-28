@@ -6,7 +6,7 @@
  *                  to the console
  */
 package ca.hdsb.gwss.youssef.ics3u.u1;
-
+import java.util.Scanner;
 /**
  * Hello World Program
  * 
@@ -19,11 +19,15 @@ public class HelloWorld {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Scanner read = new Scanner(System.in);
+        String number = read.nextLine();
+        char [] numberarray = number.toCharArray();
         
+        for (char i : numberarray) {
+            System.out.println(i);
+        }
         // in-line comment
         
-        System.out.println("Hello World");
-        System.err.println("Task Completed");
     }
     
 }
