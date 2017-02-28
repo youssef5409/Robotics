@@ -11,7 +11,7 @@ import java.util.Random;
  * @author 1mohamedyou
  */
 public class RockPaperScissors extends javax.swing.JFrame {
-
+    Random rand = new Random();
     /**
      * Creates new form RockPaperScissors
      */
@@ -136,7 +136,7 @@ public class RockPaperScissors extends javax.swing.JFrame {
         // TODO add your handling code here:
         //this is rock
         jLabel3.setText("Rock!");
-        Random rand = new Random();
+        
         int  n = rand.nextInt(3) + 1;
         switch (n) {
             case 3:
@@ -158,7 +158,7 @@ public class RockPaperScissors extends javax.swing.JFrame {
         // TODO add your handling code here:
         //This is paper
         jLabel3.setText("Paper!");
-        Random rand = new Random();
+        
         int  n = rand.nextInt(3) + 1;
         switch (n) {
             case 3:
@@ -180,7 +180,7 @@ public class RockPaperScissors extends javax.swing.JFrame {
         // TODO add your handling code here:
         //this is scissors
         jLabel3.setText("Scissors!");
-        Random rand = new Random();
+       
         int  n = rand.nextInt(3) + 1;
         switch (n) {
             case 3:
