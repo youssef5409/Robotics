@@ -25,8 +25,10 @@ public class ArrayListQuadraticCalc {
         String quad = ask.nextLine();
         
         ArrayList typeOfQuad = new ArrayList(Arrays.asList(quad.split("")));
-         
-        System.out.println(typeOfQuad.get(1));
+        
+        for (int i = 0; i < typeOfQuad.size(); i++ ) {
+            System.out.println(typeOfQuad.get(i));
+        }
         
         }
         
