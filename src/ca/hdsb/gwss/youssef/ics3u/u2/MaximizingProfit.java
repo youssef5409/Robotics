@@ -6,7 +6,7 @@
  *      This program maximizes your profit
  */
 package ca.hdsb.gwss.youssef.ics3u.u2;
-import static java.lang.Math.abs;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 /**
  *
@@ -27,14 +27,16 @@ public class MaximizingProfit {
         double profit;
         double vertex;
         
+        DecimalFormat format = new DecimalFormat();
+        format.setDecimalSeparatorAlwaysShown(false);
+        Scanner read = new Scanner(System.in);
+        
         System.out.println(" __  __                          __  __       _             _ \n" +
 "|  \\/  | ___  _ __   ___ _   _  |  \\/  | __ _| | _____ _ __| |\n" +
 "| |\\/| |/ _ \\| '_ \\ / _ \\ | | | | |\\/| |/ _` | |/ / _ \\ '__| |\n" +
 "| |  | | (_) | | | |  __/ |_| | | |  | | (_| |   <  __/ |  |_|\n" +
 "|_|  |_|\\___/|_| |_|\\___|\\__, | |_|  |_|\\__,_|_|\\_\\___|_|  (_)\n" +
 "                         |___/                                \n");
-        
-        Scanner read = new Scanner(System.in);
         
         System.out.println("I can find out how to maximize your profit! \n");
         
@@ -48,7 +50,7 @@ public class MaximizingProfit {
         deductionChunk = read.nextDouble();
         
         System.out.print("How many sales do you predict to lose for every increase of $" 
-                + String.format("%.2f", deductionChunk));
+                + String.format(format.format(deductionChunk)));
         salesLost = read.nextDouble();
         
         root1 = (numberOfSales / salesLost);
@@ -58,14 +60,15 @@ public class MaximizingProfit {
         profit = (numberOfSales - salesLost * vertex) * 
                 (originalCost + deductionChunk * vertex);
         
-        System.out.println("\nYou should sell your product for $" 
+        System.out.println("\n You should sell your product for $" 
                 + String.format("%.2f", vertex));
         
         System.out.println("You will make $" + String.format("%.2f", profit));
         
         System.out.println("This can be modeled with the quadratic equation f(x) = (" + 
-                numberOfSales + "-" + salesLost + "n" + ")" + "(" + originalCost + "+" 
-                + deductionChunk + "n" + ")");
+                format.format(numberOfSales) + "-" + format.format(salesLost)
+                + "n" + ")" + "(" + format.format(originalCost) + "+" 
+                + format.format(deductionChunk) + "n" + ")");
         
         System.out.println("Keep in mind all the numbers longer than 2 decimal "
                 + "places were rounded down to 2 decimals for easier reading.");
