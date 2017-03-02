@@ -1,7 +1,7 @@
 /*
  * Name: Youssef Mohamed
- * Date: 1st Mar 2017
- * Version: 0.1
+ * Date: 3rd Mar 2017
+ * Version: 1.0
  * Description:
  *      This program maximizes your profit
  */
@@ -18,6 +18,7 @@ public class MaximizingProfit {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //Initializing Variables
         double numberOfSales;
         double originalCost;
         double salesLost;
@@ -27,8 +28,11 @@ public class MaximizingProfit {
         double profit;
         double vertex;
         
+        //Formatting decimals that end with .0
         DecimalFormat format = new DecimalFormat();
         format.setDecimalSeparatorAlwaysShown(false);
+        
+        //Initializing 
         Scanner read = new Scanner(System.in);
         
         System.out.println(" __  __                          __  __       _             _ \n" +
