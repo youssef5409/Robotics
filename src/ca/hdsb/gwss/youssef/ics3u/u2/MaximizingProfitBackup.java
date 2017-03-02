@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Youss
  */
-public class MaximizingProfit {
+public class MaximizingProfitBackup {
 
     /**
      * @param args the command line arguments
@@ -29,7 +29,10 @@ public class MaximizingProfit {
         
         DecimalFormat format = new DecimalFormat();
         format.setDecimalSeparatorAlwaysShown(false);
-        Scanner read = new Scanner(System.in);
+        Scanner originalCostScan = new Scanner(System.in);
+        Scanner numberOfSalesScan = new Scanner(System.in);
+        Scanner salesLostScan = new Scanner(System.in);
+        Scanner deductionChunkScan = new Scanner(System.in);
         
         System.out.println(" __  __                          __  __       _             _ \n" +
 "|  \\/  | ___  _ __   ___ _   _  |  \\/  | __ _| | _____ _ __| |\n" +
@@ -41,17 +44,48 @@ public class MaximizingProfit {
         System.out.println("I can find out how to maximize your profit! \n");
         
         System.out.print("How much does your product cost? ");
-        originalCost = read.nextDouble();
+        
+        while (!originalCostScan.hasNextDouble()) {
+            
+            System.out.print("Sorry, this cost value is invalid. Please try again ");
+            originalCostScan.next();
+        }
+        
+        originalCost = originalCostScan.nextDouble();
         
         System.out.print("How many sales do you get with that cost? ");
-        numberOfSales = read.nextDouble();
+        
+        while (!numberOfSalesScan.hasNextDouble()) {
+            
+            System.out.println("Sorry, this number of sales value is invalid. "
+                    + "Please try again ");
+            numberOfSalesScan.next();
+        }
+        
+        numberOfSales = numberOfSalesScan.nextDouble();
         
         System.out.print("How much of your cost are wou willing to change at a time ");
-        deductionChunk = read.nextDouble();
         
-        System.out.print("How many sales do you predict to lose for every increase of $ " 
+        while (!deductionChunkScan.hasNextDouble()) {
+            
+            System.out.println("Sorry, this change of money value is invalid. "
+                    + "Please try again ");
+            deductionChunkScan.next();
+        }
+        
+        deductionChunk = deductionChunkScan.nextDouble();
+        
+        System.out.print("How many sales do you predict to lose for every increase of $" 
                 + String.format(format.format(deductionChunk)));
-        salesLost = read.nextDouble();
+        
+        while (!salesLostScan.hasNextDouble()) {
+            
+            System.out.println("Sorry, this sales lost value is invalid. "
+                    + "Please try again ");
+            salesLostScan.next();
+        }
+        
+        salesLost = salesLostScan.nextDouble();
         
         root1 = (numberOfSales / salesLost);
         root2 = (originalCost / -deductionChunk);
