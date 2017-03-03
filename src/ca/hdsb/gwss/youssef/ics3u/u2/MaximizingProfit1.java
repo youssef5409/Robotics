@@ -27,9 +27,6 @@ public class MaximizingProfit1 {
         double numberOfSales = 0;
         double salesLost = 0;
         double deductionChunk = 0;
-        String ratio = "";
-        
-        char[] salesToPrice;
         double root1;
         double root2;
         double profit;
@@ -79,13 +76,25 @@ public class MaximizingProfit1 {
         }
 
         check = false;
-        System.out.print("For every increase of __ you predict to lose "
-                + "__ sales. (Please enter these values with a space"
-                + "between them, for example 6 5). ");
-                ratio = read.nextLine();
-                salesToPrice = ratio.toCharArray();
-                System.out.println(salesToPrice[0]);
-                
+        System.out.print("How much of your cost are wou willing to change at a"
+                + " time ");
+
+        while (!check) {
+            try {
+                deductionChunk = read.nextDouble();
+                if (deductionChunk != 0) {
+                    check = true;
+                } else {
+                    System.out.print("Sorry, you won't let me change your price!");
+                    System.out.print("How much of your cost are wou willing to "
+                            + "change at a time ");
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.print("Sorry, you entered an invalid value ");
+                read.next();
+            }
+        }
         check = false;
         System.out.print("How many sales do you predict to lose for every "
                 + "increase of $" + String.format(format.format(deductionChunk))
