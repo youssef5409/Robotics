@@ -40,11 +40,11 @@ public class MaximizingProfit1 {
         Scanner read = new Scanner(System.in);
 
         System.out.println(" __  __                          __  __       _             _ \n"
-                + "|  \\/  | ___  _ __   ___ _   _  |  \\/  | __ _| | _____ _ __| |\n"
-                + "| |\\/| |/ _ \\| '_ \\ / _ \\ | | | | |\\/| |/ _` | |/ / _ \\ '__| |\n"
-                + "| |  | | (_) | | | |  __/ |_| | | |  | | (_| |   <  __/ |  |_|\n"
-                + "|_|  |_|\\___/|_| |_|\\___|\\__, | |_|  |_|\\__,_|_|\\_\\___|_|  (_)\n"
-                + "                         |___/                                \n");
+            + "|  \\/  | ___  _ __   ___ _   _  |  \\/  | __ _| | _____ _ __| |\n"
+            + "| |\\/| |/ _ \\| '_ \\ / _ \\ | | | | |\\/| |/ _` | |/ / _ \\ '__| |\n"
+            + "| |  | | (_) | | | |  __/ |_| | | |  | | (_| |   <  __/ |  |_|\n"
+            + "|_|  |_|\\___/|_| |_|\\___|\\__, | |_|  |_|\\__,_|_|\\_\\___|_|  (_)\n"
+            + "                         |___/                                \n");
 
         System.out.println("I can find out how to maximize your profit! \n");
 
@@ -56,7 +56,7 @@ public class MaximizingProfit1 {
                 check = true;
             } catch (InputMismatchException e) {
                 check = false;
-                System.out.print("Sorry, you entered an invalid value");
+                System.out.print("Sorry, you entered an invalid value ");
                 read.next();
             }
         }
@@ -69,13 +69,14 @@ public class MaximizingProfit1 {
                 numberOfSales = read.nextDouble();
                 check = true;
             } catch (InputMismatchException e) {
-                System.out.print("Sorry, you entered an invalid value");
+                System.out.print("Sorry, you entered an invalid value ");
                 read.next();
             }
         }
 
         check = false;
-        System.out.print("How much of your cost are wou willing to change at a time ");
+        System.out.print("How much of your cost are wou willing to change at a"
+                + " time ");
 
         while (!check) {
             try {
@@ -90,13 +91,14 @@ public class MaximizingProfit1 {
 
             } catch (InputMismatchException error) {
                 System.err.println(error);
-                System.out.print("Sorry, you entered an invalid value");
+                System.out.print("Sorry, you entered an invalid value ");
                 read.next();
             }
         }
 
-        System.out.print("How many sales do you predict to lose for every increase of $ "
-                + String.format(format.format(deductionChunk)) + "\n");
+        System.out.print("How many sales do you predict to lose for every "
+                + "increase of $" + String.format(format.format(deductionChunk))
+                + "\n");
 
         while (!check) {
             try {
@@ -112,7 +114,7 @@ public class MaximizingProfit1 {
 
             } catch (InputMismatchException error) {
                 System.err.println(error);
-                System.out.print("Sorry, you entered an invalid value");
+                System.out.print("Sorry, you entered an invalid value ");
                 read.next();
             }
         }
