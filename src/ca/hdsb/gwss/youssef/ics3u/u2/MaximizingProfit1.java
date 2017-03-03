@@ -48,7 +48,7 @@ public class MaximizingProfit1 {
                 + "|_|  |_|\\___/|_| |_|\\___|\\__, | |_|  |_|\\__,_|_|\\_\\___|_|  (_)\n"
                 + "                         |___/                                \n");
         System.out.println("I can find out how to maximize your profit! \n");
-        System.out.print("How much does your product cost? ");
+        System.out.format("%64s ","How much does your product cost? ");
 
         //while loop that verifies that the user has entered a double
         while (!check) {
@@ -63,7 +63,7 @@ public class MaximizingProfit1 {
         }
 
         check = false;
-        System.out.print("How many sales do you get with that cost? ");
+        System.out.format( "%64s ","How many sales do you get with that cost? ");
 
         while (!check) {
             try {
@@ -76,8 +76,8 @@ public class MaximizingProfit1 {
         }
 
         check = false;
-        System.out.print("How much of your cost are wou willing to change at a"
-                + " time ");
+        System.out.format( "%64s ","How much of your cost are wou willing to change at a"
+                + " time? ");
 
         while (!check) {
             try {
@@ -96,9 +96,9 @@ public class MaximizingProfit1 {
             }
         }
         check = false;
-        System.out.print("How many sales do you predict to lose for every "
+        System.out.format( "%64s ","How many sales do you predict to lose for every "
                 + "increase of $" + String.format(format.format(deductionChunk))
-                + " ");
+                + "? ");
 
         while (!check) {
             try {
@@ -125,7 +125,7 @@ public class MaximizingProfit1 {
                 * (originalCost + deductionChunk * vertex);
         
         if (vertex <= 0) {
-            System.err.println("The vertex is less than 0");
+            System.err.println("The revenue if any value is changed is less than 0");
             System.out.println("You should sell your product for $" + originalCost);
             System.out.println("You will make $" + String.format("%.2f", originalCost * numberOfSales));
             System.out.println("This can be modeled with the quadratic equation f(x) = ("
