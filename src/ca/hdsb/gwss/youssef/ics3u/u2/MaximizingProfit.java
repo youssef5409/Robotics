@@ -58,7 +58,7 @@ public class MaximizingProfit {
             } catch (InputMismatchException e) {
                 check = false;
                 System.err.println(e);
-                System.out.format("%86s ", "Sorry, you entered an invalid value ");
+                System.out.format("%88s ", "Sorry, you entered an invalid value ");
                 read.next();
             }
         }
@@ -71,7 +71,7 @@ public class MaximizingProfit {
                 numberOfSales = read.nextDouble();
                 check = true;
             } catch (InputMismatchException e) {
-                System.out.format("%86s ", "Sorry, you entered an invalid value \n");
+                System.out.format( "Sorry, you entered an invalid value");
                 read.next();
             }
         }
@@ -85,7 +85,7 @@ public class MaximizingProfit {
                 deductionChunk = read.nextDouble();
                 salesLost = read.nextDouble();
                 if (deductionChunk == 0 && salesLost == 0) {
-                    System.out.format("%86s ", "Sorry, you won't let me change"
+                    System.out.format("%88s ", "Sorry, you won't let me change"
                             + " your price! \n");
                     System.out.format("%86s ", "For every __ change in dollars,"
                             + " you expect to lose __ sales. (Format this as __ __)");
@@ -107,7 +107,7 @@ public class MaximizingProfit {
                     check = true;
                 }
             } catch (InputMismatchException e) {
-                System.out.format("%86s ", "Sorry, you entered an invalid value ");
+                System.out.format("%88s ", "Sorry, you entered an invalid value ");
                 read.next();
             }
         }

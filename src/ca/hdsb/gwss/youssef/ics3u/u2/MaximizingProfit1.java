@@ -23,7 +23,6 @@ public class MaximizingProfit1 {
      */
     public static void main(String[] args) {
         //Initializing Variables
-        String allDecimals = "";
         double originalCost = 0;
         double numberOfSales = 0;
         double salesLost = 0;
@@ -55,11 +54,18 @@ public class MaximizingProfit1 {
             try {
                 System.out.format("%86s ", "How much does your product cost?");
                 originalCost = read.nextDouble();
-                check = true;
+                if (originalCost == 0) {
+                    System.out.println("I will not have a trend to follow.");
+                    System.out.format("%86s ", "How much does your product cost?");
+                    read.next();
+                }
+                else {
+                    check = true;
+                }
             } catch (InputMismatchException e) {
                 check = false;
+                System.out.println("Sorry, you entered an invalid value");
                 System.err.println(e);
-                System.out.format("%86s ", "Sorry, you entered an invalid value \n");
                 read.next();
             }
         }
@@ -69,9 +75,16 @@ public class MaximizingProfit1 {
             try {
                 System.out.format("%86s ", "How many sales do you get with that cost?");
                 numberOfSales = read.nextDouble();
-                check = true;
+                if (numberOfSales == 0) {
+                    System.out.println("I will not have a trend to follow.");
+                    System.out.format("%86s ", "How many sales do you get with that cost?");
+                    read.next();
+                } else {
+                    check = true;
+                }
             } catch (InputMismatchException e) {
-                System.out.format("%86s ", "Sorry, you entered an invalid value \n");
+                System.out.println("Sorry, you entered an invalid value");
+                System.err.println(e);
                 read.next();
             }
         }
@@ -79,17 +92,20 @@ public class MaximizingProfit1 {
         check = false;
         while (!check) {
             try {
-                System.out.format("For your 'price increase to sales lost trend',"
+                System.out.print("For your 'price increase to sales lost trend',"
                         + " how much are you changing your cost by? ");
                 deductionChunk = read.nextDouble();
                 if (deductionChunk == 0) {
                     System.out.println("I will not have a trend to follow.");
+                    System.out.print("For your 'price increase to sales lost trend',"
+                            + " how much are you changing your cost by? ");
                     read.next();
                 } else {
                     check = true;
                 }
             } catch (InputMismatchException e) {
-                System.out.format("%86s ", "Sorry, you entered an invalid value \n");
+                System.out.println("Sorry, you entered an invalid value");
+                System.err.println(e);
                 read.next();
             }
         }
@@ -103,12 +119,16 @@ public class MaximizingProfit1 {
                 salesLost = read.nextDouble();
                 if (salesLost == 0) {
                     System.out.format("%86s ", "I will not have a trend to follow.");
+                    System.out.format("%86s ", "How many sales do you predict to lose for every "
+                            + "increase of $" + String.format(format.format(deductionChunk))
+                            + "?");
                     read.next();
                 } else {
                     check = true;
                 }
             } catch (InputMismatchException e) {
-                System.out.format("%86s ", "Sorry, you entered an invalid value ");
+                System.out.println("Sorry, you entered an invalid value");
+                System.err.println(e);
                 read.next();
             }
         }
@@ -120,9 +140,12 @@ public class MaximizingProfit1 {
                 * (originalCost + deductionChunk * vertex);
 
         if (vertex <= 0) {
-            System.err.println("The revenue if any value is changed is less than 0");
+            System.err.println("Something is wrong with this trend.");
             System.out.println("You should sell your product for $" + originalCost);
-            System.out.println("You will make $" + String.format("%.2f", originalCost * numberOfSales));
+
+            System.out.println("You will make $"
+                    + String.format("%.2f", originalCost * numberOfSales));
+
             System.out.println("This can be modeled with the quadratic equation f(x) = ("
                     + format.format(numberOfSales) + "-" + format.format(salesLost)
                     + "n" + ")" + "(" + format.format(originalCost) + "+"
@@ -142,10 +165,10 @@ public class MaximizingProfit1 {
                     + "n" + ")" + "(" + format.format(originalCost) + "+"
                     + format.format(deductionChunk) + "n" + ")");
 
-            System.out.println("Keep in mind all the numbers in the model "
-                    + "equation that have more than 2 decimal places were rounded "
-                    + "down to 2 decimal places for easier reading.");
-            }
+            System.out.println("Keep in mind all the numbers that have more "
+                    + "than 2 decimal places were rounded down to 2 decimal "
+                    + "places for easier reading.");
         }
-
     }
+
+}
