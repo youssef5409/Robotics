@@ -33,14 +33,18 @@ public class MaximizingProfit1 {
         double vertex;
         boolean check = false;
 
-        //Formatting decimals that end with .0
+        //Formatting decimals that end with .0 so that it won't include the .0
         DecimalFormat format = new DecimalFormat();
         format.setDecimalSeparatorAlwaysShown(false);
 
         //Initializing scanner for user input
         Scanner read = new Scanner(System.in);
 
-        //Welcome text
+        /*
+        * Welcome text made HUGE!
+        * want to make some for yourself?
+        * http://patorjk.com/software/taag/#p=display&f=Epic&t=YOUSSEF
+         */
         System.out.println(" __  __                          __  __       _             _ \n"
                 + "|  \\/  | ___  _ __   ___ _   _  |  \\/  | __ _| | _____ _ __| |\n"
                 + "| |\\/| |/ _ \\| '_ \\ / _ \\ | | | | |\\/| |/ _` | |/ / _ \\ '__| |\n"
@@ -49,19 +53,23 @@ public class MaximizingProfit1 {
                 + "                         |___/                                \n");
         System.out.println("I can find out how to maximize your profit! \n");
 
-        //while loop that verifies that the user has entered a double
+        //while loop that waits until check = true.
         while (!check) {
             try {
+                //Starts off by asking the question.
                 System.out.format("%86s ", "How much does your product cost?");
+                //program expects double.
                 originalCost = read.nextDouble();
+                //if number entered is 0, then the function won't 'function'. 
+                //Get it? I'm sorry.
                 if (originalCost == 0) {
                     System.out.println("I will not have a trend to follow.");
                     System.out.format("%86s ", "How much does your product cost?");
                     read.next();
-                }
-                else {
+                } else {
                     check = true;
                 }
+                //if the user does not enter a number, the program will catch that error.
             } catch (InputMismatchException e) {
                 check = false;
                 System.out.println("Sorry, you entered an invalid value");
@@ -70,6 +78,7 @@ public class MaximizingProfit1 {
             }
         }
 
+        //same while loop structure for next double
         check = false;
         while (!check) {
             try {
@@ -89,6 +98,7 @@ public class MaximizingProfit1 {
             }
         }
 
+        //next while loop for next double
         check = false;
         while (!check) {
             try {
@@ -110,6 +120,7 @@ public class MaximizingProfit1 {
             }
         }
 
+        //final while loop for final double
         check = false;
         while (!check) {
             try {
@@ -133,12 +144,16 @@ public class MaximizingProfit1 {
             }
         }
 
+        //calculating best possible cost for most profit
         root1 = (numberOfSales / salesLost);
         root2 = (originalCost / -deductionChunk);
         vertex = (root1 + root2) / 2;
         profit = (numberOfSales - salesLost * vertex)
                 * (originalCost + deductionChunk * vertex);
 
+        /*if the data the user entered forces the best possible cost to be negative
+         * the program will repeat what the user has given, for best possible profit.
+         */
         if (vertex <= 0) {
             System.err.println("Something is wrong with this trend.");
             System.out.println("You should sell your product for $" + originalCost);
