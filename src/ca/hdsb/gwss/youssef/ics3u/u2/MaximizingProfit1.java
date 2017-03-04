@@ -23,6 +23,7 @@ public class MaximizingProfit1 {
      */
     public static void main(String[] args) {
         //Initializing Variables
+        String allDecimals = "";
         double originalCost = 0;
         double numberOfSales = 0;
         double salesLost = 0;
@@ -48,72 +49,66 @@ public class MaximizingProfit1 {
                 + "|_|  |_|\\___/|_| |_|\\___|\\__, | |_|  |_|\\__,_|_|\\_\\___|_|  (_)\n"
                 + "                         |___/                                \n");
         System.out.println("I can find out how to maximize your profit! \n");
-        System.out.format("%64s ","How much does your product cost? ");
 
         //while loop that verifies that the user has entered a double
         while (!check) {
             try {
+                System.out.format("%86s ", "How much does your product cost?");
                 originalCost = read.nextDouble();
                 check = true;
             } catch (InputMismatchException e) {
                 check = false;
-                System.out.print("Sorry, you entered an invalid value ");
+                System.err.println(e);
+                System.out.format("%86s ", "Sorry, you entered an invalid value \n");
                 read.next();
             }
         }
 
         check = false;
-        System.out.format( "%64s ","How many sales do you get with that cost? ");
-
         while (!check) {
             try {
+                System.out.format("%86s ", "How many sales do you get with that cost?");
                 numberOfSales = read.nextDouble();
                 check = true;
             } catch (InputMismatchException e) {
-                System.out.print("Sorry, you entered an invalid value ");
+                System.out.format("%86s ", "Sorry, you entered an invalid value \n");
                 read.next();
             }
         }
 
         check = false;
-        System.out.format( "%64s ","How much of your cost are wou willing to change at a"
-                + " time? ");
-
         while (!check) {
             try {
+                System.out.format("For your 'price increase to sales lost trend',"
+                        + " how much are you changing your cost by? ");
                 deductionChunk = read.nextDouble();
-                if (deductionChunk != 0) {
-                    check = true;
+                if (deductionChunk == 0) {
+                    System.out.println("I will not have a trend to follow.");
+                    read.next();
                 } else {
-                    System.out.print("Sorry, you won't let me change your price!");
-                    System.out.print("How much of your cost are wou willing to "
-                            + "change at a time ");
+                    check = true;
                 }
-
             } catch (InputMismatchException e) {
-                System.out.print("Sorry, you entered an invalid value ");
+                System.out.format("%86s ", "Sorry, you entered an invalid value \n");
                 read.next();
             }
         }
-        check = false;
-        System.out.format( "%64s ","How many sales do you predict to lose for every "
-                + "increase of $" + String.format(format.format(deductionChunk))
-                + "? ");
 
+        check = false;
         while (!check) {
             try {
+                System.out.format("%86s ", "How many sales do you predict to lose for every "
+                        + "increase of $" + String.format(format.format(deductionChunk))
+                        + "?");
                 salesLost = read.nextDouble();
-                if (salesLost != 0) {
-                    check = true;
+                if (salesLost == 0) {
+                    System.out.format("%86s ", "I will not have a trend to follow.");
+                    read.next();
                 } else {
-                    System.out.print("This means you can sell your product for "
-                            + "an infinite amount of money");
-                    System.out.print("How much of your cost are wou willing to "
-                            + "change at a time ");
+                    check = true;
                 }
-
             } catch (InputMismatchException e) {
-                System.out.print("Sorry, you entered an invalid value ");
+                System.out.format("%86s ", "Sorry, you entered an invalid value ");
                 read.next();
             }
         }
@@ -123,7 +118,7 @@ public class MaximizingProfit1 {
         vertex = (root1 + root2) / 2;
         profit = (numberOfSales - salesLost * vertex)
                 * (originalCost + deductionChunk * vertex);
-        
+
         if (vertex <= 0) {
             System.err.println("The revenue if any value is changed is less than 0");
             System.out.println("You should sell your product for $" + originalCost);
@@ -136,22 +131,21 @@ public class MaximizingProfit1 {
             System.out.println("Keep in mind all the numbers in the model "
                     + "equation that have more than 2 decimal places were rounded "
                     + "down to 2 decimal places for easier reading.");
-            System.exit(0);
+        } else {
+            System.out.println("You should sell your product for $"
+                    + String.format("%.2f", vertex));
+
+            System.out.println("You will make $" + String.format("%.2f", profit));
+
+            System.out.println("This can be modeled with the quadratic equation f(x) = ("
+                    + format.format(numberOfSales) + "-" + format.format(salesLost)
+                    + "n" + ")" + "(" + format.format(originalCost) + "+"
+                    + format.format(deductionChunk) + "n" + ")");
+
+            System.out.println("Keep in mind all the numbers in the model "
+                    + "equation that have more than 2 decimal places were rounded "
+                    + "down to 2 decimal places for easier reading.");
+            }
         }
 
-        System.out.println("You should sell your product for $"
-                + String.format("%.2f", vertex));
-
-        System.out.println("You will make $" + String.format("%.2f", profit));
-
-        System.out.println("This can be modeled with the quadratic equation f(x) = ("
-                + format.format(numberOfSales) + "-" + format.format(salesLost)
-                + "n" + ")" + "(" + format.format(originalCost) + "+"
-                + format.format(deductionChunk) + "n" + ")");
-
-        System.out.println("Keep in mind all the numbers in the model "
-                + "equation that have more than 2 decimal places were rounded "
-                + "down to 2 decimal places for easier reading.");
     }
-
-}
