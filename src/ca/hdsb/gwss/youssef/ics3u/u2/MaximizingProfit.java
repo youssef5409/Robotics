@@ -8,6 +8,7 @@
 package ca.hdsb.gwss.youssef.ics3u.u2;
 
 //Organizing imports
+import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 import java.text.DecimalFormat;
 import java.util.InputMismatchException;
@@ -52,12 +53,12 @@ public class MaximizingProfit {
          */
         System.out.println("I can either find the roots of a standard quadratic"
                 + " or maximize your profit through a factored quadratic.");
-        System.out.print("Type 1 for the roots of a standard quadraticor 2 to"
+        System.out.print("Type 1 for the roots of a standard quadratic or 2 to"
                 + " maximize your profit ");
         
         whatToDo = read.nextLine();
 
-        if (whatToDo.equals("1")) {
+        if (!whatToDo.equals("1")) {
 
             System.out.println(" __  __                          __  __       _             _ \n"
                     + "|  \\/  | ___  _ __   ___ _   _  |  \\/  | __ _| | _____ _ __| |\n"
@@ -74,15 +75,7 @@ public class MaximizingProfit {
                     System.out.format("%86s ", "How much does your product cost?");
                     //program expects double.
                     originalCost = read.nextDouble();
-                    //if number entered is 0, then the function won't 'function'. 
-                    //Get it? I'm sorry.
-                    if (originalCost == 0) {
-                        System.out.println("I will not have a trend to follow.");
-                        System.out.format("%86s ", "How much does your product cost?");
-                        read.next();
-                    } else {
                         check = true;
-                    }
                     //if the user does not enter a number, the program will catch that error.
                 } catch (InputMismatchException e) {
                     check = false;
@@ -98,13 +91,7 @@ public class MaximizingProfit {
                 try {
                     System.out.format("%86s ", "How many sales do you get with that cost?");
                     numberOfSales = read.nextDouble();
-                    if (numberOfSales == 0) {
-                        System.out.println("I will not have a trend to follow.");
-                        System.out.format("%86s ", "How many sales do you get with that cost?");
-                        read.next();
-                    } else {
-                        check = true;
-                    }
+                    check = true;
                 } catch (InputMismatchException e) {
                     System.out.println("Sorry, you entered an invalid value");
                     System.err.println(e);
@@ -142,15 +129,7 @@ public class MaximizingProfit {
                             + "increase of $" + String.format(format.format(deductionChunk))
                             + "?");
                     salesLost = read.nextDouble();
-                    if (salesLost == 0) {
-                        System.out.format("%86s ", "I will not have a trend to follow.");
-                        System.out.format("%86s ", "How many sales do you predict to lose for every "
-                                + "increase of $" + String.format(format.format(deductionChunk))
-                                + "?");
-                        read.next();
-                    } else {
-                        check = true;
-                    }
+                    check = true;
                 } catch (InputMismatchException e) {
                     System.out.println("Sorry, you entered an invalid value");
                     System.err.println(e);
@@ -180,12 +159,13 @@ public class MaximizingProfit {
                         + "n" + ")" + "(" + format.format(originalCost) + "+"
                         + format.format(deductionChunk) + "n" + ")");
 
-                System.out.println("Keep in mind all the numbers in the model "
+                System.out.println("Keep in mind all the numbers"
+                        + " in the model "
                         + "equation that have more than 2 decimal places were rounded "
                         + "down to 2 decimal places for easier reading.");
             } else {
                 System.out.println("You should sell your product for $"
-                        + String.format("%.2f", vertex));
+                        + String.format("%.2f", vertex * deductionChunk + originalCost));
 
                 System.out.println("You will make $" + String.format("%.2f", profit));
 
@@ -206,7 +186,7 @@ public class MaximizingProfit {
                     + "|_| \\_\\___/ \\___/ \\__| |_|   |_|_| |_|\\__,_|\\___|_|  ");
 
             System.out.println("I can find the roots of a quadratic in standard"
-                    + "form");
+                    + " form");
 
             while (!check) {
                 try {
@@ -239,6 +219,7 @@ public class MaximizingProfit {
                     read.next();
                 }
             }
+            check = false;
             while (!check) {
                 try {
                     //Starts off by asking the question.
@@ -254,11 +235,14 @@ public class MaximizingProfit {
                     read.next();
                 }
             }
-            root1 = ((b * -1) + sqrt((b * b) - 4 * (a) * (c)));
-            root2 = ((b * -1) - sqrt((b * b) - 4 * (a) * (c)));
+            root1 = ((-b) + sqrt((pow(b, 2)) - 4 * (a) * (c))) / (2 * a);
+            root2 = ((-b) - sqrt((pow(b, 2)) - 4 * (a) * (c))) / (2 * a);
 
             System.out.println("Root 1 is " + root1);
             System.out.println("Root 2 is " + root2);
+            vertex = (root1 + root2) / 2;
+            profit = a * pow(vertex, 2) + b * vertex + c;
+            System.out.println("You will make " + profit);
         }
     }
 

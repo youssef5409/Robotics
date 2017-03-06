@@ -60,15 +60,7 @@ public class MaximizingProfit1 {
                 System.out.format("%86s ", "How much does your product cost?");
                 //program expects double.
                 originalCost = read.nextDouble();
-                //if number entered is 0, then the function won't 'function'. 
-                //Get it? I'm sorry.
-                if (originalCost == 0) {
-                    System.out.println("I will not have a trend to follow.");
-                    System.out.format("%86s ", "How much does your product cost?");
-                    read.next();
-                } else {
                     check = true;
-                }
                 //if the user does not enter a number, the program will catch that error.
             } catch (InputMismatchException e) {
                 check = false;
