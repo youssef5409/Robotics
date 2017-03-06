@@ -25,7 +25,7 @@ public class MaximizingProfit {
      */
     public static void main(String[] args) {
         //Initializing Variables
-        String whatToDo = "";
+        boolean check = false;
         double originalCost = 0;
         double numberOfSales = 0;
         double salesLost = 0;
@@ -37,7 +37,7 @@ public class MaximizingProfit {
         double c = 0;
         double profit;
         double vertex;
-        boolean check = false;
+        String whatToDo = "";
 
         //Formatting decimals that end with .0 so that it won't include the .0
         DecimalFormat format = new DecimalFormat();
@@ -51,197 +51,188 @@ public class MaximizingProfit {
         * want to make some for yourself?
         * http://patorjk.com/software/taag/#p=display&f=Epic&t=YOUSSEF
          */
-        System.out.println("I ca maximize your profit from information of a quadratic"
+        System.out.println(" __  __                          __  __       _             _ \n"
+                + "|  \\/  | ___  _ __   ___ _   _  |  \\/  | __ _| | _____ _ __| |\n"
+                + "| |\\/| |/ _ \\| '_ \\ / _ \\ | | | | |\\/| |/ _` | |/ / _ \\ '__| |\n"
+                + "| |  | | (_) | | | |  __/ |_| | | |  | | (_| |   <  __/ |  |_|\n"
+                + "|_|  |_|\\___/|_| |_|\\___|\\__, | |_|  |_|\\__,_|_|\\_\\___|_|  (_)\n"
+                + "                         |___/                                \n");
+        System.out.println("I can maximize your profit from information of a quadratic"
                 + "in standard form, or factored form");
         System.out.print("Type 1 for the standard quadratic or 2 to"
                 + " for the factored form ");
-        
-        whatToDo = read.nextLine();
 
-        if (!whatToDo.equals("1")) {
+        while (!whatToDo.equals("1") || !whatToDo.equals("2")) {
+            whatToDo = read.nextLine();
+            if (whatToDo.equals("2")) {
+                System.out.println("I can find out how to maximize your profit! \n");
 
-            System.out.println(" __  __                          __  __       _             _ \n"
-                    + "|  \\/  | ___  _ __   ___ _   _  |  \\/  | __ _| | _____ _ __| |\n"
-                    + "| |\\/| |/ _ \\| '_ \\ / _ \\ | | | | |\\/| |/ _` | |/ / _ \\ '__| |\n"
-                    + "| |  | | (_) | | | |  __/ |_| | | |  | | (_| |   <  __/ |  |_|\n"
-                    + "|_|  |_|\\___/|_| |_|\\___|\\__, | |_|  |_|\\__,_|_|\\_\\___|_|  (_)\n"
-                    + "                         |___/                                \n");
-            System.out.println("I can find out how to maximize your profit! \n");
-
-            //while loop that waits until check = true.
-            while (!check) {
-                try {
-                    //Starts off by asking the question.
-                    System.out.format("%86s ", "How much does your product cost?");
-                    //program expects double.
-                    originalCost = read.nextDouble();
+                //while loop that waits until check = true.
+                while (!check) {
+                    try {
+                        //Starts off by asking the question.
+                        System.out.format("%86s ", "How much does your product cost?");
+                        //program expects double.
+                        originalCost = read.nextDouble();
                         check = true;
-                    //if the user does not enter a number, the program will catch that error.
-                } catch (InputMismatchException e) {
-                    check = false;
-                    System.out.println("Sorry, you entered an invalid value");
-                    System.err.println(e);
-                    read.next();
+                        //if the user does not enter a number, the program will catch that error.
+                    } catch (InputMismatchException e) {
+                        check = false;
+                        System.out.println("Sorry, you entered an invalid value");
+                        System.err.println(e);
+                        read.next();
+                    }
                 }
-            }
 
-            //same while loop structure for next double
-            check = false;
-            while (!check) {
-                try {
-                    System.out.format("%86s ", "How many sales do you get with that cost?");
-                    numberOfSales = read.nextDouble();
-                    check = true;
-                } catch (InputMismatchException e) {
-                    System.out.println("Sorry, you entered an invalid value");
-                    System.err.println(e);
-                    read.next();
-                }
-            }
-
-            //next while loop for next double
-            check = false;
-            while (!check) {
-                try {
-                    System.out.print("For your 'price increase to sales lost trend',"
-                            + " how much are you changing your cost by? ");
-                    deductionChunk = read.nextDouble();
+                //same while loop structure for next double
+                check = false;
+                while (!check) {
+                    try {
+                        System.out.format("%86s ", "How many sales do you get with that cost?");
+                        numberOfSales = read.nextDouble();
                         check = true;
-                } catch (InputMismatchException e) {
-                    System.out.println("Sorry, you entered an invalid value");
-                    System.err.println(e);
-                    read.next();
+                    } catch (InputMismatchException e) {
+                        System.out.println("Sorry, you entered an invalid value");
+                        System.err.println(e);
+                        read.next();
+                    }
                 }
-            }
 
-            //final while loop for final double
-            check = false;
-            while (!check) {
-                try {
-                    System.out.format("%86s ", "How many sales do you predict to lose for every "
-                            + "increase of $" + String.format(format.format(deductionChunk))
-                            + "?");
-                    salesLost = read.nextDouble();
-                    check = true;
-                } catch (InputMismatchException e) {
-                    System.out.println("Sorry, you entered an invalid value");
-                    System.err.println(e);
-                    read.next();
+                //next while loop for next double
+                check = false;
+                while (!check) {
+                    try {
+                        System.out.print("For your 'price increase to sales lost trend',"
+                                + " how much are you changing your cost by? ");
+                        deductionChunk = read.nextDouble();
+                        check = true;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Sorry, you entered an invalid value");
+                        System.err.println(e);
+                        read.next();
+                    }
                 }
-            }
 
-            //calculating best possible cost for most profit
-            root1 = (numberOfSales / salesLost);
-            root2 = (originalCost / -deductionChunk);
-            vertex = (root1 + root2) / 2;
-            profit = (numberOfSales - salesLost * vertex)
-                    * (originalCost + deductionChunk * vertex);
+                //final while loop for final double
+                check = false;
+                while (!check) {
+                    try {
+                        System.out.format("%86s ", "How many sales do you predict to lose for every "
+                                + "increase of $" + String.format(format.format(deductionChunk))
+                                + "?");
+                        salesLost = read.nextDouble();
+                        check = true;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Sorry, you entered an invalid value");
+                        System.err.println(e);
+                        read.next();
+                    }
+                }
 
-            /*if the data the user entered forces the best possible cost to be negative
+                //calculating best possible cost for most profit
+                root1 = (numberOfSales / salesLost);
+                root2 = (originalCost / -deductionChunk);
+                vertex = (root1 + root2) / 2;
+                profit = (numberOfSales - salesLost * vertex)
+                        * (originalCost + deductionChunk * vertex);
+
+                /*if the data the user entered forces the best possible cost to be negative
          * the program will repeat what the user has given, for best possible profit.
-             */
-            if (vertex <= 0) {
-                System.err.println("Something is wrong with this trend.");
-                System.out.println("You should sell your product for $" + originalCost);
+                 */
+                if (vertex <= 0) {
+                    System.err.println("Something is wrong with this trend.");
+                    System.out.println("You should sell your product for $" + originalCost);
 
-                System.out.println("You will make $"
-                        + String.format("%.2f", originalCost * numberOfSales));
+                    System.out.println("You will make $"
+                            + String.format("%.2f", originalCost * numberOfSales));
 
-                System.out.println("This can be modeled with the quadratic equation f(x) = ("
-                        + format.format(numberOfSales) + "-" + format.format(salesLost)
-                        + "n" + ")" + "(" + format.format(originalCost) + "+"
-                        + format.format(deductionChunk) + "n" + ")");
+                    System.out.println("This can be modeled with the quadratic equation f(x) = ("
+                            + format.format(numberOfSales) + "-" + format.format(salesLost)
+                            + "n" + ")" + "(" + format.format(originalCost) + "+"
+                            + format.format(deductionChunk) + "n" + ")");
 
-                System.out.println("Keep in mind all the numbers"
-                        + " in the model "
-                        + "equation that have more than 2 decimal places were rounded "
-                        + "down to 2 decimal places for easier reading.");
-            } else {
-                System.out.println("You should sell your product for $"
-                        + String.format("%.2f", vertex * deductionChunk + originalCost));
+                    System.out.println("Keep in mind all the numbers"
+                            + " in the model "
+                            + "equation that have more than 2 decimal places were rounded "
+                            + "down to 2 decimal places for easier reading.");
+                } else {
+                    System.out.println("You should sell your product for $"
+                            + String.format("%.2f", vertex * deductionChunk + originalCost));
 
+                    System.out.println("You will make $" + String.format("%.2f", profit));
+
+                    System.out.println("This can be modeled with the quadratic equation f(x) = ("
+                            + format.format(numberOfSales) + "-" + format.format(salesLost)
+                            + "n" + ")" + "(" + format.format(originalCost) + "+"
+                            + format.format(deductionChunk) + "n" + ")");
+
+                    System.out.println("Keep in mind all the numbers that have more "
+                            + "than 2 decimal places were rounded down to 2 decimal "
+                            + "places for easier reading.");
+                }
+            } else if (whatToDo.equals("1")) {
+                System.out.println("I can find the roots of a quadratic in standard"
+                        + " form");
+
+                while (!check) {
+                    try {
+                        //Starts off by asking the question.
+                        System.out.format("%86s ", "Enter the A value");
+                        //program expects double.
+                        a = read.nextDouble();
+                        check = true;
+                        //if the user does not enter a number, the program will catch that error.
+                    } catch (InputMismatchException e) {
+                        check = false;
+                        System.out.println("Sorry, you entered an invalid value");
+                        System.err.println(e);
+                        read.next();
+                    }
+                }
+                check = false;
+                while (!check) {
+                    try {
+                        //Starts off by asking the question.
+                        System.out.format("%86s ", "Enter the B value");
+                        //program expects double.
+                        b = read.nextDouble();
+                        check = true;
+                        //if the user does not enter a number, the program will catch that error.
+                    } catch (InputMismatchException e) {
+                        check = false;
+                        System.out.println("Sorry, you entered an invalid value");
+                        System.err.println(e);
+                        read.next();
+                    }
+                }
+                check = false;
+                while (!check) {
+                    try {
+                        //Starts off by asking the question.
+                        System.out.format("%86s ", "Enter the C value");
+                        //program expects double.
+                        c = read.nextDouble();
+                        check = true;
+                        //if the user does not enter a number, the program will catch that error.
+                    } catch (InputMismatchException e) {
+                        check = false;
+                        System.out.println("Sorry, you entered an invalid value");
+                        System.err.println(e);
+                        read.next();
+                    }
+                }
+                root1 = ((-b) + sqrt((pow(b, 2)) - 4 * (a) * (c))) / (2 * a);
+                root2 = ((-b) - sqrt((pow(b, 2)) - 4 * (a) * (c))) / (2 * a);
+                vertex = (root1 + root2) / 2;
+                profit = a * pow(vertex, 2) + b * vertex + c;
                 System.out.println("You will make $" + String.format("%.2f", profit));
 
-                System.out.println("This can be modeled with the quadratic equation f(x) = ("
-                        + format.format(numberOfSales) + "-" + format.format(salesLost)
-                        + "n" + ")" + "(" + format.format(originalCost) + "+"
-                        + format.format(deductionChunk) + "n" + ")");
-
-                System.out.println("Keep in mind all the numbers that have more "
-                        + "than 2 decimal places were rounded down to 2 decimal "
-                        + "places for easier reading.");
+                //  System.out.println("This can be modeled with the factored equation f(x) = " 
+                //  + a + "(x +" + -root1 + ")" + "(x -" + root2 + ")");
+            } else {
+                System.out.println("Sorry, you didn't enter 1 or 2.");
             }
-        } else {
-            System.out.println(" ____             _     _____ _           _           \n"
-                    + "|  _ \\ ___   ___ | |_  |  ___(_)_ __   __| | ___ _ __ \n"
-                    + "| |_) / _ \\ / _ \\| __| | |_  | | '_ \\ / _` |/ _ \\ '__|\n"
-                    + "|  _ < (_) | (_) | |_  |  _| | | | | | (_| |  __/ |   \n"
-                    + "|_| \\_\\___/ \\___/ \\__| |_|   |_|_| |_|\\__,_|\\___|_|  ");
-
-            System.out.println("I can find the roots of a quadratic in standard"
-                    + " form");
-
-            while (!check) {
-                try {
-                    //Starts off by asking the question.
-                    System.out.format("%86s ", "Enter the A value");
-                    //program expects double.
-                    a = read.nextDouble();
-                    check = true;
-                    //if the user does not enter a number, the program will catch that error.
-                } catch (InputMismatchException e) {
-                    check = false;
-                    System.out.println("Sorry, you entered an invalid value");
-                    System.err.println(e);
-                    read.next();
-                }
-            }
-            check = false;
-            while (!check) {
-                try {
-                    //Starts off by asking the question.
-                    System.out.format("%86s ", "Enter the B value");
-                    //program expects double.
-                    b = read.nextDouble();
-                    check = true;
-                    //if the user does not enter a number, the program will catch that error.
-                } catch (InputMismatchException e) {
-                    check = false;
-                    System.out.println("Sorry, you entered an invalid value");
-                    System.err.println(e);
-                    read.next();
-                }
-            }
-            check = false;
-            while (!check) {
-                try {
-                    //Starts off by asking the question.
-                    System.out.format("%86s ", "Enter the C value");
-                    //program expects double.
-                    c = read.nextDouble();
-                    check = true;
-                    //if the user does not enter a number, the program will catch that error.
-                } catch (InputMismatchException e) {
-                    check = false;
-                    System.out.println("Sorry, you entered an invalid value");
-                    System.err.println(e);
-                    read.next();
-                }
-            }
-            root1 = ((-b) + sqrt((pow(b, 2)) - 4 * (a) * (c))) / (2 * a);
-            root2 = ((-b) - sqrt((pow(b, 2)) - 4 * (a) * (c))) / (2 * a);
-            vertex = (root1 + root2) / 2;
-            profit = a * pow(vertex, 2) + b * vertex + c;
-            System.out.println("You will make $" + String.format("%.2f", profit));
-            
-            
-          //  System.out.println("This can be modeled with the factored equation f(x) = " 
-                  //  + a + "(x +" + -root1 + ")" + "(x -" + root2 + ")");
         }
-        
-        
-    }
-    
-    
 
+    }
 }
