@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package youssef;
+import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 import java.util.Scanner;
 
@@ -47,7 +48,7 @@ public class QuadraticEquations {
         double c = askC.nextDouble();
         
         
-        double root1 = ((b * -1) + sqrt((b * b) - 4 * (a) * (c)));
+        double root1 = ((b * -1) + sqrt((pow(b, 2)) - 4 * (a) * (c)));
         double root2 = ((b * -1) - sqrt((b * b) - 4 * (a) * (c)));
         
         System.out.println("Root 1 is " + root1);

@@ -58,15 +58,13 @@ public class MaximizingProfit {
                 + "|_|  |_|\\___/|_| |_|\\___|\\__, | |_|  |_|\\__,_|_|\\_\\___|_|  (_)\n"
                 + "                         |___/                                \n");
         System.out.println("I can maximize your profit from information of a quadratic"
-                + "in standard form, or factored form");
+                + " in standard form, or factored form");
         System.out.print("Type 1 for the standard quadratic or 2 to"
                 + " for the factored form ");
 
         while (!whatToDo.equals("1") || !whatToDo.equals("2")) {
             whatToDo = read.nextLine();
             if (whatToDo.equals("2")) {
-                System.out.println("I can find out how to maximize your profit! \n");
-
                 //while loop that waits until check = true.
                 while (!check) {
                     try {
@@ -177,7 +175,7 @@ public class MaximizingProfit {
                 while (!check) {
                     try {
                         //Starts off by asking the question.
-                        System.out.format("%86s ", "Enter the A value");
+                        System.out.print("Enter the A value ");
                         //program expects double.
                         a = read.nextDouble();
                         check = true;
@@ -193,7 +191,7 @@ public class MaximizingProfit {
                 while (!check) {
                     try {
                         //Starts off by asking the question.
-                        System.out.format("%86s ", "Enter the B value");
+                        System.out.print("Enter the B value ");
                         //program expects double.
                         b = read.nextDouble();
                         check = true;
@@ -209,7 +207,7 @@ public class MaximizingProfit {
                 while (!check) {
                     try {
                         //Starts off by asking the question.
-                        System.out.format("%86s ", "Enter the C value");
+                        System.out.print("Enter the C value ");
                         //program expects double.
                         c = read.nextDouble();
                         check = true;
@@ -231,6 +229,8 @@ public class MaximizingProfit {
                 //  + a + "(x +" + -root1 + ")" + "(x -" + root2 + ")");
             } else {
                 System.out.println("Sorry, you didn't enter 1 or 2.");
+                System.out.print("Type 1 for the standard quadratic or 2 to"
+                + " for the factored form ");
             }
         }
 
