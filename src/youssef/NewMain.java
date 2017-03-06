@@ -5,6 +5,8 @@
  */
 package youssef;
 
+import static java.lang.Math.round;
+
 /**
  *
  * @author 1mohamedyou
@@ -18,7 +20,10 @@ public class NewMain {
         int[] myArray = {1,2,3,4,5};
         for (int f : myArray) {
             System.out.println(f);
+            
         }
+        System.out.println(round(-4.11));
+        
         
     }
     

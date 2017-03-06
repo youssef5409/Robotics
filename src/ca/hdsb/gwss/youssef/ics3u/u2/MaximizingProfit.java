@@ -51,10 +51,10 @@ public class MaximizingProfit {
         * want to make some for yourself?
         * http://patorjk.com/software/taag/#p=display&f=Epic&t=YOUSSEF
          */
-        System.out.println("I can either find the roots of a standard quadratic"
-                + " or maximize your profit through a factored quadratic.");
-        System.out.print("Type 1 for the roots of a standard quadratic or 2 to"
-                + " maximize your profit ");
+        System.out.println("I ca maximize your profit from information of a quadratic"
+                + "in standard form, or factored form");
+        System.out.print("Type 1 for the standard quadratic or 2 to"
+                + " for the factored form ");
         
         whatToDo = read.nextLine();
 
@@ -106,14 +106,7 @@ public class MaximizingProfit {
                     System.out.print("For your 'price increase to sales lost trend',"
                             + " how much are you changing your cost by? ");
                     deductionChunk = read.nextDouble();
-                    if (deductionChunk == 0) {
-                        System.out.println("I will not have a trend to follow.");
-                        System.out.print("For your 'price increase to sales lost trend',"
-                                + " how much are you changing your cost by? ");
-                        read.next();
-                    } else {
                         check = true;
-                    }
                 } catch (InputMismatchException e) {
                     System.out.println("Sorry, you entered an invalid value");
                     System.err.println(e);
@@ -237,13 +230,18 @@ public class MaximizingProfit {
             }
             root1 = ((-b) + sqrt((pow(b, 2)) - 4 * (a) * (c))) / (2 * a);
             root2 = ((-b) - sqrt((pow(b, 2)) - 4 * (a) * (c))) / (2 * a);
-
-            System.out.println("Root 1 is " + root1);
-            System.out.println("Root 2 is " + root2);
             vertex = (root1 + root2) / 2;
             profit = a * pow(vertex, 2) + b * vertex + c;
-            System.out.println("You will make " + profit);
+            System.out.println("You will make $" + String.format("%.2f", profit));
+            
+            
+          //  System.out.println("This can be modeled with the factored equation f(x) = " 
+                  //  + a + "(x +" + -root1 + ")" + "(x -" + root2 + ")");
         }
+        
+        
     }
+    
+    
 
 }
