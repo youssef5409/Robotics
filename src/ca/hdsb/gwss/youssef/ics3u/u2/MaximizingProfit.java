@@ -1,6 +1,6 @@
 /*
  * Name: Youssef Mohamed
- * Date: 3rd Mar 2017
+ * Date: 6th Mar 2017
  * Version: 1.0
  * Description:
  *      This program maximizes your profit
@@ -61,7 +61,14 @@ public class MaximizingProfit {
                 + " in standard form, or factored form");
         System.out.print("Type 1 for the standard quadratic or 2 to"
                 + " for the factored form ");
-
+        
+        /* 
+         * for some reason, after one run of the program, it would loop back
+         * and start again.
+         * I implemented 'System.exit' into my code as a way to temporarily
+         * mend this issue until I find the underlying cause.
+         */
+        
         while (!whatToDo.equals("1") || !whatToDo.equals("2")) {
             whatToDo = read.nextLine();
             //switch case that verifies that the user has entered 1 or 2
@@ -128,7 +135,7 @@ public class MaximizingProfit {
                     profit = (numberOfSales - salesLost * vertex)
                             * (originalCost + deductionChunk * vertex);
                     /*if the data the user entered forces the best possible cost to be negative
-                    * the program will repeat what the user has given, for best possible profit.
+                     * the program will repeat what the user has given, for best possible profit.
                      */
                     if (vertex <= 0) {
                         System.err.println("Something is wrong with this trend.");
@@ -161,6 +168,7 @@ public class MaximizingProfit {
                                 + "than 2 decimal places were rounded down to 2 decimal "
                                 + "places for easier reading.");
                     }
+                    System.exit(0);
                     break;
                 case "1":
                     while (!check) {
@@ -210,19 +218,21 @@ public class MaximizingProfit {
                             read.next();
                         }
                     }
+                    //Using the quadratic equation to find the roots
                     root1 = ((-b) + sqrt((pow(b, 2)) - 4 * (a) * (c))) / (2 * a);
                     root2 = ((-b) - sqrt((pow(b, 2)) - 4 * (a) * (c))) / (2 * a);
                     vertex = (root1 + root2) / 2;
                     profit = a * pow(vertex, 2) + b * vertex + c;
                     System.out.println("You will make $" + String.format("%.2f", profit));
+                    //In the future I would like to find out how to factor the
+                    //standard form into factored form, using java.
 
-                    //  System.out.println("This can be modeled with the factored equation f(x) = "
-                    //  + a + "(x +" + -root1 + ")" + "(x -" + root2 + ")");
                     break;
                 default:
                     System.out.println("Sorry, you didn't enter 1 or 2.");
                     System.out.print("Type 1 for the standard quadratic or 2 to"
                             + " for the factored form ");
+                    System.exit(0);
                     break;
             }
         }
