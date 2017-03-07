@@ -224,6 +224,7 @@ public class MaximizingProfit {
                     vertex = (root1 + root2) / 2;
                     profit = a * pow(vertex, 2) + b * vertex + c;
                     System.out.println("You will make $" + String.format("%.2f", profit));
+                    System.exit(0);
                     //In the future I would like to find out how to factor the
                     //standard form into factored form, using java.
 
@@ -232,7 +233,6 @@ public class MaximizingProfit {
                     System.out.println("Sorry, you didn't enter 1 or 2.");
                     System.out.print("Type 1 for the standard quadratic or 2 to"
                             + " for the factored form ");
-                    System.exit(0);
                     break;
             }
         }
