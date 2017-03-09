@@ -18,13 +18,13 @@ public class PhoneCallMinutes {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        double minutesDuringDay = 0;
-        double minutesDuringDayA = 0;
-        double minutesDuringDayB = 0;
-        double minutesDuringWeekend = 0;
-        double minutesDuringEvening = 0;
-        double priceA = 0;
-        double priceB = 0;
+        double minutesDuringDay;
+        double minutesDuringDayA;
+        double minutesDuringDayB;
+        double minutesDuringWeekend;
+        double minutesDuringEvening;
+        double priceA;
+        double priceB;
 
         Scanner read = new Scanner(System.in);
 
