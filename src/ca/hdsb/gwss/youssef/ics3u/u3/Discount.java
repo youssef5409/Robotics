@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ca.hdsb.gwss.youssef.ics3u.u2;
+package ca.hdsb.gwss.youssef.ics3u.u3;
 import java.util.Scanner;
 /**
  *
