@@ -47,6 +47,10 @@ public class PhoneCallMinutes {
         priceA = (minutesDuringDayA - 100) * 0.25 + minutesDuringEvening * 0.15 + minutesDuringWeekend * 0.2;
         priceB = (minutesDuringDayB - 250) * 0.45 + minutesDuringEvening * 0.35 + minutesDuringWeekend * 0.25;
 
+        
+        
+        
+        
         if (priceA == priceB) {
             System.out.println("They cost the same");
         } else if (priceA > priceB) {
