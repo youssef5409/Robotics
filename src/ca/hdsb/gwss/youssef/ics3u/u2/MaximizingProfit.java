@@ -61,14 +61,13 @@ public class MaximizingProfit {
                 + " in standard form, or factored form");
         System.out.print("Type 1 for the standard quadratic or 2 to"
                 + " for the factored form ");
-        
+
         /* 
          * for some reason, after one run of the program, it would loop back
          * and start again.
          * I implemented 'System.exit' into my code as a way to temporarily
          * mend this issue until I find the underlying cause.
          */
-        
         while (!whatToDo.equals("1") || !whatToDo.equals("2")) {
             whatToDo = read.nextLine();
             //switch case that verifies that the user has entered 1 or 2
