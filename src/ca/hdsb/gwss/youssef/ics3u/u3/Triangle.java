@@ -9,7 +9,7 @@ package ca.hdsb.gwss.youssef.ics3u.u3;
  *
  * @author 1mohamedyou
  */
-public class AlienDetector {
+public class Triangle {
 
     /**
      * @param args the command line arguments
