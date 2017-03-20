@@ -9,18 +9,21 @@ package youssef;
  *
  * @author 1mohamedyou
  */
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class NewMain {
+   public static void main(String[] args) {
+       //getting current date and time using Date class
+       DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+       Date dateobj = new Date();
+       System.out.println(df.format(dateobj));
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-
-        boolean uno = false, dos = false, tres = false, quatros = false;
-        
-        System.out.println(uno && dos || tres  && quatros);
-        
-        
+       /*getting current date time using calendar class 
+        * An Alternative of above*/
+       Calendar calobj = Calendar.getInstance();
+       System.out.println(df.format(calobj.getTime()));
     }
-    
 }

@@ -1,11 +1,16 @@
 <#if licenseFirst??>
+
 ${licenseFirst}
+
 </#if>
+
 ${licensePrefix}Name: Youssef Mohamed
+
 ${licensePrefix}Date: INSERT DATE
 ${licensePrefix}Version 0.1
 ${licensePrefix}Description:
-${licensePrefix}INSERT DESCRIPTION
-licenseLast??>
+${licensePrefix}INSERT DESCRIPTION${licensePrefix}
+</#if licenseLast??>
+
 ${licenseLast}
 </#if>

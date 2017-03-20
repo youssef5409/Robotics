@@ -1,29 +1,24 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name: Youssef Mohamed
+ * Version: 0.1
+ * Date: 20th March 2017
+ * Description: Determines if a fish can live in the water based on acidity
  */
 package ca.hdsb.gwss.youssef.ics3u.u3;
-
+import java.util.Scanner;
 /**
  *
  * @author 1mohamedyou
  */
-import java.util.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+
 
 public class AcidRain {
    public static void main(String[] args) {
-       //getting current date and time using Date class
-       DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
-       Date dateobj = new Date();
-       System.out.println(df.format(dateobj));
-
-       /*getting current date time using calendar class 
-        * An Alternative of above*/
-       Calendar calobj = Calendar.getInstance();
-       System.out.println(df.format(calobj.getTime()));
+       final double pH; 
+       Scanner read = new Scanner(System.in);
+       
+       System.out.println("Input pH");
+       pH = read.nextInt();
+       
     }
 }
