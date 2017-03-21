@@ -17,10 +17,18 @@ public class AcidRain {
        final double pH; 
        Scanner read = new Scanner(System.in);
        
-       System.out.println("Acid Rain \n Acid rain is a an environmental problem. "
-               + "This program determines if the pH level in water is safe for fish.");
-       System.out.print("Enter a pH level: ");
-       pH = read.nextInt();
-       if 
+       System.out.print("Input pH: ");
+       pH = read.nextDouble();
+       
+       if (pH > 7.4) {
+           System.out.println("TOO ALKALINE - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.");
+       }
+       else if (pH < 6.4) {
+           System.out.println("TOO ACIDIC - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.");
+           
+       }
+       else{
+           System.out.println("NEUTRAL - FISH IN STREAMS, RIVERS AND LAKES WILL SURVIVE.");
+       }
     }
 }
