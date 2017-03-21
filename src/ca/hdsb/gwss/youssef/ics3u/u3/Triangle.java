@@ -31,7 +31,7 @@ public class Triangle {
         System.out.println("What is the length of the third side: ");
         sideThree = read.nextDouble();
         
-        if ((sideOne + sideTwo) > sideThree || (sideOne + sideThree) > sideTwo ||
+        if ((sideOne + sideTwo) > sideThree && (sideOne + sideThree) > sideTwo &&
                 (sideTwo + sideThree) > sideOne) {
             System.out.println("A triangle can be made");
     }
