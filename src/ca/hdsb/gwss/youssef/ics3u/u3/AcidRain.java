@@ -17,8 +17,10 @@ public class AcidRain {
        final double pH; 
        Scanner read = new Scanner(System.in);
        
-       System.out.println("Input pH");
+       System.out.println("Acid Rain \n Acid rain is a an environmental problem. "
+               + "This program determines if the pH level in water is safe for fish.");
+       System.out.print("Enter a pH level: ");
        pH = read.nextInt();
-       
+       if 
     }
 }
