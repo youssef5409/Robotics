@@ -22,7 +22,7 @@ public class Triangle {
         
         Scanner read = new Scanner(System.in);
         
-        System.out.println("What is the lenth of the first side: ");
+        System.out.println("What is the length of the first side: ");
         sideOne = read.nextDouble();
         
         System.out.println("What is the length of the second side: ");
