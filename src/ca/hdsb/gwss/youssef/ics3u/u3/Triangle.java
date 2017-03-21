@@ -22,13 +22,13 @@ public class Triangle {
         
         Scanner read = new Scanner(System.in);
         
-        System.out.println("What is the length of the first side: ");
+        System.out.print("What is the length of the first side: ");
         sideOne = read.nextDouble();
         
-        System.out.println("What is the length of the second side: ");
+        System.out.print("What is the length of the second side: ");
         sideTwo = read.nextDouble();
         
-        System.out.println("What is the length of the third side: ");
+        System.out.print("What is the length of the third side: ");
         sideThree = read.nextDouble();
         
         if ((sideOne + sideTwo) > sideThree && (sideOne + sideThree) > sideTwo &&
