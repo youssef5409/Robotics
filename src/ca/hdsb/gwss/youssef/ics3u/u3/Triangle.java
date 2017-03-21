@@ -16,9 +16,10 @@ public class Triangle {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        final double sideOne;
-        final double sideTwo;
-        final double sideThree;
+        double sideOne;
+        double sideTwo;
+        double sideThree;
+        double swap;
         
         Scanner read = new Scanner(System.in);
         
@@ -31,12 +32,16 @@ public class Triangle {
         System.out.print("What is the length of the third side: ");
         sideThree = read.nextDouble();
         
-        if ((sideOne + sideTwo) > sideThree && (sideOne + sideThree) > sideTwo &&
-                (sideTwo + sideThree) > sideOne) {
-            System.out.println("A triangle can be made");
+        if (sideOne > sideTwo) {
+            swap = sideOne;
+            sideOne = sideTwo;
+            sideTwo = swap;
     }
-        else {
-            System.out.println("A triangle cannot be made");
+        if (sideTwo > sideThree) {
+            swap = sideTwo;
+            sideOne = sideThree;
+            sideThree = swap;
+            
         }
     }
     
