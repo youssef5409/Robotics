@@ -32,16 +32,22 @@ public class Triangle {
         System.out.print("What is the length of the third side: ");
         sideThree = read.nextDouble();
         
-        if (sideOne > sideTwo) {
+        if (sideTwo > sideOne) {
             swap = sideOne;
             sideOne = sideTwo;
             sideTwo = swap;
     }
-        if (sideTwo > sideThree) {
-            swap = sideTwo;
+        if (sideThree > sideOne) {
+            swap = sideOne;
             sideOne = sideThree;
             sideThree = swap;
+        }
+        if (sideOne >= (sideTwo + sideThree)) {
+            System.out.println("A triangle cannot be made");
+        }
+        else {
             
+            System.out.println("deerm");
         }
     }
     
