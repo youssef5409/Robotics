@@ -1,7 +1,7 @@
 /*
  * Name: Youssef Mohamed
- * Version: 0.1
- * Date: 20th March 2017
+ * Version: 0.3
+ * Date: 23rd March 2017
  * Description: Determines if a fish can live in the water based on acidity
  */
 package ca.hdsb.gwss.youssef.ics3u.u3;
