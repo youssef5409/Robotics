@@ -4,7 +4,7 @@
  * Date: 20th March 2017
  * Description: Determines cost of letter.
  */
-package ca.hdsb.gwss.youssef.ics3u.u3;
+package ca.hdsb.gwss.youssef.ics3u.u2;
 import java.util.Scanner;
 /**
  *
