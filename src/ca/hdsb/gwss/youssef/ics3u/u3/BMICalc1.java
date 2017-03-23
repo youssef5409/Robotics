@@ -7,7 +7,6 @@
 package ca.hdsb.gwss.youssef.ics3u.u3;
 
 import java.util.Scanner;
-import static java.lang.Math.pow;
 import java.util.InputMismatchException;
 
 /**
@@ -24,7 +23,7 @@ public class BMICalc1 {
         double weight = 0;
         double height = 0;
         double bmi;
-        int type = 0;
+        int type;
         String units;
         boolean check = false;
         Scanner read = new Scanner(System.in);
@@ -45,11 +44,9 @@ public class BMICalc1 {
                 type = read.nextInt();
                 switch (type) {
                     case 1:
-                        check = true;
-                        units = "Metric (cm/kg)";
+                        units = "Metric (m/kg)";
                         break;
                     case 2:
-                        check = true;
                         units = "Imperial (in/lb)";
                         break;
                     default:
@@ -58,28 +55,36 @@ public class BMICalc1 {
                 }
                 //Verification of proper weight/height info, that allows the program to
                 //keep running. Even after an error.
-                while (!(type == 2 && weight >= 5.5) || (type == 1 && weight >= 2.5)) {
+                while (!check) {
                     System.out.print("What is your weight? Keep it within realistic"
                             + " parameters (Remember: " + units + "): ");
                     weight = read.nextDouble();
+                    if (type == 2 && weight >= 5.5 && weight <= 900) {
+                        check = true;
+                        weight = weight * 703;
+                    } else if (type == 1 && weight >= 5.5 && weight <= 408.233) {
+                        check = true;
+                    }
                 }
-                while (!(type == 2 && height >= 12 || type == 1 && height >= 30.48)) {
+                check = false;
+                while (!check) {
                     System.out.print("What is your height? Keep it within realistic"
                             + " parameters (Remember: " + units + "): ");
                     height = read.nextDouble();
+                    if (type == 2 && height >= 12 && height <= 96) {
+                        check = true;
+                    } else if (type == 1 && height >= 0.3048 && height <= 2.4384) {
+                        check = true;
+                    }
                 }
                 //if the user does not enter a number, the program will catch that error.
             } catch (InputMismatchException e) {
-                check = false;
                 System.out.println("Sorry, you entered an invalid value");
                 System.err.println(e);
                 read.next();
             }
         }
-        if (type == 2) {
-            weight = weight * 703;
-        }
-        bmi = weight / (pow(height, height));
+        bmi = weight / (height * height);
         //if/elif/else for fidning what group the user falls into.
         if (bmi > 40) {
             System.out.println("You are morbidly obese.");
