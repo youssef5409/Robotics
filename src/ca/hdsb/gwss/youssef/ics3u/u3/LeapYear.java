@@ -27,8 +27,8 @@ public class LeapYear {
         //Introductory Statements
         System.out.println("A leap year is a year that has an extra day in February"
                 + " this program determines if the year you enter is a leap year.");
-
-while (!check) {
+    }}
+/*while (!check) {
             System.out.print("What year is it?: ");
             try {
                 pH = read.nextDouble();
@@ -54,3 +54,4 @@ while (!check) {
     }
 
 }
+*/
