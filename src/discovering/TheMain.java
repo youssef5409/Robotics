@@ -10,20 +10,22 @@ package discovering;
  * @author 1mohamedyou
  */
 public class TheMain {
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
         int nVal;
-        
+
         MethodOne test1 = new MethodOne();
-        
+
         nVal = test1.number();
-        
-        System.out.println(nVal);
+        if (nVal == 1) {
+            System.out.println("nVal is 1.");
+        } else {
+            System.out.println("nVal is not 1.");
+        }
     }
 
-    
-    
 }
