@@ -10,7 +10,7 @@ package discovering;
  * @author 1mohamedyou
  */
 public class MethodOne {
-    int lmao() {
+    int number() {
         int n = 1;
         return n;
         }
