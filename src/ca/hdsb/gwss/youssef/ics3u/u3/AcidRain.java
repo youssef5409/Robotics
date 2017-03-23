@@ -16,7 +16,7 @@ public class AcidRain {
 
     public static void main(String[] args) {
         //Initializing Variables
-        final double pH;
+        double pH;
         Scanner read = new Scanner(System.in);
         
         System.out.println("Acid rain is an environmental problem ");
@@ -25,7 +25,10 @@ public class AcidRain {
         pH = read.nextDouble();
         
         //Simple if/elif/else statement to find which group the pH value falls into.
-        if (pH > 7.4) {
+        if (pH > 14 || pH < 0) {
+            System.out.println("Invalid Data");
+        }
+        else if (pH > 7.4) {
             System.out.println("TOO ALKALINE - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.");
         } else if (pH < 6.4) {
             System.out.println("TOO ACIDIC - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.");

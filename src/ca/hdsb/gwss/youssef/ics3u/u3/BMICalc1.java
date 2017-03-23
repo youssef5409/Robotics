@@ -14,7 +14,7 @@ import java.util.InputMismatchException;
  *
  * @author 1mohamedyou
  */
-public class BMICalc {
+public class BMICalc1 {
 
     /**
      * @param args the command line arguments
@@ -25,7 +25,7 @@ public class BMICalc {
         double height = 0;
         double bmi;
         int type = 0;
-        String units = "";
+        String units;
         boolean check = false;
         Scanner read = new Scanner(System.in);
 
@@ -43,12 +43,30 @@ public class BMICalc {
                 System.out.print("Press 1 for metric, press 2 for imperial: ");
                 //program expects double.
                 type = read.nextInt();
-                if (type == 1) {
-                    check = true;
-                    units = "Metric (cm/kg) ";
-                } else if (type == 2) {
-                    check = true;
-                    units = "Imperial (in/lb) ";
+                switch (type) {
+                    case 1:
+                        check = true;
+                        units = "Metric (cm/kg)";
+                        break;
+                    case 2:
+                        check = true;
+                        units = "Imperial (in/lb)";
+                        break;
+                    default:
+                        System.out.println("Sorry, invalid type.");
+                        continue;
+                }
+                //Verification of proper weight/height info, that allows the program to
+                //keep running. Even after an error.
+                while (!(type == 2 && weight >= 5.5) || (type == 1 && weight >= 2.5)) {
+                    System.out.print("What is your weight? Keep it within realistic"
+                            + " parameters (Remember: " + units + "): ");
+                    weight = read.nextDouble();
+                }
+                while (!(type == 2 && height >= 12 || type == 1 && height >= 30.48)) {
+                    System.out.print("What is your height? Keep it within realistic"
+                            + " parameters (Remember: " + units + "): ");
+                    height = read.nextDouble();
                 }
                 //if the user does not enter a number, the program will catch that error.
             } catch (InputMismatchException e) {
@@ -58,22 +76,10 @@ public class BMICalc {
                 read.next();
             }
         }
-
-        System.out.print("What is your weight? (Remember: " + units + "): ");
-        while (type == 2 && weight < 5.5 || type == 1 && weight < 2.5) {
-            System.out.println("Sorry, the weight value is invalid, please try again.");
-            weight = read.nextDouble();
+        if (type == 2) {
+            weight = weight * 703;
         }
-        System.out.print("What is your weight? (Remember: " + units + "): ");
-        height = read.nextDouble();
-
-        //if/else for finding if user wants metric or imperial
-        if (type == 1) {
-            bmi = weight / (pow(height, height));
-        } else {
-            bmi = weight * 703 / (pow(height, height));
-        }
-
+        bmi = weight / (pow(height, height));
         //if/elif/else for fidning what group the user falls into.
         if (bmi > 40) {
             System.out.println("You are morbidly obese.");
