@@ -6,6 +6,7 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u3;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -16,19 +17,31 @@ public class AcidRain {
 
     public static void main(String[] args) {
         //Initializing Variables
-        double pH;
+        double pH = 0;
+        boolean check = false;
         Scanner read = new Scanner(System.in);
-        
-        System.out.println("Acid rain is an environmental problem ");
-        System.out.print("Input pH: ");
+
+        System.out.println("Acid rain is an environmental problem. This program"
+                + " determines if the pH level in the water is safe for fish.");
         //Program expects double
-        pH = read.nextDouble();
-        
         //Simple if/elif/else statement to find which group the pH value falls into.
-        if (pH > 14 || pH < 0) {
-            System.out.println("Invalid Data");
+        while (!check) {
+            System.out.print("Input your pH: ");
+            try {
+                pH = read.nextDouble();
+                if (pH < 0 || pH > 14) {
+                    System.out.println("Sorry, your pH is either too high or too low."
+                            + " Please try again.");
+                } else {
+                    check = true;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Sorry, you entered an invalid value");
+                System.err.println(e);
+                read.next();
+            }
         }
-        else if (pH > 7.4) {
+        if (pH > 7.4) {
             System.out.println("TOO ALKALINE - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.");
         } else if (pH < 6.4) {
             System.out.println("TOO ACIDIC - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.");

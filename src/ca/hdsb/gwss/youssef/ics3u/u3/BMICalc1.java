@@ -55,26 +55,32 @@ public class BMICalc1 {
                 }
                 //Verification of proper weight/height info, that allows the program to
                 //keep running. Even after an error.
+                System.out.print("What is your weight? Keep it within realistic"
+                        + " parameters (Remember: " + units + "): ");
                 while (!check) {
-                    System.out.print("What is your weight? Keep it within realistic"
-                            + " parameters (Remember: " + units + "): ");
                     weight = read.nextDouble();
                     if (type == 2 && weight >= 5.5 && weight <= 900) {
                         check = true;
                         weight = weight * 703;
                     } else if (type == 1 && weight >= 5.5 && weight <= 408.233) {
                         check = true;
+                    } else {
+                        System.out.print("Sorry, what your weight is invalid,"
+                                + " please try again: ");
                     }
                 }
                 check = false;
+                System.out.print("What is your height? Keep it within realistic"
+                        + " parameters (Remember: " + units + "): ");
                 while (!check) {
-                    System.out.print("What is your height? Keep it within realistic"
-                            + " parameters (Remember: " + units + "): ");
                     height = read.nextDouble();
                     if (type == 2 && height >= 12 && height <= 96) {
                         check = true;
                     } else if (type == 1 && height >= 0.3048 && height <= 2.4384) {
                         check = true;
+                    } else {
+                        System.out.print("Sorry, what your weight is invalid,"
+                                + " please try again: ");
                     }
                 }
                 //if the user does not enter a number, the program will catch that error.
