@@ -15,6 +15,7 @@ import java.util.Scanner;
  * @author 1mohamedyou
  */
 public class Triangle {
+
     String triangleCheck() {
         //Initiliazing Variables
         boolean check = false;
@@ -39,56 +40,67 @@ public class Triangle {
                 + "created, it will check if it is Right-Angled.\n");
 
         //Program asks for input from user
-        while (!check) {
-            try {
+        try {
+            while (!check) {
                 System.out.print("What is the length of the first side: ");
                 sideOne = read.nextDouble();
                 if (sideOne > 0) {
                     System.out.println("What is the length of the second side: ");
+                    check = true;
                     sideTwo = read.nextDouble();
-                    if (sideTwo > 0) {
-                        System.out.println("What is the length of the third side: ");
-                        sideThree = read.nextDouble();
-                        if (sideThree > 0) {
-                            check = true;
-                        }
-                    }
                 } else {
                     System.out.println("Sorry, the length you entered"
                             + " is too low.");
                 }
-
-
-            } catch (InputMismatchException e) {
-                System.out.println("Sorry, you entered an invalid value");
-                System.err.println(e);
-                read.next();
             }
-        }
-
-            if (sideTwo > sideOne) {
-                swap = sideOne;
-                sideOne = sideTwo;
-                sideTwo = swap;
-            }
-            if (sideThree > sideOne) {
-                swap = sideOne;
-                sideOne = sideThree;
-                sideThree = swap;
-            }
-            if (sideOne >= (sideTwo + sideThree)) {
-                triangleVar = "A triangle cannot be made";
-            } else {
-                if (pow(sideThree, 2) + pow(sideTwo, 2) == pow(sideOne, 2)) {
-                    triangleVar = "Not only can a Triangle be made, but it can also"
-                            + " be a Right-Angled one.";
+            check = false;
+            while (!check) {
+                if (sideTwo > 0) {
+                    System.out.println("What is the length of the third side: ");
+                    check = true;
+                    sideThree = read.nextDouble();
                 } else {
-                    triangleVar = "A triangle can be made, however it cannot"
-                            + " be Right-Angled.";
+                    System.out.println("Sorry, the length you entered"
+                            + " is too low.");
                 }
             }
-            return triangleVar;
+            check = false;
+            while (!check) {
+                if (sideThree > 0) {
+                    check = true;
+                } else {
+                    System.out.println("Sorry, the length you entered is too low.");
+                }
+            }
+
+        } catch (InputMismatchException e) {
+            System.out.println("Sorry, you entered an invalid value");
+            System.err.println(e);
+            read.next();
         }
 
+        if (sideTwo > sideOne) {
+            swap = sideOne;
+            sideOne = sideTwo;
+            sideTwo = swap;
+        }
+        if (sideThree > sideOne) {
+            swap = sideOne;
+            sideOne = sideThree;
+            sideThree = swap;
+        }
+        if (sideOne >= (sideTwo + sideThree)) {
+            triangleVar = "A triangle cannot be made";
+        } else {
+            if (pow(sideThree, 2) + pow(sideTwo, 2) == pow(sideOne, 2)) {
+                triangleVar = "Not only can a Triangle be made, but it can also"
+                        + " be a Right-Angled one.";
+            } else {
+                triangleVar = "A triangle can be made, however it cannot"
+                        + " be Right-Angled.";
+            }
+        }
+        return triangleVar;
     }
 
+}

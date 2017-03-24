@@ -5,7 +5,6 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u3;
 
-import youssef.Triangle;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
