@@ -28,7 +28,7 @@ public class Unit3MainMethod {
         AcidRain acid = new AcidRain();
         BMICalc bmi = new BMICalc();
         LeapYear year = new LeapYear();
-        Triangle triangle = new Triangle();
+        Triangle1 triangle = new Triangle1();
         Scanner read = new Scanner(System.in);
 
         System.out.println("Welcome to my unit 3 culminative task! I can do a \n"

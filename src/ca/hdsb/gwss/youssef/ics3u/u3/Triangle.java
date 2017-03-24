@@ -1,14 +1,9 @@
 /*
- * Name: Youssef Mohamed
- * Version: 0.3
- * Date: 23rd March 2017
- * Description: Determines if 3 lines can make a triangle and if it can be right angled
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package ca.hdsb.gwss.youssef.ics3u.u3;
-
-import static java.lang.Math.pow;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 /**
  *
@@ -16,122 +11,98 @@ import java.util.Scanner;
  */
 public class Triangle {
 
-    public static double sideOne;
-    public static double sideTwo;
-    public static double sideThree;
+    // 
+    public static final int NUMBER_OF_SIDES = 3;
+    
+    // INSTANCE VARIABLES
+    private double side1;
+    private double side2;
+    private double side3;
+    private String type;
 
-    String triangleCheck() {
-        //Long introductory statement, but criteria dictates this must be included
-        System.out.println("Three numbers represent the sides of a triangle when\n"
-                + "the sum of any two sides is greater than the third side.\n"
-                + "This program has the user enter three lengths of sides and\n"
-                + "determines whether the figure is a triangle or not. It will\n"
-                + "also determine if said triangle can be Right-Angled.\n"
-                + "A Right-Angled triangle has the property that when the values\n"
-                + "of the lengths of the sides are squared, the sum of two\n"
-                + "smaller values is equal to the larger value.  This program\n"
-                + "asks the user to enter three values and then determines\n"
-                + "whether a triangle is created or not, and if a triangle is\n"
-                + "created, it will check if it is Right-Angled.\n");
+    public Triangle() {
+    }
+    
+    public Triangle( String type ) {
+        this.type = type;
+    }
 
-        return trianglePossible;
+    public Triangle(double side1, double side2, double side3) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+        this.type = "UNKNOWN";
+        
+        this.orderSides();
+    }
+
+    public double getSide1() {
+        return side1;
+    }
+
+    public void setSide1(double side1) {
+        if( side1 <= 0 ) {
+            
+        }
+        this.side1 = side1;
+    }
+
+    public double getSide2() {
+        return side2;
+    }
+
+    public void setSide2(double side2) {
+        this.side2 = side2;
+    }
+
+    public double getSide3() {
+        return side3;
+    }
+
+    public void setSide3(double side3) {
+        this.side3 = side3;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    
+    
+    private void orderSides() {
         
     }
-    public static String getRightAngleTriangle() {
+    
+    public boolean isTriangle( ) {
+        boolean valid = true;
+        if( this.side1 <= 0 || this.side2 <= 0 || this.side3 <= 0 ) {
+            valid = false;
+        }
+        else if( this.side1 + this.side2 <= this.side3 ) {
+            valid = false;
+        }
+        return valid;
         
-        String trianglePossible = "";
-        if (pow(sideThree, 2) + pow(sideTwo, 2) == pow(sideOne, 2)) {
-            trianglePossible = "It can also"
-                    + " be a Right-Angled one.";
-        } else {
-            trianglePossible = "However it cannot"
-                    + " be Right-Angled.";
-    } 
-        return trianglePossible;
     }
-    public static String getTriangle() {
+    
+    public boolean isRightTriangle( ) {
 
-        double swap;
-        String trianglePossible = "";
-        if (sideTwo > sideOne) {
-            swap = sideOne;
-            sideOne = sideTwo;
-            sideTwo = swap;
-        }
-        if (sideThree > sideOne) {
-            swap = sideOne;
-            sideOne = sideThree;
-            sideThree = swap;
-        }
-        if (sideOne >= (sideTwo + sideThree)) {
-            trianglePossible = "A triangle cannot be made";
-        }
-        return trianglePossible;
+        return true;
+    }
+    
+    
+    
+    public static void main(String[] args) {
+        
+        Triangle t1 = new Triangle( "Scalene" );
+        Triangle t2 = new Triangle( 1, 2, 5 );
+        
+        
+        System.out.println( t2.isTriangle() );
+
     }
 
-    public static double getSideOne() {
-        boolean validSideLength = false;
-        Scanner read = new Scanner(System.in);
-        while (!validSideLength) {
-            try {
-                System.out.print("What is your first side length?: ");
-                sideOne = read.nextDouble();
-                if (sideOne >= 0) {
-                    validSideLength = true;
-                } else {
-                    System.out.println("Sorry, your side length is invalid,"
-                            + " please try again");
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Sorry, you entered an invalid value");
-                System.err.println(e);
-                read.next();
-            }
-        }
-        return sideOne;
-    }
-
-    public static double getSideTwo() {
-        boolean validSideLength = false;
-        Scanner read = new Scanner(System.in);
-        while (!validSideLength) {
-            try {
-                System.out.print("What is your second side length?: ");
-                sideTwo = read.nextDouble();
-                if (sideTwo >= 0) {
-                    validSideLength = true;
-                } else {
-                    System.out.println("Sorry, your side length is invalid,"
-                            + " please try again");
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Sorry, you entered an invalid value");
-                System.err.println(e);
-                read.next();
-            }
-        }
-        return sideTwo;
-    }
-
-    public static double getSideThree() {
-        boolean validSideLength = false;
-        Scanner read = new Scanner(System.in);
-        while (!validSideLength) {
-            try {
-                System.out.print("What is your first side length?: ");
-                sideThree = read.nextDouble();
-                if (sideThree >= 0) {
-                    validSideLength = true;
-                } else {
-                    System.out.println("Sorry, your side length is invalid,"
-                            + " please try again");
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Sorry, you entered an invalid value");
-                System.err.println(e);
-                read.next();
-            }
-        }
-        return sideThree;
-    }
 }
