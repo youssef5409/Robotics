@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ca.hdsb.gwss.youssef.ics3u.u3;
+package discovering;
 
 /**
  *
@@ -105,4 +105,8 @@ public class Triangle {
 
     }
 
-}
+
+public static int number(int n){
+    if(n == 0) return 0;
+    return n + number(n - 1);
+}}
