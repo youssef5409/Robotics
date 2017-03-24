@@ -40,28 +40,31 @@ public class Triangle {
                 + "created, it will check if it is Right-Angled.\n");
 
         //Program asks for input from user
+        while (!check) {
         try {
             while (!check) {
                 System.out.print("What is the length of the first side: ");
                 sideOne = read.nextDouble();
                 if (sideOne > 0) {
-                    System.out.println("What is the length of the second side: ");
+                    System.out.print("What is the length of the second side: ");
                     check = true;
                     sideTwo = read.nextDouble();
                 } else {
-                    System.out.println("Sorry, the length you entered"
-                            + " is too low.");
+                    System.out.print("Sorry, the length you entered is too low."
+                            + " Please try again: ");
+                    sideOne = read.nextDouble();
                 }
             }
             check = false;
             while (!check) {
                 if (sideTwo > 0) {
-                    System.out.println("What is the length of the third side: ");
+                    System.out.print("What is the length of the third side: ");
                     check = true;
                     sideThree = read.nextDouble();
                 } else {
-                    System.out.println("Sorry, the length you entered"
-                            + " is too low.");
+                    System.out.print("Sorry, the length you entered is too low."
+                            + " Please try again: ");
+                    sideTwo = read.nextDouble();
                 }
             }
             check = false;
@@ -69,14 +72,18 @@ public class Triangle {
                 if (sideThree > 0) {
                     check = true;
                 } else {
-                    System.out.println("Sorry, the length you entered is too low.");
+                    System.out.print("Sorry, the length you entered is too low."
+                            + " Please try again: ");
+                    sideThree = read.nextDouble();
                 }
             }
 
         } catch (InputMismatchException e) {
+            check = false;
             System.out.println("Sorry, you entered an invalid value");
             System.err.println(e);
             read.next();
+        }
         }
 
         if (sideTwo > sideOne) {
