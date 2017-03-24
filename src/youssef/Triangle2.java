@@ -4,7 +4,7 @@
  * Date: 23rd March 2017
  * Description: Determines if 3 lines can make a triangle and if it can be right angled
  */
-package ca.hdsb.gwss.youssef.ics3u.u3;
+package youssef;
 
 import static java.lang.Math.pow;
 import java.util.InputMismatchException;
@@ -14,7 +14,7 @@ import java.util.Scanner;
  *
  * @author 1mohamedyou
  */
-public class Triangle {
+public class Triangle2 {
     String triangleCheck() {
         //Initiliazing Variables
         boolean check = false;
