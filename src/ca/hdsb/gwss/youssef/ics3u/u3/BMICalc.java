@@ -13,9 +13,10 @@ import java.util.Scanner;
  * @author Youss
  */
 public class BMICalc {
+
     String levelBMI() {
-    double weight = 0;
-    String bmiLevel;
+        double weight = 0;
+        String bmiLevel;
         double height = 0;
         double bmi;
         int type;
@@ -67,17 +68,9 @@ public class BMICalc {
                 check = false;
                 System.out.print("What is your height? Keep it within realistic"
                         + " parameters (Remember: " + units + "): ");
-                while (!check) {
-                    height = read.nextDouble();
-                    if (type == 2 && height >= 12 && height <= 96) {
-                        check = true;
-                    } else if (type == 1 && height >= 0.3048 && height <= 2.4384) {
-                        check = true;
-                    } else {
-                        System.out.print("Sorry, your height is invalid,"
-                                + " please try again: ");
-                    }
-                }
+
+                height = getHeight();
+
                 //if the user does not enter a number, the program will catch that error.
             } catch (InputMismatchException e) {
                 System.out.println("Sorry, you entered an invalid value");
@@ -103,5 +96,67 @@ public class BMICalc {
         return bmiLevel;
     }
 
-}
+    public static double getType() {
+        int type;
+        boolean validType = false;
+        String units;
+        Scanner read = new Scanner(System.in);
+        while (!validType) {
+        System.out.print("Press 1 for metric, press 2 for imperial: ");
+        //program expects double.
+        type = read.nextInt();
+        switch (type) {
+            case 1:
+                units = "Metric (m/kg)";
+                break;
+            case 2:
+                units = "Imperial (in/lb)";
+                break;
+            default:
+                System.out.println("Sorry, invalid type.");
+        }
+    }
+    }
 
+    public static double getHeight() {
+        double height;
+        boolean validHeight = false;
+        Scanner read = new Scanner(System.in);
+        while (!validHeight) {
+            height = read.nextDouble();
+            if (getType() == 2 && height >= 12 && height <= 96) {
+                validHeight = true;
+            } else if (getType() == 1 && height >= 0.3048 && height <= 2.4384) {
+                validHeight = true;
+            } else {
+                System.out.print("Sorry, your height is invalid,"
+                        + " please try again: ");
+            }
+        }
+    }
+
+    public static double getWeight() {
+        double weight;
+        boolean validWeight = false;
+        Scanner read = new Scanner(System.in);
+        System.out.print("What is your weight? Keep it within realistic"
+                + " parameters (Remember: " + units + "): ");
+        while (!validWeight) {
+            weight = read.nextDouble();
+            if (getType() == 2 && weight >= 5.5 && weight <= 900) {
+                validWeight = true;
+                weight = weight * 703;
+            } else if (getType() == 1 && weight >= 5.5 && weight <= 408.233) {
+                validWeight = true;
+            } else {
+                System.out.print("Sorry, your weight is invalid,"
+                        + " please try again: ");
+            }
+        }
+    }
+}
+public static double getUnits() {
+    if (getType == 1) {
+        
+}
+}
