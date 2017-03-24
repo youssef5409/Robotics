@@ -13,11 +13,13 @@ import java.util.Scanner;
  * @author 1mohamedyou
  */
 public class Triangle {
+    String triangleCheck() {
         //Initiliazing Variables
         double sideOne;
         double sideTwo;
         double sideThree;
         double swap;
+        String triangle;
         Scanner read = new Scanner(System.in);
         
         //Long introductory statement, but criteria dictates this must be included
@@ -54,15 +56,17 @@ public class Triangle {
             sideThree = swap;
         }
         if (sideOne >= (sideTwo + sideThree)) {
-            System.out.println("A triangle cannot be made");
+            triangle = "A triangle cannot be made";
         } else {
             if (pow(sideThree, 2) + pow(sideTwo, 2) == pow(sideOne, 2)) {
-                System.out.println("Not only can a Triangle be made, but it can also"
-                        + " be a Right-Angled one.");
+                triangle = "Not only can a Triangle be made, but it can also"
+                        + " be a Right-Angled one.";
             } else {
-                System.out.println("A triangle can be made, however it cannot"
-                        + " be Right-Angled.");
+                triangle = "A triangle can be made, however it cannot"
+                        + " be Right-Angled.";
             }
         }
+        return triangle;
     }
 
+}

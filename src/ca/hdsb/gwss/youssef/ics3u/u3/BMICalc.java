@@ -60,7 +60,7 @@ public class BMICalc {
                     } else if (type == 1 && weight >= 5.5 && weight <= 408.233) {
                         check = true;
                     } else {
-                        System.out.print("Sorry, what your weight is invalid,"
+                        System.out.print("Sorry, your weight is invalid,"
                                 + " please try again: ");
                     }
                 }
@@ -74,7 +74,7 @@ public class BMICalc {
                     } else if (type == 1 && height >= 0.3048 && height <= 2.4384) {
                         check = true;
                     } else {
-                        System.out.print("Sorry, what your weight is invalid,"
+                        System.out.print("Sorry, your height is invalid,"
                                 + " please try again: ");
                     }
                 }

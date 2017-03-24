@@ -15,21 +15,38 @@ import java.util.Scanner;
  * @author Youss
  */
 public class LeapYear {
-    String yearCheck() {
-    //Initialzing variables
-    int year;
-    boolean check = false;
-    Scanner read = new Scanner(System.in);
 
-    //Introductory Statements
-    System.out.println("A leap year is a year that has an extra day in February"
+    String yearCheck() {
+        //Initialzing variables
+        double year;
+        boolean check = false;
+        Scanner read = new Scanner(System.in);
+
+        //Introductory Statements
+        System.out.println("A leap year is a year that has an extra day in February"
                 + " this program determines if the year you enter is a leap year.");
-    while (!check) {
-        System.out.println("Please enter a year that is greater than 0 AD");
-        
+        while (!check) {
+            try {
+                System.out.println("Please enter a year that is greater than 0 AD");
+                year = read.nextDouble();
+                if (year < 0) {
+                    System.out.println("Sorry, you entered a year lower than 0");
+                } else if (year % 4 != 0 || (year % 400 != 0 && year % 100 == 0)) {
+                    System.out.println("It is not a leap year.");
+                    check = true;
+                } else {
+                    System.out.println("It is a leap year");
+                    check = true;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Sorry, you entered an invalid value");
+                System.err.println(e);
+                read.next();
+            }
+        }
     }
 }
-/*while (!check) {
+        /*while (!check) {
             System.out.print("What year is it?: ");
             try {
                 pH = read.nextDouble();
@@ -55,8 +72,6 @@ public class LeapYear {
     }
 
 }
-*/
-}
-
+         */
 //         if (year % 4 != 0 || (year % 400 != 0 && year % 100 == 0)) {
-          //    System.out.println("It is not a leap year.");
+//    System.out.println("It is not a leap year.");
