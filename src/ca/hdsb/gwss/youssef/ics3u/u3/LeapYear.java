@@ -19,6 +19,7 @@ public class LeapYear {
     String yearCheck() {
         //Initialzing variables
         double year;
+        String leap = "";
         boolean check = false;
         Scanner read = new Scanner(System.in);
 
@@ -27,15 +28,15 @@ public class LeapYear {
                 + " this program determines if the year you enter is a leap year.");
         while (!check) {
             try {
-                System.out.println("Please enter a year that is greater than 0 AD");
+                System.out.print("Please enter a year that is greater than 0 AD: ");
                 year = read.nextDouble();
                 if (year < 0) {
                     System.out.println("Sorry, you entered a year lower than 0");
                 } else if (year % 4 != 0 || (year % 400 != 0 && year % 100 == 0)) {
-                    System.out.println("It is not a leap year.");
+                    leap = "It is not a leap year.";
                     check = true;
                 } else {
-                    System.out.println("It is a leap year");
+                    leap = "It is a leap year";
                     check = true;
                 }
             } catch (InputMismatchException e) {
@@ -44,6 +45,7 @@ public class LeapYear {
                 read.next();
             }
         }
+        return leap;
     }
 }
         /*while (!check) {

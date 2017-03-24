@@ -61,8 +61,8 @@ public class Unit3MainMethod {
                         check = true;
                         break;
                     case 4:
-                        //  canTriangle = triangle.TriangleCheck();
-                        //   System.out.println(canTriangle);
+                        canTriangle = triangle.triangleCheck();
+                        System.out.println(canTriangle);
                         check = true;
                         break;
                     default:
