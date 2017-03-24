@@ -1,18 +1,24 @@
-    /*
+/*
  * Name: Youssef Mohamed
  * Version: 0.3
  * Date: 23rd March 2017
  * Description: Determines if 3 lines can make a triangle and if it can be right angled
  */
-package ca.hdsb.gwss.youssef.ics3u.u3;
+package youssef;
 
 import static java.lang.Math.pow;
 import java.util.Scanner;
+
 /**
  *
  * @author 1mohamedyou
  */
 public class Triangle {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
         //Initiliazing Variables
         double sideOne;
         double sideTwo;
@@ -65,4 +71,4 @@ public class Triangle {
             }
         }
     }
-
+}

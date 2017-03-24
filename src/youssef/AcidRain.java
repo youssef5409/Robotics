@@ -1,21 +1,22 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name: Youssef Mohamed
+ * Version: 0.3
+ * Date: 23rd March 2017
+ * Description: Determines if a fish can live in the water based on acidity
  */
-package ca.hdsb.gwss.youssef.ics3u.u3;
+package youssef;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
  *
- * @author Youss
+ * @author 1mohamedyou
  */
 public class AcidRain {
-    String level() {
+
+    public static void main(String[] args) {
         //Initializing Variables
-        String pHLevel;
         double pH = 0;
         boolean check = false;
         Scanner read = new Scanner(System.in);
@@ -41,13 +42,12 @@ public class AcidRain {
             }
         }
         if (pH > 7.4) {
-            pHLevel = "TOO ALKALINE - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.";
+            System.out.println("TOO ALKALINE - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.");
         } else if (pH < 6.4) {
-            pHLevel = "TOO ACIDIC - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.";
+            System.out.println("TOO ACIDIC - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.");
 
         } else {
-            pHLevel = "NEUTRAL - FISH IN STREAMS, RIVERS AND LAKES WILL SURVIVE.";
+            System.out.println("NEUTRAL - FISH IN STREAMS, RIVERS AND LAKES WILL SURVIVE.");
         }
-        return pHLevel;
     }
 }

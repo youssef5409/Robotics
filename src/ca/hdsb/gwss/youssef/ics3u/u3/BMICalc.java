@@ -1,26 +1,21 @@
 /*
- * Name: Youssef Mohamed
- * Version: 0.3
- * Date: 23rd March 2017
- * Description: Determines a person's BMI
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package ca.hdsb.gwss.youssef.ics3u.u3;
 
-import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 /**
  *
- * @author 1mohamedyou
+ * @author Youss
  */
-public class BMICalc1 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        //Initialzing Variables
-        double weight = 0;
+public class BMICalc {
+    String levelBMI() {
+    double weight = 0;
+    String bmiLevel;
         double height = 0;
         double bmi;
         int type;
@@ -93,18 +88,20 @@ public class BMICalc1 {
         bmi = weight / (height * height);
         //if/elif/else for fidning what group the user falls into.
         if (bmi > 40) {
-            System.out.println("You are morbidly obese.");
+            bmiLevel = "You are morbidly obese.";
         } else if (bmi > 30) {
-            System.out.println("You are obese");
+            bmiLevel = "You are obese";
         } else if (bmi > 25) {
-            System.out.println("You are overweight");
+            bmiLevel = "You are overweight";
         } else if (bmi >= 18.5) {
-            System.out.println("You are ideal");
+            bmiLevel = "You are ideal";
         } else if (bmi >= 16) {
-            System.out.println("You are underweight");
+            bmiLevel = "You are underweight";
         } else {
-            System.out.println("You are starving");
+            bmiLevel = "You are starving";
         }
+        return bmiLevel;
     }
 
 }
+
