@@ -38,8 +38,6 @@ public class Triangle1 {
         sideOne = getSideLength("first");
         sideTwo = getSideLength("second");
         sideThree = getSideLength("third");
-        getTriangle();
-        getRightAngleTriangle();
         if (getTriangle() && getRightAngleTriangle()) {
             str =  "A right-angled triangle can be made";
         }

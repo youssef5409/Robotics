@@ -14,33 +14,17 @@ import java.util.Scanner;
  */
 public class AcidRain {
     String level() {
-        //Initializing Variables
-        String pHLevel;
-        double pH = 0;
-        boolean check = false;
-        Scanner read = new Scanner(System.in);
-
+        String pH;
         System.out.println("Acid rain is an environmental problem. This program"
                 + " determines if the pH level in the water is safe for fish.");
-        //Program expects double
-        //Simple if/elif/else statement to find which group the pH value falls into.
-        while (!check) {
-            System.out.print("Input your pH: ");
-            try {
-                pH = read.nextDouble();
-                if (pH < 0 || pH > 14) {
-                    System.out.println("Sorry, your pH is either too high or too low."
-                            + " Please try again.");
-                } else {
-                    check = true;
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Sorry, you entered an invalid value");
-                System.err.println(e);
-                read.next();
-            }
-        }
-        if (pH > 7.4) {
+        return pHLevel();
+    }
+    
+    public static String pHLevel() {
+        double pH;
+        pH = getpH();
+        String pHLevel;
+                if (pH > 7.4) {
             pHLevel = "TOO ALKALINE - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.";
         } else if (pH < 6.4) {
             pHLevel = "TOO ACIDIC - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.";
@@ -50,4 +34,27 @@ public class AcidRain {
         }
         return pHLevel;
     }
+    public static double getpH() {
+        Scanner read = new Scanner(System.in);
+        boolean validpH = false;
+        double pH = 0;
+        
+        while (!validpH) {
+            System.out.print("Input your pH: ");
+            try {
+                pH = read.nextDouble();
+                if (pH < 0 || pH > 14) {
+                    System.out.println("Sorry, your pH is either too high or too low."
+                            + " Please try again.");
+                } else {
+                    validpH = true;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Sorry, you entered an invalid value");
+                System.err.println(e);
+                read.next();
+            }
+        }
+        return pH;
+    } 
 }
