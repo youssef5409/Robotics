@@ -110,7 +110,7 @@ public static String getBMI() {
     getType();
     height = getHeight();
     weight = getWeight();
-    bmi = weight / (height * height);
+    bmi = weight / (Math.pow(height, 2));
             if (bmi > 40) {
             bmiLevel = "You are morbidly obese.";
         } else if (bmi > 30) {
