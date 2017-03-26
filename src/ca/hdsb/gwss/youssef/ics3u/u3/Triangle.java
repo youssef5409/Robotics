@@ -1,7 +1,7 @@
 /*
  * Name: Youssef Mohamed
- * Version: 0.3
- * Date: 23rd March 2017
+ * Version: 0.9
+ * Date: 27th March 2017
  * Description: Determines if 3 lines can make a triangle and if it can be right angled
  */
 package ca.hdsb.gwss.youssef.ics3u.u3;

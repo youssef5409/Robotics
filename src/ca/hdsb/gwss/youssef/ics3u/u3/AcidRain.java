@@ -1,7 +1,7 @@
 /*
  * Name: Youssef Mohamed
- * Version: 0.3
- * Date: 23rd March 2017
+ * Version: 0.9
+ * Date: 27th March 2017
  * Description: Determines if fish can live in a certain pH
  */
 package ca.hdsb.gwss.youssef.ics3u.u3;

@@ -1,7 +1,7 @@
 /*
  * Name: Youssef Mohamed
- * Version: 0.3
- * Date: 23rd March 2017
+ * Version: 0.9
+ * Date: 27th March 2017
  * Description: Determines someones BMI
  */
 package ca.hdsb.gwss.youssef.ics3u.u3;
@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author Youss
  */
 public class BMICalc {
-
+    //Declaring Object Variables
     public static int type;
     public static String units;
 

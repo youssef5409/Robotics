@@ -29,7 +29,7 @@ public class Unit3MainMethod {
         String canTriangle;
         int app;
         boolean check = false;
-        //Initializing Objects
+        //Declaring Objects
         AcidRain acid = new AcidRain();
         BMICalc bmi = new BMICalc();
         LeapYear year = new LeapYear();
