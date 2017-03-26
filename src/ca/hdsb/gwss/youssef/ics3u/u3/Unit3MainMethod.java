@@ -53,23 +53,26 @@ public class Unit3MainMethod {
                     case 1:
                         pH = acid.level();
                         System.out.println(pH);
+                        check = true;
                         break;
                     case 2:
                         bmiLevel = bmi.levelBMI();
                         System.out.println(bmiLevel);
+                        check = true;
                         break;
                     case 3:
                         leapYear = year.yearCheck();
                         System.out.println(leapYear);
+                        check = true;
                         break;
                     case 4:
                         canTriangle = triangle.triangleCheck();
                         System.out.println(canTriangle);
+                        check = true;
                         break;
                     default:
                         System.out.println("Sorry, invalid number.");
                 }
-                check = true;
             } catch (InputMismatchException e) {
                 System.out.println("Sorry, you entered an invalid value");
                 System.err.println(e);

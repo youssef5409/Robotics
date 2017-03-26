@@ -39,13 +39,13 @@ public class Triangle {
         sideTwo = getSideLength("second");
         sideThree = getSideLength("third");
         if (getTriangle() && getRightAngleTriangle()) {
-            str =  "A right-angled triangle can be made";
+            str =  "A right-angled triangle can be made.";
         }
         else if (getTriangle() && !getRightAngleTriangle()) {
-            str = "A triangle can be made, however it cannot be Right-Angled";
+            str = "A triangle can be made, however it cannot be Right-Angled.";
         }
         else {
-            str = "A triangle cannot be made";
+            str = "A triangle cannot be made.";
         }
         return str;
     }
