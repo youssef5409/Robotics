@@ -19,7 +19,6 @@ public class BMICalc {
     public static String units;
 
     String levelBMI() {
-        String bmiLevel;
         //Introductory Statement
         System.out.println("  ____  __  __ _____ \n"
                 + " |  _ \\|  \\/  |_   _|\n"
@@ -32,9 +31,7 @@ public class BMICalc {
                 + "a person scaled according to their height. BMI is defined as \n"
                 + "the individual's body weight divided by the square of their \n"
                 + "height. It is almost always expressed in the unit kg/m2.\n");
-        //while loop that waits until check = true.
-        bmiLevel = getBMI();
-        return bmiLevel;
+        return getBMI();
     }
 
     public static void getType() {

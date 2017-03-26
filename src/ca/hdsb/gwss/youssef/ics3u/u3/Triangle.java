@@ -15,7 +15,7 @@ import java.util.Scanner;
  * @author 1mohamedyou
  */
 public class Triangle {
-
+    //Declaring Object Variables
     public static double sideOne;
     public static double sideTwo;
     public static double sideThree;
@@ -43,10 +43,13 @@ public class Triangle {
                 + "asks the user to enter three values and then determines\n"
                 + "whether a triangle is created or not, and if a triangle is\n"
                 + "created, it will check if it is Right-Angled.\n");
-
+        //Runs the method 'getSideLength' with an argument that allows for the prompt
+        //to change to match each side length.
         sideOne = getSideLength("first");
         sideTwo = getSideLength("second");
         sideThree = getSideLength("third");
+        //simple if/elif/else block that checks what the methods return and assign
+        //a corresponding string
         if (getTriangle() && getRightAngleTriangle()) {
             str = "A right-angled triangle can be made.";
         } else if (getTriangle() && !getRightAngleTriangle()) {
@@ -56,7 +59,7 @@ public class Triangle {
         }
         return str;
     }
-
+    //Method for finding if a triangle can be right angled
     public static boolean getRightAngleTriangle() {
         boolean trianglePossible = false;
         if (pow(sideThree, 2) + pow(sideTwo, 2) == pow(sideOne, 2)) {
@@ -64,7 +67,7 @@ public class Triangle {
         }
         return trianglePossible;
     }
-
+    //Method for finding if 3 sides can make a triangle
     public static boolean getTriangle() {
         double swap;
         boolean trianglePossible = true;
@@ -83,7 +86,7 @@ public class Triangle {
         }
         return trianglePossible;
     }
-
+    //Method that prompts the user for side lengths
     public static double getSideLength(String sideNumber) {
         boolean validSideLength = false;
         double side = -1;
