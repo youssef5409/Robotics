@@ -15,14 +15,18 @@ import java.util.Scanner;
  */
 public class AcidRain {
     String level() {
+        //Introductory statement
         System.out.println("Acid rain is an environmental problem. This program"
                 + " determines if the pH level in the water is safe for fish.");
+        //returns the value that pHLevel returns.
         return pHLevel();
     }
     
     public static String pHLevel() {
+        //Initializing Variables
         double pH;
         pH = getpH();
+        //Checks the level of pH and assigns a string correlated to the given pH.
         String pHLevel;
                 if (pH > 7.4) {
             pHLevel = "TOO ALKALINE - FISH IN STREAMS, RIVERS AND LAKES WILL NOT SURVIVE.";
@@ -35,10 +39,11 @@ public class AcidRain {
         return pHLevel;
     }
     public static double getpH() {
+        //Initialzing Variables and Scanner
         Scanner read = new Scanner(System.in);
         boolean validpH = false;
         double pH = 0;
-        
+        //Keeps running until user enters valid input for pH.
         while (!validpH) {
             System.out.print("Input your pH: ");
             try {
