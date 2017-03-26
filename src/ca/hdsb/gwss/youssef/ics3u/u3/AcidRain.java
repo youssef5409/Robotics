@@ -14,7 +14,6 @@ import java.util.Scanner;
  */
 public class AcidRain {
     String level() {
-        String pH;
         System.out.println("Acid rain is an environmental problem. This program"
                 + " determines if the pH level in the water is safe for fish.");
         return pHLevel();

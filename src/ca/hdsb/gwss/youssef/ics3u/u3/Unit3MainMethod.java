@@ -1,7 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name: Youssef Mohamed
+ * Date: 26th Mar 2017
+ * Version: 0.9
+ * Description:
+ *      This program articulates and manipulates methods that can, calculate the
+ *      bmi of a person, calculate if fish can live in a certain pH, calculate if 3
+ *      sides can make a triangle, and, figure out if a year is a leap year.
  */
 package ca.hdsb.gwss.youssef.ics3u.u3;
 
