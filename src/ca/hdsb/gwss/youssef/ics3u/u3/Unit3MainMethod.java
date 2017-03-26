@@ -22,19 +22,21 @@ public class Unit3MainMethod {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //Initializing variables
         String pH;
         String bmiLevel;
         String leapYear;
         String canTriangle;
         int app;
         boolean check = false;
+        //Initializing Objects
         AcidRain acid = new AcidRain();
         BMICalc bmi = new BMICalc();
         LeapYear year = new LeapYear();
         Triangle triangle = new Triangle();
         Scanner read = new Scanner(System.in);
-
+        
+        //Introductory Statement
         System.out.println("Welcome to my unit 3 culminative task! I can do a \n"
                 + "multitude of things, which include, telling you if your fish can live\n"
                 + "in water with a stated pH, telling you your BMI, telling you whether\n"
@@ -72,7 +74,6 @@ public class Unit3MainMethod {
                 System.out.println("Sorry, you entered an invalid value");
                 System.err.println(e);
                 read.next();
-
             }
         }
     }
