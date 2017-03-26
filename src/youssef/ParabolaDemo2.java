@@ -9,7 +9,7 @@ package youssef;
  *
  * @author Youss
  */
-import discovering.ParabolaDemo;
+import discovering.graphing.ParabolaDemo;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Rectangle;
