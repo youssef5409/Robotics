@@ -21,8 +21,16 @@ public class LeapYear {
         String leap = "";
         boolean check = false;
         Scanner read = new Scanner(System.in);
-
         //Introductory Statements
+        System.out.println("  _                       __     __             \n"
+                + " | |                      \\ \\   / /             \n"
+                + " | |     ___  __ _ _ __    \\ \\_/ /__  __ _ _ __ \n"
+                + " | |    / _ \\/ _` | '_ \\    \\   / _ \\/ _` | '__|\n"
+                + " | |___|  __/ (_| | |_) |    | |  __/ (_| | |   \n"
+                + " |______\\___|\\__,_| .__/     |_|\\___|\\__,_|_|   \n"
+                + "                  | |                           \n"
+                + "                  |_| \n");
+
         System.out.println("A leap year is a year that has an extra day in February"
                 + " this program determines if the year you enter is a leap year.");
         while (!check) {

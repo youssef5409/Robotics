@@ -22,6 +22,15 @@ public class Triangle {
 
     String triangleCheck() {
         String str;
+
+        System.out.println("  _______   _                   _         _____ _               _             \n"
+                + " |__   __| (_)                 | |       / ____| |             | |            \n"
+                + "    | |_ __ _  __ _ _ __   __ _| | ___  | |    | |__   ___  ___| | _____ _ __ \n"
+                + "    | | '__| |/ _` | '_ \\ / _` | |/ _ \\ | |    | '_ \\ / _ \\/ __| |/ / _ \\ '__|\n"
+                + "    | | |  | | (_| | | | | (_| | |  __/ | |____| | | |  __/ (__|   <  __/ |   \n"
+                + "    |_|_|  |_|\\__,_|_| |_|\\__, |_|\\___|  \\_____|_| |_|\\___|\\___|_|\\_\\___|_|   \n"
+                + "                           __/ |                                              \n"
+                + "                          |___/                                              \n");
         //Long introductory statement, but criteria dictates this must be included
         System.out.println("Three numbers represent the sides of a triangle when\n"
                 + "the sum of any two sides is greater than the third side.\n"
@@ -39,24 +48,23 @@ public class Triangle {
         sideTwo = getSideLength("second");
         sideThree = getSideLength("third");
         if (getTriangle() && getRightAngleTriangle()) {
-            str =  "A right-angled triangle can be made.";
-        }
-        else if (getTriangle() && !getRightAngleTriangle()) {
+            str = "A right-angled triangle can be made.";
+        } else if (getTriangle() && !getRightAngleTriangle()) {
             str = "A triangle can be made, however it cannot be Right-Angled.";
-        }
-        else {
+        } else {
             str = "A triangle cannot be made.";
         }
         return str;
     }
+
     public static boolean getRightAngleTriangle() {
         boolean trianglePossible = false;
         if (pow(sideThree, 2) + pow(sideTwo, 2) == pow(sideOne, 2)) {
             trianglePossible = true;
-    } 
+        }
         return trianglePossible;
     }
-    
+
     public static boolean getTriangle() {
         double swap;
         boolean trianglePossible = true;
@@ -75,8 +83,8 @@ public class Triangle {
         }
         return trianglePossible;
     }
-    
-    public static double getSideLength( String sideNumber ) {
+
+    public static double getSideLength(String sideNumber) {
         boolean validSideLength = false;
         double side = -1;
         Scanner read = new Scanner(System.in);
