@@ -14,7 +14,7 @@ import java.util.Scanner;
  *
  * @author 1mohamedyou
  */
-public class Triangle1 {
+public class Triangle {
 
     public static double sideOne;
     public static double sideTwo;

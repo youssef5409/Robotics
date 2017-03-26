@@ -10,8 +10,11 @@ package discovering;
  * @author 1mohamedyou
  */
 public class MethodOne {
-    int number() {
-        int n = 1;
-        return n;
-        }
+
+    public static int number(int n) {
+        if (n == 0) return 0;
+        System.out.println(n);
+        return n + number(n - 1);
+
+    }
 }
