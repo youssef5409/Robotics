@@ -46,7 +46,7 @@ public class PieChart extends JFrame {
         DefaultPieDataset result = new DefaultPieDataset();
         result.setValue("Linux", 29);
         result.setValue("Mac", 20);
-        result.setValue("Windows", 51);
+        result.setValue("Windows", 43);
         return result;
 
     }

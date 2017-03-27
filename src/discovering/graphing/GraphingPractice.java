@@ -31,14 +31,14 @@ public GraphingPractice(final String title) {
     super(title);
     final XYSeries series = new XYSeries("Sales");
     series.add(1, 1);
-    series.add(2, 2);
-    series.add(3, 3);
-    series.add(4, 4);
-    series.add(5,5);
-    series.add(6,6);
-    series.add(7, 7);
-    series.add(8, 8);
-    series.add(9, 9);
+    series.add(2, 4);
+    series.add(3, 9);
+    series.add(4, 16);
+    series.add(5, 25);
+    series.add(6, 36);
+    series.add(7, 49);
+    series.add(8, 64);
+    series.add(9, 81);
     final XYSeriesCollection data = new XYSeriesCollection(series);
     final JFreeChart chart = ChartFactory.createXYLineChart(
         "How does price affect sales",
