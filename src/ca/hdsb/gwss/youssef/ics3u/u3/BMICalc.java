@@ -33,7 +33,7 @@ public class BMICalc {
                 + "height. It is almost always expressed in the unit kg/m2.\n");
         return getBMI();
     }
-
+    //Method that returns if the user wants imperial or metric
     public static void getType() {
         boolean validType = false;
         Scanner read = new Scanner(System.in);
@@ -63,7 +63,8 @@ public class BMICalc {
             }
         }
     }
-
+    //Method that returns the users height. Uses the same verification method
+    //That is shown above
     public static double getHeight() {
         double height = 0;
         boolean validHeight = false;
@@ -89,7 +90,8 @@ public class BMICalc {
         }
         return height;
     }
-
+    //Method that returns the users weight. It also uses the same verification
+    //method that is shown above
     public static double getWeight() {
         double weight = 0;
         boolean validWeight = false;
@@ -110,7 +112,7 @@ public class BMICalc {
         }
         return weight;
     }
-
+    //Method that returns the users final BMI
     public static String getBMI() {
         double weight;
         double height;

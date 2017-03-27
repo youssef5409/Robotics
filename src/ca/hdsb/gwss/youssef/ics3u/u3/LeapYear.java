@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author Youss
  */
 public class LeapYear {
-
+    //This method returns if a year is a leap year or not
     String yearCheck() {
         //Initialzing variables
         double year;
@@ -33,6 +33,7 @@ public class LeapYear {
 
         System.out.println("A leap year is a year that has an extra day in February"
                 + " this program determines if the year you enter is a leap year.");
+        //This is the same verification method that has been used in all the other classes.
         while (!check) {
             try {
                 System.out.print("Please enter a year that is greater than 0 AD: ");
