@@ -28,7 +28,7 @@ public class TheMain {
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
         // TODO code application logic here
 
-        File file = new File("D:\\Documents\\NetBeansProjects\\ICS3U-Youssef\\src\\discovering\\newXMLDocument.xml");
+        File file = new File("G:\\MyPortfolio\\ICS3U-Youssef\\src\\discovering\\newXMLDocument.xml");
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = dbf.newDocumentBuilder();
         Document document = db.parse(file);

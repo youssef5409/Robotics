@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package discovering.graphing;
+
 import java.util.Scanner;
+
 /**
  *
  * @author 1mohamedyou
@@ -29,5 +31,5 @@ public class GraphingInfo {
                     + "Press Enter.");
         }
     }
-    
+
 }

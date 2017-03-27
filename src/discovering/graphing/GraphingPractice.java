@@ -27,9 +27,18 @@ public class GraphingPractice extends ApplicationFrame {
  * @param title  the frame title.
  */
 public GraphingPractice(final String title) {
-
     super(title);
     final XYSeries series = new XYSeries("Sales");
+    series.add(-1, 1);
+    series.add(-2, 4);
+    series.add(-3, 9);
+    series.add(-4, 16);
+    series.add(-5, 25);
+    series.add(-6, 36);
+    series.add(-7, 49);
+    series.add(-8, 64);
+    series.add(-9, 81);
+    series.add(0, 0);
     series.add(1, 1);
     series.add(2, 4);
     series.add(3, 9);
