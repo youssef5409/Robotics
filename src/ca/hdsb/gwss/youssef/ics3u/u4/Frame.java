@@ -23,13 +23,13 @@ public class Frame {
         double m;
         Scanner read = new Scanner(System.in);
 
-        System.out.println("What is your Q Value?: ");
+        System.out.print("What is your Q Value?: ");
         q = read.nextDouble();
-        System.out.println("What is your P value?: ");
+        System.out.print("What is your P value?: ");
         p = read.nextDouble();
-        System.out.println("What is your N value?: ");
+        System.out.print("What is your N value?: ");
         n = read.nextDouble();
-        System.out.println("What is your M value?: ");
+        System.out.print("What is your M value?: ");
         m = read.nextDouble();
 
         double counter2 = 0;

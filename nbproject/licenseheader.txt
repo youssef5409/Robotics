@@ -1,8 +1,8 @@
-<#if licenseFirst??>
+<Oif licenseFirst??>
 
 ${licenseFirst}
 
-</#if>
+</Oif>
 
 ${licensePrefix}Name: Youssef Mohamed
 
@@ -10,7 +10,7 @@ ${licensePrefix}Date: INSERT DATE
 ${licensePrefix}Version 0.1
 ${licensePrefix}Description:
 ${licensePrefix}INSERT DESCRIPTION${licensePrefix}
-</#if licenseLast??>
+</Oif licenseLast??>
 
 ${licenseLast}
-</#if>
+</Oif>

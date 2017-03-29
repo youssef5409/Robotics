@@ -49,7 +49,7 @@ public class MaximizingProfit {
         /*
         * Welcome text made HUGE!
         * want to make some for yourself?
-        * http://patorjk.com/software/taag/#p=display&f=Epic&t=YOUSSEF
+        * http://patorjk.com/software/taag/Op=display&f=Epic&t=YOUSSEF
          */
         System.out.println(" __  __                          __  __       _             _ \n"
                 + "|  \\/  | ___  _ __   ___ _   _  |  \\/  | __ _| | _____ _ __| |\n"

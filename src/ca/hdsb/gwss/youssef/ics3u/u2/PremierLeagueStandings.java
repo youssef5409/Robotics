@@ -26,7 +26,7 @@ public class PremierLeagueStandings {
         System.out.println("   ************ On February 17th 2017 ************");
         System.out.println("   ***********************************************");
         System.out.println("\n");
-        System.out.println("       # Team        Wins    Losses      Win %");
+        System.out.println("       O Team        Wins    Losses      Win %");
         System.out.println("       ---------------------------------------");
         System.out.println("       1 Cavaliers   39      16          70.9%");
         System.out.println("       ---------------------------------------");
