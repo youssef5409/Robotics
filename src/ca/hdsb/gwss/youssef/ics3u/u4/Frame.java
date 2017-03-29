@@ -22,6 +22,7 @@ public class Frame {
         double n;
         double m;
         Scanner read = new Scanner(System.in);
+
         System.out.println("What is your Q Value?: ");
         q = read.nextDouble();
         System.out.println("What is your P value?: ");
@@ -30,8 +31,10 @@ public class Frame {
         n = read.nextDouble();
         System.out.println("What is your M value?: ");
         m = read.nextDouble();
+
         double counter2 = 0;
         double counter = q;
+        
         while (counter > 0) {
             for (int i = 0; i < n + 2 * p + 2 * q; i++) {
                 System.out.print("#");
