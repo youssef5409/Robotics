@@ -64,7 +64,7 @@ public class Frame {
                 System.out.print("+");
             }
             for (int i = 0; i < q; i++) {
-                System.out.print("");
+                System.out.print("#");
             }
             System.out.println("");
             counter--;
