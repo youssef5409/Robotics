@@ -41,7 +41,7 @@ public class PremierLeagueStandings {
         
         //Table of standings version 2
         System.out.format("%-10s | %4s | %6s | %14s \n", "Team", "Wins", "Losses", "Win Percentage");
-        System.out.format("%-10s | %4s | %6s | %14s \n", "Cavaliers", "39", "16", "70.9%");
+        System.out.format("%-10s | %4s | %6s | %14s \n", "Cavaliers", "397", "16", "70.9%");
         System.out.format("%-10s | %4s | %6s | %14s \n", "Celtics", "37", "20", "64.9%");
         System.out.format("%-10s | %4s | %6s | %14s \n", "Wizards", "34", "21", "61.8%");
         System.out.format("%-10s | %4s | %6s | %14s \n", "Raptors", "33", "24", "57.9%");
