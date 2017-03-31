@@ -28,7 +28,6 @@ public class Unit4MainMethod {
         int app;
         boolean check = false;
         //Declaring Objects
-        CloserToTwo two = new CloserToTwo();
         CompoundInvesting investing = new CompoundInvesting();
         LabAnimals animals = new LabAnimals();
         Erosion erode = new Erosion();
@@ -53,8 +52,8 @@ public class Unit4MainMethod {
                             total = total + (Math.pow(denominator, -1));
                             if (total != Infinity) {
                                 System.out.println(total);
+                                denominator = denominator * 2;
                             }
-                            denominator = denominator * 2;
                         }
                         check = true;
                         break;
@@ -95,8 +94,24 @@ public class Unit4MainMethod {
                         check = true;
                         break;
                     case 6:
-                        //         soil = erode.crops();
-                        //                  System.out.println(soil);
+                        int years;
+                        double projectedTopsoil = 30;
+                        final int MINIMUM_TOP_SOIL = 9;
+                        final double YEARLY_TOPSOIL_GROWTH = 0.005;
+                        final double YEARLY_EROSION = 0.01;
+                        System.out.println("Topsoil Erosion");
+                        System.out.println("Careless land management causes approximately 1% of \n"
+                                + "the topsoil to erode each year. It is then lost forever, since \n"
+                                + "it takes nature approximately 500 years to produce 2.5cm of topsoil. \n"
+                                + "At 9cm, the topsoil is so shallow the crops cannot grow on \n"
+                                + "a large scale. If Canada has about 30cm of topsoil, how many \n"
+                                + "years will it take for the depths to be reduced to 9cm? \n");
+
+                        for (years = 0; projectedTopsoil > MINIMUM_TOP_SOIL; years++) {
+                            projectedTopsoil += YEARLY_TOPSOIL_GROWTH;
+                            projectedTopsoil -= YEARLY_EROSION * projectedTopsoil;
+                        }
+                        System.out.println("It will take " + years + " years.");
                         check = true;
                         break;
 
