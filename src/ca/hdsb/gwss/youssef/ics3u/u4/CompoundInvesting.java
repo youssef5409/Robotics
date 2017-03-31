@@ -20,37 +20,29 @@ public class CompoundInvesting {
         double total;
         double interestAmount;
         final double ORIGINAL_CASH;
-        
-        years = 15;
-        cash = 100;
-        interest = 2.5;
-        
+
+        years = getYear();
+        cash = getInvestAmount();
+        interest = getInterest();
         ORIGINAL_CASH = cash;
-        interestAmount = (interest / 100) * ORIGINAL_CASH;
-        total = ORIGINAL_CASH + ORIGINAL_CASH * (interest / 100);
         
         System.out.println("Compound Investing");
         System.out.println("This program will print out a title table that will"
                 + " display the amount of a yearly investment over a period of up"
                 + " to 15 years.");
 
-        System.out.format("%-10s | %-20s | %-10s | %-7s \n", "Year", "Amount In Account",
+        System.out.format("%-10s | %-18s | %-10s | %-7s \n", "Year", "Amount In Account",
                 "Interest", "Total");
 
         for (int i = 1; i <= years; i++) {
-            interestAmount = (interest  /100) * cash;
+            interestAmount = (interest / 100) * cash;
             total = cash + interestAmount;
-            System.out.format("%-10s | %-20s | %-10s | %-7s \n", i, cash, interestAmount, total);
+            System.out.format("%10s | %18.2f | %10.2f | %7.2f \n", i, cash, interestAmount, total);
             cash = total + ORIGINAL_CASH;
-            
 
-            
         }
     }
-
-    /**
-     * @param args the command line arguments
-     */
+    
     private double getInvestAmount() {
         boolean valid = false;
         double money = 0;

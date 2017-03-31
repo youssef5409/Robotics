@@ -52,8 +52,8 @@ public class Unit4MainMethod {
                 System.out.print("Press 1 - 6 respectively for any task. (Note: "
                         + "Triangle and Right-Angle Triangle both fall under the number 4): ");
                 //program expects double.
-        //        app = read.nextInt();
-                switch (2) {
+                app = read.nextInt();
+                switch (app) {
                     case 1:
        //                 closer = two.closeness();
               //          System.out.println(closer);
@@ -69,7 +69,7 @@ public class Unit4MainMethod {
                         check = true;
                         break;    
                     case 4:
-           //             fibonacci = series.seriesOfFibonacci();
+                       series.seriesOfFibonacci();
           //              System.out.println(fibonacci);
                         check = true;
                         break;

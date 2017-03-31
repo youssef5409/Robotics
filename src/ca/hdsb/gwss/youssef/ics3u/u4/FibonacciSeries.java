@@ -11,11 +11,13 @@ package ca.hdsb.gwss.youssef.ics3u.u4;
  */
 public class FibonacciSeries {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public void seriesOfFibonacci() {
+        int a = 0;
+        int b = 1;
+        for ( int i = 0; i < 20; i++) {
+            System.out.println(b);
+            b += a;
+            a++;
+        }
     }
-    
 }
