@@ -47,7 +47,7 @@ public class Unit3MainMethod {
                 //Starts off by asking the question.
                 System.out.print("Press 1 - 4 respectively for any task. (Note: "
                         + "Triangle and Right-Angle Triangle both fall under the number 4): ");
-                //program expects double.
+                //program expects Integer.
                 app = read.nextInt();
                 switch (app) {
                     case 1:

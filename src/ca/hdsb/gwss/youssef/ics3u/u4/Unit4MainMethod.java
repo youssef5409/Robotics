@@ -11,6 +11,7 @@ package ca.hdsb.gwss.youssef.ics3u.u4;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import static jdk.nashorn.internal.objects.Global.Infinity;
 
 /**
  *
@@ -40,15 +41,21 @@ public class Unit4MainMethod {
 
         while (!check) {
             try {
-                //Starts off by asking the question.
                 System.out.print("Press 1 - 6 respectively for any task. (Note: "
                         + "Triangle and Right-Angle Triangle both fall under the number 4): ");
-                //program expects double.
                 app = Integer.parseInt(read.nextLine());
                 switch (app) {
                     case 1:
-                        //                 closer = two.closeness();
-                        //          System.out.println(closer);
+                        int denominator = 1;
+                        double total = 0;
+
+                        while (total < 2) {
+                            total = total + (Math.pow(denominator, -1));
+                            if (total != Infinity) {
+                                System.out.println(total);
+                            }
+                            denominator = denominator * 2;
+                        }
                         check = true;
                         break;
                     case 2:
