@@ -23,40 +23,32 @@ public class Unit4MainMethod {
      */
     public static void main(String[] args) {
         //Initializing variables
-        String closer;
-        String compound;
-        String ounce;
-        String fibonacci;
-        String lab;
-        String soil;
-        
+
         int app;
         boolean check = false;
         //Declaring Objects
         CloserToTwo two = new CloserToTwo();
         CompoundInvesting investing = new CompoundInvesting();
-        OunceGrams grams = new OunceGrams();
-        FibonacciSeries series = new FibonacciSeries();
         LabAnimals animals = new LabAnimals();
         Erosion erode = new Erosion();
-        
+
         Scanner read = new Scanner(System.in);
-        
+
         //Introductory Statement
         System.out.println("Welcome to my unit 4 culminative task! I can do a \n"
                 + "multitude of things, which include,\n");
-        
+
         while (!check) {
             try {
                 //Starts off by asking the question.
                 System.out.print("Press 1 - 6 respectively for any task. (Note: "
                         + "Triangle and Right-Angle Triangle both fall under the number 4): ");
                 //program expects double.
-                app = read.nextInt();
+                app = Integer.parseInt(read.nextLine());
                 switch (app) {
                     case 1:
-       //                 closer = two.closeness();
-              //          System.out.println(closer);
+                        //                 closer = two.closeness();
+                        //          System.out.println(closer);
                         check = true;
                         break;
                     case 2:
@@ -64,32 +56,48 @@ public class Unit4MainMethod {
                         check = true;
                         break;
                     case 3:
-         //               ounce = grams.conversion();
-            //            System.out.println(ounce);
+                        final double OUNCE_TO_GRAM = 28.3495231;
+
+                        System.out.println("Ounce To Grams Conversion Chart");
+
+                        System.out.println("This program will print out a titled table that can "
+                                + "be used to convert ounces to grams, for values from 1 to 15. "
+                                + "(1 ounce = 28.35 grams)");
+
+                        System.out.format("%-6s | %4s \n", "Ounces", "Grams");
+                        for (int i = 1; i < 16; i++) {
+                            System.out.format("%6s | %6.2f\n", i, i * OUNCE_TO_GRAM);
+                        }
                         check = true;
-                        break;    
+                        break;
                     case 4:
-                       series.seriesOfFibonacci();
-          //              System.out.println(fibonacci);
+                        int a = 0;
+                        int b = 1;
+                        int c;
+                        for (int i = 0; i < 20; i++) {
+                            System.out.println(b);
+                            c = a + b;
+                            a = b;
+                            b = c;
+                        }
                         check = true;
                         break;
                     case 5:
-             //           lab = animals.animalNumber();
-        //                System.out.println(lab);
+                        //           lab = animals.animalNumber();
+                        //                System.out.println(lab);
                         check = true;
                         break;
                     case 6:
-               //         soil = erode.crops();
-      //                  System.out.println(soil);
+                        //         soil = erode.crops();
+                        //                  System.out.println(soil);
                         check = true;
                         break;
-                    default:
-                        System.out.println("Sorry, invalid number.");
+
+                }
+                if (!check) {
+                    System.out.println("Sorry, you entered an invalid value");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Sorry, you entered an invalid value");
-                System.err.println(e);
-                read.next();
             }
         }
     }

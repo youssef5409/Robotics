@@ -21,84 +21,48 @@ public class CompoundInvesting {
         double interestAmount;
         final double ORIGINAL_CASH;
 
-        years = getYear();
-        cash = getInvestAmount();
-        interest = getInterest();
-        ORIGINAL_CASH = cash;
-        
         System.out.println("Compound Investing");
         System.out.println("This program will print out a title table that will"
                 + " display the amount of a yearly investment over a period of up"
                 + " to 15 years.");
+        years = (int) getAmount(" number of years up to 15 (any decimal will be rounded down): ");
+        cash = getAmount(" cash invested per year: ");
+        interest = getAmount(" interest rate (%): ");
 
-        System.out.format("%-10s | %-18s | %-10s | %-7s \n", "Year", "Amount In Account",
+        ORIGINAL_CASH = cash;
+
+        System.out.format(" | %-6s | %-18s | %-10s | %-10s | \n", "Year", "Amount In Account",
                 "Interest", "Total");
 
         for (int i = 1; i <= years; i++) {
             interestAmount = (interest / 100) * cash;
             total = cash + interestAmount;
-            System.out.format("%10s | %18.2f | %10.2f | %7.2f \n", i, cash, interestAmount, total);
+            System.out.format(" | %-6s | $%17.2f | $%9.2f | $%9.2f | \n", i, cash, interestAmount, total);
             cash = total + ORIGINAL_CASH;
-
         }
     }
-    
-    private double getInvestAmount() {
+
+    private double getAmount(String type) {
         boolean valid = false;
-        double money = 0;
+        double amount = 0;
         Scanner read = new Scanner(System.in);
         while (!valid) {
             try {
-                System.out.print("How much are you investing?: ");
-                money = Double.parseDouble(read.nextLine());
-                valid = true;
-            } catch (NumberFormatException e) {
-            }
-
-            if (!valid) {
-                System.out.println("Invalid Input.");
-            }
-        }
-        return money;
-    }
-
-    private double getInterest() {
-        boolean valid = false;
-        double interest = 0;
-        Scanner read = new Scanner(System.in);
-        while (!valid) {
-            try {
-                System.out.print("Enter the interest rate (%): ");
-                interest = Double.parseDouble(read.nextLine());
-                valid = true;
-            } catch (NumberFormatException e) {
-            }
-
-            if (!valid) {
-                System.out.println("Invalid Input.");
-            }
-        }
-        return interest;
-    }
-
-    private int getYear() {
-        boolean valid = false;
-        int years = 0;
-        Scanner read = new Scanner(System.in);
-        while (!valid) {
-            try {
-                System.out.print("Please enter a year between 1-15: ");
-                years = Integer.parseInt(read.nextLine());
-                if (years >= 1 && years <= 15) {
+                System.out.format("%71s ", "Enter the" + type);
+                amount = Double.parseDouble(read.nextLine());
+                if (type.equals(" number of years up to 15 (any decimal will be rounded down): ")) {
+                    if (amount >= 1 && amount <= 15) {
+                        valid = true;
+                    }
+                } else {
                     valid = true;
                 }
             } catch (NumberFormatException e) {
             }
-
             if (!valid) {
-                System.out.println("Invalid Input; Year Must be 1-15");
+                System.out.println("Invalid Input.");
             }
         }
-        return years;
+        return amount;
     }
 }
