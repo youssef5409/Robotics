@@ -30,7 +30,6 @@ public class Unit4MainMethod {
         //Declaring Objects
         CompoundInvesting investing = new CompoundInvesting();
         LabAnimals animals = new LabAnimals();
-        Erosion erode = new Erosion();
 
         Scanner read = new Scanner(System.in);
 
@@ -89,8 +88,7 @@ public class Unit4MainMethod {
                         check = true;
                         break;
                     case 5:
-                        //           lab = animals.animalNumber();
-                        //                System.out.println(lab);
+                        animals.animalNumber();
                         check = true;
                         break;
                     case 6:

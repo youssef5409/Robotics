@@ -7,15 +7,10 @@ package ca.hdsb.gwss.youssef.ics3u.u4;
 
 /**
  *
- * @author 1mohamedyou
+ * @author Youss
  */
 public class LabAnimals {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-
+    public void animalNumber() {
+        
     }
-    
 }
