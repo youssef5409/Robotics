@@ -5,7 +5,6 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u4;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -14,52 +13,100 @@ import java.util.Scanner;
  */
 public class CompoundInvesting {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        final double CASH = 150.00;
-        boolean valid = false;
-        double years;
-        Scanner read = new Scanner(System.in);
+    public void money() {
+        int years;
+        double cash;
+        double interest;
+        double total;
+        double interestAmount;
+        final double ORIGINAL_CASH;
+        
+        years = 15;
+        cash = 100;
+        interest = 2.5;
+        
+        ORIGINAL_CASH = cash;
+        interestAmount = (interest / 100) * ORIGINAL_CASH;
+        total = ORIGINAL_CASH + ORIGINAL_CASH * (interest / 100);
+        
         System.out.println("Compound Investing");
         System.out.println("This program will print out a title table that will"
                 + " display the amount of a yearly investment over a period of up"
                 + " to 15 years.");
+
+        System.out.format("%-10s | %-20s | %-10s | %-7s \n", "Year", "Amount In Account",
+                "Interest", "Total");
+
+        for (int i = 1; i <= years; i++) {
+            interestAmount = (interest  /100) * cash;
+            total = cash + interestAmount;
+            System.out.format("%-10s | %-20s | %-10s | %-7s \n", i, cash, interestAmount, total);
+            cash = total + ORIGINAL_CASH;
+            
+
+            
+        }
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    private double getInvestAmount() {
+        boolean valid = false;
+        double money = 0;
+        Scanner read = new Scanner(System.in);
         while (!valid) {
             try {
-                System.out.print("Please enter, a year between 1-15 ");
-                years = Double.parseDouble(read.nextLine());
+                System.out.print("How much are you investing?: ");
+                money = Double.parseDouble(read.nextLine());
+                valid = true;
+            } catch (NumberFormatException e) {
+            }
+
+            if (!valid) {
+                System.out.println("Invalid Input.");
+            }
+        }
+        return money;
+    }
+
+    private double getInterest() {
+        boolean valid = false;
+        double interest = 0;
+        Scanner read = new Scanner(System.in);
+        while (!valid) {
+            try {
+                System.out.print("Enter the interest rate (%): ");
+                interest = Double.parseDouble(read.nextLine());
+                valid = true;
+            } catch (NumberFormatException e) {
+            }
+
+            if (!valid) {
+                System.out.println("Invalid Input.");
+            }
+        }
+        return interest;
+    }
+
+    private int getYear() {
+        boolean valid = false;
+        int years = 0;
+        Scanner read = new Scanner(System.in);
+        while (!valid) {
+            try {
+                System.out.print("Please enter a year between 1-15: ");
+                years = Integer.parseInt(read.nextLine());
                 if (years >= 1 && years <= 15) {
                     valid = true;
                 }
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
             }
 
             if (!valid) {
                 System.out.println("Invalid Input; Year Must be 1-15");
             }
         }
-//////////////////////////////////////////////////
-        do {
-            try {
-                System.out.print("Please enter a year that is greater than 0 AD: ");
-                years = read.nextDouble();
-                if (years < 0 || years > 15) {
-                    System.out.println("Sorry, you entered a year lower than 0 "
-                            + "or greater than 15");
-                    validYear = false;
-                } else {
-                    validYear = true;
-                    System.out.print("Enter the yearly investment: ");
-
-                }
-            } catch (InputMismatchException e) {
-                validYear = false;
-                System.out.println("Sorry, you entered an invalid value");
-                System.err.println(e);
-                read.next();
-            }
-        } while (!validYear);
+        return years;
     }
 }

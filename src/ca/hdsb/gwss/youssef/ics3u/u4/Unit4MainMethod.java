@@ -52,36 +52,35 @@ public class Unit4MainMethod {
                 System.out.print("Press 1 - 6 respectively for any task. (Note: "
                         + "Triangle and Right-Angle Triangle both fall under the number 4): ");
                 //program expects double.
-                app = read.nextInt();
-                switch (app) {
+        //        app = read.nextInt();
+                switch (2) {
                     case 1:
-                        closer = two.closeness();
-                        System.out.println(closer);
+       //                 closer = two.closeness();
+              //          System.out.println(closer);
                         check = true;
                         break;
                     case 2:
-                        compound = investing.money();
-                        System.out.println(compound);
+                        investing.money();
                         check = true;
                         break;
                     case 3:
-                        ounce = grams.conversion();
-                        System.out.println(ounce);
+         //               ounce = grams.conversion();
+            //            System.out.println(ounce);
                         check = true;
                         break;    
                     case 4:
-                        fibonacci = series.seriesOfFibonacci();
-                        System.out.println(fibonacci);
+           //             fibonacci = series.seriesOfFibonacci();
+          //              System.out.println(fibonacci);
                         check = true;
                         break;
                     case 5:
-                        lab = animals.animalNumber();
-                        System.out.println(lab);
+             //           lab = animals.animalNumber();
+        //                System.out.println(lab);
                         check = true;
                         break;
                     case 6:
-                        soil = erode.crops();
-                        System.out.println(soil);
+               //         soil = erode.crops();
+      //                  System.out.println(soil);
                         check = true;
                         break;
                     default:
