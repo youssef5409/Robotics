@@ -52,7 +52,7 @@ public class CompoundInvesting {
                 amount = Double.parseDouble(read.nextLine());
                 //Stops user from entering an investmest of less than $1 or an interest rate of less than 0.01%
                 if (amount < 0.01);
-                 //Stops user from entering years less than 1 or greater than 15
+                //Stops user from entering years less than 1 or greater than 15
                 if (type.equals(" number of years up to 15 (any decimal will be rounded down): ")) {
                     if (amount >= 1 && amount <= 15) {
                         valid = true;
@@ -65,6 +65,7 @@ public class CompoundInvesting {
             if (!valid) {
                 System.out.println("Invalid Input.");
             }
+
         }
         return amount;
     }
