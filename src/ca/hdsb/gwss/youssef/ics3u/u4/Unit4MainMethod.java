@@ -1,6 +1,6 @@
 /*
  * Name: Youssef Mohamed
- * Date: 26th Mar 2017
+ * Date: 2nd Apr 2017
  * Version: 0.9
  * Description:
  *      This program manipulates methods that can, make a number get closer and
@@ -103,11 +103,15 @@ public class Unit4MainMethod {
                         check = true;
                         break;
                     case 6:
+                        //Initializing variables and final variables
                         int years;
                         double projectedTopsoil = 30;
                         final int MINIMUM_TOP_SOIL = 9;
+                        //This number was found by dividing 2.5 cm by 500 years to found out
+                        //the cm per year, this is for more accurate calculations
                         final double YEARLY_TOPSOIL_GROWTH = 0.005;
                         final double YEARLY_EROSION = 0.01;
+                        //Introductory statement
                         System.out.println("Topsoil Erosion");
                         System.out.println("Careless land management causes approximately 1% of \n"
                                 + "the topsoil to erode each year. It is then lost forever, since \n"
@@ -115,7 +119,7 @@ public class Unit4MainMethod {
                                 + "At 9cm, the topsoil is so shallow the crops cannot grow on \n"
                                 + "a large scale. If Canada has about 30cm of topsoil, how many \n"
                                 + "years will it take for the depths to be reduced to 9cm? \n");
-
+                        //For loop that checks when the topsoil goes below a certain level before stopping
                         for (years = 0; projectedTopsoil > MINIMUM_TOP_SOIL; years++) {
                             projectedTopsoil += YEARLY_TOPSOIL_GROWTH;
                             projectedTopsoil -= YEARLY_EROSION * projectedTopsoil;
