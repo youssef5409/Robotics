@@ -3,9 +3,12 @@
  * Date: 26th Mar 2017
  * Version: 0.9
  * Description:
- *      This program articulates and manipulates methods that can, calculate the
- *      bmi of a person, calculate if fish can live in a certain pH, calculate if 3
- *      sides can make a triangle, and, figure out if a year is a leap year.
+ *      This program manipulates methods that can, make a number get closer and
+ *      and closer to two without ever becoming two, show when the population of
+ *      animals will outgrow the amount of food in the lab, how long it will take
+ *      for canadian topsoil to erode to a point where crops cannot grow, convert
+ *      ounces to grams, calculate compound interest, and show the first 20 terms
+ *      of the fibonacci sequence.
  */
 package ca.hdsb.gwss.youssef.ics3u.u4;
 
@@ -24,7 +27,6 @@ public class Unit4MainMethod {
      */
     public static void main(String[] args) {
         //Initializing variables
-
         int app;
         boolean check = false;
         //Declaring Objects
@@ -36,19 +38,22 @@ public class Unit4MainMethod {
         //Introductory Statement
         System.out.println("Welcome to my unit 4 culminative task! I can do a \n"
                 + "multitude of things, which include,\n");
-
+        //while loop that wait for valid input
         while (!check) {
             try {
-                System.out.print("Press 1 - 6 respectively for any task. (Note: "
-                        + "Triangle and Right-Angle Triangle both fall under the number 4): ");
+                System.out.print("Press 1 - 6 respectively for any task. \\ ");
                 app = Integer.parseInt(read.nextLine());
+                //switch-case that checks for the integer that the user entered.
                 switch (app) {
                     case 1:
+                        //Initializing variables
                         int denominator = 1;
                         double total = 0;
-
+                        //while loop that repeats itself, as long as the total is less than 2
                         while (total < 2) {
                             total = total + (Math.pow(denominator, -1));
+                            //For some reason the program would output 'Infinity' at the end
+                            //This if statement prevents that from happening
                             if (total != Infinity) {
                                 System.out.println(total);
                                 denominator = denominator * 2;
@@ -57,10 +62,13 @@ public class Unit4MainMethod {
                         check = true;
                         break;
                     case 2:
+                        //Calls the compound investing method
                         investing.money();
                         check = true;
                         break;
                     case 3:
+                        //Initialzing final that is equal to the conversion rate
+                        //of ounces to grams
                         final double OUNCE_TO_GRAM = 28.3495231;
 
                         System.out.println("Ounce To Grams Conversion Chart");
@@ -68,7 +76,7 @@ public class Unit4MainMethod {
                         System.out.println("This program will print out a titled table that can "
                                 + "be used to convert ounces to grams, for values from 1 to 15. "
                                 + "(1 ounce = 28.35 grams)");
-
+                        //Series of format statements that create a table
                         System.out.format("%-6s | %4s \n", "Ounces", "Grams");
                         for (int i = 1; i < 16; i++) {
                             System.out.format("%6s | %6.2f\n", i, i * OUNCE_TO_GRAM);
@@ -76,9 +84,11 @@ public class Unit4MainMethod {
                         check = true;
                         break;
                     case 4:
+                        //Initializing variables
                         int a = 0;
                         int b = 1;
                         int c;
+                        //For loop that prints and follows the fibonacci series
                         for (int i = 0; i < 20; i++) {
                             System.out.println(b);
                             c = a + b;
@@ -88,6 +98,7 @@ public class Unit4MainMethod {
                         check = true;
                         break;
                     case 5:
+                        //Calls upon the lab animals method
                         animals.animalNumber();
                         check = true;
                         break;
