@@ -41,9 +41,9 @@ public class Unit4MainMethod {
         while (!check) {
             try {
                 System.out.print("Press 1 - 6 respectively for any task. \\ ");
-               // app = Integer.parseInt(read.nextLine());
+                app = Integer.parseInt(read.nextLine());
                 //switch-case that checks for the integer that the user entered.
-                switch (5) {
+                switch (app) {
                     case 1:
                         //Initializing variables
                         int denominator = 1;
