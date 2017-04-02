@@ -21,7 +21,7 @@ public class LabAnimals {
         int numberOfAnimals;
         int food;
         int additionOfFood;
-        
+
         System.out.println("Lab Animals");
         System.out.println("At present there are X animals in the lab and enough"
                 + " food for Y animals.  At the end of every hour the population"
@@ -29,18 +29,16 @@ public class LabAnimals {
                 + " During any hour the animals will eat enough food for only"
                 + " themselves. The program will determine when the population"
                 + " will outgrow the food supply.");
-        
+
         numberOfAnimals = getAmount(" number of animals: ");
         food = getAmount(" amount of food: ");
         additionOfFood = getAmount(" addition of food per hour: ");
-        
-        System.out.format("| %-6s | %-17s | %-14s | %-14s | %-17s | \n", "Hour", "Animals At Start",
+
+        System.out.format("| %-4s | %-16s | %-13s | %-11s | %-14s | \n", "Hour", "Animals At Start",
                 "Food At Start", "Food At End", "Animals At End");
-        for (hours = 0; food >= numberOfAnimals; hours++) {
-            System.out.format("");
-            food -= numberOfAnimals;
+        for (hours = 1; food >= numberOfAnimals; hours++) {
+            System.out.format("| %4s | %16s | %13s | %11s | %14s | \n", hours, numberOfAnimals, food, food += additionOfFood - numberOfAnimals, numberOfAnimals * 2);
             numberOfAnimals *= 2;
-            food += additionOfFood;
         }
     }
 
@@ -52,8 +50,7 @@ public class LabAnimals {
             try {
                 System.out.format("%37s ", "Enter the" + type);
                 amount = Integer.parseInt(read.nextLine());
-                if (amount < 1); 
-                else {
+                if (amount < 1); else {
                     valid = true;
                 }
             } catch (NumberFormatException e) {
