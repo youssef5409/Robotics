@@ -17,11 +17,13 @@ import java.util.Scanner;
 public class LabAnimals {
 
     public void animalNumber() {
+        //Initialzing variables
         int hours;
         int numberOfAnimals;
         int food;
         int additionOfFood;
-
+        
+        //Introductory statement
         System.out.println("Lab Animals");
         System.out.println("At present there are X animals in the lab and enough"
                 + " food for Y animals.  At the end of every hour the population"
@@ -29,17 +31,22 @@ public class LabAnimals {
                 + " During any hour the animals will eat enough food for only"
                 + " themselves. The program will determine when the population"
                 + " will outgrow the food supply.");
-
+        
+        //Getting user info
         numberOfAnimals = getAmount(" number of animals: ");
         food = getAmount(" amount of food: ");
         additionOfFood = getAmount(" addition of food per hour: ");
-
+        
+        //Initial table header print statement
         System.out.format("| %-4s | %-16s | %-13s | %-11s | %-14s | \n", "Hour", "Animals At Start",
                 "Food At Start", "Food At End", "Animals At End");
+        //for loop that only stops printing once the number of animals outgrow the food supply
         for (hours = 1; food >= numberOfAnimals; hours++) {
             System.out.format("| %4s | %16s | %13s | %11s | %14s | \n", hours, numberOfAnimals, food, food += additionOfFood - numberOfAnimals, numberOfAnimals * 2);
             numberOfAnimals *= 2;
         }
+        System.out.println("\n");
+        System.out.println("In this setup, the animals will live for " + hours + " hours");
     }
 
     private int getAmount(String type) {
