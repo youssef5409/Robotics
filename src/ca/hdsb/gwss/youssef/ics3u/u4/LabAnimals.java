@@ -18,18 +18,30 @@ public class LabAnimals {
 
     public void animalNumber() {
         int hours;
-        int numberOfAnimals = getAmount(" number of animals: ");
-        int food = getAmount(" amount of food: ");
-        int additionOfFood = getAmount(" addition of food per hour: ");
+        int numberOfAnimals;
+        int food;
+        int additionOfFood;
+        
+        System.out.println("Lab Animals");
+        System.out.println("At present there are X animals in the lab and enough"
+                + " food for Y animals.  At the end of every hour the population"
+                + " doubles, and enough food is added to support Z more animals."
+                + " During any hour the animals will eat enough food for only"
+                + " themselves. The program will determine when the population"
+                + " will outgrow the food supply.");
+        
+        numberOfAnimals = getAmount(" number of animals: ");
+        food = getAmount(" amount of food: ");
+        additionOfFood = getAmount(" addition of food per hour: ");
+        
+        System.out.format("| %-6s | %-17s | %-14s | %-14s | %-17s | \n", "Hour", "Animals At Start",
+                "Food At Start", "Food At End", "Animals At End");
         for (hours = 0; food >= numberOfAnimals; hours++) {
+            System.out.format("");
             food -= numberOfAnimals;
             numberOfAnimals *= 2;
             food += additionOfFood;
-            
-            System.out.format("");
-
         }
-        System.out.println(hours);
     }
 
     private int getAmount(String type) {

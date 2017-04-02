@@ -12,7 +12,6 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u4;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 import static jdk.nashorn.internal.objects.Global.Infinity;
 
@@ -42,13 +41,18 @@ public class Unit4MainMethod {
         while (!check) {
             try {
                 System.out.print("Press 1 - 6 respectively for any task. \\ ");
-                app = Integer.parseInt(read.nextLine());
+               // app = Integer.parseInt(read.nextLine());
                 //switch-case that checks for the integer that the user entered.
-                switch (app) {
+                switch (5) {
                     case 1:
                         //Initializing variables
                         int denominator = 1;
                         double total = 0;
+                        System.out.println("Closer to Two");
+                        System.out.println("This program demonstrates that the"
+                                + " result of adding the numbers 1, 1/2, 1/4,"
+                                + " 1/16, ... and so on gets closer to 2"
+                                + " without becoming 2.");
                         //while loop that repeats itself, as long as the total is less than 2
                         while (total < 2) {
                             total = total + (Math.pow(denominator, -1));
@@ -58,6 +62,7 @@ public class Unit4MainMethod {
                                 System.out.println(total);
                                 denominator = denominator * 2;
                             }
+                                 
                         }
                         check = true;
                         break;
@@ -88,6 +93,9 @@ public class Unit4MainMethod {
                         int a = 0;
                         int b = 1;
                         int c;
+                        System.out.println("Fibonacci Sequence");
+                        System.out.println("This program will print the first"
+                                + " twenty terms of the Fibonacci Series.");
                         //For loop that prints and follows the fibonacci series
                         for (int i = 0; i < 20; i++) {
                             System.out.println(b);
@@ -132,7 +140,7 @@ public class Unit4MainMethod {
                 if (!check) {
                     System.out.println("Sorry, you entered an invalid value");
                 }
-            } catch (InputMismatchException e) {
+            } catch (NumberFormatException e) {
             }
         }
     }
