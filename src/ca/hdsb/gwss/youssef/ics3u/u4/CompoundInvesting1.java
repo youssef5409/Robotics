@@ -17,6 +17,9 @@ public class CompoundInvesting1 extends GetAmounts {
         //Initializing variables
         double total;
         double interestAmount;
+        double years;
+        double cash;
+        double interest;
         final double ORIGINAL_CASH;
 
         //Introductory Statements
@@ -24,14 +27,15 @@ public class CompoundInvesting1 extends GetAmounts {
         System.out.println("This program will print out a title table that will"
                 + " display the amount of a yearly investment over a period of up"
                 + " to 15 years.");
+
         //Assigning variables to previously declared variables
-        GetAmounts years = new CompoundInvestingAmounts();
-        GetAmounts cash = new CompoundInvestingAmounts();
-        GetAmounts interest = new CompoundInvestingAmounts();
+        years = new CompoundInvestingAmounts().getAmount(" number of years up to 15 (any decimal will be rounded down): ");
+        cash = new CompoundInvestingAmounts().getAmount(" cash invested per year: ");
+        interest = new CompoundInvestingAmounts().getAmount(" interest rate (%): ");
 
         //Assigning the initial investing to a final double this will be useful
         //for future calculations
-        ORIGINAL_CASH = cash.getAmount(" cash invested per year: ");
+        ORIGINAL_CASH = cash;
 
         //format statement that begins the table
         System.out.format(" | %-6s | %-18s | %-10s | %-10s | \n", "Year", "Amount In Account",

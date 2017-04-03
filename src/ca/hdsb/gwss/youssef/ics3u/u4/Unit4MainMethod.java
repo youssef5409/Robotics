@@ -62,7 +62,7 @@ public class Unit4MainMethod {
                                 System.out.println(total);
                                 denominator = denominator * 2;
                             }
-                                 
+
                         }
                         check = true;
                         break;
@@ -137,10 +137,11 @@ public class Unit4MainMethod {
                         break;
 
                 }
-                if (!check) {
-                    System.out.println("Sorry, you entered an invalid value");
-                }
+
             } catch (NumberFormatException e) {
+            }
+            if (!check) {
+                System.out.println("Sorry, you entered an invalid value");
             }
         }
     }
