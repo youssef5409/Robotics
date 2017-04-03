@@ -46,7 +46,7 @@ public class Unit4MainMethod {
                 switch (app) {
                     case 1:
                         //Initializing variables
-                        int denominator = 1;
+                        long denominator = 1;
                         double total = 0;
                         System.out.println("Closer to Two");
                         System.out.println("This program demonstrates that the"
@@ -55,15 +55,13 @@ public class Unit4MainMethod {
                                 + " without becoming 2.");
                         //while loop that repeats itself, as long as the total is less than 2
                         while (total < 2) {
-                            total = total + (Math.pow(denominator, -1));
-                            //For some reason the program would output 'Infinity' at the end
-                            //This if statement prevents that from happening
-                            if (total != Infinity) {
-                                System.out.println(total);
-                                denominator = denominator * 2;
-                            }
 
+                            System.out.print(total + " + " + " 1/" + denominator + " = ");
+                            denominator = denominator * 2;
+                            total += Math.pow(denominator, -1);
+                            System.out.println(total);
                         }
+
                         check = true;
                         break;
                     case 2:

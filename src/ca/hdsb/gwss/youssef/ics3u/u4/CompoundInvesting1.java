@@ -33,12 +33,12 @@ public class CompoundInvesting1 extends GetAmounts {
         cash = new CompoundInvestingAmounts().getAmount(" cash invested per year: ");
         interest = new CompoundInvestingAmounts().getAmount(" interest rate (%): ");
 
-        //Assigning the initial investing to a final double this will be useful
+        //Assigning the initial investing to a final double, this will be useful
         //for future calculations
         ORIGINAL_CASH = cash;
 
         //format statement that begins the table
-        System.out.format(" | %-6s | %-18s | %-10s | %-10s | \n", "Year", "Amount In Account",
+        System.out.format(" | %-6s | %-21s | %-12s | %-13s | \n", "Year", "Amount In Account",
                 "Interest", "Total");
 
         //For loop that shows the user their compound invest cycle
@@ -46,14 +46,14 @@ public class CompoundInvesting1 extends GetAmounts {
         for (int i = 1; i <= years; i++) {
             interestAmount = (interest / 100) * cash;
             total = cash + interestAmount;
-            System.out.format(" | %-6s | $%17.2f | $%9.2f | $%9.2f | \n", i, cash, interestAmount, total);
+            System.out.format(" | %-6s | $%20.2f | $%10.2f | $%12.2f | \n", i, cash, interestAmount, total);
             cash = total + ORIGINAL_CASH;
         }
     }
 
     @Override
     double getAmount(String type) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }
