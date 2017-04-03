@@ -11,5 +11,6 @@ package ca.hdsb.gwss.youssef.ics3u.u4.getamounts;
  */
 public abstract class GetAmounts {
 
-    public abstract double getAmount(String type);
+    public abstract double CompoundInvestAmount(String type);
+    public abstract double LabAnimalAmount(String type);
 }

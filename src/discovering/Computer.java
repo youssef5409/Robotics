@@ -12,12 +12,7 @@ package discovering;
 public class Computer extends AbstractClass {
 
     /**
-     * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        
-    }
-
     @Override
     public void internet() {
         System.out.println("google");
@@ -27,5 +22,10 @@ public class Computer extends AbstractClass {
     public void processing() {
         System.out.println("64 bit");
     }
-    
+
+    /**
+     *
+     * @param args
+     */
+
 }

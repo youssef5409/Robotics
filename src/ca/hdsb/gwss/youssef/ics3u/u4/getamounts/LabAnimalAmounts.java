@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class LabAnimalAmounts extends GetAmounts {
     @Override
-    public double getAmount(String type) {
+    public double LabAnimalAmount(String type) {
         boolean valid = false;
         int amount = 0;
         Scanner read = new Scanner(System.in);
@@ -32,5 +32,12 @@ public class LabAnimalAmounts extends GetAmounts {
 
         }
         return amount;
+
+    
+    }
+
+    @Override
+    public double CompoundInvestAmount(String type) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

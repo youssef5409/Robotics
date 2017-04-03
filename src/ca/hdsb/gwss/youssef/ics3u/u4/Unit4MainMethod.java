@@ -28,8 +28,8 @@ public class Unit4MainMethod {
         int app;
         boolean check = false;
         //Declaring Objects
-        CompoundInvesting1 investing = new CompoundInvesting1();
-        LabAnimals1 animals = new LabAnimals1();
+        CompoundInvesting investing = new CompoundInvesting();
+        LabAnimals animals = new LabAnimals();
 
         Scanner read = new Scanner(System.in);
 
@@ -44,8 +44,15 @@ public class Unit4MainMethod {
         //while loop that wait for valid input
         while (!check) {
             try {
-                System.out.print("Press 1 - 6 respectively for any task: ");
+                System.out.println("1 - Closer To Two \n"
+                        + "2 - Compound Investments \n"
+                        + "3 - Ounce to Gram Conversion \n"
+                        + "4 - Fibonacci Sequence \n"
+                        + "5 - Lab Animals \n"
+                        + "6 - Erosion \n");
+                System.out.print("What would you like to do?: ");
                 app = Integer.parseInt(read.nextLine());
+                System.out.println("\n");
                 //switch-case that checks for the integer that the user entered.
                 switch (app) {
                     case 1:

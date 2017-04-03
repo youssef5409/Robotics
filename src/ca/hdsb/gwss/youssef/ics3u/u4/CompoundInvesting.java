@@ -5,8 +5,9 @@
  * Description:
  *      Contains methods for calculating compound interest
  */
-package discovering;
+package ca.hdsb.gwss.youssef.ics3u.u4;
 
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 /**
@@ -23,6 +24,8 @@ public class CompoundInvesting {
         double total;
         double interestAmount;
         final double ORIGINAL_CASH;
+
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
         
         //Introductory Statements
         System.out.println("Compound Investing");
@@ -47,7 +50,8 @@ public class CompoundInvesting {
         for (int i = 1; i <= years; i++) {
             interestAmount = (interest / 100) * cash;
             total = cash + interestAmount;
-            System.out.format(" | %-6s | $%17.2f | $%9.2f | $%9.2f | \n", i, cash, interestAmount, total);
+            System.out.format(" | %-6s | %17s | %9s | %9s | \n", i, formatter.format(cash), 
+                    formatter.format(interestAmount), formatter.format(total));
             cash = total + ORIGINAL_CASH;
         }
     }
@@ -56,6 +60,7 @@ public class CompoundInvesting {
     private double getAmount(String type) {
         boolean valid = false;
         double amount = 0;
+        final int MAX_YEARS = 15;
         Scanner read = new Scanner(System.in);
         while (!valid) {
             try {
@@ -66,7 +71,7 @@ public class CompoundInvesting {
                 if (amount < 0.01);
                 //Stops user from entering years less than 1 or greater than 15
                 if (type.equals(" number of years up to 15 (any decimal will be rounded down): ")) {
-                    if (amount >= 1 && amount <= 15) {
+                    if (amount >= 1 && amount <= MAX_YEARS) {
                         valid = true;
                     }
                 } else {

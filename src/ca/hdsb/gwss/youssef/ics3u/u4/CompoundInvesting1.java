@@ -32,9 +32,9 @@ public class CompoundInvesting1 extends CompoundInvestingAmounts {
                 + " to 15 years.");
 
         //Assigning variables to previously declared variables
-        years = invest.getAmount(" number of years up to 15 (any decimal will be rounded down): ");
-        cash =  invest.getAmount(" cash invested per year: ");
-        interest = invest.getAmount(" interest rate (%): ");
+        years = invest.CompoundInvestAmount(" number of years up to 15 (any decimal will be rounded down): ");
+        cash =  invest.CompoundInvestAmount(" cash invested per year: ");
+        interest = invest.CompoundInvestAmount(" interest rate (%): ");
 
         //Assigning the initial investing to a final double, this will be useful
         //for future calculations
@@ -52,11 +52,13 @@ public class CompoundInvesting1 extends CompoundInvestingAmounts {
             System.out.format(" | %-6s | $%20.2f | $%10.2f | $%12.2f | \n", i, cash, interestAmount, total);
             cash = total + ORIGINAL_CASH;
         }
+    
     }
+
 
     @Override
-    public double getAmount(String type) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    public double LabAnimalAmount(String type) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
+}
 }

@@ -13,8 +13,13 @@ import java.util.Scanner;
  */
 public class CompoundInvestingAmounts extends GetAmounts {
 
+    /**
+     *
+     * @param type
+     * @return
+     */
     @Override
-    public double getAmount(String type) {
+    public double CompoundInvestAmount(String type) {
         boolean valid = false;
         double amount = 0;
         Scanner read = new Scanner(System.in);
@@ -41,6 +46,13 @@ public class CompoundInvestingAmounts extends GetAmounts {
 
         }
         return amount;
+    
+    }
+
+    @Override
+    public double LabAnimalAmount(String type) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
 }
