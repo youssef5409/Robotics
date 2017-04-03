@@ -14,12 +14,10 @@ import java.util.Scanner;
 abstract class GetAmounts {
 
     abstract double getAmount(String type);
-    abstract String exceptionOfType();
 }
 
 class LabAnimalAmounts extends GetAmounts {
-@Override
-String exceptionOfType() {return "urmum";}
+
     @Override
     double getAmount(String type) {
         boolean valid = false;
@@ -48,11 +46,7 @@ String exceptionOfType() {return "urmum";}
 
         }
         return amount;
-    }
 
-    @Override
-    String exceptionOfType() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
 
@@ -88,10 +82,6 @@ class CompoundInvestingAmounts extends GetAmounts {
         return amount;
     }
 
-    @Override
-    String exceptionOfType() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
 
 class Test {
