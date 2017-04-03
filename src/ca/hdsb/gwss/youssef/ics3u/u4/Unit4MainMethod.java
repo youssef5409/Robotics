@@ -13,7 +13,6 @@
 package ca.hdsb.gwss.youssef.ics3u.u4;
 
 import java.util.Scanner;
-import static jdk.nashorn.internal.objects.Global.Infinity;
 
 /**
  *
@@ -35,12 +34,17 @@ public class Unit4MainMethod {
         Scanner read = new Scanner(System.in);
 
         //Introductory Statement
-        System.out.println("Welcome to my unit 4 culminative task! I can do a \n"
-                + "multitude of things, which include,\n");
+        System.out.println("Welcome to my unit 4 culminative task! I can utilize \n"
+                + " methods that can make a number get closer and\n"
+                + " and closer to two without ever becoming two, show when the population of\n"
+                + " animals will outgrow the amount of food in the lab, how long it will take\n"
+                + " for canadian topsoil to erode to a point where crops cannot grow, convert\n"
+                + " ounces to grams, calculate compound interest, and show the first 20 terms\n"
+                + " of the fibonacci sequence.\n");
         //while loop that wait for valid input
         while (!check) {
             try {
-                System.out.print("Press 1 - 6 respectively for any task. \\ ");
+                System.out.print("Press 1 - 6 respectively for any task: ");
                 app = Integer.parseInt(read.nextLine());
                 //switch-case that checks for the integer that the user entered.
                 switch (app) {
