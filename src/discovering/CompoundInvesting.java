@@ -5,7 +5,7 @@
  * Description:
  *      Contains methods for calculating compound interest
  */
-package ca.hdsb.gwss.youssef.ics3u.u4;
+package discovering;
 
 import java.util.Scanner;
 
