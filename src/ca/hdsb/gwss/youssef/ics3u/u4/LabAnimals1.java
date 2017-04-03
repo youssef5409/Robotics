@@ -22,7 +22,7 @@ public class LabAnimals1 extends LabAnimalAmounts {
         int numberOfAnimals;
         int food;
         int additionOfFood;
-        
+        LabAnimalAmounts lab = new LabAnimalAmounts();
         //Introductory statement
         System.out.println("Lab Animals");
         System.out.println("At present there are X animals in the lab and enough"
@@ -31,12 +31,12 @@ public class LabAnimals1 extends LabAnimalAmounts {
                 + " During any hour the animals will eat enough food for only"
                 + " themselves. The program will determine when the population"
                 + " will outgrow the food supply.");
-        
+
         //Getting user info
-        numberOfAnimals = (int) new LabAnimalAmounts().getAmount(" number of animals: ");
-        food = (int) new LabAnimalAmounts().getAmount(" amount of food: ");
-        additionOfFood = (int) new LabAnimalAmounts().getAmount(" addition of food per hour: ");
-        
+        numberOfAnimals = (int) lab.getAmount(" number of animals: ");
+        food = (int) lab.getAmount(" amount of food: ");
+        additionOfFood = (int) lab.getAmount(" addition of food per hour: ");
+
         //Initial table header print statement
         System.out.format("| %-4s | %-16s | %-13s | %-11s | %-14s | \n", "Hour", "Animals At Start",
                 "Food At Start", "Food At End", "Animals At End");
@@ -46,8 +46,8 @@ public class LabAnimals1 extends LabAnimalAmounts {
             numberOfAnimals *= 2;
         }
         System.out.println("\n");
-        System.out.println("In this setup, the animals will live for " + (hours - 1) +
-                "hours before there is not even food for all of them.");
+        System.out.println("In this setup, the animals will live for " + (hours - 1)
+                + "hours before there is not even food for all of them.");
     }
 
     @Override
@@ -55,5 +55,4 @@ public class LabAnimals1 extends LabAnimalAmounts {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
 }

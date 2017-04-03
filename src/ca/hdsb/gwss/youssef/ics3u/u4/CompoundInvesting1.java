@@ -23,6 +23,7 @@ public class CompoundInvesting1 extends CompoundInvestingAmounts {
         double cash;
         double interest;
         final double ORIGINAL_CASH;
+        CompoundInvestingAmounts invest = new CompoundInvestingAmounts();
 
         //Introductory Statements
         System.out.println("Compound Investing");
@@ -31,9 +32,9 @@ public class CompoundInvesting1 extends CompoundInvestingAmounts {
                 + " to 15 years.");
 
         //Assigning variables to previously declared variables
-        years = new CompoundInvestingAmounts().getAmount(" number of years up to 15 (any decimal will be rounded down): ");
-        cash =  new CompoundInvestingAmounts().getAmount(" cash invested per year: ");
-        interest = new CompoundInvestingAmounts().getAmount(" interest rate (%): ");
+        years = invest.getAmount(" number of years up to 15 (any decimal will be rounded down): ");
+        cash =  invest.getAmount(" cash invested per year: ");
+        interest = invest.getAmount(" interest rate (%): ");
 
         //Assigning the initial investing to a final double, this will be useful
         //for future calculations

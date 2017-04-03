@@ -12,7 +12,6 @@ import java.util.Scanner;
  * @author GWS-Student
  */
 public class LabAnimalAmounts extends GetAmounts {
-
     @Override
     public double getAmount(String type) {
         boolean valid = false;
@@ -35,4 +34,3 @@ public class LabAnimalAmounts extends GetAmounts {
         return amount;
     }
 }
-
