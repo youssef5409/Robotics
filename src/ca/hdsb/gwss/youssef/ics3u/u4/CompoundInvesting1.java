@@ -7,11 +7,13 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u4;
 
+import ca.hdsb.gwss.youssef.ics3u.u4.getamounts.CompoundInvestingAmounts;
+
 /**
  *
  * @author 1mohamedyou
  */
-public class CompoundInvesting1 extends GetAmounts {
+public class CompoundInvesting1 extends CompoundInvestingAmounts {
 
     public void money() {
         //Initializing variables
@@ -30,7 +32,7 @@ public class CompoundInvesting1 extends GetAmounts {
 
         //Assigning variables to previously declared variables
         years = new CompoundInvestingAmounts().getAmount(" number of years up to 15 (any decimal will be rounded down): ");
-        cash = new CompoundInvestingAmounts().getAmount(" cash invested per year: ");
+        cash =  new CompoundInvestingAmounts().getAmount(" cash invested per year: ");
         interest = new CompoundInvestingAmounts().getAmount(" interest rate (%): ");
 
         //Assigning the initial investing to a final double, this will be useful
@@ -52,7 +54,7 @@ public class CompoundInvesting1 extends GetAmounts {
     }
 
     @Override
-    double getAmount(String type) {
+    public double getAmount(String type) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

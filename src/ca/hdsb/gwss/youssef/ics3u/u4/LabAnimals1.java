@@ -8,11 +8,13 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u4;
 
+import ca.hdsb.gwss.youssef.ics3u.u4.getamounts.LabAnimalAmounts;
+
 /**
  *
  * @author Youss
  */
-public class LabAnimals1 extends GetAmounts {
+public class LabAnimals1 extends LabAnimalAmounts {
 
     public void animalNumber() {
         //Initialzing variables
@@ -49,7 +51,7 @@ public class LabAnimals1 extends GetAmounts {
     }
 
     @Override
-    double getAmount(String type) {
+    public double getAmount(String type) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
