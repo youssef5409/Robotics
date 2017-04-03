@@ -44,7 +44,8 @@ public class LabAnimals1 extends GetAmounts {
             numberOfAnimals *= 2;
         }
         System.out.println("\n");
-        System.out.println("In this setup, the animals will live for " + hours + " hours");
+        System.out.println("In this setup, the animals will live for " + (hours - 1) +
+                "hours before there is not even food for all of them.");
     }
 
     @Override

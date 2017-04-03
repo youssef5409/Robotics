@@ -29,8 +29,8 @@ public class Unit4MainMethod {
         int app;
         boolean check = false;
         //Declaring Objects
-        CompoundInvesting investing = new CompoundInvesting();
-        LabAnimals animals = new LabAnimals();
+        CompoundInvesting1 investing = new CompoundInvesting1();
+        LabAnimals1 animals = new LabAnimals1();
 
         Scanner read = new Scanner(System.in);
 
