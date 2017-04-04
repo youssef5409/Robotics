@@ -42,6 +42,7 @@ public class CompoundInvesting {
         ORIGINAL_CASH = cash;
         
         //format statement that begins the table
+        System.out.println("\n");
         System.out.format(" | %-6s | %-18s | %-10s | %-7s | \n", "Year", "Amount In Account",
                 "Interest", "Total");
         

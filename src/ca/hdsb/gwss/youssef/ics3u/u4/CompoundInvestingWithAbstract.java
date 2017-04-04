@@ -13,7 +13,7 @@ import ca.hdsb.gwss.youssef.ics3u.u4.getamounts.CompoundInvestingAmounts;
  *
  * @author 1mohamedyou
  */
-public class CompoundInvesting1 extends CompoundInvestingAmounts {
+public class CompoundInvestingWithAbstract extends CompoundInvestingAmounts {
 
     public void money() {
         //Initializing variables

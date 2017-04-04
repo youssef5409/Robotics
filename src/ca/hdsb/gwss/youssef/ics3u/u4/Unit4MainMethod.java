@@ -32,8 +32,6 @@ public class Unit4MainMethod {
         intro();
         options();
         
-        System.out.println("\n");
-        
         //switch-case that checks for the integer that the user entered, and runs
         //a respective method
         switch (getApp()) {
@@ -82,10 +80,11 @@ public class Unit4MainMethod {
                 app = Integer.parseInt(read.nextLine());
             } catch (NumberFormatException e) {
             }
-            if (!(app < 1 && app > 6)) {
+            if (!(app > 0 && app < 7)) {
                 System.out.println("Sorry, you entered an invalid value.");
             }
-        } while (!(app < 1 && app > 6));
+        } while (!(app > 0 && app < 7));
+        System.out.println("\n");
         return app;
     }
     
@@ -127,7 +126,7 @@ public class Unit4MainMethod {
             System.out.println(total);
             denominator = denominator * 2;
         }
-        System.out.println("This does not really equal two, java shows this because, \n"
+        System.out.println("This does not really equal two, java only shows this because, \n"
                 + "this is the extent of java's ability to parse double's for more \n"
                 + "decimals.");
     }

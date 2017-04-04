@@ -14,7 +14,7 @@ import ca.hdsb.gwss.youssef.ics3u.u4.getamounts.LabAnimalAmounts;
  *
  * @author Youss
  */
-public class LabAnimals1 extends LabAnimalAmounts {
+public class LabAnimalsWithAbstract extends LabAnimalAmounts {
 
     public void animalNumber() {
         //Initialzing variables
