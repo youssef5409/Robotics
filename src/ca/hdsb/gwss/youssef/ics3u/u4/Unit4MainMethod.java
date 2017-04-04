@@ -24,10 +24,6 @@ public class Unit4MainMethod {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        //Instantiating Classes
-        CompoundInvesting investing = new CompoundInvesting();
-        LabAnimals animals = new LabAnimals();
         
         //Introduces the program
         intro();
@@ -45,6 +41,7 @@ public class Unit4MainMethod {
             case 2:
                 //Calls and uses the compound investing method which is originally
                 //located in CompoundInvesting.java
+                CompoundInvesting investing = new CompoundInvesting();
                 investing.money();
                 break;
             case 3:
@@ -58,6 +55,7 @@ public class Unit4MainMethod {
             case 5:
                 //Calls and uses the lab animals method which is originally
                 //located in LabAnimals.java
+                LabAnimals animals = new LabAnimals();
                 animals.animalNumber();
                 break;
             case 6:

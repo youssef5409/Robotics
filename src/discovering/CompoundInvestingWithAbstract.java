@@ -7,7 +7,6 @@
  */
 package discovering;
 
-import discovering.CompoundInvestingAmounts;
 
 /**
  *

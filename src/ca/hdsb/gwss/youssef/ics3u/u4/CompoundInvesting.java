@@ -44,7 +44,7 @@ public class CompoundInvesting {
         
         //format statement that begins the table
         System.out.println("\n");
-        System.out.format(" | %-6s | %-18s | %-10s | %-7s | \n", "Year", "Amount In Account",
+        System.out.format(" | %-6s | %-18s | %-18s | %-18s | \n", "Year", "Amount In Account",
                 "Interest", "Total");
         
         //For loop that shows the user their compound invest cycle
@@ -52,7 +52,7 @@ public class CompoundInvesting {
         for (int i = 1; i <= years; i++) {
             interestAmount = (interest / 100) * cash;
             total = cash + interestAmount;
-            System.out.format(" | %-6s | %18s | %10s | %18s | \n", i, formatter.format(cash), 
+            System.out.format(" | %-6s | %18s | %18s | %18s | \n", i, formatter.format(cash), 
                     formatter.format(interestAmount), formatter.format(total));
             cash = total + ORIGINAL_CASH;
         }
