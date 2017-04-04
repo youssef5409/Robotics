@@ -16,7 +16,3 @@ public abstract class AbstractMethods {
     public abstract int getApp();
     
 }
-
-public class menu {
-    
-}

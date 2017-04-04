@@ -17,7 +17,9 @@ public class Unit5MainMethod extends AbstractMethods {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        Unit5MainMethod part = new Unit5MainMethod();
+        part.intro();
+        part.options();
     }
 
     @Override
