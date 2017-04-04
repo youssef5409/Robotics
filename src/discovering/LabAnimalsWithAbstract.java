@@ -6,9 +6,9 @@
  *      Contains methods that calculate how long an exponentially growing amount
  *      of animals, can live on a linear supply of food
  */
-package ca.hdsb.gwss.youssef.ics3u.u4;
+package discovering;
 
-import ca.hdsb.gwss.youssef.ics3u.u4.getamounts.LabAnimalAmounts;
+import discovering.LabAnimalAmounts;
 
 /**
  *

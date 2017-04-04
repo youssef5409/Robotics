@@ -5,9 +5,9 @@
  * Description:
  *      Contains methods for calculating compound interest
  */
-package ca.hdsb.gwss.youssef.ics3u.u4;
+package discovering;
 
-import ca.hdsb.gwss.youssef.ics3u.u4.getamounts.CompoundInvestingAmounts;
+import discovering.CompoundInvestingAmounts;
 
 /**
  *
