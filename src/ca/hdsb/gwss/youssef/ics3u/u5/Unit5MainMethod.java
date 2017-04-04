@@ -29,12 +29,12 @@ public class Unit5MainMethod extends AbstractMethods {
 
     @Override
     public void options() {
-        System.out.println("1 - "
-                + "2 - "
-                + "3 -"
-                + "4 -"
-                + "5 -"
-                + "6 -");
+        System.out.println("1 - \n"
+                + "2 - \n"
+                + "3 - \n"
+                + "4 - \n"
+                + "5 - \n"
+                + "6 - \n");
     }
 
     @Override

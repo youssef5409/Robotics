@@ -6,6 +6,7 @@
 package youssef;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,8 +16,12 @@ import java.text.NumberFormat;
 
 public class NewMain {
    public static void main(String[] args) {
-       //getting current date and time using Date class
-NumberFormat formatter = NumberFormat.getCurrencyInstance();
-       System.out.println(formatter.format(999999.99));
+ArrayList<String> array = new ArrayList();
+        ArrayList<String> array2 = new ArrayList();
+        
+        array2.add("no");
+        array.add(array2.get(0));
+        
+        System.out.println(array.get(0));
     }
 }
