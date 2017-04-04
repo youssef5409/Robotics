@@ -54,6 +54,8 @@ public class LabAnimals {
         boolean valid = false;
         int amount = 0;
         Scanner read = new Scanner(System.in);
+        //while is needed instead of do while in order to use the if statement
+        //that uses a boolean to verify input
         while (!valid) {
             try {
                 System.out.format("%37s ", "Enter the" + type);
