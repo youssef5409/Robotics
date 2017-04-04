@@ -28,8 +28,11 @@ public class Unit4MainMethod {
         //Instantiating Classes
         CompoundInvesting investing = new CompoundInvesting();
         LabAnimals animals = new LabAnimals();
-
+        
+        //Introduces the program
         intro();
+        
+        //Shows the user their options
         options();
         
         //switch-case that checks for the integer that the user entered, and runs
@@ -101,6 +104,7 @@ public class Unit4MainMethod {
     }
 
     private static void options() {
+        //Statement showing options
         System.out.println("1 - Closer To Two \n"
                 + "2 - Compound Investments \n"
                 + "3 - Ounce to Gram Conversion \n"
@@ -124,7 +128,7 @@ public class Unit4MainMethod {
             System.out.print(total + " + " + " 1/" + denominator + " = ");
             total += Math.pow(denominator, -1);
             System.out.println(total);
-            denominator = denominator * 2;
+            denominator *= 2;
         }
         System.out.println("This does not really equal two, java only shows this because, \n"
                 + "this is the extent of java's ability to parse double's for more \n"
@@ -135,6 +139,7 @@ public class Unit4MainMethod {
         //Initialzing final that is equal to the conversion rate
         //of ounces to grams
         final double OUNCE_TO_GRAM = 28.3495231;
+        final int NUMBER_OF_CONVERSIONS = 15;
 
         System.out.println("Ounce To Grams Conversion Chart");
 
@@ -143,25 +148,26 @@ public class Unit4MainMethod {
                 + "(1 ounce = 28.35 grams)");
         //Series of format statements that create a table
         System.out.format("%-6s | %4s \n", "Ounces", "Grams");
-        for (int i = 1; i < 16; i++) {
+        for (int i = 1; i < NUMBER_OF_CONVERSIONS; i++) {
             System.out.format("%6s | %6.2f\n", i, i * OUNCE_TO_GRAM);
         }
     }
 
     private static void fibonacci() {
         //Initializing variables
-        int a = 0;
-        int b = 1;
-        int c;
+        final int NUMBER_OF_TERMS = 20;
+        int add = 0;
+        int total = 1;
+        int swap;
         System.out.println("Fibonacci Sequence");
         System.out.println("This program will print the first"
                 + " twenty terms of the Fibonacci Series.");
         //For loop that prints and follows the fibonacci series
-        for (int i = 0; i < 20; i++) {
-            System.out.println(b);
-            c = a + b;
-            a = b;
-            b = c;
+        for (int i = 0; i < NUMBER_OF_TERMS; i++) {
+            System.out.println(total);
+            swap = add + total;
+            add = total;
+            total = swap;
         }
     }
 

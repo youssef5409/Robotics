@@ -32,7 +32,8 @@ public class CompoundInvesting {
         System.out.println("This program will print out a title table that will"
                 + " display the amount of a yearly investment over a period of up"
                 + " to 15 years.");
-        //Assigning variables to previously declared variables
+        
+        //Assigning variables to previously declared variables using methods
         years = (int) getAmount(" number of years up to 15 (any decimal will be rounded down): ");
         cash = getAmount(" cash invested per year: ");
         interest = getAmount(" interest rate (%): ");
