@@ -146,7 +146,7 @@ public class Unit4MainMethod {
                 + "(1 ounce = 28.35 grams)");
         //Series of format statements that create a table
         System.out.format("%-6s | %4s \n", "Ounces", "Grams");
-        for (int i = 1; i < NUMBER_OF_CONVERSIONS; i++) {
+        for (int i = 1; i <= NUMBER_OF_CONVERSIONS; i++) {
             System.out.format("%6s | %6.2f\n", i, i * OUNCE_TO_GRAM);
         }
     }
@@ -161,8 +161,9 @@ public class Unit4MainMethod {
         System.out.println("This program will print the first"
                 + " twenty terms of the Fibonacci Series.");
         //For loop that prints and follows the fibonacci series
-        for (int i = 0; i < NUMBER_OF_TERMS; i++) {
-            System.out.println(total);
+        System.out.format("%-6s | %4s \n", "Term #", "Term");
+        for (int i = 1; i <= NUMBER_OF_TERMS; i++) {
+            System.out.format("%6s | %4s \n", i, total);
             swap = add + total;
             add = total;
             total = swap;
