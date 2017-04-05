@@ -21,7 +21,7 @@ public class HashApartmentBuilding {
     public static void main(String[] args) {
         int oldMen = 0;
         int youngMen = 0;
-        
+
         int nOfFloors;
         int nOfRooms;
 
@@ -40,22 +40,29 @@ public class HashApartmentBuilding {
                 mMap.put(j, i);
             }
         }
-        char a;
-        
+        String a;
+
         for (Map.Entry key : mMap.entrySet()) {
-            a = getPerson(((int) key.getKey() + (int) key.getValue()));
+            a = getPerson((int) key.getKey(), (int) key.getValue());
             System.out.println(a);
 
         }
     }
-    public static char getPerson(int floor) {
-        char name;
+
+    public static String getPerson(int floor, int room) {
+        String name;
+        String floorLetter;
+        String roomLetter;
+        
         String quad = "abcdefghijklmnopqrstuvwxyz";
         char[] typeOfQuad;
-        typeOfQuad = quad.toCharArray();
-            
-        name = quad.charAt(floor);
         
+        typeOfQuad = quad.toCharArray();
+
+        floorLetter = Character.toString(quad.charAt(floor - 1));
+        roomLetter = Character.toString(quad.charAt(room - 1));
+        
+        name = floorLetter + roomLetter;
         return name;
     }
 
