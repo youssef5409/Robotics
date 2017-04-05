@@ -45,20 +45,9 @@ public class HashApartmentBuilding {
         for (Map.Entry key : mMap.entrySet()) {
             a = getPerson(((int) key.getKey() + (int) key.getValue()));
             System.out.println(a);
-            if (a > 10) {
-                oldMen++;
-                
-            }
-            else {
-                youngMen++;
-            }
-            
-        }
-        System.out.println("");
-        System.out.println(youngMen);
-        System.out.println(oldMen);
-    }
 
+        }
+    }
     public static char getPerson(int floor) {
         char name;
         String quad = "abcdefghijklmnopqrstuvwxyz";
