@@ -10,7 +10,7 @@ package ca.hdsb.gwss.youssef.ics3u.u5;
  * @author 1mohamedyou
  */
 public abstract class AbstractMethods {
-    AbstractMethods(){}
+  //  AbstractMethods(){}
     public abstract void intro();
     public abstract void options();
     public abstract int getApp();
