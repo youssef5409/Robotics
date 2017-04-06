@@ -19,11 +19,10 @@ public class HashApartmentBuilding {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int oldMen = 0;
-        int youngMen = 0;
 
         int nOfFloors;
         int nOfRooms;
+        String a;
 
         Scanner read = new Scanner(System.in);
         System.out.println("Welcome to your own apartment building");
@@ -40,7 +39,6 @@ public class HashApartmentBuilding {
                 mMap.put(j, i);
             }
         }
-        String a;
 
         for (Map.Entry key : mMap.entrySet()) {
             a = getPerson((int) key.getKey(), (int) key.getValue());
@@ -53,15 +51,12 @@ public class HashApartmentBuilding {
         String name;
         String floorLetter;
         String roomLetter;
-        
+
         String quad = "abcdefghijklmnopqrstuvwxyz";
-        char[] typeOfQuad;
-        
-        typeOfQuad = quad.toCharArray();
 
         floorLetter = Character.toString(quad.charAt(floor - 1));
         roomLetter = Character.toString(quad.charAt(room - 1));
-        
+
         name = floorLetter + roomLetter;
         return name;
     }
