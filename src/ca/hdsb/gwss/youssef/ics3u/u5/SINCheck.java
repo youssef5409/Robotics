@@ -14,32 +14,29 @@ import java.util.Scanner;
  */
 public class SINCheck {
 
-    /**
+    /*
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         String sin;
         double total = 0;
-        int digit;
+        double digit;
 
         Scanner read = new Scanner(System.in);
         do {
-        System.out.println("Enter SIN: ");
-        sin = read.nextLine();
-        }while (sin.length() < 8);
+            System.out.println("Enter SIN: ");
+            sin = read.nextLine();
+        } while (sin.length() < 8);
 
-        for (int i = 0; i < sin.length() - 1; i++) {
-            if (i % 2 == 0) {
-                digit = Character.getNumericValue(sin.charAt(i));
-                total += digit;
-            } else {
-                digit = 2 * Character.getNumericValue(sin.charAt(i));
-                if (digit > 10) {
-                    digit = (digit - 10) + 1;
-                }
-                total += digit;
-            }
+        for (int i = 1; i < sin.length() - 1; i += 2) {
+            digit = ceil(2 * Character.getNumericValue(sin.charAt(i)) / 10)
+                    + 2 * Character.getNumericValue(sin.charAt(i)) % 10;
+            total += digit;
+            digit = ceil(Character.getNumericValue(sin.charAt(i - 1)) / 10)
+                    + Character.getNumericValue(sin.charAt(i - 1)) % 10;
+            total += digit;
         }
+
         if (ceil(total / 10) * 10 - total == Character.getNumericValue(sin.charAt(8))) {
             System.out.println("Verified.");
         } else {
@@ -47,6 +44,3 @@ public class SINCheck {
         }
     }
 }
-    
-
-//130692544
