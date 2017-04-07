@@ -5,8 +5,10 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u5;
 
+import java.util.regex.Pattern;
 import static java.lang.Math.ceil;
 import java.util.Scanner;
+import java.util.regex.Matcher;
 
 /**
  *
@@ -18,15 +20,20 @@ public class SINCheck {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String sin;
+        String sin = "";
         double total = 0;
         double digit;
-
+        boolean results = false;
         Scanner read = new Scanner(System.in);
-        do {
-            System.out.println("Enter SIN: ");
-            sin = read.nextLine();
-        } while (sin.length() < 8);
+        
+        
+
+while (!results) {
+    System.out.print("Enter SIN: ");
+        sin = read.nextLine();
+        
+        results = Pattern.matches("^(\\d{3} ?\\d{3} ?\\d{3}|XXX XXX XXX)$", sin);
+}
 
         for (int i = 1; i < sin.length() - 1; i += 2) {
             digit = ceil(2 * Character.getNumericValue(sin.charAt(i)) / 10)
@@ -44,3 +51,8 @@ public class SINCheck {
         }
     }
 }
+//sin = sin.^(\d{3}-?\d{3}-?\d{3}|XXX-XXX-XXX)$);
+//sin.repla
+
+//        Pattern rx = Pattern.compile( "^(\\d{3}-?\\d{3}-?\\d{3}|XXX-XXX-XXX)$");
+//        Matcher mx = rx.matcher(sin);
