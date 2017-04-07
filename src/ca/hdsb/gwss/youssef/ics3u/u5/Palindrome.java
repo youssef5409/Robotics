@@ -18,14 +18,14 @@ public class Palindrome {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String str = "";
+        String str;
         
         Scanner read = new Scanner(System.in);
         
         System.out.println("Enter string: ");
         
         str = read.nextLine();
-        if (str.equals(str.reverse().toString())) {
+        if (str.equals(reverse(str))) {
             System.out.println("Yes");
         }
         else {
