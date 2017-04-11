@@ -19,19 +19,12 @@ public class NumberToWords2 {
     /**
      * @param args the command line arguments
      */
+    static Scanner read = new Scanner(System.in);
     static ArrayList words = new ArrayList();
     static boolean teensNeeded = false;
 
     public static void main(String[] args) {
-        int ORIGINAL_NUMBER;
-        int number;
-        String hundreds = "";
-        String tens = "";
-        String ones;
 
-        Scanner read = new Scanner(System.in);
-        Stack numbers = new Stack();
-        
         words.add("one");
         words.add("two");
         words.add("three");
@@ -41,33 +34,27 @@ public class NumberToWords2 {
         words.add("seven");
         words.add("eight");
         words.add("nine");
+
+        int type;
+        System.out.println("How would you like for me to convert your number? ");
+        System.out.println("1 - Enter Own Number \n"
+                + "2 - Automatically Loop 1 - 999 \n");
         
-        System.out.print("Enter Number: ");
-        number = Integer.parseInt(read.nextLine());
-        ORIGINAL_NUMBER = number;
-        while (number > 0) {
-            numbers.push(number % 10);
-            number = number / 10;
+        System.out.print("Your Option: ");
+
+        type = Integer.parseInt(read.nextLine());
+
+        switch (type) {
+            case 1:
+                System.out.print("Enter Number: ");
+                process(Integer.parseInt(read.nextLine()));
+                break;
+            case 2:
+                for (int i = 1; i < 1000; i++) {
+                    process(i);
+                }
+                break;
         }
-        if (ORIGINAL_NUMBER > 99) {
-            hundreds = hundreds((int) numbers.pop());
-            tens = tens((int) numbers.pop());
-            if (!teensNeeded) {
-                ones = ones((int) numbers.pop());
-            } else {
-                ones = teens((int) numbers.pop());
-            }
-        } else if (ORIGINAL_NUMBER > 9) {
-            tens = tens((int) numbers.pop());
-            if (!teensNeeded) {
-                ones = ones((int) numbers.pop());
-            } else {
-                ones = teens((int) numbers.pop());
-            }
-        } else {
-            ones = ones((int) numbers.pop());
-        }
-        System.out.println(hundreds + tens + ones);
 
     }
 
@@ -118,7 +105,7 @@ public class NumberToWords2 {
     private static String teens(int n) {
         String word;
         if (n == 8) {
-            word = "eighteen";
+            word = "eighteen ";
         } else if (n == 5) {
             word = "fifteen ";
         } else if (n < 5) {
@@ -130,7 +117,7 @@ public class NumberToWords2 {
                     if (n < 2) {
                         word = "eleven ";
                         if (n < 1) {
-                            word = "ten";
+                            word = "ten ";
                         }
                     }
                 }
@@ -140,5 +127,44 @@ public class NumberToWords2 {
             word = words.get(n - 1) + "teen";
         }
         return word;
+    }
+
+    private static void process(int n) {
+        int ORIGINAL_NUMBER;
+        String hundreds = "";
+        String tens = "";
+        String ones;
+
+        Stack numbers = new Stack();
+        
+        numbers.empty();
+        teensNeeded = false;
+        
+        ORIGINAL_NUMBER = n;
+
+        while (n > 0) {
+            numbers.push(n % 10);
+            n = n / 10;
+        }
+        if (ORIGINAL_NUMBER > 99) {
+            hundreds = hundreds((int) numbers.pop());
+            tens = tens((int) numbers.pop());
+            if (!teensNeeded) {
+                ones = ones((int) numbers.pop());
+            } else {
+                ones = teens((int) numbers.pop());
+            }
+        } else if (ORIGINAL_NUMBER > 9) {
+            tens = tens((int) numbers.pop());
+            if (!teensNeeded) {
+                ones = ones((int) numbers.pop());
+            } else {
+                ones = teens((int) numbers.pop());
+            }
+        } else {
+            ones = ones((int) numbers.pop());
+        }
+        System.out.println(hundreds + tens + ones);
+
     }
 }
