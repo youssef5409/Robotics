@@ -64,7 +64,11 @@ public class NumberToWords2 {
             }
         } else if (ORIGINAL_NUMBER > 9) {
             tens = tens((int) numbers.pop());
-            ones = ones((int) numbers.pop());
+            if (!teensNeeded) {
+                ones = ones((int) numbers.pop());
+            } else {
+                ones = teens((int) numbers.pop());
+            }
         } else {
             ones = ones((int) numbers.pop());
         }
@@ -79,16 +83,23 @@ public class NumberToWords2 {
 
     private static String tens(int n) {
         String word;
-        if (n == 1) {
-            teensNeeded = true;
-            word = "";
-        } else {
-            if (n == 5) {
-                word = "fifty";
-            } else {
-                word = words.get(n - 1) + "ty ";
+        if (n < 6) {
+            word = "fifty";
+            if (n < 4) {
+                word = "thirty";
+                if (n < 3) {
+                    word = "twenty";
+                    if (n < 2) {
+                        word = "";
+                        teensNeeded = true;
+                    }
+                }
             }
+
+        } else {
+            word = words.get(n - 1) + "ty ";
         }
+
         return word;
     }
 
