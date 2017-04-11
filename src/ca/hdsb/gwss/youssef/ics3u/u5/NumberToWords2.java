@@ -13,13 +13,7 @@ import java.util.Stack;
  *
  * @author 1mohamedyou
  */
-
-
-
-
 //Ask muir most efficiency = IF statements vs extra array lists vs extra array list entries
-
-
 public class NumberToWords2 {
 
     /**
@@ -29,6 +23,15 @@ public class NumberToWords2 {
     static boolean teensNeeded = false;
 
     public static void main(String[] args) {
+        int ORIGINAL_NUMBER;
+        int number;
+        String hundreds = "";
+        String tens = "";
+        String ones;
+
+        Scanner read = new Scanner(System.in);
+        Stack numbers = new Stack();
+        
         words.add("one");
         words.add("two");
         words.add("three");
@@ -38,22 +41,7 @@ public class NumberToWords2 {
         words.add("seven");
         words.add("eight");
         words.add("nine");
-        words.add("ten");
-        words.add("eleven");
-        words.add("twelve");
-        words.add("thirteen");
-        words.add("twenty");
-        words.add("thirty");
-
-        final int ORIGINAL_NUMBER;
-        int number;
-        String hundreds = "";
-        String tens = "";
-        String ones;
-
-        Scanner read = new Scanner(System.in);
-        Stack numbers = new Stack();
-
+        
         System.out.print("Enter Number: ");
         number = Integer.parseInt(read.nextLine());
         ORIGINAL_NUMBER = number;
@@ -79,30 +67,43 @@ public class NumberToWords2 {
         } else {
             ones = ones((int) numbers.pop());
         }
-
         System.out.println(hundreds + tens + ones);
 
     }
 
     private static String ones(int n) {
-        return (String) words.get(n - 1);
+        String word;
+        try {
+            word = (String) words.get(n - 1);
+        } catch (Exception e) {
+            word = "";
+        }
+        return word;
     }
 
     private static String tens(int n) {
         String word;
-        if (n < 6) {
-            word = "fifty";
+        if (n == 8) {
+            word = "eighty ";
+        } else if (n == 5) {
+            word = "fifty ";
+        } else if (n < 5) {
+            word = "forty ";
             if (n < 4) {
-                word = "thirty";
+                word = "thirty ";
                 if (n < 3) {
-                    word = "twenty";
+                    word = "twenty ";
                     if (n < 2) {
                         word = "";
                         teensNeeded = true;
+                        if (n == 0) {
+                            teensNeeded = false;
+                            word = "";
+                        }
                     }
                 }
-            }
 
+            }
         } else {
             word = words.get(n - 1) + "ty ";
         }
@@ -116,16 +117,27 @@ public class NumberToWords2 {
 
     private static String teens(int n) {
         String word;
-        if (n < 4) {
-            word = "thirteen";
-            if (n < 3) {
-                word = "twelve";
-                if (n < 2) {
-                    word = "eleven";
+        if (n == 8) {
+            word = "eighteen";
+        } else if (n == 5) {
+            word = "fifteen ";
+        } else if (n < 5) {
+            word = "fourteen ";
+            if (n < 4) {
+                word = "thirteen ";
+                if (n < 3) {
+                    word = "twelve ";
+                    if (n < 2) {
+                        word = "eleven ";
+                        if (n < 1) {
+                            word = "ten";
+                        }
+                    }
                 }
             }
         } else {
-            word = words.get(n - 1) + "ty";
+
+            word = words.get(n - 1) + "teen";
         }
         return word;
     }
