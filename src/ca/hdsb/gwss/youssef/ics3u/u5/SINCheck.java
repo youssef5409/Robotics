@@ -18,17 +18,13 @@ public class SINCheck {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String sin = "";
+        String sin;
         double total = 0;
         double digit;
-        boolean results = false;
         Scanner read = new Scanner(System.in);
 
-        while (!results) {
-            System.out.print("Enter SIN: ");
-            sin = read.nextLine();
-
-        }
+        System.out.print("Enter SIN: ");
+        sin = read.nextLine();
 
         for (int i = 1; i < sin.length() - 1; i += 2) {
             digit = ceil(2 * Character.getNumericValue(sin.charAt(i)) / 10)
@@ -46,8 +42,9 @@ public class SINCheck {
         }
     }
 }
-//sin = sin.^(\d{3}-?\d{3}-?\d{3}|XXX-XXX-XXX)$);
-//sin.repla
+//For next Program involving verification of number format.
 
-//        Pattern rx = Pattern.compile( "^(\\d{3}-?\\d{3}-?\\d{3}|XXX-XXX-XXX)$");
-//        Matcher mx = rx.matcher(sin);
+//sin = sin.^(\d{3}-?\d{3}-?\d{3}|XXX-XXX-XXX)$);
+//sin.replace
+//Pattern rx = Pattern.compile( "^(\\d{3}-?\\d{3}-?\\d{3}|XXX-XXX-XXX)$");
+//Matcher mx = rx.matcher(sin);
