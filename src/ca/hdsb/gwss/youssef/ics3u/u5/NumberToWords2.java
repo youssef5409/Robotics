@@ -35,19 +35,13 @@ public class NumberToWords2 {
         words.add("eight");
         words.add("nine");
 
-        int type;
         System.out.println("How would you like for me to convert your number? ");
-        System.out.println("1 - Enter Own Number \n"
+        System.out.println("1 - Enter Own Number (Between 1 - 999) \n"
                 + "2 - Automatically Loop 1 - 999 \n");
-        
-        System.out.print("Your Option: ");
 
-        type = Integer.parseInt(read.nextLine());
-
-        switch (type) {
+        switch (getType("What would you like to do?: ")) {
             case 1:
-                System.out.print("Enter Number: ");
-                process(Integer.parseInt(read.nextLine()));
+                process(getType("Enter Number: "));
                 break;
             case 2:
                 for (int i = 1; i < 1000; i++) {
@@ -55,7 +49,6 @@ public class NumberToWords2 {
                 }
                 break;
         }
-
     }
 
     private static String ones(int n) {
@@ -136,10 +129,10 @@ public class NumberToWords2 {
         String ones;
 
         Stack numbers = new Stack();
-        
+
         numbers.empty();
         teensNeeded = false;
-        
+
         ORIGINAL_NUMBER = n;
 
         while (n > 0) {
@@ -166,5 +159,32 @@ public class NumberToWords2 {
         }
         System.out.println(hundreds + tens + ones);
 
+    }
+
+    private static int getType(String type) {
+        //Initializing variables
+        int app = 0;
+        boolean valid = false;
+        //Do while is not needed, as variable app must be declared in advance.
+        //However this is to meet criteria.
+        do {
+            try {
+                System.out.print(type);
+                app = Integer.parseInt(read.nextLine());
+                if (app < 1 || app > 999); //Stops user from entering a number smaller than one or greater than 999
+                else if (type.equals("What would you like to do?: ")) {
+                    if (app == 1 || app == 2) {
+                        valid = true;
+                    }
+                } else {
+                    valid = true;
+                }
+            } catch (NumberFormatException e) {
+            }
+            if (!valid) {
+                System.out.println("Invalid Input.");
+            }
+        } while (!valid);
+        return app;
     }
 }
