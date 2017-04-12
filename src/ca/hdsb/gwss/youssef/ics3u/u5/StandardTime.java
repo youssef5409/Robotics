@@ -9,10 +9,13 @@ package ca.hdsb.gwss.youssef.ics3u.u5;
  *
  * @author 1mohamedyou
  */
-public abstract class AbstractMethods {
-  //  AbstractMethods(){}
-    public abstract void intro();
-    public abstract void options();
-    public abstract int getApp();
+public class StandardTime {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+    }
     
 }

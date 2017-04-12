@@ -35,7 +35,7 @@ public class Unit4MainMethod {
         //a respective method
         switch (getApp()) {
             case 1:
-                //Calls and uses the closeToTwo method
+                //Calls and uses the closerToTwo method
                 closerToTwo();
                 break;
             case 2:
