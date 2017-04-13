@@ -52,8 +52,6 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
         String hh;
         String mm;
         String ampm;
-        System.out.println(regex);
-        System.out.println(time);
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(time);
         if (matcher.find()) {
@@ -66,8 +64,9 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
     }
 
     private static void traditionalToStandard(String time, String regex) {
-        System.out.println(regex);
-        System.out.println(time);
+        String hh;
+        String mm;
+        String ampm;
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(time);
         if (matcher.find()) {

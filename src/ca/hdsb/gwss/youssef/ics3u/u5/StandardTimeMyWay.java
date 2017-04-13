@@ -31,10 +31,10 @@ public class StandardTimeMyWay {
         //I made both the Standard time regex, and Traditional time regex.
         
         //Can add '?' to allow '3:59' ^([0-1]?[0-9]|2[0-3]):([0-5][0-9])$
-        final String STANDARD_REGEX = "^([0-1][0-9]|2[0-3]):([0-5][0-9])$"; 
+        final String STANDARD_REGEX = "^([0-1]?[0-9]|2[0-3]):([0-5][0-9])$"; 
         
         //Can add '?' to allow '03:59 PM' ^(1[0-2]|0?[1-9]):([0-5][0-9])(a|p)m$
-        final String TRADITIONAL_REGEX = "^(1[0-2]|0[1-9]):([0-5][0-9])(a|p)m$"; 
+        final String TRADITIONAL_REGEX = "^(1[0-2]|0?[1-9]):([0-5][0-9])(a|p)m$"; 
         
         Scanner read = new Scanner(System.in);
 
