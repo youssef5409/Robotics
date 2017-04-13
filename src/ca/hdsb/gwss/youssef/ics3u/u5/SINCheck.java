@@ -42,9 +42,3 @@ public class SINCheck {
         }
     }
 }
-//For next Program involving verification of number format.
-
-//sin = sin.^(\d{3}-?\d{3}-?\d{3}|XXX-XXX-XXX)$);
-//sin.replace
-//Pattern rx = Pattern.compile( "^(\\d{3}-?\\d{3}-?\\d{3}|XXX-XXX-XXX)$");
-//Matcher mx = rx.matcher(sin);

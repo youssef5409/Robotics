@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ca.hdsb.gwss.youssef.ics3u.u5;
+package discovering;
         import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /**
  *
  * @author Youss
  */
-public class NewMain {
+public class TestingRegex {
 
     /**
      * @param args the command line arguments
@@ -21,7 +21,7 @@ public class NewMain {
 final String regex = "^(1[0-2]|0?[1-9]):[0-5][0-9] (AM|PM)$";
 final String string = "1:05 PM";
 
-final Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+final Pattern pattern = Pattern.compile(regex);
 final Matcher matcher = pattern.matcher(string);
 
 if (matcher.find()) {

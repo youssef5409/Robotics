@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name: Youssef Mohamed
+ * Date: 2nd Apr 2017
+ * Version: 0.9
+ * Description:
  */
 package ca.hdsb.gwss.youssef.ics3u.u5;
 
@@ -13,7 +14,6 @@ import java.util.Stack;
  *
  * @author 1mohamedyou
  */
-//Ask muir most efficiency = IF statements vs extra array lists vs extra array list entries
 public class NumberToWords2 {
 
     /**
