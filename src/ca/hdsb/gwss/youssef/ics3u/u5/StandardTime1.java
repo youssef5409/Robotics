@@ -29,8 +29,8 @@ public class StandardTime1 {
         //I actually made my own regex!
         //https://regex101.com/r/zF1yS5/9 That site helps alot, it's where I made mine
         //I made both the Standard time regex, and Traditional time regex.
-        final String STANDARD_REGEX = "^[0-1][0-9]|2[0-3]:[0-5][0-9]$";
-        final String TRADITIONAL_REGEX = "^(1[0-2]|0?[1-9]):[0-5][0-9](a|p)m$";
+        final String STANDARD_REGEX = "^([0-1][0-9]|2[0-3]):([0-5][0-9])$";
+        final String TRADITIONAL_REGEX = "^(1[0-2]|0?[1-9]):([0-5][0-9])(a|p)m$";
         Scanner read = new Scanner(System.in);
 
         do {
@@ -44,9 +44,6 @@ public class StandardTime1 {
 
         } while (!standardCheck && !traditionalCheck);
 
-        System.out.println(standardCheck);
-        System.out.println(traditionalCheck);
-
         if (standardCheck) {
             standardToTraditional(time);
         } else {
@@ -58,7 +55,8 @@ public class StandardTime1 {
         SimpleDateFormat traditionalTime = new SimpleDateFormat("hh:mma");
         SimpleDateFormat standardTime = new SimpleDateFormat("HH:mm");
 
-        System.out.println(traditionalTime.format(standardTime.parse(time)));
+        System.out.println("The traditional time is: "
+                + traditionalTime.format(standardTime.parse(time)));
 
     }
 
@@ -66,7 +64,8 @@ public class StandardTime1 {
         SimpleDateFormat traditionalTime = new SimpleDateFormat("hh:mma");
         SimpleDateFormat standardTime = new SimpleDateFormat("HH:mm");
 
-        System.out.println(standardTime.format(traditionalTime.parse(time)));
+        System.out.println("The standard time is: "
+                + standardTime.format(traditionalTime.parse(time)));
 
     }
 
