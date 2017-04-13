@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  *
  * @author 1mohamedyou
  */
-public class StandardTime {
+public class StandardTimeProbablyTheWayMuirWillForceMe {
 
     /**
      * @param args the command line arguments
@@ -26,7 +26,7 @@ public class StandardTime {
         Scanner read = new Scanner(System.in);
 
         final String STANDARD_REGEX = "^([0-1][0-9]|2[0-3]):([0-5][0-9])$";
-        final String TRADITIONAL_REGEX = "^(1[0-2]|0?[1-9]):([0-5][0-9])(A|P)M$";
+        final String TRADITIONAL_REGEX = "^(1[0-2]|0[1-9]):([0-5][0-9])(A|P)M$";
 
         do {
             System.out.print("Enter Time: ");
@@ -60,8 +60,8 @@ public class StandardTime {
             System.out.println("Full match: " + matcher.group(0));
             for (int i = 1; i <= matcher.groupCount(); i++) {
                 System.out.println("Group " + i + ": " + matcher.group(i));
-
             }
+            //Take each capture and assign corresponding converted value.
         }
     }
 
@@ -70,10 +70,14 @@ public class StandardTime {
         System.out.println(time);
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(time);
-        System.out.println("Full match: " + matcher.group(0));
-
+        if (matcher.find()) {
+            System.out.println("Full match: " + matcher.group(0));
+            for (int i = 1; i <= matcher.groupCount(); i++) {
+                System.out.println("Group " + i + ": " + matcher.group(i));
+            }
+            //Take each capture and assign corresponding converted value.
+        }
     }
-
 }
 //I actually made my own regex!
 //https://regex101.com/r/zF1yS5/9 That site helps alot, it's where I made mine
