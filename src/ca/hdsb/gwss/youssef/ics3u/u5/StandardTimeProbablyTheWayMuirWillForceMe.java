@@ -6,6 +6,7 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u5;
 
+import static java.lang.Math.abs;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,15 +27,16 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
         Scanner read = new Scanner(System.in);
 
         final String STANDARD_REGEX = "^([0-1][0-9]|2[0-3]):([0-5][0-9])$";
-        final String TRADITIONAL_REGEX = "^(1[0-2]|0[1-9]):([0-5][0-9])(A|P)M$";
+        final String TRADITIONAL_REGEX = "^(1[0-2]|0?[1-9]):([0-5][0-9])(a|p)m$";
 
         do {
             System.out.print("Enter Time: ");
             time = read.nextLine();
+            time = time.toLowerCase();
             time = time.replaceAll(" ", "");
 
-            standardCheck = Pattern.matches(STANDARD_REGEX, time);
             traditionalCheck = Pattern.matches(TRADITIONAL_REGEX, time);
+            standardCheck = Pattern.matches(STANDARD_REGEX, time);
 
         } while (!standardCheck && !traditionalCheck);
 
@@ -43,41 +45,43 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
         } else {
             traditionalToStandard(time, TRADITIONAL_REGEX);
         }
-
-        System.out.println(standardCheck);
-        System.out.println(traditionalCheck);
     }
 
     private static void standardToTraditional(String time, String regex) {
         String hh;
-        String mm;
-        String ampm;
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(time);
-        if (matcher.find()) {
-            System.out.println("Full match: " + matcher.group(0));
-            for (int i = 1; i <= matcher.groupCount(); i++) {
-                System.out.println("Group " + i + ": " + matcher.group(i));
-            }
-            //Take each capture and assign corresponding converted value.
+        matcher.find(); //It won't work without this.
+
+        if (Integer.parseInt(matcher.group(1)) > 12) {
+            hh = "" + abs(Integer.parseInt(matcher.group(1)) - 12);
+            System.out.println(hh + ":" + matcher.group(2) + " PM");
+        } else {
+            hh = "" + abs(Integer.parseInt(matcher.group(1)));
+            System.out.println(hh + ":" + matcher.group(2) + " AM");
         }
+
     }
 
     private static void traditionalToStandard(String time, String regex) {
         String hh;
-        String mm;
-        String ampm;
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(time);
-        if (matcher.find()) {
-            System.out.println("Full match: " + matcher.group(0));
-            for (int i = 1; i <= matcher.groupCount(); i++) {
-                System.out.println("Group " + i + ": " + matcher.group(i));
+        matcher.find(); //Why does it need this????
+        if (matcher.group(3).equals("a")) {
+            if (Integer.parseInt(matcher.group(1)) == 12) {
+                hh = "00";
+            } else {
+                hh = "" + abs(Integer.parseInt(matcher.group(1)));
             }
-            //Take each capture and assign corresponding converted value.
+        } else {
+            if (Integer.parseInt(matcher.group(1)) == 12) {
+                hh = "12";
+            } else {
+                hh = "" + abs(Integer.parseInt(matcher.group(1)) + 12);
+            }
+
         }
+        System.out.print(hh + ":" + matcher.group(2));
     }
 }
-//I actually made my own regex!
-//https://regex101.com/r/zF1yS5/9 That site helps alot, it's where I made mine
-        //I made both the Standard time regex, and Traditional time regex.
