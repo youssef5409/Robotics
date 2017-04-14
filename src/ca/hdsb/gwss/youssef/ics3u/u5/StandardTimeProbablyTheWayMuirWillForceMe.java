@@ -17,10 +17,7 @@ import java.util.regex.Pattern;
  */
 public class StandardTimeProbablyTheWayMuirWillForceMe {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    public void convertTime() {
         String time;
         boolean standardCheck;
         boolean traditionalCheck;
@@ -60,7 +57,6 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
             hh = "" + abs(Integer.parseInt(matcher.group(1)));
             System.out.println(hh + ":" + matcher.group(2) + " AM");
         }
-
     }
 
     private static void traditionalToStandard(String time, String regex) {

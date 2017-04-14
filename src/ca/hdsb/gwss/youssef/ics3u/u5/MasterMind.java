@@ -11,11 +11,7 @@ package ca.hdsb.gwss.youssef.ics3u.u5;
  */
 public class MasterMind {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public void play() {
+
     }
-    
 }

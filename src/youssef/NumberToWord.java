@@ -4,7 +4,7 @@
  * Version: 0.9
  * Description:
  */
-package ca.hdsb.gwss.youssef.ics3u.u5;
+package youssef;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -14,7 +14,7 @@ import java.util.Stack;
  *
  * @author 1mohamedyou
  */
-public class NumberToWords2 {
+public class NumberToWord {
 
     /**
      * @param args the command line arguments
@@ -23,7 +23,7 @@ public class NumberToWords2 {
     static ArrayList words = new ArrayList();
     static boolean teensNeeded = false;
 
-    public void numberWord() {
+    public static void main(String[] args) {
 
         words.add("one");
         words.add("two");
@@ -45,14 +45,14 @@ public class NumberToWords2 {
         words.add("ten");
         words.add("eleven");
         words.add("twelve");
-        words.add("thirteen");
+        words.add("thirteen");        
         words.add("fourteen"); //Same deal with 14, 16, 17, 19. Added them here for
         words.add("fifteen");  //Less lines of code.
         words.add("sixteen");
         words.add("seventeen");
         words.add("eighteen");
         words.add("nineteen");
-
+        
         System.out.println("How would you like for me to convert your number? ");
         System.out.println("1 - Enter Own Number (Between 1 - 999) \n"
                 + "2 - Automatically Loop 1 - 999 \n");

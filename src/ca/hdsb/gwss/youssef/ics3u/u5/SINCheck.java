@@ -14,17 +14,16 @@ import java.util.Scanner;
  */
 public class SINCheck {
 
-    /*
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    public void sinChecker() {
         String sin;
         double total = 0;
         double digit;
         Scanner read = new Scanner(System.in);
-
-        System.out.print("Enter SIN: ");
+        
+        do {
+        System.out.print("Enter Canadian SIN (Must be 8 numbers in length): ");
         sin = read.nextLine();
+        } while (!(sin.length() == 9));
 
         for (int i = 1; i < sin.length() - 1; i += 2) {
             digit = ceil(2 * Character.getNumericValue(sin.charAt(i)) / 10)
