@@ -33,7 +33,7 @@ public class Unit5MainMethod {
                 //Calls and uses the Mastermind method which is originally
                 //located in MasterMind.java
                 MasterMind masterMind = new MasterMind();
-                masterMind.play();
+             //   masterMind.play();
                 break;
             case 2:
                 //Calls and uses the numberWord method which is originally
