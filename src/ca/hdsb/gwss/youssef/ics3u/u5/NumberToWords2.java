@@ -34,7 +34,25 @@ public class NumberToWords2 {
         words.add("seven");
         words.add("eight");
         words.add("nine");
-
+        words.add("twenty ");
+        words.add("thirty ");
+        words.add("forty ");
+        words.add("fifty ");
+        words.add("sixty "); //This and seventy are the only ones that follow the normal spelling
+        words.add("seventy "); //So I just decided to add them in the array list. Instead of
+        words.add("eighty ");  // doing an if statement, and then concatening "ty"
+        words.add("ninety ");
+        words.add("ten");
+        words.add("eleven");
+        words.add("twelve");
+        words.add("thirteen");        
+        words.add("fourteen"); //Same deal with 14, 16, 17, 19. Added them here for
+        words.add("fifteen");  //Less lines of code.
+        words.add("sixteen");
+        words.add("seventeen");
+        words.add("eighteen");
+        words.add("nineteen");
+        
         System.out.println("How would you like for me to convert your number? ");
         System.out.println("1 - Enter Own Number (Between 1 - 999) \n"
                 + "2 - Automatically Loop 1 - 999 \n");
@@ -63,29 +81,18 @@ public class NumberToWords2 {
 
     private static String tens(int n) {
         String word;
-        if (n == 8) {
-            word = "eighty ";
-        } else if (n == 5) {
-            word = "fifty ";
-        } else if (n < 5) {
-            word = "forty ";
-            if (n < 4) {
-                word = "thirty ";
-                if (n < 3) {
-                    word = "twenty ";
-                    if (n < 2) {
-                        word = "";
-                        teensNeeded = true;
-                        if (n == 0) {
-                            teensNeeded = false;
-                            word = "";
-                        }
-                    }
-                }
-
+        //Instead of checking if n == 1 then n == 0; I made it check if it was smaller
+        //Than 2 and then if it equals 0. This improves on efficiency.
+        if (n < 2) {
+            word = "";
+            teensNeeded = true;
+            if (n == 0) {
+                teensNeeded = false;
+                word = "";
             }
+
         } else {
-            word = words.get(n - 1) + "ty ";
+            word = (String) words.get(n + 7);
         }
 
         return word;
@@ -97,28 +104,7 @@ public class NumberToWords2 {
 
     private static String teens(int n) {
         String word;
-        if (n == 8) {
-            word = "eighteen ";
-        } else if (n == 5) {
-            word = "fifteen ";
-        } else if (n < 5) {
-            word = "fourteen ";
-            if (n < 4) {
-                word = "thirteen ";
-                if (n < 3) {
-                    word = "twelve ";
-                    if (n < 2) {
-                        word = "eleven ";
-                        if (n < 1) {
-                            word = "ten ";
-                        }
-                    }
-                }
-            }
-        } else {
-
-            word = words.get(n - 1) + "teen";
-        }
+        word = (String) words.get(n + 17);
         return word;
     }
 
