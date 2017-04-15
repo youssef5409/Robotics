@@ -23,7 +23,7 @@ public class SINCheck {
         do {
         System.out.print("Enter Canadian SIN (Must be 8 numbers in length): ");
         sin = read.nextLine();
-        } while (!(sin.length() == 9));
+        } while (sin.length() != 9);
 
         for (int i = 1; i < sin.length() - 1; i += 2) {
             digit = ceil(2 * Character.getNumericValue(sin.charAt(i)) / 10)
