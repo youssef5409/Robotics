@@ -7,7 +7,6 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u5;
 
-import youssef.MasterMind;
 import java.util.Scanner;
 
 /**
