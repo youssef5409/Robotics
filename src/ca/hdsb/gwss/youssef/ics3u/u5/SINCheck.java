@@ -15,14 +15,16 @@ import java.util.Scanner;
 public class SINCheck {
 
     public void sinChecker() {
+        //Initializing Variables
         String sin;
         double total = 0;
         double digit;
         Scanner read = new Scanner(System.in);
-        
+
         do {
-        System.out.print("Enter Canadian SIN (Must be 8 numbers in length): ");
-        sin = read.nextLine();
+            //Prompts user for input
+            System.out.print("Enter Canadian SIN (Must be 8 numbers in length): ");
+            sin = read.nextLine();
         } while (sin.length() != 9);
 
         for (int i = 1; i < sin.length() - 1; i += 2) {

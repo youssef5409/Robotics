@@ -50,9 +50,10 @@ public class MasterMind {
             for (int i = 1; i <= 5; i++) {
                 coloursPinsHave.add(pins.get(i));
             }
-            System.out.print("Enter 4 guesses separated by spaces: ");
+            System.out.print("Enter 4 guesses separated by spaces "
+                    + "(Guesses can be \"green\", \"blue\", \"red\" or \"yellow\": ");
             for (int i = 1; i <= 4; i++) {
-                guess = read.next();
+                guess = read.next().toLowerCase();
                 if (checkGuessAndSpot(pins, guess, i)) {
                     placeAndColour++;
                 }
@@ -60,7 +61,6 @@ public class MasterMind {
                     colour++;
                     coloursPinsHave.remove(guess);
                 }
-
             }
             System.out.println("You guessed " + placeAndColour + " spots and colours correctly");
             System.out.println("You guessed " + colour + " colours correctly");

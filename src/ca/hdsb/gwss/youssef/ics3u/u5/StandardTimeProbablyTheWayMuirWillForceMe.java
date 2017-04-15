@@ -18,15 +18,18 @@ import java.util.regex.Pattern;
 public class StandardTimeProbablyTheWayMuirWillForceMe {
 
     public void convertTime() {
+        //Initializing variables
         String time;
         boolean standardCheck;
         boolean traditionalCheck;
         Scanner read = new Scanner(System.in);
-
+        
+        //And Regex's!
         final String STANDARD_REGEX = "^([0-1][0-9]|2[0-3]):([0-5][0-9])$";
         final String TRADITIONAL_REGEX = "^(1[0-2]|0?[1-9]):([0-5][0-9])(a|p)m$";
 
         do {
+            //Prompts user for input, then formats it
             System.out.print("Enter Time: ");
             time = read.nextLine();
             time = time.toLowerCase();
@@ -45,16 +48,19 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
     }
 
     private static void standardToTraditional(String time, String regex) {
+        //Initialzing variables
         String hh;
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(time);
         matcher.find(); //It won't work without this.
-
+        //Checking what time was inputted, then converts.
         if (Integer.parseInt(matcher.group(1)) > 12) {
             hh = "" + abs(Integer.parseInt(matcher.group(1)) - 12);
+            //Prints converted time
             System.out.println(hh + ":" + matcher.group(2) + " PM");
         } else {
             hh = "" + abs(Integer.parseInt(matcher.group(1)));
+            //Prints converted time
             System.out.println(hh + ":" + matcher.group(2) + " AM");
         }
     }
@@ -64,6 +70,7 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(time);
         matcher.find(); //Why does it need this????
+        //Checking what time was inputted, then converts.
         if (matcher.group(3).equals("a")) {
             if (Integer.parseInt(matcher.group(1)) == 12) {
                 hh = "00";
@@ -78,6 +85,7 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
             }
 
         }
+        //Prints converted time
         System.out.print(hh + ":" + matcher.group(2));
     }
 }
