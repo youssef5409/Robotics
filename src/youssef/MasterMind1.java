@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ca.hdsb.gwss.youssef.ics3u.u5;
+package youssef;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -12,13 +13,14 @@ import java.util.Scanner;
  *
  * @author Youss
  */
-public class MasterMind2 {
+public class MasterMind1 {
 
     public static void main(String[] args) {
         int guesses;
-        String guess;
+        int guess = 0;
         int counter = 0;
         Scanner read = new Scanner(System.in);
+        
         
         HashMap<Integer, String> colours = new HashMap();
         HashMap<Integer, String> pins = new HashMap();
@@ -39,10 +41,9 @@ public class MasterMind2 {
         System.out.println(pins.get(4));
 
         System.out.print("Enter 4 guesses separated by spaces: ");
-        for (int i = 1; i <= 4; i++) {
-            guess = read.next();
-            if (pins.get(i).equals(guess)) {
-                counter++;
+        for (int i = 0; i < 4; i++) {
+            if (pins.containsValue(read.next())) {
+            counter++;
             }
         }
         System.out.println(counter);

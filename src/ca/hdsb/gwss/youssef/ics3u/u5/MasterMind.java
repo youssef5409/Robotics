@@ -15,65 +15,75 @@ import java.util.Scanner;
  */
 public class MasterMind {
 
-    public static void main(String[] args) {
-
-        ArrayList coloursPinsHave = new ArrayList();
-
-        HashMap<String, Integer> colours = new HashMap();
-
-        colours.put("blue", 1);
-        colours.put("yellow", 2);
-        colours.put("red", 3);
-        colours.put("green", 4);
-
-        int guesses;
-        int guess = 0;
-
-        int firstColour = (int) (Math.random() * 4 + 1);
-        int secondColour = (int) (Math.random() * 4 + 1);
-        int thirdColour = (int) (Math.random() * 4 + 1);
-        int fourthColour = (int) (Math.random() * 4 + 1);
-
-        coloursPinsHave.add(firstColour);
-        coloursPinsHave.add(secondColour);
-        coloursPinsHave.add(thirdColour);
-        coloursPinsHave.add(fourthColour);
-
-        Pin pin = new Pin();
-        Pin secondPin = new Pin();
-        Pin thirdPin = new Pin();
-        Pin fourthPin = new Pin();
-
-        pin.place(1);
-        secondPin.place(2);
-        thirdPin.place(3);
-        fourthPin.place(4);
-
-        pin.colour(firstColour);
-        secondPin.colour(secondColour);
-        thirdPin.colour(thirdColour);
-        fourthPin.colour(fourthColour);
+    public void play() {
+        boolean allRight = false;
+        int attempts = 0;
+        String guess;
+        int placeAndColour;
+        int colour;
 
         Scanner read = new Scanner(System.in);
-        System.out.print("Enter 4 guesses separated by spaces: ");
-        System.out.println(colours.get(read.next()));
+        ArrayList coloursPinsHave = new ArrayList();
+        HashMap<Integer, String> colours = new HashMap();
+        HashMap<Integer, String> pins = new HashMap();
 
+        colours.put(1, "blue");
+        colours.put(2, "yellow");
+        colours.put(3, "red");
+        colours.put(4, "green");
+
+        pins.put(1, colours.get((int) (Math.random() * 4 + 1)));
+        pins.put(2, colours.get((int) (Math.random() * 4 + 1)));
+        pins.put(3, colours.get((int) (Math.random() * 4 + 1)));
+        pins.put(4, colours.get((int) (Math.random() * 4 + 1)));
+
+        System.out.println(pins.get(1));
+        System.out.println(pins.get(2));
+        System.out.println(pins.get(3));
+        System.out.println(pins.get(4));
+
+        while (!allRight) {
+            placeAndColour = 0;
+            colour = 0;
+            attempts++;
+            coloursPinsHave.clear();
+            for (int i = 1; i <= 5; i++) {
+                coloursPinsHave.add(pins.get(i));
+            }
+            System.out.print("Enter 4 guesses separated by spaces: ");
+            for (int i = 1; i <= 4; i++) {
+                guess = read.next();
+                if (checkGuessAndSpot(pins, guess, i)) {
+                    placeAndColour++;
+                }
+                if (checkGuess(coloursPinsHave, guess)) {
+                    colour++;
+                    coloursPinsHave.remove(guess);
+                }
+
+            }
+            System.out.println("You guessed " + placeAndColour + " spots and colours correctly");
+            System.out.println("You guessed " + colour + " colours correctly");
+            if (placeAndColour == 4) {
+                allRight = true;
+            }
+        }
+        System.out.println("Congratulations! It took you " + attempts + " attempt(s) to win!");
     }
 
-    private static class Pin {
-
-        public int place(int place) {
-            return place;
+    private static boolean checkGuess(ArrayList coloursPinsHave, String guess) {
+        boolean goodGuess = false;
+        if (coloursPinsHave.contains(guess)) {
+            goodGuess = true;
         }
+        return goodGuess;
+    }
 
-        public int colour(int colour) {
-            return colour;
+    private static boolean checkGuessAndSpot(HashMap pins, String guess, int i) {
+        boolean goodGuess = false;
+        if (pins.get(i).equals(guess)) {
+            goodGuess = true;
         }
-
-        public boolean colourMatch(int colour, int guess) {
-            boolean match;
-            match = colour == guess;
-            return match;
-        }
+        return goodGuess;
     }
 }
