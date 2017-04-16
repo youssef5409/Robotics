@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ca.hdsb.gwss.youssef.ics3u.u5;
+package discovering;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,12 +13,9 @@ import java.util.Scanner;
  *
  * @author Youss
  */
-public class MasterMindUsingArray {
+public class MasterMind {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    public void play() {
         boolean allRight = false;
         int attempts = 0;
         String guess;
@@ -27,37 +24,37 @@ public class MasterMindUsingArray {
 
         Scanner read = new Scanner(System.in);
         ArrayList coloursPinsHave = new ArrayList();
-        ArrayList coloursArray = new ArrayList();
-        ArrayList pinsArray = new ArrayList();
+        HashMap<Integer, String> colours = new HashMap();
+        HashMap<Integer, String> pins = new HashMap();
 
-        coloursArray.add("blue");
-        coloursArray.add("yellow");
-        coloursArray.add("red");
-        coloursArray.add("green");
+        colours.put(1, "blue");
+        colours.put(2, "yellow");
+        colours.put(3, "red");
+        colours.put(4, "green");
 
-        pinsArray.add(coloursArray.get((int) (Math.random() * 4)));
-        pinsArray.add(coloursArray.get((int) (Math.random() * 4)));
-        pinsArray.add(coloursArray.get((int) (Math.random() * 4)));
-        pinsArray.add(coloursArray.get((int) (Math.random() * 4)));
+        pins.put(1, colours.get((int) (Math.random() * 4 + 1)));
+        pins.put(2, colours.get((int) (Math.random() * 4 + 1)));
+        pins.put(3, colours.get((int) (Math.random() * 4 + 1)));
+        pins.put(4, colours.get((int) (Math.random() * 4 + 1)));
 
-        System.out.println(pinsArray.get(0));
-        System.out.println(pinsArray.get(1));
-        System.out.println(pinsArray.get(2));
-        System.out.println(pinsArray.get(3));
+        System.out.println(pins.get(1));
+        System.out.println(pins.get(2));
+        System.out.println(pins.get(3));
+        System.out.println(pins.get(4));
 
         while (!allRight) {
             placeAndColour = 0;
             colour = 0;
             attempts++;
             coloursPinsHave.clear();
-            for (int i = 0; i < 4; i++) {
-                coloursPinsHave.add(pinsArray.get(i));
+            for (int i = 1; i <= 5; i++) {
+                coloursPinsHave.add(pins.get(i));
             }
             System.out.print("Enter 4 guesses separated by spaces "
                     + "(Guesses can be \"green\", \"blue\", \"red\" or \"yellow\"): ");
-            for (int i = 0; i < 4; i++) {
+            for (int i = 1; i <= 4; i++) {
                 guess = read.next().toLowerCase();
-                if (checkGuessAndSpot(pinsArray, guess, i)) {
+                if (checkGuessAndSpot(pins, guess, i)) {
                     placeAndColour++;
                 }
                 if (checkGuess(coloursPinsHave, guess)) {
@@ -82,9 +79,9 @@ public class MasterMindUsingArray {
         return goodGuess;
     }
 
-    private static boolean checkGuessAndSpot(ArrayList pinsArray, String guess, int i) {
+    private static boolean checkGuessAndSpot(HashMap pins, String guess, int i) {
         boolean goodGuess = false;
-        if (pinsArray.get(i).equals(guess)) {
+        if (pins.get(i).equals(guess)) {
             goodGuess = true;
         }
         return goodGuess;
