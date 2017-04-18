@@ -31,10 +31,10 @@ public class MasterMind {
         coloursArray.add("red");
         coloursArray.add("green");
 
-        pinsArray.add(coloursArray.get((int) (Math.random() * 4)));
-        pinsArray.add(coloursArray.get((int) (Math.random() * 4)));
-        pinsArray.add(coloursArray.get((int) (Math.random() * 4)));
-        pinsArray.add(coloursArray.get((int) (Math.random() * 4)));
+        pinsArray.add(coloursArray.get(randomWholeNumber()));
+        pinsArray.add(coloursArray.get(randomWholeNumber()));
+        pinsArray.add(coloursArray.get(randomWholeNumber()));
+        pinsArray.add(coloursArray.get(randomWholeNumber()));
 
         System.out.println(pinsArray.get(0));
         System.out.println(pinsArray.get(1));
@@ -84,5 +84,10 @@ public class MasterMind {
             goodGuess = true;
         }
         return goodGuess;
+    }
+
+    private static int randomWholeNumber() {
+        int randNum = (int) (Math.random() * 4);
+        return randNum;
     }
 }
