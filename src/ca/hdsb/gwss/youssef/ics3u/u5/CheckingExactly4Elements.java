@@ -12,13 +12,13 @@ import java.util.Scanner;
  *
  * @author Youss
  */
-public class MasterMind {
+public class CheckingExactly4Elements {
 
     public void play() {
         boolean allRight = false;
         boolean validGuess;
         int attempts = 0;
-        String guess;
+        String guess = "";
         int placeAndColour;
         int colour;
         int guessCounter;
