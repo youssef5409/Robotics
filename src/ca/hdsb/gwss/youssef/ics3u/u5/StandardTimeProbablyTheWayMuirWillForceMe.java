@@ -23,7 +23,7 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
         boolean standardCheck;
         boolean traditionalCheck;
         Scanner read = new Scanner(System.in);
-        
+
         //And Regex's!
         final String STANDARD_REGEX = "^([0-1][0-9]|2[0-3]):([0-5][0-9])$";
         final String TRADITIONAL_REGEX = "^(1[0-2]|0?[1-9]):([0-5][0-9])(a|p)m$";
@@ -31,9 +31,7 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
         do {
             //Prompts user for input, then formats it
             System.out.print("Enter Time: ");
-            time = read.nextLine();
-            time = time.toLowerCase();
-            time = time.replaceAll(" ", "");
+            time = read.nextLine().toLowerCase().replaceAll(" ", "");
 
             traditionalCheck = Pattern.matches(TRADITIONAL_REGEX, time);
             standardCheck = Pattern.matches(STANDARD_REGEX, time);
@@ -54,14 +52,22 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
         Matcher matcher = pattern.matcher(time);
         matcher.find(); //It won't work without this.
         //Checking what time was inputted, then converts.
-        if (Integer.parseInt(matcher.group(1)) > 12) {
+        if (Integer.parseInt(matcher.group(1)) == 12) {
+            hh = "12";
+            System.out.println(hh + ":" + matcher.group(2) + " PM");
+        } else if (Integer.parseInt(matcher.group(1)) > 12) {
             hh = "" + abs(Integer.parseInt(matcher.group(1)) - 12);
             //Prints converted time
             System.out.println(hh + ":" + matcher.group(2) + " PM");
         } else {
-            hh = "" + abs(Integer.parseInt(matcher.group(1)));
-            //Prints converted time
-            System.out.println(hh + ":" + matcher.group(2) + " AM");
+            if (Integer.parseInt(matcher.group(1)) == 0) {
+                hh = "12";
+                System.out.println(hh + ":" + matcher.group(2) + " AM");
+            } else {
+                hh = "" + abs(Integer.parseInt(matcher.group(1)));
+                //Prints converted time
+                System.out.println(hh + ":" + matcher.group(2) + " AM");
+            }
         }
     }
 

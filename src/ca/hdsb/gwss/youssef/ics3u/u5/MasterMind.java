@@ -7,6 +7,7 @@ package ca.hdsb.gwss.youssef.ics3u.u5;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -15,6 +16,7 @@ import java.util.Scanner;
 public class MasterMind {
 
     public void play() {
+        boolean valid = false;
         boolean allRight = false;
         int attempts = 0;
         String guess;
@@ -25,6 +27,7 @@ public class MasterMind {
         ArrayList coloursPinsHave = new ArrayList();
         ArrayList coloursArray = new ArrayList();
         ArrayList pinsArray = new ArrayList();
+        StringTokenizer guesses;
 
         coloursArray.add("blue");
         coloursArray.add("yellow");
@@ -53,8 +56,10 @@ public class MasterMind {
             System.out.println("Guesses can be \"green\", \"blue\", \"red\" "
                     + "or \"yellow\")");
             System.out.print("Any guesses after 4 guesses will be ignored: ");
+            while (!valid) {
             for (int i = 0; i < 4; i++) {
-                guess = read.next().toLowerCase();
+                guess = read.nextLine().toLowerCase();
+                guesses = new StringTokenizer(guess);
                 if (checkGuessAndSpot(pinsArray, guess, i)) {
                     placeAndColour++;
                 }
@@ -62,6 +67,8 @@ public class MasterMind {
                     colour++;
                     coloursPinsHave.remove(guess);
                 }
+            }
+            if ( )
             }
             read.nextLine();
             System.out.println("You guessed " + placeAndColour + " spots and colours correctly");
