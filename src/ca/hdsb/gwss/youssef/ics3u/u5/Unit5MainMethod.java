@@ -7,6 +7,7 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u5;
 
+import discovering.MasterMindWorkingOLD;
 import java.util.Scanner;
 
 /**
@@ -32,7 +33,7 @@ public class Unit5MainMethod {
             case 1:
                 //Calls and uses the Mastermind method which is originally
                 //located in MasterMind.java
-                MasterMind masterMind = new MasterMind();
+                MasterMindWorkingOLD masterMind = new MasterMindWorkingOLD();
                 masterMind.play();
                 break;
             case 2:

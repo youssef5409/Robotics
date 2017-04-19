@@ -7,7 +7,6 @@ package ca.hdsb.gwss.youssef.ics3u.u5;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 /**
  *
@@ -15,19 +14,19 @@ import java.util.StringTokenizer;
  */
 public class MasterMind {
 
-    public void play() {
-        boolean valid = false;
+    public static void main(String[] args) {
+        boolean valid;
         boolean allRight = false;
         int attempts = 0;
-        String guess;
         int placeAndColour;
         int colour;
+        int i;
+        String[] guessLine;
 
         Scanner read = new Scanner(System.in);
         ArrayList coloursPinsHave = new ArrayList();
         ArrayList coloursArray = new ArrayList();
         ArrayList pinsArray = new ArrayList();
-        StringTokenizer guesses;
 
         coloursArray.add("blue");
         coloursArray.add("yellow");
@@ -49,30 +48,34 @@ public class MasterMind {
             colour = 0;
             attempts++;
             coloursPinsHave.clear();
-            for (int i = 0; i < 4; i++) {
+            valid = false;
+            for (i = 0; i < 4; i++) {
                 coloursPinsHave.add(pinsArray.get(i));
             }
             System.out.println("Enter 4 guesses separated by spaces");
-            System.out.println("Guesses can be \"green\", \"blue\", \"red\" "
-                    + "or \"yellow\")");
-            System.out.print("Any guesses after 4 guesses will be ignored: ");
+            System.out.print("Guesses can be \"green\", \"blue\", \"red\" "
+                    + "or \"yellow\"): ");
             while (!valid) {
-            for (int i = 0; i < 4; i++) {
-                guess = read.nextLine().toLowerCase();
-                guesses = new StringTokenizer(guess);
-                if (checkGuessAndSpot(pinsArray, guess, i)) {
-                    placeAndColour++;
-                }
-                if (checkGuess(coloursPinsHave, guess)) {
-                    colour++;
-                    coloursPinsHave.remove(guess);
+                guessLine = read.nextLine().split(" ");
+                if (!verifyGuessLine(guessLine, coloursPinsHave)) {
+                } else {
+                    valid = true;
+                    for (i = 0; i < 4; i++) {
+
+                        if (checkGuessAndSpot(pinsArray, guessLine[i], i)) {
+                            placeAndColour++;
+                        }
+                        if (checkGuess(coloursPinsHave, guessLine[i])) {
+                            colour++;
+                            coloursPinsHave.remove(guessLine[i]);
+                        }
+                    }
                 }
             }
-            if ( )
-            }
-            read.nextLine();
-            System.out.println("You guessed " + placeAndColour + " spots and colours correctly");
-            System.out.println("You guessed " + colour + " colours correctly");
+            System.out.println("\n");
+            System.out.println("You guessed " + placeAndColour + " spot(s) and colour(s) correctly");
+            System.out.println("You guessed " + colour + " colour(s) correctly");
+            System.out.println("\n");
             if (placeAndColour == 4) {
                 allRight = true;
             }
@@ -99,5 +102,24 @@ public class MasterMind {
     private static int randomWholeNumber() {
         int randNum = (int) (Math.random() * 4);
         return randNum;
+    }
+
+    private static boolean verifyGuessLine(String[] guessLine, ArrayList coloursPinsHave) {
+        boolean verified = true;
+        if (guessLine.length != 4) {
+            System.out.print("Please enter 4 guesses at once: ");
+            verified = false;
+        } else {
+            for (int i = 0; i < 4; i++) {
+                if (!coloursPinsHave.contains(guessLine[i])) {
+                    verified = false;
+                }
+
+            }
+            if (!verified) {
+                System.out.print("Sorry, an invalid guess was entered: ");
+            }
+        }
+        return verified;
     }
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ca.hdsb.gwss.youssef.ics3u.u5;
+package discovering;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -13,7 +13,7 @@ import java.util.StringTokenizer;
  *
  * @author Youss
  */
-public class MasterMind1 {
+public class MasterMindWorkingOLD {
 
     public void play() {
         boolean valid = false;
@@ -27,6 +27,7 @@ public class MasterMind1 {
         ArrayList coloursPinsHave = new ArrayList();
         ArrayList coloursArray = new ArrayList();
         ArrayList pinsArray = new ArrayList();
+        StringTokenizer guesses;
 
         coloursArray.add("blue");
         coloursArray.add("yellow");
@@ -56,20 +57,17 @@ public class MasterMind1 {
                     + "or \"yellow\")");
             System.out.print("Any guesses after 4 guesses will be ignored: ");
             while (!valid) {
-                ArrayList<String> guesses = new ArrayList(read.nextLine().split(" "));
-                for (int i = 0; i < 4; i++) {
-                    if (checkGuessAndSpot(pinsArray, guess, i)) {
-                        placeAndColour++;
-                    }
-                    if (checkGuess(coloursPinsHave, guess)) {
-                        colour++;
-                        coloursPinsHave.remove(guess);
-                    }
+            for (int i = 0; i < 4; i++) {
+                guess = read.nextLine().toLowerCase();
+                guesses = new StringTokenizer(guess);
+                if (checkGuessAndSpot(pinsArray, guess, i)) {
+                    placeAndColour++;
                 }
-                if () {
-                    
+                if (checkGuess(coloursPinsHave, guess)) {
+                    colour++;
+                    coloursPinsHave.remove(guess);
                 }
-            }
+            
             read.nextLine();
             System.out.println("You guessed " + placeAndColour + " spots and colours correctly");
             System.out.println("You guessed " + colour + " colours correctly");
@@ -78,6 +76,8 @@ public class MasterMind1 {
             }
         }
         System.out.println("Congratulations! It took you " + attempts + " attempt(s) to win!");
+    }
+        }
     }
 
     private static boolean checkGuess(ArrayList coloursPinsHave, String guess) {
