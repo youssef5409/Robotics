@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
  */
 public class StandardTimeProbablyTheWayMuirWillForceMe {
 
-    public void convertTime() {
+    public static void convertTime() {
         //Initializing variables
         String time;
         boolean standardCheck;

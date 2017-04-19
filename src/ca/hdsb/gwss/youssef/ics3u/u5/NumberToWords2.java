@@ -23,7 +23,7 @@ public class NumberToWords2 {
     static ArrayList words = new ArrayList();
     static boolean teensNeeded = false;
 
-    public void numberWord() {
+    public static void numberWord() {
 
         words.add("one");
         words.add("two");

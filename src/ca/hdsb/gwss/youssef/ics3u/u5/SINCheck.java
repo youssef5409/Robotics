@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class SINCheck {
 
-    public void sinChecker() {
+    public static void sinChecker() {
         //Initializing Variables
         String sin;
         double total = 0;

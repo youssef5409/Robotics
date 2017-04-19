@@ -7,7 +7,6 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u5;
 
-import discovering.MasterMindWorkingOLD;
 import java.util.Scanner;
 
 /**
@@ -33,28 +32,23 @@ public class Unit5MainMethod {
             case 1:
                 //Calls and uses the Mastermind method which is originally
                 //located in MasterMind.java
-                MasterMindWorkingOLD masterMind = new MasterMindWorkingOLD();
-                masterMind.play();
+                MasterMind.play();
                 break;
             case 2:
                 //Calls and uses the numberWord method which is originally
                 //located in NumberToWords2.java
-                NumberToWords2 convertNumber = new NumberToWords2();
-                convertNumber.numberWord();
+                NumberToWords2.numberWord();
                 break;
             case 3:
                 //Calls and uses the SIN Checker method which is originally
                 //located in SINCheck.java
-                SINCheck check = new SINCheck();
-                check.sinChecker();
+                SINCheck.sinChecker();
                 break;
             case 4:
                 //Calls and uses the Convert Time method which is originally
                 //located in StandardTimeProbablyTheWayMuirWillForceMe.java
                 //How's that for a descriptive name
-                StandardTimeProbablyTheWayMuirWillForceMe convertTimeFormat
-                        = new StandardTimeProbablyTheWayMuirWillForceMe();
-                convertTimeFormat.convertTime();
+                StandardTimeProbablyTheWayMuirWillForceMe.convertTime();
                 break;
         }
     }
