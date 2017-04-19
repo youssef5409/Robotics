@@ -5,7 +5,6 @@
  */
 package youssef;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -35,10 +34,6 @@ public class MasterMind1 {
         pins.put(3, colours.get((int) (Math.random() * 4 + 1)));
         pins.put(4, colours.get((int) (Math.random() * 4 + 1)));
         
-        System.out.println(pins.get(1));
-        System.out.println(pins.get(2));
-        System.out.println(pins.get(3));
-        System.out.println(pins.get(4));
 
         System.out.print("Enter 4 guesses separated by spaces: ");
         for (int i = 0; i < 4; i++) {
