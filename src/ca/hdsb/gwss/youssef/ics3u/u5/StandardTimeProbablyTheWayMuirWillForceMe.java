@@ -95,6 +95,6 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
 
         }
         //Prints converted time
-        System.out.print(hh + ":" + matcher.group(2));
+        System.out.println(hh + ":" + matcher.group(2));
     }
 }
