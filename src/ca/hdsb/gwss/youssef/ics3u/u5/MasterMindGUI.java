@@ -6,7 +6,6 @@
 package ca.hdsb.gwss.youssef.ics3u.u5;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
@@ -443,6 +442,8 @@ public class MasterMindGUI extends javax.swing.JFrame {
         int colour;
         int i;
 
+        boolean allButtonGroup = true;
+
         //Initializing Objects
         ArrayList coloursPinsHave = new ArrayList();
         ArrayList coloursArray = new ArrayList();
@@ -477,24 +478,29 @@ public class MasterMindGUI extends javax.swing.JFrame {
             for (i = 0; i < 4; i++) {
                 coloursPinsHave.add(pinsArray.get(i));
             }
+
             if (jRadioButtonC1Red.isSelected()) {
                 guess.add("red");
             } else if (jRadioButtonC1Blue.isSelected()) {
                 guess.add("blue");
             } else if (jRadioButtonC1Green.isSelected()) {
                 guess.add("green");
-            } else {
+            } else if (jRadioButtonC1Yellow.isSelected()) {
                 guess.add("yellow");
+            } else {
+                allButtonGroup = false;
             }
 
-            if (jRadioButtonC4Red.isSelected()) {
+            if (jRadioButtonC2Red.isSelected()) {
                 guess.add("red");
-            } else if (jRadioButtonC4Blue.isSelected()) {
+            } else if (jRadioButtonC2Blue.isSelected()) {
                 guess.add("blue");
-            } else if (jRadioButtonC4Green.isSelected()) {
+            } else if (jRadioButtonC2Green.isSelected()) {
                 guess.add("green");
-            } else {
+            } else if (jRadioButtonC2Yellow.isSelected()) {
                 guess.add("yellow");
+            } else {
+                allButtonGroup = false;
             }
 
             if (jRadioButtonC3Red.isSelected()) {
@@ -503,8 +509,10 @@ public class MasterMindGUI extends javax.swing.JFrame {
                 guess.add("blue");
             } else if (jRadioButtonC3Green.isSelected()) {
                 guess.add("green");
-            } else {
+            } else if (jRadioButtonC3Yellow.isSelected()) {
                 guess.add("yellow");
+            } else {
+                allButtonGroup = false;
             }
 
             if (jRadioButtonC4Red.isSelected()) {
@@ -513,19 +521,21 @@ public class MasterMindGUI extends javax.swing.JFrame {
                 guess.add("blue");
             } else if (jRadioButtonC4Green.isSelected()) {
                 guess.add("green");
-            } else {
+            } else if (jRadioButtonC4Yellow.isSelected()) {
                 guess.add("yellow");
+            } else {
+                allButtonGroup = false;
             }
-
-            if (checkGuessAndSpot(pinsArray, guess.get(i), i)) {
-                placeAndColour++;
-                colour++;
-                coloursPinsHave.remove(guess);
-            } else if (checkGuess(coloursPinsHave, guess.get(i))) {
-                colour++;
-                coloursPinsHave.remove(guess);
+            for (i = 0; i < 4; i++) {
+                if (checkGuessAndSpot(pinsArray, guess.get(i), i)) {
+                    placeAndColour++;
+                    colour++;
+                    coloursPinsHave.remove(guess);
+                } else if (checkGuess(coloursPinsHave, guess.get(i))) {
+                    colour++;
+                    coloursPinsHave.remove(guess);
+                }
             }
-
             //Shows the user how well he guessed
             System.out.println("\n");
             System.out.println("You guessed " + placeAndColour + " spot(s) and colour(s) correctly");
