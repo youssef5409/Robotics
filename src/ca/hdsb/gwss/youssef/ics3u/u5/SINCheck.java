@@ -26,11 +26,15 @@ public class SINCheck {
             System.out.print("Enter Canadian SIN (Must be 8 numbers in length): ");
             sin = read.nextLine();
         } while (sin.length() != 9);
-
+        
+        //Instead of looping through each character this for loop jumps up 2 character
+        //At a time
         for (int i = 1; i < sin.length() - 1; i += 2) {
+            //Even numbers get processed, doubling, adding digits
             digit = ceil(2 * Character.getNumericValue(sin.charAt(i)) / 10)
                     + 2 * Character.getNumericValue(sin.charAt(i)) % 10;
             total += digit;
+            //Odd numbers get processed
             digit = ceil(Character.getNumericValue(sin.charAt(i - 1)) / 10)
                     + Character.getNumericValue(sin.charAt(i - 1)) % 10;
             total += digit;

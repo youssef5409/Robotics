@@ -35,6 +35,9 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
 
             traditionalCheck = Pattern.matches(TRADITIONAL_REGEX, time);
             standardCheck = Pattern.matches(STANDARD_REGEX, time);
+            if (!standardCheck && !traditionalCheck) {
+                System.out.println("Sorry, invalid time.");
+            }
 
         } while (!standardCheck && !traditionalCheck);
 
