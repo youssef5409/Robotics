@@ -98,7 +98,8 @@ public class NumberToWords2 {
 
         return word;
     }
-    //Method for assigning a 'hundreds' value
+    //Method for assigning a 'hundreds' value, feels forced, however criteria 
+    //requires it
     private static String hundreds(int n) {
         return words.get(n - 1) + " hundred ";
     }
