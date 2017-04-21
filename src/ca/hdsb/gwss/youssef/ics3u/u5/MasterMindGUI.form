@@ -2,9 +2,13 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroupC1">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup4">
     </Component>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup3">
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -30,7 +34,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
           </Group>
@@ -132,7 +136,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC1Red">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup4"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Red"/>
           </Properties>
@@ -143,7 +147,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC1Blue">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup4"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Blue"/>
           </Properties>
@@ -154,7 +158,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC1Green">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup4"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Green"/>
           </Properties>
@@ -165,7 +169,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC1Yellow">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup4"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Yellow"/>
           </Properties>
@@ -217,7 +221,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC4Red">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup3"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Red"/>
           </Properties>
@@ -228,7 +232,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC4Blue">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup3"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Blue"/>
           </Properties>
@@ -239,7 +243,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC4Green">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup3"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Green"/>
           </Properties>
@@ -250,7 +254,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC4Yellow">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup3"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Yellow"/>
           </Properties>
@@ -302,7 +306,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC2Red">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Red"/>
           </Properties>
@@ -313,7 +317,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC2Blue">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Blue"/>
           </Properties>
@@ -324,7 +328,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC2Green">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Green"/>
           </Properties>
@@ -335,7 +339,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC2Yellow">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Yellow"/>
           </Properties>
@@ -387,7 +391,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC3Red">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup2"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Red"/>
           </Properties>
@@ -398,7 +402,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC3Blue">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup2"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Blue"/>
           </Properties>
@@ -409,7 +413,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC3Green">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup2"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Green"/>
           </Properties>
@@ -420,7 +424,7 @@
         <Component class="javax.swing.JRadioButton" name="jRadioButtonC3Yellow">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-              <ComponentRef name="buttonGroupC1"/>
+              <ComponentRef name="buttonGroup2"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Yellow"/>
           </Properties>
