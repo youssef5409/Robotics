@@ -451,90 +451,91 @@ public class MasterMindGUI extends javax.swing.JFrame {
             spotsAndColoursCorrect.setText("");
             coloursCorrect.setText("");
             allButtonsText.setText("");
-        }
-        placeAndColour = 0;
-        colour = 0;
-        attempts++;
-        coloursPinsHave.clear();
-        guess.clear();
-        for (int i = 0; i < 4; i++) {
-            coloursPinsHave.add(pinsArray.get(i));
-        }
-
-        if (jRadioButtonC1Red.isSelected()) {
-            guess.add("red");
-        } else if (jRadioButtonC1Blue.isSelected()) {
-            guess.add("blue");
-        } else if (jRadioButtonC1Green.isSelected()) {
-            guess.add("green");
-        } else if (jRadioButtonC1Yellow.isSelected()) {
-            guess.add("yellow");
         } else {
-            allButtonGroup = false;
-        }
-
-        if (jRadioButtonC2Red.isSelected()) {
-            guess.add("red");
-        } else if (jRadioButtonC2Blue.isSelected()) {
-            guess.add("blue");
-        } else if (jRadioButtonC2Green.isSelected()) {
-            guess.add("green");
-        } else if (jRadioButtonC2Yellow.isSelected()) {
-            guess.add("yellow");
-        } else {
-            allButtonGroup = false;
-        }
-
-        if (jRadioButtonC3Red.isSelected()) {
-            guess.add("red");
-        } else if (jRadioButtonC3Blue.isSelected()) {
-            guess.add("blue");
-        } else if (jRadioButtonC3Green.isSelected()) {
-            guess.add("green");
-        } else if (jRadioButtonC3Yellow.isSelected()) {
-            guess.add("yellow");
-        } else {
-            allButtonGroup = false;
-        }
-
-        if (jRadioButtonC4Red.isSelected()) {
-            guess.add("red");
-        } else if (jRadioButtonC4Blue.isSelected()) {
-            guess.add("blue");
-        } else if (jRadioButtonC4Green.isSelected()) {
-            guess.add("green");
-        } else if (jRadioButtonC4Yellow.isSelected()) {
-            guess.add("yellow");
-        } else {
-            allButtonGroup = false;
-        }
-
-        buttonGroup1.clearSelection();
-        buttonGroup2.clearSelection();
-        buttonGroup3.clearSelection();
-        buttonGroup4.clearSelection();
-
-        if (allButtonGroup) {
+            placeAndColour = 0;
+            colour = 0;
+            attempts++;
+            coloursPinsHave.clear();
+            guess.clear();
             for (int i = 0; i < 4; i++) {
-                if (checkGuessAndSpot(pinsArray, guess.get(i), i)) {
-                    placeAndColour++;
-                }
-                if (checkGuess(coloursPinsHave, guess.get(i))) {
-                    colour++;
-                    coloursPinsHave.remove(guess.get(i));
-                }
+                coloursPinsHave.add(pinsArray.get(i));
+            }
 
+            if (jRadioButtonC1Red.isSelected()) {
+                guess.add("red");
+            } else if (jRadioButtonC1Blue.isSelected()) {
+                guess.add("blue");
+            } else if (jRadioButtonC1Green.isSelected()) {
+                guess.add("green");
+            } else if (jRadioButtonC1Yellow.isSelected()) {
+                guess.add("yellow");
+            } else {
+                allButtonGroup = false;
             }
-            //Shows the user how well he guessed
-            spotsAndColoursCorrect.setText("You guessed " + placeAndColour + " spot(s) and colour(s) correctly");
-            coloursCorrect.setText("You guessed " + colour + " colour(s) correctly");
-            if (placeAndColour == 4) {
-                //Shows the user the number of attempts it took him to guess
-                allButtonsText.setText("Congratulations! It took you " + attempts + " attempt(s) to win!");
-                mainButton.setText("New Game");
+
+            if (jRadioButtonC2Red.isSelected()) {
+                guess.add("red");
+            } else if (jRadioButtonC2Blue.isSelected()) {
+                guess.add("blue");
+            } else if (jRadioButtonC2Green.isSelected()) {
+                guess.add("green");
+            } else if (jRadioButtonC2Yellow.isSelected()) {
+                guess.add("yellow");
+            } else {
+                allButtonGroup = false;
             }
-        } else {
-            allButtonsText.setText("Sorry, You didn't select one of the guesses");
+
+            if (jRadioButtonC3Red.isSelected()) {
+                guess.add("red");
+            } else if (jRadioButtonC3Blue.isSelected()) {
+                guess.add("blue");
+            } else if (jRadioButtonC3Green.isSelected()) {
+                guess.add("green");
+            } else if (jRadioButtonC3Yellow.isSelected()) {
+                guess.add("yellow");
+            } else {
+                allButtonGroup = false;
+            }
+
+            if (jRadioButtonC4Red.isSelected()) {
+                guess.add("red");
+            } else if (jRadioButtonC4Blue.isSelected()) {
+                guess.add("blue");
+            } else if (jRadioButtonC4Green.isSelected()) {
+                guess.add("green");
+            } else if (jRadioButtonC4Yellow.isSelected()) {
+                guess.add("yellow");
+            } else {
+                allButtonGroup = false;
+            }
+
+            buttonGroup1.clearSelection();
+            buttonGroup2.clearSelection();
+            buttonGroup3.clearSelection();
+            buttonGroup4.clearSelection();
+
+            if (allButtonGroup) {
+                for (int i = 0; i < 4; i++) {
+                    if (checkGuessAndSpot(pinsArray, guess.get(i), i)) {
+                        placeAndColour++;
+                    }
+                    if (checkGuess(coloursPinsHave, guess.get(i))) {
+                        colour++;
+                        coloursPinsHave.remove(guess.get(i));
+                    }
+
+                }
+                //Shows the user how well he guessed
+                spotsAndColoursCorrect.setText("You guessed " + placeAndColour + " spot(s) and colour(s) correctly");
+                coloursCorrect.setText("You guessed " + colour + " colour(s) correctly");
+                if (placeAndColour == 4) {
+                    //Shows the user the number of attempts it took him to guess
+                    allButtonsText.setText("Congratulations! It took you " + attempts + " attempt(s) to win!");
+                    mainButton.setText("New Game");
+                }
+            } else {
+                allButtonsText.setText("Sorry, You didn't select one of the guesses");
+            }
         }
     }
 
@@ -564,11 +565,7 @@ public class MasterMindGUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_mainButtonActionPerformed
     private static void setUp() {
-        coloursArray.add("blue");
-        coloursArray.add("yellow");
-        coloursArray.add("red");
-        coloursArray.add("green");
-
+        pinsArray.clear();
         //Assinging each pin a colour
         pinsArray.add(coloursArray.get(randomWholeNumber()));
         pinsArray.add(coloursArray.get(randomWholeNumber()));
@@ -584,6 +581,10 @@ public class MasterMindGUI extends javax.swing.JFrame {
     }
 
     public static void playGUI() {
+        coloursArray.add("blue");
+        coloursArray.add("yellow");
+        coloursArray.add("red");
+        coloursArray.add("green");
         setUp();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
