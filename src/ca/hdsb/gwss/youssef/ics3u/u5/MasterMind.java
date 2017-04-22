@@ -73,7 +73,8 @@ public class MasterMind {
                         //Checking if user users guess is a correct one
                         if (checkGuessAndSpot(pinsArray, guessLine[i], i)) {
                             placeAndColour++;
-                        } if (checkGuess(coloursPinsHave, guessLine[i])) {
+                        }
+                        if (checkGuess(coloursPinsHave, guessLine[i])) {
                             colour++;
                             coloursPinsHave.remove(guessLine[i]);
                         }
