@@ -586,10 +586,7 @@ public class MasterMindGUI extends javax.swing.JFrame {
         System.out.println(pinsArray.get(3));
     }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    public static void playGUI() {
         setUp();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

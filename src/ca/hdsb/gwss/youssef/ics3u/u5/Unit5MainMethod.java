@@ -50,6 +50,11 @@ public class Unit5MainMethod {
                 //How's that for a descriptive name
                 StandardTimeProbablyTheWayMuirWillForceMe.convertTime();
                 break;
+            case 5:
+                //Calls and uses the PlayGUI method which is originally
+                //located in MasterMindGUI.java
+                MasterMindGUI.playGUI();
+                break;
         }
     }
 
@@ -68,10 +73,10 @@ public class Unit5MainMethod {
                 app = Integer.parseInt(read.nextLine());
             } catch (NumberFormatException e) {
             }
-            if (!(app > 0 && app < 5)) {
+            if (!(app > 0 && app < 6)) {
                 System.out.println("Sorry, you entered an invalid value.");
             }
-        } while (!(app > 0 && app < 5));
+        } while (!(app > 0 && app < 6));
         System.out.println("\n");
         return app;
     }
@@ -86,6 +91,7 @@ public class Unit5MainMethod {
         System.out.println("1 - Mastermind \n"
                 + "2 - Convert Numbers to Words \n"
                 + "3 - SIN Check \n"
-                + "4 - Convert Time Format \n");
+                + "4 - Convert Time Format \n"
+                + "5 - Mastermind (GUI Version) \n");
     }
 }

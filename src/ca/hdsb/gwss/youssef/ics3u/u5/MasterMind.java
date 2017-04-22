@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class MasterMind {
 
-    public static void main(String[] args) {
+    public static void play() {
         //Initialzing Variables
         boolean valid;
         boolean allRight = false;
