@@ -81,7 +81,7 @@
                   <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <EmptySpace pref="73" max="32767" attributes="0"/>
               <Component id="mainButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -443,18 +443,11 @@
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="spotsAndColoursCorrect">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="coloursCorrect">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel3"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="allButtonsText">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel4"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>

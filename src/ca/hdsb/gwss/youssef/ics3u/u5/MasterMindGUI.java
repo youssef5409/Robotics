@@ -324,11 +324,6 @@ public class MasterMindGUI extends javax.swing.JFrame {
             }
         });
 
-        spotsAndColoursCorrect.setText("jLabel2");
-
-        coloursCorrect.setText("jLabel3");
-
-        allButtonsText.setText("jLabel4");
         allButtonsText.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -375,7 +370,7 @@ public class MasterMindGUI extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addComponent(mainButton)
                 .addContainerGap())
         );
@@ -519,15 +514,14 @@ public class MasterMindGUI extends javax.swing.JFrame {
             for (int i = 0; i < 4; i++) {
                 if (checkGuessAndSpot(pinsArray, guess.get(i), i)) {
                     placeAndColour++;
-                    colour++;
                     coloursPinsHave.remove(guess.get(i));
+                    System.out.println("s" + colour);
                 } else if (checkGuess(coloursPinsHave, guess.get(i))) {
                     colour++;
                     coloursPinsHave.remove(guess.get(i));
                 }
-                System.out.println(colour);
+                
             }
-            System.out.println(coloursPinsHave);
 
             //Shows the user how well he guessed
             spotsAndColoursCorrect.setText("You guessed " + placeAndColour + " spot(s) and colour(s) correctly");
