@@ -19,9 +19,6 @@ public class MasterMindGUI extends javax.swing.JFrame {
     int attempts = 0;
     int placeAndColour;
     int colour;
-    int i;
-
-    boolean allButtonGroup = false;
 
     //Initializing Objects
     static ArrayList coloursPinsHave = new ArrayList();
@@ -46,7 +43,7 @@ public class MasterMindGUI extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jRadioButtonC1Red = new javax.swing.JRadioButton();
         jRadioButtonC1Blue = new javax.swing.JRadioButton();
@@ -67,14 +64,14 @@ public class MasterMindGUI extends javax.swing.JFrame {
         jRadioButtonC3Blue = new javax.swing.JRadioButton();
         jRadioButtonC3Green = new javax.swing.JRadioButton();
         jRadioButtonC3Yellow = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        mainButton = new javax.swing.JButton();
+        spotsAndColoursCorrect = new javax.swing.JLabel();
+        coloursCorrect = new javax.swing.JLabel();
+        allButtonsText = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("MasterMind");
+        title.setText("MasterMind");
 
         jPanel1.setBackground(new java.awt.Color(255, 20, 240));
 
@@ -320,18 +317,19 @@ public class MasterMindGUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Submit Guess");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        mainButton.setText("Submit Guess");
+        mainButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                mainButtonActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("jLabel2");
+        spotsAndColoursCorrect.setText("jLabel2");
 
-        jLabel3.setText("jLabel3");
+        coloursCorrect.setText("jLabel3");
 
-        jLabel4.setText("jLabel4");
+        allButtonsText.setText("jLabel4");
+        allButtonsText.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -339,7 +337,7 @@ public class MasterMindGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(mainButton)
                 .addGap(29, 29, 29))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,22 +353,22 @@ public class MasterMindGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(172, 172, 172)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2))))
+                            .addComponent(coloursCorrect)
+                            .addComponent(title)
+                            .addComponent(allButtonsText)
+                            .addComponent(spotsAndColoursCorrect))))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
+                .addComponent(title)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel2)
+                .addComponent(spotsAndColoursCorrect)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
+                .addComponent(coloursCorrect)
                 .addGap(28, 28, 28)
-                .addComponent(jLabel4)
+                .addComponent(allButtonsText)
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -378,7 +376,7 @@ public class MasterMindGUI extends javax.swing.JFrame {
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(mainButton)
                 .addContainerGap())
         );
 
@@ -449,91 +447,99 @@ public class MasterMindGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButtonC3YellowActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void mainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButtonActionPerformed
+        boolean allButtonGroup = true;
+
+        if (mainButton.getText().equals("New Game")) {
+            setUp();
+        }
         placeAndColour = 0;
         colour = 0;
         attempts++;
         coloursPinsHave.clear();
         guess.clear();
-        for (i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {
             coloursPinsHave.add(pinsArray.get(i));
         }
 
-        while (!allButtonGroup) {
-            if (jRadioButtonC1Red.isSelected()) {
-                guess.add("red");
-            } else if (jRadioButtonC1Blue.isSelected()) {
-                guess.add("blue");
-            } else if (jRadioButtonC1Green.isSelected()) {
-                guess.add("green");
-            } else if (jRadioButtonC1Yellow.isSelected()) {
-                guess.add("yellow");
-            } else {
-                allButtonGroup = true;
-            }
-
-            if (jRadioButtonC2Red.isSelected()) {
-                guess.add("red");
-            } else if (jRadioButtonC2Blue.isSelected()) {
-                guess.add("blue");
-            } else if (jRadioButtonC2Green.isSelected()) {
-                guess.add("green");
-            } else if (jRadioButtonC2Yellow.isSelected()) {
-                guess.add("yellow");
-            } else {
-                allButtonGroup = true;
-            }
-
-            if (jRadioButtonC3Red.isSelected()) {
-                guess.add("red");
-            } else if (jRadioButtonC3Blue.isSelected()) {
-                guess.add("blue");
-            } else if (jRadioButtonC3Green.isSelected()) {
-                guess.add("green");
-            } else if (jRadioButtonC3Yellow.isSelected()) {
-                guess.add("yellow");
-            } else {
-                allButtonGroup = true;
-            }
-
-            if (jRadioButtonC4Red.isSelected()) {
-                guess.add("red");
-            } else if (jRadioButtonC4Blue.isSelected()) {
-                guess.add("blue");
-            } else if (jRadioButtonC4Green.isSelected()) {
-                guess.add("green");
-            } else if (jRadioButtonC4Yellow.isSelected()) {
-                guess.add("yellow");
-            } else {
-                allButtonGroup = true;
-            }
-
-            buttonGroup1.clearSelection();
-            buttonGroup2.clearSelection();
-            buttonGroup3.clearSelection();
-            buttonGroup4.clearSelection();
+        if (jRadioButtonC1Red.isSelected()) {
+            guess.add("red");
+        } else if (jRadioButtonC1Blue.isSelected()) {
+            guess.add("blue");
+        } else if (jRadioButtonC1Green.isSelected()) {
+            guess.add("green");
+        } else if (jRadioButtonC1Yellow.isSelected()) {
+            guess.add("yellow");
+        } else {
+            allButtonGroup = false;
         }
 
-        allButtonGroup = false;
+        if (jRadioButtonC2Red.isSelected()) {
+            guess.add("red");
+        } else if (jRadioButtonC2Blue.isSelected()) {
+            guess.add("blue");
+        } else if (jRadioButtonC2Green.isSelected()) {
+            guess.add("green");
+        } else if (jRadioButtonC2Yellow.isSelected()) {
+            guess.add("yellow");
+        } else {
+            allButtonGroup = false;
+        }
 
-        for (i = 0; i < 4; i++) {
-            if (checkGuessAndSpot(pinsArray, guess.get(i), i)) {
-                placeAndColour++;
-                colour++;
-                coloursPinsHave.remove(guess.get(i));
-            } else if (checkGuess(coloursPinsHave, guess.get(i))) {
-                colour++;
-                coloursPinsHave.remove(guess.get(i));
+        if (jRadioButtonC3Red.isSelected()) {
+            guess.add("red");
+        } else if (jRadioButtonC3Blue.isSelected()) {
+            guess.add("blue");
+        } else if (jRadioButtonC3Green.isSelected()) {
+            guess.add("green");
+        } else if (jRadioButtonC3Yellow.isSelected()) {
+            guess.add("yellow");
+        } else {
+            allButtonGroup = false;
+        }
+
+        if (jRadioButtonC4Red.isSelected()) {
+            guess.add("red");
+        } else if (jRadioButtonC4Blue.isSelected()) {
+            guess.add("blue");
+        } else if (jRadioButtonC4Green.isSelected()) {
+            guess.add("green");
+        } else if (jRadioButtonC4Yellow.isSelected()) {
+            guess.add("yellow");
+        } else {
+            allButtonGroup = false;
+        }
+
+        buttonGroup1.clearSelection();
+        buttonGroup2.clearSelection();
+        buttonGroup3.clearSelection();
+        buttonGroup4.clearSelection();
+
+        if (allButtonGroup) {
+            for (int i = 0; i < 4; i++) {
+                if (checkGuessAndSpot(pinsArray, guess.get(i), i)) {
+                    placeAndColour++;
+                    colour++;
+                    coloursPinsHave.remove(guess.get(i));
+                } else if (checkGuess(coloursPinsHave, guess.get(i))) {
+                    colour++;
+                    coloursPinsHave.remove(guess.get(i));
+                }
+                System.out.println(colour);
             }
-        }
-        //Shows the user how well he guessed
-        jLabel2.setText("You guessed " + placeAndColour + " spot(s) and colour(s) correctly");
-        jLabel3.setText("You guessed " + colour + " colour(s) correctly");
-        if (placeAndColour == 4) {
-            //Shows the user the number of attempts it took him to guess
-            jLabel4.setText("Congratulations! It took you " + attempts + " attempt(s) to win!");
-        }
+            System.out.println(coloursPinsHave);
 
+            //Shows the user how well he guessed
+            spotsAndColoursCorrect.setText("You guessed " + placeAndColour + " spot(s) and colour(s) correctly");
+            coloursCorrect.setText("You guessed " + colour + " colour(s) correctly");
+            if (placeAndColour == 4) {
+                //Shows the user the number of attempts it took him to guess
+                allButtonsText.setText("Congratulations! It took you " + attempts + " attempt(s) to win!");
+                mainButton.setText("New Game");
+            }
+        } else {
+            allButtonsText.setText("Sorry, You didn't select one of the guesses");
+        }
     }
 
     //Method for verifying guess colour
@@ -560,12 +566,8 @@ public class MasterMindGUI extends javax.swing.JFrame {
         return randNum;
 
 
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    }//GEN-LAST:event_mainButtonActionPerformed
+    private static void setUp() {
         coloursArray.add("blue");
         coloursArray.add("yellow");
         coloursArray.add("red");
@@ -582,6 +584,13 @@ public class MasterMindGUI extends javax.swing.JFrame {
         System.out.println(pinsArray.get(1));
         System.out.println(pinsArray.get(2));
         System.out.println(pinsArray.get(3));
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        setUp();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -612,15 +621,12 @@ public class MasterMindGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel allButtonsText;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel coloursCorrect;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -641,5 +647,8 @@ public class MasterMindGUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButtonC4Green;
     private javax.swing.JRadioButton jRadioButtonC4Red;
     private javax.swing.JRadioButton jRadioButtonC4Yellow;
+    private javax.swing.JButton mainButton;
+    private javax.swing.JLabel spotsAndColoursCorrect;
+    private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }

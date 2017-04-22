@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class MasterMind {
 
-    public static void play() {
+    public static void main(String[] args) {
         //Initialzing Variables
         boolean valid;
         boolean allRight = false;
@@ -23,31 +23,31 @@ public class MasterMind {
         int colour;
         int i;
         String[] guessLine;
-        
+
         //Initializing Objects
         Scanner read = new Scanner(System.in);
         ArrayList coloursPinsHave = new ArrayList();
         ArrayList coloursArray = new ArrayList();
         ArrayList pinsArray = new ArrayList();
-        
+
         //Adding english colours to array
         coloursArray.add("blue");
         coloursArray.add("yellow");
         coloursArray.add("red");
         coloursArray.add("green");
-        
+
         //Assinging each pin a colour
         pinsArray.add(coloursArray.get(randomWholeNumber()));
         pinsArray.add(coloursArray.get(randomWholeNumber()));
         pinsArray.add(coloursArray.get(randomWholeNumber()));
         pinsArray.add(coloursArray.get(randomWholeNumber()));
-        
+
         //Printing out each pin's colour, in order.
         System.out.println(pinsArray.get(0));
         System.out.println(pinsArray.get(1));
         System.out.println(pinsArray.get(2));
         System.out.println(pinsArray.get(3));
-        
+
         //While loop that waits for the user to guess all four colours correctly
         while (!allRight) {
             //Resetting variables for more guesses
@@ -75,8 +75,7 @@ public class MasterMind {
                             placeAndColour++;
                             colour++;
                             coloursPinsHave.remove(guessLine[i]);
-                        }
-                        else if (checkGuess(coloursPinsHave, guessLine[i])) {
+                        } else if (checkGuess(coloursPinsHave, guessLine[i])) {
                             colour++;
                             coloursPinsHave.remove(guessLine[i]);
                         }
@@ -95,6 +94,7 @@ public class MasterMind {
         //Shows the user the number of attempts it took him to guess
         System.out.println("Congratulations! It took you " + attempts + " attempt(s) to win!");
     }
+
     //Method for verifying guess colour
     private static boolean checkGuess(ArrayList coloursPinsHave, String guess) {
         boolean goodGuess = false;
@@ -103,6 +103,7 @@ public class MasterMind {
         }
         return goodGuess;
     }
+
     //Method for verifying guess colour and its spot
     private static boolean checkGuessAndSpot(ArrayList pinsArray, String guess, int i) {
         boolean goodGuess = false;
@@ -111,11 +112,13 @@ public class MasterMind {
         }
         return goodGuess;
     }
+
     //Method for getting a random int, this method feels forced
     private static int randomWholeNumber() {
         int randNum = (int) (Math.random() * 4);
         return randNum;
     }
+
     //Ascertains that the user has entered a guess, that is either green, red, yellow or blue
     //Also checks for the number of guesses in the line
     private static boolean verifyGuessLine(String[] guessLine, ArrayList coloursPinsHave) {
