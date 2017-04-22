@@ -447,6 +447,10 @@ public class MasterMindGUI extends javax.swing.JFrame {
 
         if (mainButton.getText().equals("New Game")) {
             setUp();
+            mainButton.setText("Submit Guess");
+            spotsAndColoursCorrect.setText("");
+            coloursCorrect.setText("");
+            allButtonsText.setText("");
         }
         placeAndColour = 0;
         colour = 0;
@@ -514,15 +518,13 @@ public class MasterMindGUI extends javax.swing.JFrame {
             for (int i = 0; i < 4; i++) {
                 if (checkGuessAndSpot(pinsArray, guess.get(i), i)) {
                     placeAndColour++;
-                    coloursPinsHave.remove(guess.get(i));
-                    System.out.println("s" + colour);
-                } else if (checkGuess(coloursPinsHave, guess.get(i))) {
+                }
+                if (checkGuess(coloursPinsHave, guess.get(i))) {
                     colour++;
                     coloursPinsHave.remove(guess.get(i));
                 }
-                
-            }
 
+            }
             //Shows the user how well he guessed
             spotsAndColoursCorrect.setText("You guessed " + placeAndColour + " spot(s) and colour(s) correctly");
             coloursCorrect.setText("You guessed " + colour + " colour(s) correctly");
@@ -578,6 +580,7 @@ public class MasterMindGUI extends javax.swing.JFrame {
         System.out.println(pinsArray.get(1));
         System.out.println(pinsArray.get(2));
         System.out.println(pinsArray.get(3));
+
     }
 
     public static void playGUI() {
