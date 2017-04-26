@@ -89,7 +89,7 @@ public class Unit5MainMethod {
         System.out.println("Welcome to my unit 5 culminative task, I can do a multitude\n"
                 + "of things which include, counting from 1-999, playing mastermind\n"
                 + "checking for a valid SIN number, and converting standard time to traditional time\n"
-                + "and vice-versa.");
+                + "and vice-versa.\n");
     }
 
     private static void options() {
