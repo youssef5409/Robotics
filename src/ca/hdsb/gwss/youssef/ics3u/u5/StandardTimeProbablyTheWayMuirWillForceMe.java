@@ -30,7 +30,7 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
         final String TRADITIONAL_REGEX = "^(1[0-2]|0?[1-9]):([0-5][0-9])(a|p)m$";
         
         System.out.println("I can convert standard time to traditional time, and"
-                + " vice-versa");
+                + " vice-versa. \n");
         do {
             //Prompts user for input, then formats it
             System.out.print("Enter Time: ");

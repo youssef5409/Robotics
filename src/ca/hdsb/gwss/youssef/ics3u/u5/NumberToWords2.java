@@ -56,7 +56,7 @@ public class NumberToWords2 {
 
         //Allows user to choose whether they want to enter their own number, or loop through
         //1-999
-        System.out.println("I can convert numbers to words.");
+        System.out.println("I can convert numbers to words. \n");
         System.out.println("How would you like for me to convert your number? ");
         System.out.println("1 - Enter Own Number (Between 1 - 999) \n"
                 + "2 - Automatically Loop 1 - 999 \n");

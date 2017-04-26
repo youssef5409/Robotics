@@ -23,7 +23,7 @@ public class SINCheck {
         double digit;
         Scanner read = new Scanner(System.in);
 
-        System.out.println("I can verify a canadian SIN");
+        System.out.println("I can verify a canadian SIN. \n");
 
         do {
             //Prompts user for input
