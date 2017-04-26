@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name: Youssef Mohamed
+ * Date: 26th Apr 2017
+ * Version: 0.9
+ * Description:
+ *      This program can verify a canadian sin number
  */
 package ca.hdsb.gwss.youssef.ics3u.u5;
 
@@ -21,12 +23,14 @@ public class SINCheck {
         double digit;
         Scanner read = new Scanner(System.in);
 
+        System.out.println("I can verify a canadian SIN");
+
         do {
             //Prompts user for input
             System.out.print("Enter Canadian SIN (Must be 8 numbers in length): ");
             sin = read.nextLine();
         } while (sin.length() != 9);
-        
+
         //Instead of looping through each character this for loop jumps up 2 character
         //At a time
         for (int i = 1; i < sin.length() - 1; i += 2) {

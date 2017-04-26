@@ -1,8 +1,9 @@
 /*
  * Name: Youssef Mohamed
- * Date: 2nd Apr 2017
+ * Date: 26th Apr 2017
  * Version: 0.9
  * Description:
+ *      This program counts from 1 to 999.   
  */
 package ca.hdsb.gwss.youssef.ics3u.u5;
 
@@ -52,9 +53,10 @@ public class NumberToWords2 {
         words.add("seventeen");
         words.add("eighteen");
         words.add("nineteen");
-        
+
         //Allows user to choose whether they want to enter their own number, or loop through
         //1-999
+        System.out.println("I can convert numbers to words.");
         System.out.println("How would you like for me to convert your number? ");
         System.out.println("1 - Enter Own Number (Between 1 - 999) \n"
                 + "2 - Automatically Loop 1 - 999 \n");
@@ -69,6 +71,7 @@ public class NumberToWords2 {
                 break;
         }
     }
+
     //Method for assigning a 'ones' value
     private static String ones(int n) {
         String word;
@@ -79,6 +82,7 @@ public class NumberToWords2 {
         }
         return word;
     }
+
     //Method for assigning a 'tens' value
     private static String tens(int n) {
         String word;
@@ -98,17 +102,20 @@ public class NumberToWords2 {
 
         return word;
     }
+
     //Method for assigning a 'hundreds' value, feels forced, however criteria 
     //requires it
     private static String hundreds(int n) {
         return words.get(n - 1) + " hundred ";
     }
+
     //Method for assigning a 'teens' value
     private static String teens(int n) {
         String word;
         word = (String) words.get(n + 17);
         return word;
     }
+
     //Method for processing a number into a word
     private static void process(int n) {
         int ORIGINAL_NUMBER;
@@ -148,6 +155,7 @@ public class NumberToWords2 {
         System.out.println(hundreds + tens + ones);
 
     }
+
     //Getting user input, and verifying it
     private static int getType(String type) {
         //Initializing variables

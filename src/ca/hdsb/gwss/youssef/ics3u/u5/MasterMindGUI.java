@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name: Youssef Mohamed
+ * Date: 26th Apr 2017
+ * Version: 0.9
+ * Description:
+ *      Plays mastermind, but with a GUI.
  */
 package ca.hdsb.gwss.youssef.ics3u.u5;
 
@@ -70,6 +72,7 @@ public class MasterMindGUI extends javax.swing.JFrame {
         allButtonsText = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Mastermind");
 
         title.setText("MasterMind");
 
@@ -445,12 +448,13 @@ public class MasterMindGUI extends javax.swing.JFrame {
     private void mainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButtonActionPerformed
         boolean allButtonGroup = true;
 
+        spotsAndColoursCorrect.setText("");
+        coloursCorrect.setText("");
+        allButtonsText.setText("");
         if (mainButton.getText().equals("New Game")) {
             setUp();
             mainButton.setText("Submit Guess");
-            spotsAndColoursCorrect.setText("");
-            coloursCorrect.setText("");
-            allButtonsText.setText("");
+
         } else {
             placeAndColour = 0;
             colour = 0;

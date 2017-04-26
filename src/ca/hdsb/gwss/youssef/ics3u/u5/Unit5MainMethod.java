@@ -1,8 +1,11 @@
 /*
  * Name: Youssef Mohamed
- * Date: 2nd Apr 2017
+ * Date: 26th Apr 2017
  * Version: 0.9
- * Description:
+ * Description: 
+ *      This program manipulates methods that can, count from 1-999, play mastermind
+ *      check for a valid SIN number, and convert standard time to traditional time
+ *      and vice-versa.
  *      
  */
 package ca.hdsb.gwss.youssef.ics3u.u5;
@@ -83,7 +86,10 @@ public class Unit5MainMethod {
 
     private static void intro() {
         //Introductory Statement
-        System.out.println("\n");
+        System.out.println("Welcome to my unit 5 culminative task, I can do a multitude\n"
+                + "of things which include, counting from 1-999, playing mastermind\n"
+                + "checking for a valid SIN number, and converting standard time to traditional time\n"
+                + "and vice-versa.");
     }
 
     private static void options() {

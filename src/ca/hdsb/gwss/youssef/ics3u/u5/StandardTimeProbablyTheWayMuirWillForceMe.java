@@ -1,8 +1,9 @@
 /*
  * Name: Youssef Mohamed
- * Date: 2nd Apr 2017
+ * Date: 26th Apr 2017
  * Version: 0.9
  * Description:
+ *      This program converts standard time to traditional time, and vice versa.
  */
 package ca.hdsb.gwss.youssef.ics3u.u5;
 
@@ -27,7 +28,9 @@ public class StandardTimeProbablyTheWayMuirWillForceMe {
         //And Regex's!
         final String STANDARD_REGEX = "^([0-1][0-9]|2[0-3]):([0-5][0-9])$";
         final String TRADITIONAL_REGEX = "^(1[0-2]|0?[1-9]):([0-5][0-9])(a|p)m$";
-
+        
+        System.out.println("I can convert standard time to traditional time, and"
+                + " vice-versa");
         do {
             //Prompts user for input, then formats it
             System.out.print("Enter Time: ");

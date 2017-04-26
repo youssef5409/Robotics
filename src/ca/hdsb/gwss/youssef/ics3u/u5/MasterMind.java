@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Name: Youssef Mohamed
+ * Date: 26th Apr 2017
+ * Version: 0.9
+ * Description:
+ *      This program allows the user to play Mastermind.
  */
 package ca.hdsb.gwss.youssef.ics3u.u5;
 
@@ -47,6 +49,11 @@ public class MasterMind {
         System.out.println(pinsArray.get(1));
         System.out.println(pinsArray.get(2));
         System.out.println(pinsArray.get(3));
+
+        System.out.println("\nIn this game, there are four different coloured blocks\n"
+                + "(red, green, blue and yellow). The computer hides four different\n"
+                + "coloured blocks from you. You then try to guess the colours, and\n"
+                + "the order of the blocks.\n");
 
         //While loop that waits for the user to guess all four colours correctly
         while (!allRight) {
