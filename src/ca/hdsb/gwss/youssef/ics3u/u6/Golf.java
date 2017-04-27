@@ -11,6 +11,9 @@ package ca.hdsb.gwss.youssef.ics3u.u6;
  */
 public class Golf extends javax.swing.JFrame {
 
+    int holeNumber = 0;
+    String[] scores = new String[18];
+
     /**
      * Creates new form Golf
      */
@@ -27,32 +30,136 @@ public class Golf extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jLabelTitle = new javax.swing.JLabel();
+        jTextFieldScore = new javax.swing.JTextField();
+        jLabelHoleNum = new javax.swing.JLabel();
+        jButtonAddScore = new javax.swing.JButton();
+        jButtonShowScore = new javax.swing.JButton();
+        jTextFieldScores = new javax.swing.JTextField();
+        jLabelSub = new javax.swing.JLabel();
+        jLabelError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Golf Score");
 
-        jLabel1.setForeground(new java.awt.Color(0, 255, 0));
-        jLabel1.setText("Golf Scores");
+        jLabelTitle.setForeground(new java.awt.Color(0, 255, 0));
+        jLabelTitle.setText("Golf Scores");
+
+        jTextFieldScore.setText("jTextField1");
+        jTextFieldScore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldScoreActionPerformed(evt);
+            }
+        });
+
+        jLabelHoleNum.setText("Enter the score for hole #1");
+
+        jButtonAddScore.setText("jButton1");
+        jButtonAddScore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddScoreActionPerformed(evt);
+            }
+        });
+
+        jButtonShowScore.setText("jButton1");
+
+        jTextFieldScores.setEditable(false);
+        jTextFieldScores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldScoresActionPerformed(evt);
+            }
+        });
+
+        jLabelSub.setText("This program records up to 18 golf holes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(205, 205, 205)
-                .addComponent(jLabel1)
-                .addGap(205, 205, 205))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(223, 223, 223)
+                        .addComponent(jLabelTitle)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelHoleNum)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabelError))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(67, 67, 67)
+                                        .addComponent(jTextFieldScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(77, 77, 77)
+                                        .addComponent(jButtonAddScore))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButtonShowScore)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextFieldScores, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(11, 11, 11)))))
+                .addContainerGap(94, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabelSub)
+                .addGap(153, 153, 153))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 374, Short.MAX_VALUE))
+                .addComponent(jLabelTitle)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelSub)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelHoleNum)
+                    .addComponent(jButtonAddScore))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelError)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButtonShowScore)
+                                .addGap(0, 221, Short.MAX_VALUE))
+                            .addComponent(jTextFieldScores))
+                        .addContainerGap())))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonAddScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddScoreActionPerformed
+        jLabelHoleNum.setText("Enter the score for hole #" + holeNumber + 1);
+        try {
+            if (Integer.parseInt(jTextFieldScore.getText()) <= 0) {
+                jLabelError.setText("Sorry, you entered a score less than 1");
+            } else {
+
+                scores[holeNumber] = jTextFieldScore.getText();
+                holeNumber++;
+            }
+        } catch (NumberFormatException e) {
+            jTextFieldScore.setText("Sorry, Invalid Value");
+        }
+
+
+    }//GEN-LAST:event_jButtonAddScoreActionPerformed
+
+    private void jTextFieldScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldScoreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldScoreActionPerformed
+
+    private void jTextFieldScoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldScoresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldScoresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,7 +187,7 @@ public class Golf extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Golf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -90,6 +197,13 @@ public class Golf extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButtonAddScore;
+    private javax.swing.JButton jButtonShowScore;
+    private javax.swing.JLabel jLabelError;
+    private javax.swing.JLabel jLabelHoleNum;
+    private javax.swing.JLabel jLabelSub;
+    private javax.swing.JLabel jLabelTitle;
+    private javax.swing.JTextField jTextFieldScore;
+    private javax.swing.JTextField jTextFieldScores;
     // End of variables declaration//GEN-END:variables
 }
