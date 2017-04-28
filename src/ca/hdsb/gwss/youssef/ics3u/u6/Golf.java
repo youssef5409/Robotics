@@ -19,6 +19,7 @@ public class Golf extends javax.swing.JFrame {
      */
     public Golf() {
         initComponents();
+        startUp();
     }
 
     /**
@@ -85,34 +86,29 @@ public class Golf extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(223, 223, 223)
+                .addComponent(jLabelTitle)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(223, 223, 223)
-                        .addComponent(jLabelTitle)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(40, 40, 40)
+                        .addComponent(jButtonShowScore)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelError, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButtonShowScore)
-                            .addComponent(jLabelHoleNum))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelError, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)))))
-                .addGap(68, 68, 68))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabelSub)
-                        .addGap(153, 153, 153))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jTextFieldScore, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonAddScore)
-                        .addGap(37, 37, 37))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelHoleNum)
+                                .addGap(18, 29, Short.MAX_VALUE)
+                                .addComponent(jTextFieldScore, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabelSub))
+                        .addGap(35, 35, 35)
+                        .addComponent(jButtonAddScore)))
+                .addGap(37, 37, 37))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,24 +134,27 @@ public class Golf extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void startUp() {
+        jLabelSub.setText("This program records up to " + scores.length + " golf holes");
+    }
     private void jButtonAddScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddScoreActionPerformed
-
-        if (holeNumber == scores.length + 1) {
-            jButtonAddScore.setEnabled(false);
-        } else {
-            try {
-                if (Integer.parseInt(jTextFieldScore.getText()) <= 0) {
-                    jLabelError.setText("Sorry, you entered a score less than 1");
-                } else {
-                    jLabelHoleNum.setText("Enter the score for hole #" + (holeNumber + 1));
-                    scores[holeNumber - 1] = Integer.parseInt(jTextFieldScore.getText());
-                    holeNumber++;
-                }
-            } catch (NumberFormatException e) {
-                jTextFieldScore.setText("Sorry, Invalid Value");
+        try {
+            if (Integer.parseInt(jTextFieldScore.getText()) <= 0) {
+                jLabelError.setText("Sorry, you entered a score less than 1");
+            } else if (holeNumber != scores.length + 1) {
+                jLabelHoleNum.setText("Enter the score for hole #" + (holeNumber + 1));
+                scores[holeNumber - 1] = Integer.parseInt(jTextFieldScore.getText());
+                holeNumber++;
+            } else {
+                jLabelHoleNum.setText("All scores have been entered.");
+                jButtonAddScore.setEnabled(false);
             }
+        } catch (NumberFormatException e) {
+            jTextFieldScore.setText("Sorry, Invalid Value");
         }
-
+        if (!"Sorry, Invalid Value".equals(jTextFieldScore.getText())) {
+            jTextFieldScore.setText("");
+        }
     }//GEN-LAST:event_jButtonAddScoreActionPerformed
 
     private void jTextFieldScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldScoreActionPerformed
@@ -193,17 +192,10 @@ public class Golf extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Golf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Golf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Golf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Golf.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new Golf().setVisible(true);
