@@ -44,7 +44,12 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                      <Component id="jButtonShowTemps" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jButtonShowTemps" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelMin" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelMax" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelAverage" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -83,7 +88,15 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane1" min="-2" pref="232" max="-2" attributes="0"/>
-                  <Component id="jButtonShowTemps" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jButtonShowTemps" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabelMin" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabelMax" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabelAverage" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
@@ -124,7 +137,6 @@
     <Component class="javax.swing.JButton" name="jButtonShowTemps">
       <Properties>
         <Property name="text" type="java.lang.String" value="Display Temperatures"/>
-        <Property name="actionCommand" type="java.lang.String" value="Display Temperatures"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
       </Properties>
       <Events>
@@ -157,5 +169,11 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="jLabelMin">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelMax">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelAverage">
+    </Component>
   </SubComponents>
 </Form>

@@ -12,6 +12,7 @@ package ca.hdsb.gwss.youssef.ics3u.u6;
 public class TemperaturesOfTheWeek extends javax.swing.JFrame {
 
     int dayNumber = 0;
+    //Could've made a hashmap, but due to meeting criteria I had to make 2 arrays.
     int[] temperatures = new int[7];
     String[] days = {"Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
         "Sunday"};
@@ -41,6 +42,9 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
         jLabelError = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaResults = new javax.swing.JTextArea();
+        jLabelMin = new javax.swing.JLabel();
+        jLabelMax = new javax.swing.JLabel();
+        jLabelAverage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Temperatures of the Week");
@@ -70,7 +74,6 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
         });
 
         jButtonShowTemps.setText("Display Temperatures");
-        jButtonShowTemps.setActionCommand("Display Temperatures");
         jButtonShowTemps.setAutoscrolls(true);
         jButtonShowTemps.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +109,11 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
                                 .addComponent(jLabelError))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(57, 57, 57)
-                        .addComponent(jButtonShowTemps)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonShowTemps)
+                            .addComponent(jLabelMin)
+                            .addComponent(jLabelMax)
+                            .addComponent(jLabelAverage))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(37, 37, 37))
@@ -136,7 +143,14 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonShowTemps))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonShowTemps)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelMin)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelMax)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelAverage)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -173,8 +187,10 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
         for (int i = 1; i < dayNumber; i++) {
             jTextAreaResults.setText(jTextAreaResults.getText()
                     + (days[i] + ": " + temperatures[i] + "\n"));
-
         }
+        jLabelAverage.setText("Avg. Temp: " + Integer.toString(IntArrayUtils.averageValue(temperatures)));
+        jLabelMin.setText("Min. Temp: " + Integer.toString(IntArrayUtils.minValue(temperatures)));
+        jLabelMax.setText("Max. Temp: " + Integer.toString(IntArrayUtils.maxValue(temperatures)));
         jButtonShowTemps.setEnabled(false);
         jButtonAddTemperature.setEnabled(false);
     }//GEN-LAST:event_jButtonShowTempsActionPerformed
@@ -184,10 +200,7 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
         jTextFieldScore.setText("");
     }//GEN-LAST:event_jTextFieldScoreMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    public static void temperaturesOfTheWeek() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -213,8 +226,11 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAddTemperature;
     private javax.swing.JButton jButtonShowTemps;
+    private javax.swing.JLabel jLabelAverage;
     private javax.swing.JLabel jLabelDayNum;
     private javax.swing.JLabel jLabelError;
+    private javax.swing.JLabel jLabelMax;
+    private javax.swing.JLabel jLabelMin;
     private javax.swing.JLabel jLabelSub;
     private javax.swing.JLabel jLabelTitle;
     private javax.swing.JScrollPane jScrollPane1;
