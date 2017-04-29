@@ -40,6 +40,10 @@ public class Golf extends javax.swing.JFrame {
         jLabelError = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaResults = new javax.swing.JTextArea();
+        jLabelTotal = new javax.swing.JLabel();
+        jLabelMin = new javax.swing.JLabel();
+        jLabelMax = new javax.swing.JLabel();
+        jLabelAverage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Golf Score");
@@ -93,7 +97,12 @@ public class Golf extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jButtonShowScore)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonShowScore)
+                            .addComponent(jLabelTotal)
+                            .addComponent(jLabelMin)
+                            .addComponent(jLabelMax)
+                            .addComponent(jLabelAverage))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelError, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -127,7 +136,16 @@ public class Golf extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonShowScore))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonShowScore)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelTotal)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelMin)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelMax)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelAverage)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -166,6 +184,10 @@ public class Golf extends javax.swing.JFrame {
             jTextAreaResults.setText(jTextAreaResults.getText() + ("Hole #" + i + ": " + scores[i - 1] + "\n"));
 
         }
+        jLabelTotal.setText("Total. score: " + Integer.toString(IntArrayUtils.totalValue(scores)));
+        jLabelAverage.setText("Avg. score: " + Integer.toString(IntArrayUtils.averageValue(scores)));
+        jLabelMin.setText("Min. score: " + Integer.toString(IntArrayUtils.minValue(scores)));
+        jLabelMax.setText("Max. score: " + Integer.toString(IntArrayUtils.maxValue(scores)));
         jButtonShowScore.setEnabled(false);
         jButtonAddScore.setEnabled(false);
     }//GEN-LAST:event_jButtonShowScoreActionPerformed
@@ -201,10 +223,14 @@ public class Golf extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAddScore;
     private javax.swing.JButton jButtonShowScore;
+    private javax.swing.JLabel jLabelAverage;
     private javax.swing.JLabel jLabelError;
     private javax.swing.JLabel jLabelHoleNum;
+    private javax.swing.JLabel jLabelMax;
+    private javax.swing.JLabel jLabelMin;
     private javax.swing.JLabel jLabelSub;
     private javax.swing.JLabel jLabelTitle;
+    private javax.swing.JLabel jLabelTotal;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaResults;
     private javax.swing.JTextField jTextFieldScore;
