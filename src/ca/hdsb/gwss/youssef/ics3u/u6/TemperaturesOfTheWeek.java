@@ -11,16 +11,16 @@ package ca.hdsb.gwss.youssef.ics3u.u6;
  */
 public class TemperaturesOfTheWeek extends javax.swing.JFrame {
 
-    int dayNumber = 1;
+    int dayNumber = 0;
     int[] temperatures = new int[7];
-    String[] days = new String[7];
+    String[] days = {"Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
+        "Sunday"};
 
     /**
-     * Creates new form Golf
+     * Creates new form TemperaturesOfTheWeek
      */
     public TemperaturesOfTheWeek() {
         initComponents();
-        startUp();
     }
 
     /**
@@ -35,7 +35,7 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
         jLabelTitle = new javax.swing.JLabel();
         jTextFieldScore = new javax.swing.JTextField();
         jLabelDayNum = new javax.swing.JLabel();
-        jButtonAddScore = new javax.swing.JButton();
+        jButtonAddTemperature = new javax.swing.JButton();
         jButtonShowTemps = new javax.swing.JButton();
         jLabelSub = new javax.swing.JLabel();
         jLabelError = new javax.swing.JLabel();
@@ -45,7 +45,8 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Temperatures of the Week");
 
-        jLabelTitle.setForeground(new java.awt.Color(0, 255, 0));
+        jLabelTitle.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        jLabelTitle.setForeground(new java.awt.Color(255, 0, 0));
         jLabelTitle.setText("Temperatures in the Week");
 
         jTextFieldScore.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -59,12 +60,12 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
             }
         });
 
-        jLabelDayNum.setText("Enter the score for hole #1");
+        jLabelDayNum.setText("Enter the temperature for Monday");
 
-        jButtonAddScore.setText("Add Temperature");
-        jButtonAddScore.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAddTemperature.setText("Add Temperature");
+        jButtonAddTemperature.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAddScoreActionPerformed(evt);
+                jButtonAddTemperatureActionPerformed(evt);
             }
         });
 
@@ -77,6 +78,7 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
             }
         });
 
+        jLabelSub.setForeground(new java.awt.Color(0, 0, 255));
         jLabelSub.setText("This program records the maximum temperatures in the days of the week (Celsius)");
 
         jTextAreaResults.setEditable(false);
@@ -88,32 +90,35 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
+                        .addContainerGap(49, Short.MAX_VALUE)
+                        .addComponent(jLabelDayNum)
+                        .addGap(67, 67, 67)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextFieldScore, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonAddTemperature))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(169, 169, 169)
+                                .addComponent(jLabelError))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
                         .addComponent(jButtonShowTemps)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelError, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabelDayNum)
-                        .addGap(18, 55, Short.MAX_VALUE)
-                        .addComponent(jTextFieldScore, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(jButtonAddScore)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(37, 37, 37))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(223, 223, 223)
+                        .addGap(178, 178, 178)
                         .addComponent(jLabelTitle))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
+                        .addGap(99, 99, 99)
                         .addComponent(jLabelSub)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,45 +126,35 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
                 .addComponent(jLabelTitle)
                 .addGap(18, 18, 18)
                 .addComponent(jLabelSub)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonAddScore, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabelDayNum)
-                        .addComponent(jTextFieldScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelDayNum)
+                    .addComponent(jTextFieldScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonAddTemperature))
+                .addGap(12, 12, 12)
                 .addComponent(jLabelError)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonShowTemps))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void startUp() {
-        days[0] = "Monday";
-        days[1] = "Tuesday";
-        days[2] = "Wednesday";
-        days[3] = "Thursday";
-        days[4] = "Friday";
-        days[5] = "Saturday";
-        days[6] = "Sunday";
-    }
-    private void jButtonAddScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddScoreActionPerformed
+    private void jButtonAddTemperatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddTemperatureActionPerformed
         try {
             if (Integer.parseInt(jTextFieldScore.getText()) <= -273.15) {
                 jLabelError.setText("You entered a temperature less than or equal to"
                         + "0 kelvin. This not possible on earth yet alone the universe.");
-            } else if (dayNumber != temperatures.length + 1) {
-                jLabelDayNum.setText("Enter the score for hole #" + (dayNumber + 1));
-                temperatures[dayNumber - 1] = Integer.parseInt(jTextFieldScore.getText());
+            } else if (dayNumber != temperatures.length - 1) {
+                jLabelDayNum.setText("Enter the temperature for " + days[dayNumber]);
+                temperatures[dayNumber] = Integer.parseInt(jTextFieldScore.getText());
                 dayNumber++;
             } else {
-                jLabelDayNum.setText("All scores have been entered.");
-                jButtonAddScore.setEnabled(false);
+                jLabelDayNum.setText("All temperatures have been entered.");
+                jButtonAddTemperature.setEnabled(false);
             }
         } catch (NumberFormatException e) {
             jTextFieldScore.setText("Sorry, Invalid Value");
@@ -167,21 +162,21 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
         if (!"Sorry, Invalid Value".equals(jTextFieldScore.getText())) {
             jTextFieldScore.setText("");
         }
-    }//GEN-LAST:event_jButtonAddScoreActionPerformed
+    }//GEN-LAST:event_jButtonAddTemperatureActionPerformed
 
     private void jTextFieldScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldScoreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldScoreActionPerformed
 
     private void jButtonShowTempsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowTempsActionPerformed
-        for (int i = 1; i < temperatures.length + 1; i++) {
-            if (temperatures[i - 1] != 0) {
-                jTextAreaResults.setText(jTextAreaResults.getText() +
-                        ("Hole #" + i + ": " + temperatures[i - 1] + "\n"));
-            }
+        jTextAreaResults.setText("Monday: " + temperatures[0] + "\n");
+        for (int i = 1; i < dayNumber; i++) {
+            jTextAreaResults.setText(jTextAreaResults.getText()
+                    + (days[i] + ": " + temperatures[i] + "\n"));
+
         }
         jButtonShowTemps.setEnabled(false);
-        jButtonAddScore.setEnabled(false);
+        jButtonAddTemperature.setEnabled(false);
     }//GEN-LAST:event_jButtonShowTempsActionPerformed
 
     private void jTextFieldScoreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldScoreMouseClicked
@@ -216,7 +211,7 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAddScore;
+    private javax.swing.JButton jButtonAddTemperature;
     private javax.swing.JButton jButtonShowTemps;
     private javax.swing.JLabel jLabelDayNum;
     private javax.swing.JLabel jLabelError;

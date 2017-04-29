@@ -162,10 +162,9 @@ public class Golf extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldScoreActionPerformed
 
     private void jButtonShowScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowScoreActionPerformed
-        for (int i = 1; i < scores.length + 1; i++) {
-            if (scores[i - 1] != 0) {
-                jTextAreaResults.setText(jTextAreaResults.getText() + ("Hole #" + i + ": " + scores[i - 1] + "\n"));
-            }
+        for (int i = 1; i < holeNumber; i++) {
+            jTextAreaResults.setText(jTextAreaResults.getText() + ("Hole #" + i + ": " + scores[i - 1] + "\n"));
+
         }
         jButtonShowScore.setEnabled(false);
         jButtonAddScore.setEnabled(false);
