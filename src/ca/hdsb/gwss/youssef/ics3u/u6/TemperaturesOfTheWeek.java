@@ -7,15 +7,20 @@ package ca.hdsb.gwss.youssef.ics3u.u6;
 
 /**
  *
- * @author Youss
+ * @author 1mohamedyou
  */
 public class TemperaturesOfTheWeek extends javax.swing.JFrame {
 
+    int dayNumber = 1;
+    int[] temperatures = new int[7];
+    String[] days = new String[7];
+
     /**
-     * Creates new form TemperaturesOfTheWeek
+     * Creates new form Golf
      */
     public TemperaturesOfTheWeek() {
         initComponents();
+        startUp();
     }
 
     /**
@@ -27,21 +32,162 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelTitle = new javax.swing.JLabel();
+        jTextFieldScore = new javax.swing.JTextField();
+        jLabelDayNum = new javax.swing.JLabel();
+        jButtonAddScore = new javax.swing.JButton();
+        jButtonShowTemps = new javax.swing.JButton();
+        jLabelSub = new javax.swing.JLabel();
+        jLabelError = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextAreaResults = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Temperatures of the Week");
+
+        jLabelTitle.setForeground(new java.awt.Color(0, 255, 0));
+        jLabelTitle.setText("Temperatures in the Week");
+
+        jTextFieldScore.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextFieldScoreMouseClicked(evt);
+            }
+        });
+        jTextFieldScore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldScoreActionPerformed(evt);
+            }
+        });
+
+        jLabelDayNum.setText("Enter the score for hole #1");
+
+        jButtonAddScore.setText("Add Temperature");
+        jButtonAddScore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAddScoreActionPerformed(evt);
+            }
+        });
+
+        jButtonShowTemps.setText("Display Temperatures");
+        jButtonShowTemps.setActionCommand("Display Temperatures");
+        jButtonShowTemps.setAutoscrolls(true);
+        jButtonShowTemps.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonShowTempsActionPerformed(evt);
+            }
+        });
+
+        jLabelSub.setText("This program records the maximum temperatures in the days of the week (Celsius)");
+
+        jTextAreaResults.setEditable(false);
+        jTextAreaResults.setColumns(20);
+        jTextAreaResults.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaResults);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jButtonShowTemps)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelError, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabelDayNum)
+                        .addGap(18, 55, Short.MAX_VALUE)
+                        .addComponent(jTextFieldScore, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(jButtonAddScore)))
+                .addGap(37, 37, 37))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(223, 223, 223)
+                        .addComponent(jLabelTitle))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(jLabelSub)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabelTitle)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelSub)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonAddScore, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabelDayNum)
+                        .addComponent(jTextFieldScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelError)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonShowTemps))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void startUp() {
+        days[0] = "Monday";
+        days[1] = "Tuesday";
+        days[2] = "Wednesday";
+        days[3] = "Thursday";
+        days[4] = "Friday";
+        days[5] = "Saturday";
+        days[6] = "Sunday";
+    }
+    private void jButtonAddScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddScoreActionPerformed
+        try {
+            if (Integer.parseInt(jTextFieldScore.getText()) <= -273.15) {
+                jLabelError.setText("You entered a temperature less than or equal to"
+                        + "0 kelvin. This not possible on earth yet alone the universe.");
+            } else if (dayNumber != temperatures.length + 1) {
+                jLabelDayNum.setText("Enter the score for hole #" + (dayNumber + 1));
+                temperatures[dayNumber - 1] = Integer.parseInt(jTextFieldScore.getText());
+                dayNumber++;
+            } else {
+                jLabelDayNum.setText("All scores have been entered.");
+                jButtonAddScore.setEnabled(false);
+            }
+        } catch (NumberFormatException e) {
+            jTextFieldScore.setText("Sorry, Invalid Value");
+        }
+        if (!"Sorry, Invalid Value".equals(jTextFieldScore.getText())) {
+            jTextFieldScore.setText("");
+        }
+    }//GEN-LAST:event_jButtonAddScoreActionPerformed
+
+    private void jTextFieldScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldScoreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldScoreActionPerformed
+
+    private void jButtonShowTempsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowTempsActionPerformed
+        for (int i = 1; i < temperatures.length + 1; i++) {
+            if (temperatures[i - 1] != 0) {
+                jTextAreaResults.setText(jTextAreaResults.getText() +
+                        ("Hole #" + i + ": " + temperatures[i - 1] + "\n"));
+            }
+        }
+        jButtonShowTemps.setEnabled(false);
+        jButtonAddScore.setEnabled(false);
+    }//GEN-LAST:event_jButtonShowTempsActionPerformed
+
+    private void jTextFieldScoreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldScoreMouseClicked
+        // TODO add your handling code here:
+        jTextFieldScore.setText("");
+    }//GEN-LAST:event_jTextFieldScoreMouseClicked
 
     /**
      * @param args the command line arguments
@@ -59,25 +205,25 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TemperaturesOfTheWeek.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TemperaturesOfTheWeek.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TemperaturesOfTheWeek.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TemperaturesOfTheWeek.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TemperaturesOfTheWeek().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new TemperaturesOfTheWeek().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAddScore;
+    private javax.swing.JButton jButtonShowTemps;
+    private javax.swing.JLabel jLabelDayNum;
+    private javax.swing.JLabel jLabelError;
+    private javax.swing.JLabel jLabelSub;
+    private javax.swing.JLabel jLabelTitle;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextAreaResults;
+    private javax.swing.JTextField jTextFieldScore;
     // End of variables declaration//GEN-END:variables
 }
