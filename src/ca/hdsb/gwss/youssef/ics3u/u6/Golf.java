@@ -153,19 +153,21 @@ public class Golf extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void startUp() {
-        jLabelSub.setText("This program records up to " + scores.length + " golf holes");
+        jLabelSub.setText("This program records " + scores.length + " golf holes");
+        jButtonShowScore.setEnabled(false);
     }
     private void jButtonAddScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddScoreActionPerformed
         try {
             if (Integer.parseInt(jTextFieldScore.getText()) <= 0) {
                 jLabelError.setText("Sorry, you entered a score less than 1");
-            } else if (holeNumber <= scores.length) {
-                jLabelHoleNum.setText("Enter the score for hole #" + (holeNumber + 1));
+            } else if (holeNumber < scores.length) {
                 scores[holeNumber - 1] = Integer.parseInt(jTextFieldScore.getText());
-                holeNumber++;
+                jLabelHoleNum.setText("Enter the score for hole #" + (++holeNumber));
             } else {
+                scores[holeNumber - 1] = Integer.parseInt(jTextFieldScore.getText());
                 jLabelHoleNum.setText("All scores have been entered.");
                 jButtonAddScore.setEnabled(false);
+                jButtonShowScore.setEnabled(true);
             }
         } catch (NumberFormatException e) {
             jTextFieldScore.setText("Sorry, Invalid Value");
@@ -180,16 +182,14 @@ public class Golf extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldScoreActionPerformed
 
     private void jButtonShowScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowScoreActionPerformed
-        for (int i = 1; i < holeNumber; i++) {
+        for (int i = 1; i <= scores.length; i++) {
             jTextAreaResults.setText(jTextAreaResults.getText() + ("Hole #" + i + ": " + scores[i - 1] + "\n"));
-
         }
         jLabelTotal.setText("Total. score: " + Integer.toString(ArrayUtils.totalValue(scores)));
         jLabelAverage.setText("Avg. score: " + Double.toString(ArrayUtils.averageValue(scores)));
         jLabelMin.setText("Min. score: " + Integer.toString(ArrayUtils.minValue(scores)));
         jLabelMax.setText("Max. score: " + Integer.toString(ArrayUtils.maxValue(scores)));
         jButtonShowScore.setEnabled(false);
-        jButtonAddScore.setEnabled(false);
     }//GEN-LAST:event_jButtonShowScoreActionPerformed
 
     private void jTextFieldScoreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldScoreMouseClicked

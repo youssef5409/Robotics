@@ -22,6 +22,7 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
      */
     public TemperaturesOfTheWeek() {
         initComponents();
+        startUp();
     }
 
     /**
@@ -156,7 +157,9 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void startUp() {
+        jButtonShowTemps.setEnabled(false);
+    }
     private void jButtonAddTemperatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddTemperatureActionPerformed
         try {
             //Im leaving extremely hot temperatures open because, what if they're
@@ -171,6 +174,7 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
             } else {
                 jLabelDayNum.setText("All temperatures have been entered.");
                 jButtonAddTemperature.setEnabled(false);
+                jButtonShowTemps.setEnabled(true);
             }
         } catch (NumberFormatException e) {
             jTextFieldScore.setText("Sorry, Invalid Value");
@@ -187,7 +191,7 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
 
     private void jButtonShowTempsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonShowTempsActionPerformed
         jTextAreaResults.setText("Monday: " + temperatures[0] + "\n");
-        for (int i = 1; i < dayNumber; i++) {
+        for (int i = 0; i < days.length; i++) {
             jTextAreaResults.setText(jTextAreaResults.getText()
                     + (days[i] + ": " + temperatures[i] + "\n"));
         }
@@ -195,7 +199,6 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
         jLabelMin.setText("Min. Temp: " + Double.toString(ArrayUtils.minValue(temperatures)));
         jLabelMax.setText("Max. Temp: " + Double.toString(ArrayUtils.maxValue(temperatures)));
         jButtonShowTemps.setEnabled(false);
-        jButtonAddTemperature.setEnabled(false);
     }//GEN-LAST:event_jButtonShowTempsActionPerformed
 
     private void jTextFieldScoreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldScoreMouseClicked
