@@ -69,8 +69,8 @@ public class Unit6MainMethod {
     private static void intro() {
         //Introductory Statement
         System.out.println("Welcome to my unit 6 culminative task, I can do only\n"
-                +"two things this time, manage golf scores, and manage the\n"
-                +"temperatures of the week. However, they are both in GUI Form!\n");
+                + "two things this time, manage golf scores, and manage the\n"
+                + "temperatures of the week. However, they are both in GUI Form!\n");
     }
 
     private static void options() {

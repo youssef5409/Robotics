@@ -171,6 +171,7 @@ public class Golf extends javax.swing.JFrame {
             }
         } catch (NumberFormatException e) {
             jTextFieldScore.setText("Sorry, Invalid Value");
+            System.err.println("User has attempted an invalid value. " + e);
         }
         if (!"Sorry, Invalid Value".equals(jTextFieldScore.getText())) {
             jTextFieldScore.setText("");

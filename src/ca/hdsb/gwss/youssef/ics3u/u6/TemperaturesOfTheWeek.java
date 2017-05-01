@@ -164,7 +164,7 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
         try {
             //Im leaving extremely hot temperatures open because, what if they're
             //measuring the temperature at the core of the earth? You wouldn't know.
-            if (Integer.parseInt(jTextFieldScore.getText()) <= -273.15) {
+            if (Double.parseDouble(jTextFieldScore.getText()) <= -273.15) {
                 jLabelError.setText("You entered a temperature less than or equal to"
                         + "0 kelvin. This not possible on earth yet alone the universe.");
             } else if (dayNumber != temperatures.length - 1) {
@@ -178,7 +178,7 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
             }
         } catch (NumberFormatException e) {
             jTextFieldScore.setText("Sorry, Invalid Value");
-            System.err.println("User has attempted an invalid value.");
+            System.err.println("User has attempted an invalid value. " + e);
         }
         if (!"Sorry, Invalid Value".equals(jTextFieldScore.getText())) {
             jTextFieldScore.setText("");
