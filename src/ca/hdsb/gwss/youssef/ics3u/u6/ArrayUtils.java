@@ -31,8 +31,8 @@ public class ArrayUtils {
         return minimum;
     }
 
-    public static int averageValue(int myArray[]) {
-        int total = 0;
+    public static double averageValue(int myArray[]) {
+        double total = 0;
         for (int i = 0; i < myArray.length; i++) {
             total += myArray[i];
         }

@@ -159,6 +159,8 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
 
     private void jButtonAddTemperatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddTemperatureActionPerformed
         try {
+            //Im leaving extremely hot temperatures open because, what if they're
+            //measuring the temperature at the core of the earth? You wouldn't know.
             if (Integer.parseInt(jTextFieldScore.getText()) <= -273.15) {
                 jLabelError.setText("You entered a temperature less than or equal to"
                         + "0 kelvin. This not possible on earth yet alone the universe.");
