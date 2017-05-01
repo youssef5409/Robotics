@@ -184,10 +184,10 @@ public class Golf extends javax.swing.JFrame {
             jTextAreaResults.setText(jTextAreaResults.getText() + ("Hole #" + i + ": " + scores[i - 1] + "\n"));
 
         }
-        jLabelTotal.setText("Total. score: " + Integer.toString(IntArrayUtils.totalValue(scores)));
-        jLabelAverage.setText("Avg. score: " + Integer.toString(IntArrayUtils.averageValue(scores)));
-        jLabelMin.setText("Min. score: " + Integer.toString(IntArrayUtils.minValue(scores)));
-        jLabelMax.setText("Max. score: " + Integer.toString(IntArrayUtils.maxValue(scores)));
+        jLabelTotal.setText("Total. score: " + Integer.toString(ArrayUtils.totalValue(scores)));
+        jLabelAverage.setText("Avg. score: " + Integer.toString(ArrayUtils.averageValue(scores)));
+        jLabelMin.setText("Min. score: " + Integer.toString(ArrayUtils.minValue(scores)));
+        jLabelMax.setText("Max. score: " + Integer.toString(ArrayUtils.maxValue(scores)));
         jButtonShowScore.setEnabled(false);
         jButtonAddScore.setEnabled(false);
     }//GEN-LAST:event_jButtonShowScoreActionPerformed

@@ -13,7 +13,7 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
 
     int dayNumber = 0;
     //Could've made a hashmap, but due to meeting criteria I had to make 2 arrays.
-    int[] temperatures = new int[7];
+    double[] temperatures = new double[7];
     String[] days = {"Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
         "Sunday"};
 
@@ -172,6 +172,7 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
             }
         } catch (NumberFormatException e) {
             jTextFieldScore.setText("Sorry, Invalid Value");
+            System.err.println("User has attempted an invalid value.");
         }
         if (!"Sorry, Invalid Value".equals(jTextFieldScore.getText())) {
             jTextFieldScore.setText("");
@@ -188,9 +189,9 @@ public class TemperaturesOfTheWeek extends javax.swing.JFrame {
             jTextAreaResults.setText(jTextAreaResults.getText()
                     + (days[i] + ": " + temperatures[i] + "\n"));
         }
-        jLabelAverage.setText("Avg. Temp: " + Integer.toString(IntArrayUtils.averageValue(temperatures)));
-        jLabelMin.setText("Min. Temp: " + Integer.toString(IntArrayUtils.minValue(temperatures)));
-        jLabelMax.setText("Max. Temp: " + Integer.toString(IntArrayUtils.maxValue(temperatures)));
+        jLabelAverage.setText("Avg. Temp: " + Double.toString(ArrayUtils.averageValue(temperatures)));
+        jLabelMin.setText("Min. Temp: " + Double.toString(ArrayUtils.minValue(temperatures)));
+        jLabelMax.setText("Max. Temp: " + Double.toString(ArrayUtils.maxValue(temperatures)));
         jButtonShowTemps.setEnabled(false);
         jButtonAddTemperature.setEnabled(false);
     }//GEN-LAST:event_jButtonShowTempsActionPerformed
