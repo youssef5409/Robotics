@@ -15,7 +15,8 @@ public class NewMain1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        double s = 5;
+        System.out.println(s / 2);
     }
     
 }

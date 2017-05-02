@@ -3,8 +3,8 @@
  * Date: 28th Apr 2017
  * Version: 0.9
  * Description: 
- *      Comment
- *      
+ *      This program manipulates methods that can manage golf scores, and manage the
+ *      temperatures of the week. They are also both in GUI Form.
  */
 package ca.hdsb.gwss.youssef.ics3u.u6;
 
