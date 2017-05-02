@@ -82,5 +82,4 @@ public class ArrayUtils {
         }
         return total;
     }
-
 }
