@@ -13,6 +13,24 @@ package ca.hdsb.gwss.youssef.ics3u.u6;
  * @author Youss
  */
 public class ArrayUtils {
+
+    public static void bubbleSort(int[] x) {
+        int temp;
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 1; j < x.length - i; j++) {
+                if (x[j - 1] > x[j]) {
+                    temp = x[j - 1];
+                    x[j - 1] = x[j];
+                    x[j] = temp;
+                }
+            }
+            System.out.println("----------------------------");
+            for (int g : x) {
+                System.out.println(g);
+            }
+        }
+    }
+
     //Checks if a value is greater than another; it carries and returns the greatest value.
     public static int maxValue(int myArray[]) {
         int maximum = myArray[0];
@@ -23,6 +41,7 @@ public class ArrayUtils {
         }
         return maximum;
     }
+
     //Checks if a value is smaller than another; it carries and returns the smallest value.
     public static int minValue(int myArray[]) {
         int minimum = myArray[0];
@@ -33,6 +52,7 @@ public class ArrayUtils {
         }
         return minimum;
     }
+
     //Finds the average of the numbers in an array, by adding them all up and dividing by length.
     public static double averageValue(int myArray[]) {
         double total = 0;
@@ -41,6 +61,7 @@ public class ArrayUtils {
         }
         return total / myArray.length;
     }
+
     //Finds the total of the numbers by adding them up.
     public static int totalValue(int myArray[]) {
         int total = 0;
@@ -49,6 +70,24 @@ public class ArrayUtils {
         }
         return total;
     }
+
+    public static void bubbleSort(double[] x) {
+        double temp;
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 1; j < x.length - i; j++) {
+                if (x[j - 1] > x[j]) {
+                    temp = x[j - 1];
+                    x[j - 1] = x[j];
+                    x[j] = temp;
+                }
+            }
+            System.out.println("----------------------------");
+            for (double g : x) {
+                System.out.println(g);
+            }
+        }
+    }
+
     //Repeating all methods, for doubles.
     public static double maxValue(double myArray[]) {
         double maximum = myArray[0];
