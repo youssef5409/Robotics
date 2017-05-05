@@ -8,27 +8,79 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u6;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Youss
  */
 public class ArrayUtils {
 
-    public static void bubbleSort(int[] x) {
+    public static void main(String[] args) {
+        display(bubbleIntAsc(generateIntArray(50, -100, 100)));
+    }
+
+    public static void display(int[] array) {
+        System.out.println("-------------------------------------------");
+        for (int i : array) {
+            System.out.print(i);
+        }
+        System.out.println("-------------------------------------------");
+    }
+
+    public static void display(double[] array) {
+        System.out.println("-------------------------------------------");
+        for (double i : array) {
+            System.out.print(i);
+        }
+        System.out.println("-------------------------------------------");
+    }
+
+    public static void display(String[] array) {
+        System.out.println("-------------------------------------------");
+        for (String i : array) {
+            System.out.print(i);
+        }
+        System.out.println("-------------------------------------------");
+    }
+
+    public static void generateIntArray(int size, int min, int max) {
+        int[] data = new int[size];
+
+        for (int i = 0; i < data.length; i++) {
+            data[i] = (int) (Math.random() * max + min);
+
+        }
+        
+    }
+
+    public static void generateIntArray(int size, double min, double max) {
+        double[] data = new double[size];
+
+        for (int i = 0; i < data.length; i++) {
+            data[i] = (int) (Math.random() * max + min);
+
+        }
+     
+    }
+
+    public static String[] generateArray( int size, ) {
+        return null;
+    }
+
+    public static int[] bubbleIntAsc(int[] array) {
         int temp;
-        for (int i = 0; i < x.length; i++) {
-            for (int j = 1; j < x.length - i; j++) {
-                if (x[j - 1] > x[j]) {
-                    temp = x[j - 1];
-                    x[j - 1] = x[j];
-                    x[j] = temp;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 1; j < array.length - i; j++) {
+                if (array[j - 1] > array[j]) {
+                    temp = array[j - 1];
+                    array[j - 1] = array[j];
+                    array[j] = temp;
                 }
             }
-            System.out.println("----------------------------");
-            for (int g : x) {
-                System.out.println(g);
-            }
+
         }
+        return array;
     }
 
     //Checks if a value is greater than another; it carries and returns the greatest value.
@@ -71,7 +123,7 @@ public class ArrayUtils {
         return total;
     }
 
-    public static void bubbleSort(double[] x) {
+    public static void bubbleDoubleAsc(double[] x) {
         double temp;
         for (int i = 0; i < x.length; i++) {
             for (int j = 1; j < x.length - i; j++) {
@@ -81,10 +133,7 @@ public class ArrayUtils {
                     x[j] = temp;
                 }
             }
-            System.out.println("----------------------------");
-            for (double g : x) {
-                System.out.println(g);
-            }
+
         }
     }
 
