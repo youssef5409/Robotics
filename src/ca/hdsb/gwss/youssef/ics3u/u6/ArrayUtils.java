@@ -71,7 +71,7 @@ public class ArrayUtils {
             str = "";
             for (int j = 0; j < lengthOfString; j++) {
                 str += Character.toString((char) (int) (Math.random() * max + min));
-                System.out.println((int) (Math.random() * max + min));
+                System.out.println((int) (Math.random() * max) + min);
             }
             data[i] = str;
         }
