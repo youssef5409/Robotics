@@ -17,13 +17,12 @@ import java.util.ArrayList;
 public class ArrayUtils {
 
     public static void main(String[] args) {
-        display(generateArray(7, 7, 17, 0));
     }
 
     public static void display(int[] array) {
         System.out.println("-------------------------------------------");
         for (int i : array) {
-            System.out.print(i);
+            System.out.println(i);
         }
         System.out.println("-------------------------------------------");
     }
@@ -31,7 +30,7 @@ public class ArrayUtils {
     public static void display(double[] array) {
         System.out.println("-------------------------------------------");
         for (double i : array) {
-            System.out.print(i);
+            System.out.println(i);
         }
         System.out.println("-------------------------------------------");
     }
@@ -48,28 +47,31 @@ public class ArrayUtils {
         int[] data = new int[size];
 
         for (int i = 0; i < data.length; i++) {
-            data[i] = (int) (Math.random() * max + min);
+            int nOfSpaces = Math.abs(max) + Math.abs(min);
+            data[i] = (int) (Math.random() * nOfSpaces + min);
         }
         return data;
     }
 
     public static double[] generateArray(int size, double min, double max) {
         double[] data = new double[size];
+        double nOfSpaces = Math.abs(max) + Math.abs(min);
 
         for (int i = 0; i < data.length; i++) {
-            data[i] = (int) (Math.random() * max + min);
+
+            data[i] = Math.random() * nOfSpaces + min;
         }
         return data;
     }
 
-    public static String[] generateArray(int size, int lengthOfString, int min, int max) {
+    public static String[] generateArray(int size, int lengthOfString, char min, char max) {
         String[] data = new String[size];
         String str;
-        
         for (int i = 0; i < data.length; i++) {
             str = "";
             for (int j = 0; j < lengthOfString; j++) {
-                str += Integer.toString((int) (Math.random() * max + min ));
+                str += Character.toString((char) (int) (Math.random() * max + min));
+                System.out.println((int) (Math.random() * max + min));
             }
             data[i] = str;
         }
@@ -153,22 +155,22 @@ public class ArrayUtils {
     }
     //Repeating all methods, for doubles.
 
-    public static int[] bubbleIntAsc(int[] array) {
+    public static int[] bubbleIntAsc(int[] x) {
         int swap;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 1; j < array.length - i; j++) {
-                if (array[j - 1] > array[j]) {
-                    swap = array[j - 1];
-                    array[j - 1] = array[j];
-                    array[j] = swap;
+        int j; //This is so that j is only initialized once
+        for (int i = 0; i < x.length; i++) {
+            for (j = 1; j < x.length - i; j++) {
+                if (x[j - 1] > x[j]) {
+                    swap = x[j - 1];
+                    x[j - 1] = x[j];
+                    x[j] = swap;
                 }
             }
-
         }
-        return array;
+        return x;
     }
 
-    public static void bubbleDoubleAsc(double[] x) {
+    public static double[] bubbleDoubleAsc(double[] x) {
         double temp;
         for (int i = 0; i < x.length; i++) {
             for (int j = 1; j < x.length - i; j++) {
@@ -179,13 +181,14 @@ public class ArrayUtils {
                 }
             }
         }
+        return x;
     }
-    
-        public static void bubbleStringAsc(String[] x) {
+
+    public static void bubbleStringAsc(String[] x) {
         String temp;
         for (int i = 0; i < x.length; i++) {
             for (int j = 1; j < x.length - i; j++) {
-                if (x[j - 1].compareTo(x[j]) > 0 ) {
+                if (x[j - 1].compareTo(x[j]) > 0) {
                     temp = x[j - 1];
                     x[j - 1] = x[j];
                     x[j] = temp;
@@ -193,5 +196,66 @@ public class ArrayUtils {
             }
         }
     }
+
+    public static int[] bubbleIntDsc(int[] array) {
+        int swap;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 1; j < array.length - i; j++) {
+                if (array[j - 1] < array[j]) {
+                    swap = array[j - 1];
+                    array[j - 1] = array[j];
+                    array[j] = swap;
+                }
+            }
+
+        }
+        return array;
+    }
+
+    public static void bubbleDoubleDsc(double[] x) {
+        double temp;
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 1; j < x.length - i; j++) {
+                if (x[j - 1] < x[j]) {
+                    temp = x[j - 1];
+                    x[j - 1] = x[j];
+                    x[j] = temp;
+                }
+            }
+        }
+    }
+
+    public static void bubbleStringDsc(String[] x) {
+        String temp;
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 1; j < x.length - i; j++) {
+                if (x[j - 1].compareTo(x[j]) < 0) {
+                    temp = x[j - 1];
+                    x[j - 1] = x[j];
+                    x[j] = temp;
+                }
+            }
+        }
+    }
+
+    public static void selectionIntAsc(int[] x) {
+    }
+    public static void selectionSort(int[] x) {  
+        int j;
+        int temp;
+        
+        for (int i = 0; i < x.length - 1; i++)  {
+            int index = i;  
+            for (j = i + 1; j < x.length; j++){  
+                if (x[j] < x[index]){  
+                    index = j;//searching for lowest index  
+                }  
+            }  
+            temp = x[index];   
+            x[index] = x[i];  
+            x[i] = temp;  
+        }  
+    }  
+    
 
 }
