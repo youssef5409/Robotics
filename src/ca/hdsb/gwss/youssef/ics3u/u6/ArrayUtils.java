@@ -64,7 +64,6 @@ public class ArrayUtils {
             str = "";
             for (int j = 0; j < lengthOfString; j++) {
                 str += Character.toString((char) (int) (Math.random() * (max - min) + min));
-                System.out.println((int) (Math.random() * max) + min);
             }
             data[i] = str;
         }
@@ -96,7 +95,7 @@ public class ArrayUtils {
     public static int minValue(int x[]) {
         int minimum = x[0];
         for (int i = 0; i < x.length - 1; i++) {
-            if (x[i] > x[i + 1]) {
+            if (x[i] < minimum) {
                 minimum = x[i];
             }
         }
@@ -106,7 +105,7 @@ public class ArrayUtils {
     public static double minValue(double x[]) {
         double minimum = x[0];
         for (int i = 0; i < x.length - 1; i++) {
-            if (x[i] > x[i + 1]) {
+            if (x[i] < minimum) {
                 minimum = x[i];
             }
         }
