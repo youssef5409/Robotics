@@ -19,49 +19,47 @@ public class UnitTest {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[] x = ArrayUtils.generateArray(10, -100, 100);
-        double[] y = ArrayUtils.generateArray(10, -100.0, 100.0);
-        String[] z = ArrayUtils.generateArray(10, 4, 'A', '[');
 
-        maxInt(x);
-        maxDouble(y);
+        maxInt();
+        maxDouble();
 
-        minInt(x);
-        minDouble(y);
+        minInt();
+        minDouble();
 
-        totalValueInt(x);
-        totalValueDouble(y);
+        totalValueInt();
+        totalValueDouble();
 
-        averageInt(x);
-        averageDouble(y);
+        averageInt();
+        averageDouble();
 
-        bubbleIntAsc(x);
-        bubbleDoubleAsc(y);
-        bubbleStringAsc(z);
+        bubbleIntAsc();
+        bubbleDoubleAsc();
+        bubbleStringAsc();
 
-        bubbleIntDsc(x);
-        bubbleDoubleDsc(y);
-        bubbleStringDsc(z);
+        bubbleIntDsc();
+        bubbleDoubleDsc();
+        bubbleStringDsc();
 
-        selectionIntAsc(x);
-        selectionDoubleAsc(y);
-        selectionStringAsc(z);
+        selectionIntAsc();
+        selectionDoubleAsc();
+        selectionStringAsc();
 
-        selectionIntDsc(x);
-        selectionDoubleDsc(y);
-        selectionStringDsc(z);
+        selectionIntDsc();
+        selectionDoubleDsc();
+        selectionStringDsc();
 
-        linearSearchInt(x);
-        linearSearchDouble(y);
-        linearSearchString(z);
+        linearSearchInt();
+        linearSearchDouble();
+        linearSearchString();
 
-        binarySearchInt(x);
-        binarySearchDouble(y);
-        binarySearchString(z);
+        binarySearchInt();
+        binarySearchDouble();
+        binarySearchString();
 
     }
 
-    private static void maxInt(int[] x) {
+    private static void maxInt() {
+        int[] x = ArrayUtils.generateArray(10, -100, 100);
         try {
             x[0] = 101;
             assert (ArrayUtils.maxValue(x) == 101);
@@ -72,8 +70,9 @@ public class UnitTest {
 
     }
 
-    private static void maxDouble(double[] y) {
+    private static void maxDouble() {
         try {
+            double[] y = ArrayUtils.generateArray(10, -100.0, 100.0);
             y[0] = 101.0;
             assert (ArrayUtils.maxValue(y) == 101.0);
             System.out.println("Maximum Double Test Passed");
@@ -82,8 +81,9 @@ public class UnitTest {
         }
     }
 
-    private static void minInt(int[] x) {
+    private static void minInt() {
         try {
+            int[] x = ArrayUtils.generateArray(10, -100, 100);
             x[0] = -101;
             assert (ArrayUtils.minValue(x) == -101);
             System.out.println("Minimum Int Test Passed");
@@ -92,8 +92,9 @@ public class UnitTest {
         }
     }
 
-    private static void minDouble(double[] y) {
+    private static void minDouble() {
         try {
+            double[] y = ArrayUtils.generateArray(10, -100.0, 100.0);
             y[0] = -101.0;
             assert (ArrayUtils.minValue(y) == -101.0);
             System.out.println("Minimum Double Test Passed");
@@ -102,8 +103,9 @@ public class UnitTest {
         }
     }
 
-    private static void totalValueInt(int[] x) {
+    private static void totalValueInt() {
         try {
+            int[] x = ArrayUtils.generateArray(10, -100, 100);
             int counter = 1;
             for (int i = 0; i < x.length; i++) {
                 x[i] = counter++;
@@ -115,8 +117,9 @@ public class UnitTest {
         }
     }
 
-    private static void totalValueDouble(double[] y) {
+    private static void totalValueDouble() {
         try {
+            double[] y = ArrayUtils.generateArray(10, -100.0, 100.0);
             double counter = 1.5;
             for (int i = 0; i < y.length; i++) {
                 y[i] = counter++;
@@ -128,8 +131,9 @@ public class UnitTest {
         }
     }
 
-    private static void averageInt(int[] x) {
+    private static void averageInt() {
         try {
+            int[] x = ArrayUtils.generateArray(10, -100, 100);
             assert (ArrayUtils.averageValue(x) == (double) ArrayUtils.totalValue(x) / x.length);
             System.out.println("Average Int Test Passed");
         } catch (AssertionError e) {
@@ -137,8 +141,9 @@ public class UnitTest {
         }
     }
 
-    private static void averageDouble(double[] y) {
+    private static void averageDouble() {
         try {
+            double[] y = ArrayUtils.generateArray(10, -100.0, 100.0);
             assert (ArrayUtils.averageValue(y) == (double) ArrayUtils.totalValue(y) / y.length);
             System.out.println("Average Double Test Passed");
         } catch (AssertionError e) {
@@ -146,67 +151,74 @@ public class UnitTest {
         }
     }
 
-    private static void bubbleIntAsc(int[] x) {
+    private static void bubbleIntAsc() {
         try {
-            int[] y = x;
-            ArrayUtils.bubbleIntAsc(x);
-            for (int i = 0; i < y.length; i++) {
-                System.out.println(y[i]);
-            }
-            Arrays.sort(y);
-            
+            int[] x = ArrayUtils.generateArray(10, -100, 100);
+            int[] y = new int[x.length];
 
-            
-            assert (x == y);
+            System.arraycopy(x, 0, y, 0, x.length);
+
+            ArrayUtils.bubbleIntAsc(x);
+            Arrays.sort(y);
+
+            assert (Arrays.equals(x, y));
             System.out.println("Bubble Int Asc Test Passed");
         } catch (AssertionError e) {
             System.err.println("Bubble Int Asc Test Failed");
         }
     }
 
-    private static void bubbleDoubleAsc(double[] y) {
+    private static void bubbleDoubleAsc() {
         try {
-            double[] x = y;
+            double[] x = ArrayUtils.generateArray(10, -100.0, 100.0);
+            double[] y = new double[x.length];
+
+            System.arraycopy(x, 0, y, 0, x.length);
+
             ArrayUtils.bubbleDoubleAsc(x);
             Arrays.sort(y);
-            assert (x == y);
+
+            assert (Arrays.equals(x, y));
             System.out.println("Bubble Double Asc Test Passed");
         } catch (AssertionError e) {
             System.err.println("Bubble Double Asc Test Failed");
         }
     }
 
-    private static void bubbleStringAsc(String[] z) {
+    private static void bubbleStringAsc() {
         try {
-            String[] x = z;
-            ArrayUtils.bubbleStringAsc(z);
-            Arrays.sort(x);
-            
-            assert (x == z);
+            String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
+            String[] y = new String[x.length];
+
+            System.arraycopy(x, 0, y, 0, x.length);
+
+            ArrayUtils.bubbleStringAsc(x);
+            Arrays.sort(y);
+
+            assert (Arrays.equals(x, y));
             System.out.println("Bubble String Asc Test Passed");
         } catch (AssertionError e) {
             System.err.println("Bubble String Asc Test Failed");
         }
     }
 
-    private static void bubbleIntDsc(int[] x) {
+    private static void bubbleIntDsc() {
         try {
             boolean same = true;
-            
-            int[] y = x;
-            
-            ArrayUtils.bubbleIntDsc(y);
-            
-            Arrays.sort(x);
-            
-            for (int i = 0; i < x.length / 2; i++) {
-                if (y[i] != x[i]) {
+            int[] x = ArrayUtils.generateArray(10, -100, 100);
+            int[] y = new int[x.length];
+
+            System.arraycopy(x, 0, y, 0, x.length);
+
+            ArrayUtils.bubbleIntDsc(x);
+            Arrays.sort(y);
+
+            for (int i = 0; i < x.length; i++) {
+                if (y[i] != x[x.length - 1 - i]) {
 
                     same = false;
                 }
-                
             }
-            
             assert (same);
             System.out.println("Bubble Int Dsc Test Passed");
         } catch (AssertionError e) {
@@ -214,30 +226,45 @@ public class UnitTest {
         }
     }
 
-    private static void bubbleDoubleDsc(double[] y) {
+    private static void bubbleDoubleDsc() {
         try {
-            assert (1 == 2);
+            boolean same = true;
+            double[] x = ArrayUtils.generateArray(10, -100.0, 100.0);
+            double[] y = new double[x.length];
+
+            System.arraycopy(x, 0, y, 0, x.length);
+
+            ArrayUtils.bubbleDoubleDsc(x);
+            Arrays.sort(y);
+
+            for (int i = 0; i < x.length; i++) {
+                if (y[i] != x[x.length - 1 - i]) {
+                    same = false;
+                }
+            }
+            assert (same);
             System.out.println("Bubble Double Dsc Test Passed");
         } catch (AssertionError e) {
             System.err.println("Bubble Double Dsc Test Failed");
         }
     }
 
-    private static void bubbleStringDsc(String[] z) {
+    private static void bubbleStringDsc() {
         try {
             boolean same = true;
-            String[] x = z;
-            ArrayUtils.bubbleStringAsc(z);
-            
-            Arrays.sort(x);
-            
+            String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
+            String[] y = new String[x.length];
+
+            System.arraycopy(x, 0, y, 0, x.length);
+
+            ArrayUtils.bubbleStringDsc(x);
+            Arrays.sort(y);
+
             for (int i = 0; i < x.length; i++) {
-                if (!x[i].equals(z[x.length - 1 - i])) {
+                if (!y[i].equals(x[x.length - 1 - i])) {
                     same = false;
                 }
-                
             }
-            
             assert (same);
             System.out.println("Bubble String Dsc Test Passed");
         } catch (AssertionError e) {
@@ -245,61 +272,128 @@ public class UnitTest {
         }
     }
 
-    private static void selectionIntAsc(int[] x) {
+    private static void selectionIntAsc() {
         try {
-            assert (1 == 2);
+            int[] x = ArrayUtils.generateArray(10, -100, 100);
+            int[] y = new int[x.length];
+
+            System.arraycopy(x, 0, y, 0, x.length);
+
+            ArrayUtils.selectionIntAsc(x);
+            Arrays.sort(y);
+
+            assert (Arrays.equals(x, y));
             System.out.println("Selection Int Asc Test Passed");
         } catch (AssertionError e) {
             System.err.println("Selection Int Asc Test Failed");
         }
     }
 
-    private static void selectionDoubleAsc(double[] y) {
+    private static void selectionDoubleAsc() {
         try {
-            assert (1 == 2);
+            double[] x = ArrayUtils.generateArray(10, -100.0, 100.0);
+            double[] y = new double[x.length];
+
+            System.arraycopy(x, 0, y, 0, x.length);
+
+            ArrayUtils.selectionDoubleAsc(x);
+            Arrays.sort(y);
+
+            assert (Arrays.equals(x, y));
             System.out.println("Selection Double Asc Test Passed");
         } catch (AssertionError e) {
             System.err.println("Selection Double Asc Test Failed");
         }
     }
 
-    private static void selectionStringAsc(String[] z) {
+    private static void selectionStringAsc() {
         try {
-            assert (1 == 2);
+            String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
+            String[] y = new String[x.length];
+
+            System.arraycopy(x, 0, y, 0, x.length);
+
+            ArrayUtils.selectionStringAsc(x);
+            Arrays.sort(y);
+
+            assert (Arrays.equals(x, y));
             System.out.println("Selection String Asc Test Passed");
         } catch (AssertionError e) {
             System.err.println("Selection String Asc Test Failed");
         }
     }
 
-    private static void selectionIntDsc(int[] x) {
+    private static void selectionIntDsc() {
         try {
-            assert (1 == 2);
+            boolean same = true;
+            int[] x = ArrayUtils.generateArray(10, -100, 100);
+            int[] y = new int[x.length];
+
+            System.arraycopy(x, 0, y, 0, x.length);
+
+            ArrayUtils.selectionIntDsc(x);
+            Arrays.sort(y);
+
+            for (int i = 0; i < x.length; i++) {
+                if (y[i] != x[x.length - 1 - i]) {
+
+                    same = false;
+                }
+            }
+            assert (same);
             System.out.println("Selection Int Dsc Test Passed");
         } catch (AssertionError e) {
             System.err.println("Selection Int Dsc Test Failed");
         }
     }
 
-    private static void selectionDoubleDsc(double[] y) {
+    private static void selectionDoubleDsc() {
         try {
-            assert (1 == 2);
+            boolean same = true;
+            double[] x = ArrayUtils.generateArray(10, -100.0, 100.0);
+            double[] y = new double[x.length];
+
+            System.arraycopy(x, 0, y, 0, x.length);
+
+            ArrayUtils.selectionDoubleDsc(x);
+            Arrays.sort(y);
+
+            for (int i = 0; i < x.length; i++) {
+                if (y[i] != x[x.length - 1 - i]) {
+                    same = false;
+                }
+            }
+            assert (same);
             System.out.println("Selection Double Dsc Test Passed");
         } catch (AssertionError e) {
             System.err.println("Selection Double Dsc Test Failed");
         }
     }
 
-    private static void selectionStringDsc(String[] z) {
+    private static void selectionStringDsc() {
         try {
-            assert (1 == 2);
+            boolean same = true;
+            String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
+            String[] y = new String[x.length];
+
+            System.arraycopy(x, 0, y, 0, x.length);
+
+            ArrayUtils.selectionStringDsc(x);
+            Arrays.sort(y);
+
+            for (int i = 0; i < x.length; i++) {
+                if (!y[i].equals(x[x.length - 1 - i])) {
+                    same = false;
+                }
+            }
+            assert (same);
             System.out.println("Selection String Dsc Test Passed");
         } catch (AssertionError e) {
             System.err.println("Selection String Dsc Test Failed");
         }
     }
 
-    private static void linearSearchInt(int[] x) {
+    private static void linearSearchInt() {
         try {
             assert (1 == 2);
             System.out.println("Linear Search Int Test Passed");
@@ -308,7 +402,7 @@ public class UnitTest {
         }
     }
 
-    private static void linearSearchDouble(double[] y) {
+    private static void linearSearchDouble() {
         try {
             assert (1 == 2);
             System.out.println("Linear Search Double Test Passed");
@@ -317,7 +411,7 @@ public class UnitTest {
         }
     }
 
-    private static void linearSearchString(String[] z) {
+    private static void linearSearchString() {
         try {
             assert (1 == 2);
             System.out.println("Linear Search String Test Passed");
@@ -326,16 +420,44 @@ public class UnitTest {
         }
     }
 
-    private static void binarySearchInt(int[] x) {
+    private static void binarySearchInt() {
         try {
-            assert (1 == 2);
+            int searchVal;
+            int willBeFound = (int) (Math.random() * 2);
+            int ascOrDsc = (int) (Math.random() * 2);
+            int[] x = ArrayUtils.generateArray(10, -100, 100); //make odd
+            Integer[] y = new Integer[x.length];
+            
+            for (int i = 0; i < x.length; i++) {
+                y[i] = x[i];
+            }
+            Arrays.sort(y);
+            
+            if (ascOrDsc == 0) {
+                ArrayUtils.selectionIntAsc(x);
+            } else {
+                int temp;
+                ArrayUtils.selectionIntDsc(x);
+                for (int i = 0; i < y.length / 2; i++) {
+                     temp = y[i];
+                     y[i] = y[y.length -1 - i];
+                     y[y.length -1 - i] = temp;
+                }
+            }
+            if (willBeFound == 0) {
+                searchVal = ArrayUtils.maxValue(x) + 1;
+            } else {
+                searchVal = x[(int) (Math.random() * x.length)];
+            }
+
+            assert (ArrayUtils.binarySearch(x, searchVal) == Arrays.asList(y).indexOf(searchVal));
             System.out.println("Binary Search Int Test Passed");
         } catch (AssertionError e) {
             System.err.println("Binary Search Int Test Failed");
         }
     }
 
-    private static void binarySearchDouble(double[] y) {
+    private static void binarySearchDouble() {
         try {
             assert (1 == 2);
             System.out.println("Binary Search Double Test Passed");
@@ -344,7 +466,7 @@ public class UnitTest {
         }
     }
 
-    private static void binarySearchString(String[] z) {
+    private static void binarySearchString() {
         try {
             assert (1 == 2);
             System.out.println("Binary Search String Test Passed");
