@@ -150,7 +150,13 @@ public class UnitTest {
         try {
             int[] y = x;
             ArrayUtils.bubbleIntAsc(x);
+            for (int i = 0; i < y.length; i++) {
+                System.out.println(y[i]);
+            }
             Arrays.sort(y);
+            
+
+            
             assert (x == y);
             System.out.println("Bubble Int Asc Test Passed");
         } catch (AssertionError e) {
@@ -172,12 +178,10 @@ public class UnitTest {
 
     private static void bubbleStringAsc(String[] z) {
         try {
-            ArrayList x = new ArrayList(Arrays.asList(z));
+            String[] x = z;
             ArrayUtils.bubbleStringAsc(z);
+            Arrays.sort(x);
             
-            Arrays.asList(z);
-            Arrays.sort(z);
-            Collections.reverse(z);
             assert (x == z);
             System.out.println("Bubble String Asc Test Passed");
         } catch (AssertionError e) {
@@ -187,10 +191,23 @@ public class UnitTest {
 
     private static void bubbleIntDsc(int[] x) {
         try {
+            boolean same = true;
+            
             int[] y = x;
-            ArrayUtils.bubbleIntAsc(x);
-            Arrays.sort(y);
-            assert (x == y);
+            
+            ArrayUtils.bubbleIntDsc(y);
+            
+            Arrays.sort(x);
+            
+            for (int i = 0; i < x.length / 2; i++) {
+                if (y[i] != x[i]) {
+
+                    same = false;
+                }
+                
+            }
+            
+            assert (same);
             System.out.println("Bubble Int Dsc Test Passed");
         } catch (AssertionError e) {
             System.err.println("Bubble Int Dsc Test Failed");
@@ -208,7 +225,20 @@ public class UnitTest {
 
     private static void bubbleStringDsc(String[] z) {
         try {
-            assert (1 == 2);
+            boolean same = true;
+            String[] x = z;
+            ArrayUtils.bubbleStringAsc(z);
+            
+            Arrays.sort(x);
+            
+            for (int i = 0; i < x.length; i++) {
+                if (!x[i].equals(z[x.length - 1 - i])) {
+                    same = false;
+                }
+                
+            }
+            
+            assert (same);
             System.out.println("Bubble String Dsc Test Passed");
         } catch (AssertionError e) {
             System.err.println("Bubble String Dsc Test Failed");
