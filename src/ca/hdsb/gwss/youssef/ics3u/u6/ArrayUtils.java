@@ -384,11 +384,27 @@ public class ArrayUtils {
     public static int binarySearch(int[] x, int val) {
         int l = 0;
         int r = x.length - 1;
-        int mid = 0;
+        int mid;
+        int index = -1;
+
+        if (x[x.length - 1] < x[0]) {
+            while (r >= l) {
+                mid = (l + r) / 2;
+                if (x[mid] == val) {
+                    index = mid;
+                    r = -1;
+                } else if (val > x[mid]) {
+                    r = mid - 1;
+                } else {
+                    l = mid + 1;
+                }
+            }
+        }
 
         while (r >= l) {
             mid = (l + r) / 2;
             if (x[mid] == val) {
+                index = mid;
                 r = -1;
             } else if (val < x[mid]) {
                 r = mid - 1;
@@ -396,13 +412,28 @@ public class ArrayUtils {
                 l = mid + 1;
             }
         }
-        return mid;
+        return index;
     }
 
     public static int binarySearch(double[] x, double val) {
         int l = 0;
         int r = x.length - 1;
-        int mid = 0;
+        int mid;
+        int index = -1;
+
+        if (x[x.length - 1] < x[0]) {
+            while (r >= l) {
+                mid = (l + r) / 2;
+                if (x[mid] == val) {
+                    index = mid;
+                    r = -1;
+                } else if (val > x[mid]) {
+                    r = mid - 1;
+                } else {
+                    l = mid + 1;
+                }
+            }
+        }
 
         while (r >= l) {
             mid = (l + r) / 2;
@@ -414,13 +445,27 @@ public class ArrayUtils {
                 l = mid + 1;
             }
         }
-        return mid;
+        return index;
     }
 
     public static int binarySearch(String[] x, String val) {
         int l = 0;
         int r = x.length - 1;
-        int mid = 0;
+        int mid;
+        int index = -1;
+
+        if (x[x.length - 1].compareTo(x[0]) < 0) {
+            while (r >= l) {
+                mid = (l + r) / 2;
+                if (x[mid].equals(val)) {
+                    r = -1;
+                } else if (val.compareTo(x[mid]) < 0) {
+                    r = mid - 1;
+                } else {
+                    l = mid + 1;
+                }
+            }
+        }
 
         while (r >= l) {
             mid = (l + r) / 2;
@@ -432,7 +477,7 @@ public class ArrayUtils {
                 l = mid + 1;
             }
         }
-        return mid;
+        return index;
     }
 }
 

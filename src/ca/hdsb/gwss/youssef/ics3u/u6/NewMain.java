@@ -15,11 +15,11 @@ public class NewMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[] x = ArrayUtils.generateArray(7, 4, 200);
+        int[] x = ArrayUtils.generateArray(5, -1, 8 );
         
         ArrayUtils.display(x);
-        ArrayUtils.selectionIntAsc(x);
-        System.out.println(ArrayUtils.binarySearch(x, 5));
+        ArrayUtils.selectionIntDsc(x);
+        System.out.println(ArrayUtils.binarySearch(x, 1));
         ArrayUtils.display(x);
         
     }
