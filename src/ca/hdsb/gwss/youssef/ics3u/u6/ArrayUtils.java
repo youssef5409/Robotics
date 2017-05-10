@@ -15,27 +15,27 @@ package ca.hdsb.gwss.youssef.ics3u.u6;
 public class ArrayUtils {
 
     public static void display(int[] array) {
-        System.out.println("-------------------------------------------");
+        System.out.println("------------------------------------------------------");
         for (int i : array) {
             System.out.println(i);
         }
-        System.out.println("-------------------------------------------");
+        System.out.println("------------------------------------------------------");
     }
 
     public static void display(double[] array) {
-        System.out.println("-------------------------------------------");
+        System.out.println("------------------------------------------------------");
         for (double i : array) {
             System.out.println(i);
         }
-        System.out.println("-------------------------------------------");
+        System.out.println("------------------------------------------------------");
     }
 
     public static void display(String[] array) {
-        System.out.println("-------------------------------------------");
+        System.out.println("------------------------------------------------------");
         for (String i : array) {
             System.out.println(i);
         }
-        System.out.println("-------------------------------------------");
+        System.out.println("------------------------------------------------------");
     }
 
     public static int[] generateArray(int size, int min, int max) {
