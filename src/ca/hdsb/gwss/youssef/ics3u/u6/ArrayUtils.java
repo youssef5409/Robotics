@@ -8,56 +8,11 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u6;
 
-import java.util.Arrays;
-
 /**
  *
  * @author Youss
  */
 public class ArrayUtils {
-
-    public static void main(String[] args) {
-            int searchVal;
-            int willBeFound = (int) (Math.random() * 2);
-            int ascOrDsc = (int) (Math.random() * 2);
-            int[] x = ArrayUtils.generateArray(10, -100, 100); //make odd
-            Integer[] y = new Integer[x.length];
-            
-            for (int i = 0; i < x.length; i++) {
-                y[i] = x[i];
-            }
-            Arrays.sort(y);
-            
-            if (ascOrDsc == 0) {
-                ArrayUtils.selectionIntAsc(x);
-                
-            } else {
-                int temp;
-                ArrayUtils.selectionIntDsc(x);
-                for (int i = 0; i < y.length / 2; i++) {
-                     temp = y[i];
-                     y[i] = y[y.length -1 - i];
-                     y[y.length -1 - i] = temp;
-                }
-                for (int g : y) {
-                    System.out.println(g);
-                }
-                
-            }
-            if (willBeFound == 0) {
-                searchVal = ArrayUtils.maxValue(x) + 1;
-            } else {
-                searchVal = x[(int) (Math.random() * x.length)];
-            }
-            
-            
-            for (int i : x) {
-                System.out.println(i);
-            }
-            System.out.println(searchVal + " search");
-            System.out.println(ArrayUtils.binarySearch(x, searchVal) + " me");
-            System.out.println(Arrays.asList(y).indexOf(searchVal) + " it");
-    }
 
     public static void display(int[] array) {
         System.out.println("-------------------------------------------");
@@ -385,7 +340,7 @@ public class ArrayUtils {
         int i = 0;
         boolean indexFound = false;
 
-        while (!indexFound) {
+        while (!indexFound && i < x.length) {
             if (x[i] == val) {
                 index = i;
                 indexFound = true;
@@ -400,7 +355,7 @@ public class ArrayUtils {
         int i = 0;
         boolean indexFound = false;
 
-        while (!indexFound) {
+        while (!indexFound && i < x.length) {
             if (x[i] == val) {
                 index = i;
                 indexFound = true;
@@ -415,7 +370,7 @@ public class ArrayUtils {
         int i = 0;
         boolean indexFound = false;
 
-        while (!indexFound) {
+        while (!indexFound && i < x.length) {
             if (x[i].equals(val)) {
                 index = i;
                 indexFound = true;
@@ -482,6 +437,7 @@ public class ArrayUtils {
             while (r >= l) {
                 mid = (l + r) / 2;
                 if (x[mid] == val) {
+                    index = mid;
                     r = -1;
                 } else if (val < x[mid]) {
                     r = mid - 1;
@@ -489,6 +445,7 @@ public class ArrayUtils {
                     l = mid + 1;
                 }
             }
+
         }
         return index;
     }
@@ -503,8 +460,9 @@ public class ArrayUtils {
             while (r >= l) {
                 mid = (l + r) / 2;
                 if (x[mid].equals(val)) {
+                    index = mid;
                     r = -1;
-                } else if (val.compareTo(x[mid]) < 0) {
+                } else if (val.compareTo(x[mid]) > 0) {
                     r = mid - 1;
                 } else {
                     l = mid + 1;
@@ -514,6 +472,7 @@ public class ArrayUtils {
             while (r >= l) {
                 mid = (l + r) / 2;
                 if (x[mid].equals(val)) {
+                    index = mid;
                     r = -1;
                 } else if (val.compareTo(x[mid]) < 0) {
                     r = mid - 1;
@@ -521,6 +480,7 @@ public class ArrayUtils {
                     l = mid + 1;
                 }
             }
+
         }
         return index;
     }
