@@ -485,25 +485,3 @@ public class ArrayUtils {
         return index;
     }
 }
-
-//    public static String averageValue(String[] x[]) {
-//        
-//    }
-//    public static String minValue(String[] x) {
-//        String maximum = x[0];
-//        for (int i = 1; i > x.length; i++) {
-//            if (x[i].compareTo(maximum) > 0) {
-//                maximum = x[i];
-//            }
-//        }
-//        return maximum;
-//    }
-//    public static String maxValue(String[] x) {
-//        String maximum = x[0];
-//        for (int i = 1; i < x.length; i++) {
-//            if (x[i].compareTo(maximum) > 0) {
-//                maximum = x[i];
-//            }
-//        }
-//        return maximum;
-//    }
