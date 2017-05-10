@@ -69,8 +69,8 @@ public class UnitTest {
             x[0] = 101;
             System.out.println("DATA BEFORE        : (See Below)");
             ArrayUtils.display(x);
-            assert (ArrayUtils.maxValue(x) == x[0]);
             System.out.println("DATA AFTER: " + ArrayUtils.maxValue(x));
+            assert (ArrayUtils.maxValue(x) == x[0]);
             System.out.println("Maximum Int Test Passed");
             System.out.println("******************************************************");
         } catch (AssertionError e) {
@@ -92,8 +92,8 @@ public class UnitTest {
             y[0] = 101.0;
             System.out.println("DATA BEFORE        : (See Below)");
             ArrayUtils.display(y);
-            assert (ArrayUtils.maxValue(y) == 101.0);
             System.out.println("DATA AFTER: " + ArrayUtils.maxValue(y));
+            assert (ArrayUtils.maxValue(y) == 101.0);
             System.out.println("Maximum Double Test Passed");
             System.out.println("******************************************************");
         } catch (AssertionError e) {
@@ -114,8 +114,8 @@ public class UnitTest {
             x[0] = -101;
             System.out.println("DATA BEFORE        : (See Below)");
             ArrayUtils.display(x);
-            assert (ArrayUtils.minValue(x) == -101);
             System.out.println("DATA AFTER: " + ArrayUtils.minValue(x));
+            assert (ArrayUtils.minValue(x) == -101);
             System.out.println("Minimum Int Test Passed");
             System.out.println("******************************************************");
         } catch (AssertionError e) {
@@ -135,8 +135,8 @@ public class UnitTest {
             y[0] = -101.0;
             System.out.println("DATA BEFORE        : (See Below)");
             ArrayUtils.display(y);
-            assert (ArrayUtils.minValue(y) == -101.0);
             System.out.println("DATA AFTER: " + ArrayUtils.minValue(y));
+            assert (ArrayUtils.minValue(y) == -101.0);
             System.out.println("Minimum Double Test Passed");
             System.out.println("******************************************************");
         } catch (AssertionError e) {
@@ -159,8 +159,8 @@ public class UnitTest {
             }
             System.out.println("DATA BEFORE        : (See Below)");
             ArrayUtils.display(x);
-            assert (ArrayUtils.totalValue(x) == (x.length / 2) * (2 * x[0] + (x.length - 1) * Math.abs(x[1] - x[0])));
             System.out.println("DATA AFTER: " + ArrayUtils.totalValue(x));
+            assert (ArrayUtils.totalValue(x) == (x.length / 2) * (2 * x[0] + (x.length - 1) * Math.abs(x[1] - x[0])));
             System.out.println("Total Int Test Passed");
             System.out.println("******************************************************");
         } catch (AssertionError e) {
@@ -183,8 +183,8 @@ public class UnitTest {
             }
             System.out.println("DATA BEFORE        : (See Below)");
             ArrayUtils.display(y);
-            assert (ArrayUtils.totalValue(y) == (y.length / 2) * (2 * y[0] + (y.length - 1) * Math.abs(y[1] - y[0])));
             System.out.println("DATA AFTER: " + ArrayUtils.totalValue(y));
+            assert (ArrayUtils.totalValue(y) == (y.length / 2) * (2 * y[0] + (y.length - 1) * Math.abs(y[1] - y[0])));
             System.out.println("Total Double Test Passed");
             System.out.println("******************************************************");
         } catch (AssertionError e) {
@@ -203,8 +203,8 @@ public class UnitTest {
         try {
             System.out.println("DATA BEFORE        : (See Below)");
             ArrayUtils.display(x);
-            assert (ArrayUtils.averageValue(x) == (double) ArrayUtils.totalValue(x) / x.length);
             System.out.println("DATA AFTER: " + ArrayUtils.averageValue(x));
+            assert (ArrayUtils.averageValue(x) == (double) ArrayUtils.totalValue(x) / x.length);
             System.out.println("Average Int Test Passed");
             System.out.println("******************************************************");
         } catch (AssertionError e) {
@@ -247,10 +247,10 @@ public class UnitTest {
             ArrayUtils.display(x);
 
             ArrayUtils.bubbleIntAsc(x);
-            
+
             System.out.println("DATA AFTER: (See Below)");
             ArrayUtils.display(x);
-            
+
             Arrays.sort(y);
             assert (Arrays.equals(x, y));
             System.out.println("Bubble Int Asc Test Passed");
