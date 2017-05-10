@@ -238,11 +238,11 @@ public class UnitTest {
         System.out.println("******************************************************");
         System.out.println("TEST CASE #5A      : Bubble Sort Integer Array Asc");
         System.out.println("PRE CONDITION      : Unsorted Array, + and - Integers");
-        System.out.println("POST CONDITION     : Average Value of Array is printed");
+        System.out.println("POST CONDITION     : Ascending Sorted Array is printed");
         int[] x = ArrayUtils.generateArray(10, -100, 100);
         int[] y = new int[x.length];
+        System.arraycopy(x, 0, y, 0, x.length);
         try {
-            System.arraycopy(x, 0, y, 0, x.length);
             System.out.println("DATA BEFORE        : (See Below)");
             ArrayUtils.display(x);
 
@@ -263,15 +263,23 @@ public class UnitTest {
     }
 
     private static void bubbleDoubleAsc() {
+        System.out.println("******************************************************");
+        System.out.println("TEST CASE #5B      : Bubble Sort Double Array Asc");
+        System.out.println("PRE CONDITION      : Unsorted Array, + and - Doubles");
+        System.out.println("POST CONDITION     : Ascending Sorted Array is printed");
+        double[] x = ArrayUtils.generateArray(10, -100.0, 100.0);
+        double[] y = new double[x.length];
+        System.arraycopy(x, 0, y, 0, x.length);
         try {
-            double[] x = ArrayUtils.generateArray(10, -100.0, 100.0);
-            double[] y = new double[x.length];
-
-            System.arraycopy(x, 0, y, 0, x.length);
+            System.out.println("DATA BEFORE        : (See Below)");
+            ArrayUtils.display(x);
 
             ArrayUtils.bubbleDoubleAsc(x);
-            Arrays.sort(y);
 
+            System.out.println("DATA AFTER: (See Below)");
+            ArrayUtils.display(x);
+
+            Arrays.sort(y);
             assert (Arrays.equals(x, y));
             System.out.println("Bubble Double Asc Test Passed");
             System.out.println("******************************************************");
@@ -283,15 +291,23 @@ public class UnitTest {
     }
 
     private static void bubbleStringAsc() {
+        System.out.println("******************************************************");
+        System.out.println("TEST CASE #5C      : Bubble Sort String Array Asc");
+        System.out.println("PRE CONDITION      : Unsorted Array, + and - Strings");
+        System.out.println("POST CONDITION     : Ascending Sorted Array is printed");
+        String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
+        String[] y = new String[x.length];
+        System.arraycopy(x, 0, y, 0, x.length);
         try {
-            String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
-            String[] y = new String[x.length];
-
-            System.arraycopy(x, 0, y, 0, x.length);
+            System.out.println("DATA BEFORE        : (See Below)");
+            ArrayUtils.display(x);
 
             ArrayUtils.bubbleStringAsc(x);
-            Arrays.sort(y);
 
+            System.out.println("DATA AFTER: (See Below)");
+            ArrayUtils.display(x);
+
+            Arrays.sort(y);
             assert (Arrays.equals(x, y));
             System.out.println("Bubble String Asc Test Passed");
             System.out.println("******************************************************");
@@ -303,16 +319,24 @@ public class UnitTest {
     }
 
     private static void bubbleIntDsc() {
+        System.out.println("******************************************************");
+        System.out.println("TEST CASE #5A      : Bubble Sort Integer Array Dsc");
+        System.out.println("PRE CONDITION      : Unsorted Array, + and - Integers");
+        System.out.println("POST CONDITION     : Descending Sorted Array is printed");
+        boolean same = true;
+        int[] x = ArrayUtils.generateArray(10, -100, 100);
+        int[] y = new int[x.length];
+        System.arraycopy(x, 0, y, 0, x.length);
         try {
-            boolean same = true;
-            int[] x = ArrayUtils.generateArray(10, -100, 100);
-            int[] y = new int[x.length];
-
-            System.arraycopy(x, 0, y, 0, x.length);
+            System.out.println("DATA BEFORE        : (See Below)");
+            ArrayUtils.display(x);
 
             ArrayUtils.bubbleIntDsc(x);
-            Arrays.sort(y);
 
+            System.out.println("DATA AFTER: (See Below)");
+            ArrayUtils.display(x);
+
+            Arrays.sort(y);
             for (int i = 0; i < x.length; i++) {
                 if (y[i] != x[x.length - 1 - i]) {
 
@@ -330,16 +354,24 @@ public class UnitTest {
     }
 
     private static void bubbleDoubleDsc() {
+        System.out.println("******************************************************");
+        System.out.println("TEST CASE #5B      : Bubble Sort Double Array Dsc");
+        System.out.println("PRE CONDITION      : Unsorted Array, + and - Doubles");
+        System.out.println("POST CONDITION     : Descending Sorted Array is printed");
+        boolean same = true;
+        double[] x = ArrayUtils.generateArray(10, -100.0, 100.0);
+        double[] y = new double[x.length];
+        System.arraycopy(x, 0, y, 0, x.length);
         try {
-            boolean same = true;
-            double[] x = ArrayUtils.generateArray(10, -100.0, 100.0);
-            double[] y = new double[x.length];
-
-            System.arraycopy(x, 0, y, 0, x.length);
+            System.out.println("DATA BEFORE        : (See Below)");
+            ArrayUtils.display(x);
 
             ArrayUtils.bubbleDoubleDsc(x);
-            Arrays.sort(y);
 
+            System.out.println("DATA AFTER: (See Below)");
+            ArrayUtils.display(x);
+
+            Arrays.sort(y);
             for (int i = 0; i < x.length; i++) {
                 if (y[i] != x[x.length - 1 - i]) {
                     same = false;
@@ -356,14 +388,21 @@ public class UnitTest {
     }
 
     private static void bubbleStringDsc() {
+        System.out.println("******************************************************");
+        System.out.println("TEST CASE #5C      : Bubble Sort String Array Asc");
+        System.out.println("PRE CONDITION      : Unsorted Array, + and - Strings");
+        System.out.println("POST CONDITION     : Ascending Sorted Array is printed");
+        boolean same = true;
+        String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
+        String[] y = new String[x.length];
+        System.arraycopy(x, 0, y, 0, x.length);
+        
         try {
-            boolean same = true;
-            String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
-            String[] y = new String[x.length];
-
-            System.arraycopy(x, 0, y, 0, x.length);
-
+            System.out.println("DATA BEFORE        : (See Below)");
+            ArrayUtils.display(x);
+            
             ArrayUtils.bubbleStringDsc(x);
+            
             Arrays.sort(y);
 
             for (int i = 0; i < x.length; i++) {
@@ -717,17 +756,4 @@ public class UnitTest {
             System.out.println("******************************************************");
         }
     }
-
 }
-
-//        //        s + char int A + int math.random * 26
-//        //Test - Bubble Sort Ascending, Integers.
-//        //PRE-CONDITIONS: Unsorted Integer Array with random values between, 
-//        //Integer.MAX_VALUE to Integer.MIN_VALUE.
-//        //POST-CONDITIONS: Sorted, from smallest to largest.
-//        System.out.println("---------------------------");
-//        System.out.println("Test #1 - Bubble Sort, int, ascending");
-//        int[] data = ArrayUtils.gRA(100, Integer.MIN_VALUE, Integer.MAX_VALUE);
-//
-//        System.out.println("BEFORE");
-//        Array.display(data);
