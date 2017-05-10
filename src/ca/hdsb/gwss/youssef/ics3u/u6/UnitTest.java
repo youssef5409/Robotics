@@ -320,7 +320,7 @@ public class UnitTest {
 
     private static void bubbleIntDsc() {
         System.out.println("******************************************************");
-        System.out.println("TEST CASE #5A      : Bubble Sort Integer Array Dsc");
+        System.out.println("TEST CASE #6A      : Bubble Sort Integer Array Dsc");
         System.out.println("PRE CONDITION      : Unsorted Array, + and - Integers");
         System.out.println("POST CONDITION     : Descending Sorted Array is printed");
         boolean same = true;
@@ -355,7 +355,7 @@ public class UnitTest {
 
     private static void bubbleDoubleDsc() {
         System.out.println("******************************************************");
-        System.out.println("TEST CASE #5B      : Bubble Sort Double Array Dsc");
+        System.out.println("TEST CASE #6B      : Bubble Sort Double Array Dsc");
         System.out.println("PRE CONDITION      : Unsorted Array, + and - Doubles");
         System.out.println("POST CONDITION     : Descending Sorted Array is printed");
         boolean same = true;
@@ -389,9 +389,9 @@ public class UnitTest {
 
     private static void bubbleStringDsc() {
         System.out.println("******************************************************");
-        System.out.println("TEST CASE #5C      : Bubble Sort String Array Asc");
+        System.out.println("TEST CASE #6C      : Bubble Sort String Array Dsc");
         System.out.println("PRE CONDITION      : Unsorted Array, + and - Strings");
-        System.out.println("POST CONDITION     : Ascending Sorted Array is printed");
+        System.out.println("POST CONDITION     : Descending Sorted Array is printed");
         boolean same = true;
         String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
         String[] y = new String[x.length];
@@ -403,8 +403,10 @@ public class UnitTest {
             
             ArrayUtils.bubbleStringDsc(x);
             
+            System.out.println("DATA AFTER: (See Below)");
+            ArrayUtils.display(x);
+       
             Arrays.sort(y);
-
             for (int i = 0; i < x.length; i++) {
                 if (!y[i].equals(x[x.length - 1 - i])) {
                     same = false;
@@ -421,15 +423,19 @@ public class UnitTest {
     }
 
     private static void selectionIntAsc() {
-        try {
-            int[] x = ArrayUtils.generateArray(10, -100, 100);
+                    int[] x = ArrayUtils.generateArray(10, -100, 100);
             int[] y = new int[x.length];
-
             System.arraycopy(x, 0, y, 0, x.length);
-
+        try {
+            System.out.println("DATA BEFORE        : (See Below)");
+            ArrayUtils.display(x);
+            
             ArrayUtils.selectionIntAsc(x);
+            
+                        System.out.println("DATA AFTER: (See Below)");
+            ArrayUtils.display(x);
+            
             Arrays.sort(y);
-
             assert (Arrays.equals(x, y));
             System.out.println("Selection Int Asc Test Passed");
             System.out.println("******************************************************");
