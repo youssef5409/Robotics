@@ -465,6 +465,8 @@ public class UnitTest {
         System.out.println("POST CONDITION     : Ascending Integer Array is printed");
         int[] x = ArrayUtils.generateArray(10, -100, 100);
         int[] y = new int[x.length];
+        //Copying the array x[] into the array y[], this is so I can have different
+        //pointers for each of the arrays.
         System.arraycopy(x, 0, y, 0, x.length);
         try {
             System.out.println("DATA BEFORE        : (See Below)");
@@ -494,6 +496,8 @@ public class UnitTest {
         System.out.println("POST CONDITION     : Ascending Double Array is printed");
         double[] x = ArrayUtils.generateArray(10, -100.0, 100.0);
         double[] y = new double[x.length];
+        //Copying the array x[] into the array y[], this is so I can have different
+        //pointers for each of the arrays.
         System.arraycopy(x, 0, y, 0, x.length);
         try {
             System.out.println("DATA BEFORE        : (See Below)");
@@ -523,6 +527,8 @@ public class UnitTest {
         System.out.println("POST CONDITION     : Ascending String Array is printed");
         String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
         String[] y = new String[x.length];
+        //Copying the array x[] into the array y[], this is so I can have different
+        //pointers for each of the arrays.
         System.arraycopy(x, 0, y, 0, x.length);
         try {
             System.out.println("DATA BEFORE        : (See Below)");
@@ -553,6 +559,8 @@ public class UnitTest {
         boolean same = true;
         int[] x = ArrayUtils.generateArray(10, -100, 100);
         int[] y = new int[x.length];
+        //Copying the array x[] into the array y[], this is so I can have different
+        //pointers for each of the arrays.
         System.arraycopy(x, 0, y, 0, x.length);
         try {
             System.out.println("DATA BEFORE        : (See Below)");
@@ -564,6 +572,8 @@ public class UnitTest {
             ArrayUtils.display(x);
 
             Arrays.sort(y);
+            //Instead of using array.equals, I make a custom for loop in order to
+            //compare an ascending loop to a descending one.
             for (int i = 0; i < x.length; i++) {
                 if (y[i] != x[x.length - 1 - i]) {
 
@@ -589,6 +599,8 @@ public class UnitTest {
         boolean same = true;
         double[] x = ArrayUtils.generateArray(10, -100.0, 100.0);
         double[] y = new double[x.length];
+        //Copying the array x[] into the array y[], this is so I can have different
+        //pointers for each of the arrays.
         System.arraycopy(x, 0, y, 0, x.length);
         try {
             System.out.println("DATA BEFORE        : (See Below)");
@@ -600,6 +612,8 @@ public class UnitTest {
             ArrayUtils.display(x);
 
             Arrays.sort(y);
+            //Instead of using array.equals, I make a custom for loop in order to
+            //compare an ascending loop to a descending one.
             for (int i = 0; i < x.length; i++) {
                 if (y[i] != x[x.length - 1 - i]) {
                     same = false;
@@ -624,6 +638,8 @@ public class UnitTest {
         boolean same = true;
         String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
         String[] y = new String[x.length];
+        //Copying the array x[] into the array y[], this is so I can have different
+        //pointers for each of the arrays.
         System.arraycopy(x, 0, y, 0, x.length);
         try {
             System.out.println("DATA BEFORE        : (See Below)");
@@ -634,6 +650,8 @@ public class UnitTest {
             ArrayUtils.display(x);
 
             Arrays.sort(y);
+            //Instead of using array.equals, I make a custom for loop in order to
+            //compare an ascending loop to a descending one.
             for (int i = 0; i < x.length; i++) {
                 if (!y[i].equals(x[x.length - 1 - i])) {
                     same = false;
@@ -658,8 +676,11 @@ public class UnitTest {
         int searchVal;
         int willBeFound = (int) (Math.random() * 2);
         int[] x = ArrayUtils.generateArray(10, -100, 100);
+        //I make an Integer[] array 
         Integer[] y = new Integer[x.length];
         try {
+            //arraycopy does not work when copying two different types of arrays,
+            //So I make a custom for loop
             for (int i = 0; i < x.length; i++) {
                 y[i] = x[i];
             }
@@ -674,6 +695,8 @@ public class UnitTest {
             ArrayUtils.display(x);
 
             System.out.println("DATA AFTER: " + ArrayUtils.linearSearch(x, searchVal));
+            System.out.println("Linear Search will return the first index of");
+            System.out.println("search value if search value is not unique.");
 
             assert (ArrayUtils.linearSearch(x, searchVal) == Arrays.asList(y).indexOf(searchVal));
             System.out.println("Linear Search Int Test Passed");
@@ -710,6 +733,8 @@ public class UnitTest {
             ArrayUtils.display(x);
 
             System.out.println("DATA AFTER: " + ArrayUtils.linearSearch(x, searchVal));
+            System.out.println("Linear Search will return the first index of");
+            System.out.println("search value if search value is not unique.");
 
             assert (ArrayUtils.linearSearch(x, searchVal) == Arrays.asList(y).indexOf(searchVal));
             System.out.println("Linear Search Double Test Passed");
@@ -743,6 +768,8 @@ public class UnitTest {
             ArrayUtils.display(x);
 
             System.out.println("DATA AFTER: " + ArrayUtils.linearSearch(x, searchVal));
+            System.out.println("Linear Search will return the first index of");
+            System.out.println("search value if search value is not unique.");
 
             assert (ArrayUtils.linearSearch(x, searchVal) == Arrays.asList(y).indexOf(searchVal));
             System.out.println("Linear Search String Test Passed");
