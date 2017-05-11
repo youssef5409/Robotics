@@ -696,6 +696,11 @@ public class UnitTest {
                 searchVal = x[(int) (Math.random() * x.length)];
             }
 
+            System.out.println("DATA BEFORE        : (See Below)");
+            ArrayUtils.display(x);
+
+            System.out.println("DATA AFTER: " + ArrayUtils.linearSearch(x, searchVal));
+
             assert (ArrayUtils.linearSearch(x, searchVal) == Arrays.asList(y).indexOf(searchVal));
             System.out.println("Linear Search String Test Passed");
             System.out.println(buffer);
@@ -707,16 +712,20 @@ public class UnitTest {
     }
 
     private static void binarySearchInt() {
+        System.out.println(buffer);
+        System.out.println("TEST CASE #10A     : Binary Search Integer Array");
+        System.out.println("PRE CONDITION      : Unsorted Array, Random Integers");
+        System.out.println("POST CONDITION     : Index of search value is printed");
+        int searchVal;
+        int willBeFound = (int) (Math.random() * 2);
+        int ascOrDsc = (int) (Math.random() * 2);
+        int[] x = ArrayUtils.generateArray(10, -100, 100);
+        Integer[] y = new Integer[x.length];
         try {
-            int searchVal;
-            int willBeFound = (int) (Math.random() * 2);
-            int ascOrDsc = (int) (Math.random() * 2);
-            int[] x = ArrayUtils.generateArray(10, -100, 100);
-            Integer[] y = new Integer[x.length];
-
             for (int i = 0; i < x.length; i++) {
                 y[i] = x[i];
             }
+
             Arrays.sort(y);
 
             if (ascOrDsc == 0) {
@@ -736,6 +745,11 @@ public class UnitTest {
                 searchVal = x[(int) (Math.random() * x.length)];
             }
 
+            System.out.println("DATA BEFORE        : (See Below)");
+            ArrayUtils.display(x);
+
+            System.out.println("DATA AFTER: " + ArrayUtils.binarySearch(x, searchVal));
+
             assert (ArrayUtils.binarySearch(x, searchVal) == Arrays.asList(y).indexOf(searchVal));
             System.out.println("Binary Search Int Test Passed");
             System.out.println(buffer);
@@ -747,6 +761,10 @@ public class UnitTest {
     }
 
     private static void binarySearchDouble() {
+        System.out.println(buffer);
+        System.out.println("TEST CASE #10B     : Binary Search Double Array");
+        System.out.println("PRE CONDITION      : Unsorted Array, Random Doubles");
+        System.out.println("POST CONDITION     : Index of search value is printed");
         try {
             double searchVal;
             int willBeFound = (int) (Math.random() * 2);
@@ -776,6 +794,11 @@ public class UnitTest {
                 searchVal = x[(int) (Math.random() * x.length)];
             }
 
+            System.out.println("DATA BEFORE        : (See Below)");
+            ArrayUtils.display(x);
+
+            System.out.println("DATA AFTER: " + ArrayUtils.binarySearch(x, searchVal));
+
             assert (ArrayUtils.binarySearch(x, searchVal) == Arrays.asList(y).indexOf(searchVal));
             System.out.println("Binary Search Double Test Passed");
             System.out.println(buffer);
@@ -787,6 +810,10 @@ public class UnitTest {
     }
 
     private static void binarySearchString() {
+        System.out.println(buffer);
+        System.out.println("TEST CASE #10C     : Binary Search String Array");
+        System.out.println("PRE CONDITION      : Unsorted Array, Random Strings");
+        System.out.println("POST CONDITION     : Index of search value is printed");
         try {
             String searchVal;
             int willBeFound = (int) (Math.random() * 2);
@@ -814,6 +841,11 @@ public class UnitTest {
             } else {
                 searchVal = x[(int) (Math.random() * x.length)];
             }
+
+            System.out.println("DATA BEFORE        : (See Below)");
+            ArrayUtils.display(x);
+
+            System.out.println("DATA AFTER: " + ArrayUtils.binarySearch(x, searchVal));
 
             assert (ArrayUtils.binarySearch(x, searchVal) == Arrays.asList(y).indexOf(searchVal));
             System.out.println("Binary Search String Test Passed");
