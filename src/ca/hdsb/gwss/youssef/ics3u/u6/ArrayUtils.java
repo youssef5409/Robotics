@@ -39,25 +39,45 @@ public class ArrayUtils {
     }
 
     public static int[] generateArray(int size, int min, int max) {
+        boolean contained = false;
         int[] data = new int[size];
-
+        int n;
         for (int i = 0; i < data.length; i++) {
-            data[i] = (int) (Math.random() * (max - min) + min);
+            n = (int) (Math.random() * (max - min) + min);
+            for (int j = 0; j < i; j++) {
+                if (data[j] == n) {
+                    i--;
+                    contained = true;
+                }
+            }
+            if (!contained) {
+                data[i] = n;
+            }
         }
         return data;
     }
 
     public static double[] generateArray(int size, double min, double max) {
+        boolean contained = false;
         double[] data = new double[size];
-
+        double n;
         for (int i = 0; i < data.length; i++) {
-
-            data[i] = Math.random() * (max - min) + min;
+            n = Math.random() * (max - min) + min;
+            for (int j = 0; j < i; j++) {
+                if (data[j] == n) {
+                    i--;
+                    contained = true;
+                }
+            }
+            if (!contained) {
+                data[i] = n;
+            }
         }
         return data;
     }
 
     public static String[] generateArray(int size, int lengthOfString, char min, char max) {
+        boolean contained = false;
         String[] data = new String[size];
         String str;
         for (int i = 0; i < data.length; i++) {
@@ -65,7 +85,15 @@ public class ArrayUtils {
             for (int j = 0; j < lengthOfString; j++) {
                 str += Character.toString((char) (int) (Math.random() * (max - min) + min));
             }
-            data[i] = str;
+            for (int j = 0; j < i; j++) {
+                if (data[j].equals(str)) {
+                    i--;
+                    contained = true;
+                }
+            }
+             if (!contained) {
+                data[i] = str;
+            }
         }
         return data;
     }
