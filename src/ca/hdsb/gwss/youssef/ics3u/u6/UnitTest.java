@@ -53,10 +53,13 @@ public class UnitTest {
         linearSearchDouble();
         linearSearchString();
 
-        binarySearchInt();
-        binarySearchDouble();
-        binarySearchString();
+        binarySearchIntAsc();
+        binarySearchDoubleAsc();
+        binarySearchStringAsc();
 
+        binarySearchIntDsc();
+        binarySearchDoubleDsc();
+        binarySearchStringDsc();
     }
 
     private static void maxInt() {
@@ -758,14 +761,13 @@ public class UnitTest {
         }
     }
 
-    private static void binarySearchInt() {
+    private static void binarySearchIntAsc() {
         //Printing Introductory Information
         System.out.println(BUFFER);
         System.out.println("TEST CASE #10A     : Binary Search Integer Array");
-        System.out.println("PRE CONDITION      : Unsorted Array, Random Integers, no duplicates");
+        System.out.println("PRE CONDITION      : Ascending sorted Array, Random Integers, no duplicates");
         System.out.println("POST CONDITION     : Index of search value is printed");
-        int ascOrDsc = (int) (Math.random() * 2);
-        int[] x = ArrayUtils.generateArray(10, -100, 100);
+        int[] x = ArrayUtils.generateArray(11, -100, 100);
         Integer[] y = new Integer[x.length];
         try {
             for (int i = 0; i < x.length; i++) {
@@ -773,18 +775,7 @@ public class UnitTest {
             }
 
             Arrays.sort(y);
-
-            if (ascOrDsc == 0) {
-                ArrayUtils.selectionIntAsc(x);
-            } else {
-                int temp;
-                ArrayUtils.selectionIntDsc(x);
-                for (int i = 0; i < y.length / 2; i++) {
-                    temp = y[i];
-                    y[i] = y[y.length - 1 - i];
-                    y[y.length - 1 - i] = temp;
-                }
-            }
+            ArrayUtils.selectionIntAsc(x);
 
             System.out.println("DATA BEFORE        : (See Below)");
             ArrayUtils.display(x);
@@ -793,42 +784,97 @@ public class UnitTest {
                 System.out.println("Search: " + i + " --> " + ArrayUtils.linearSearch(x, x[i]));
                 assert (ArrayUtils.linearSearch(x, x[i]) == Arrays.asList(y).indexOf(x[i]));
             }
-
-            System.out.println("Binary Search Int Test Passed");
+            System.out.println("Binary Search Int Ascending Test Passed");
             System.out.println(BUFFER);
         } catch (AssertionError e) {
             System.out.println(BUFFER);
-            System.err.println("Binary Search Int Test Failed");
+            System.err.println("Binary Search Int Ascending Test Failed");
             System.out.println(BUFFER);
         }
     }
 
-    private static void binarySearchDouble() {
+    private static void binarySearchDoubleAsc() {
         //Printing Introductory Information
         System.out.println(BUFFER);
         System.out.println("TEST CASE #10B     : Binary Search Double Array");
-        System.out.println("PRE CONDITION      : Unsorted Array, Random Doubles, no duplicates");
+        System.out.println("PRE CONDITION      : Ascending sorted Array, Random Doubles, no duplicates");
         System.out.println("POST CONDITION     : Index of search value is printed");
+        double[] x = ArrayUtils.generateArray(11, -100.0, 100.0);
+        Double[] y = new Double[x.length];
         try {
-            int ascOrDsc = (int) (Math.random() * 2);
-            double[] x = ArrayUtils.generateArray(10, -100.0, 100.0);
-            Double[] y = new Double[x.length];
-
             for (int i = 0; i < x.length; i++) {
                 y[i] = x[i];
             }
-            Arrays.sort(y);
 
-            if (ascOrDsc == 0) {
-                ArrayUtils.selectionDoubleAsc(x);
-            } else {
-                double temp;
-                ArrayUtils.selectionDoubleDsc(x);
-                for (int i = 0; i < y.length / 2; i++) {
-                    temp = y[i];
-                    y[i] = y[y.length - 1 - i];
-                    y[y.length - 1 - i] = temp;
-                }
+            Arrays.sort(y);
+            ArrayUtils.selectionDoubleAsc(x);
+
+            System.out.println("DATA BEFORE        : (See Below)");
+            ArrayUtils.display(x);
+
+            for (int i = 0; i < x.length; i++) {
+                System.out.println("Search: " + i + " --> " + ArrayUtils.linearSearch(x, x[i]));
+                assert (ArrayUtils.linearSearch(x, x[i]) == Arrays.asList(y).indexOf(x[i]));
+            }
+            System.out.println("Binary Search Double Ascending Test Passed");
+            System.out.println(BUFFER);
+        } catch (AssertionError e) {
+            System.out.println(BUFFER);
+            System.err.println("Binary Search Double Ascending Test Failed");
+            System.out.println(BUFFER);
+        }
+    }
+
+    private static void binarySearchStringAsc() {
+        //Printing Introductory Information
+        System.out.println(BUFFER);
+        System.out.println("TEST CASE #10C     : Binary Search String Array");
+        System.out.println("PRE CONDITION      : Ascending Sorted Array, Random Strings, no duplicates");
+        System.out.println("POST CONDITION     : Index of search value is printed");
+        String[] x = ArrayUtils.generateArray(11, 4, 'A', '[');
+        String[] y = new String[x.length];
+        System.arraycopy(x, 0, y, 0, x.length);
+        try {
+            Arrays.sort(y);
+            ArrayUtils.selectionStringAsc(x);
+
+            System.out.println("DATA BEFORE        : (See Below)");
+            ArrayUtils.display(x);
+
+            for (int i = 0; i < x.length; i++) {
+                System.out.println("Search: " + i + " --> " + ArrayUtils.linearSearch(x, x[i]));
+                assert (ArrayUtils.linearSearch(x, x[i]) == Arrays.asList(y).indexOf(x[i]));
+            }
+            System.out.println("Binary Search String Ascending Test Passed");
+            System.out.println(BUFFER);
+        } catch (AssertionError e) {
+            System.out.println(BUFFER);
+            System.err.println("Binary Search String Ascending Test Failed");
+            System.out.println(BUFFER);
+        }
+    }
+
+    private static void binarySearchIntDsc() {
+        //Printing Introductory Information
+        System.out.println(BUFFER);
+        System.out.println("TEST CASE #11A     : Binary Search Integer Array");
+        System.out.println("PRE CONDITION      : Descending sorted Array, Random Integers, no duplicates");
+        System.out.println("POST CONDITION     : Index of search value is printed");
+        int[] x = ArrayUtils.generateArray(11, -100, 100);
+        Integer[] y = new Integer[x.length];
+        int temp;
+        try {
+            for (int i = 0; i < x.length; i++) {
+                y[i] = x[i];
+            }
+
+            Arrays.sort(y);
+            ArrayUtils.selectionIntDsc(x);
+
+            for (int i = 0; i < y.length / 2; i++) {
+                temp = y[i];
+                y[i] = y[y.length - 1 - i];
+                y[y.length - 1 - i] = temp;
             }
 
             System.out.println("DATA BEFORE        : (See Below)");
@@ -838,61 +884,86 @@ public class UnitTest {
                 System.out.println("Search: " + i + " --> " + ArrayUtils.linearSearch(x, x[i]));
                 assert (ArrayUtils.linearSearch(x, x[i]) == Arrays.asList(y).indexOf(x[i]));
             }
-
-            System.out.println("Binary Search Double Test Passed");
+            System.out.println("Binary Search Int Descending Test Passed");
             System.out.println(BUFFER);
         } catch (AssertionError e) {
             System.out.println(BUFFER);
-            System.err.println("Binary Search Double Test Failed");
+            System.err.println("Binary Search Int Descending Test Failed");
             System.out.println(BUFFER);
         }
     }
 
-    private static void binarySearchString() {
+    private static void binarySearchDoubleDsc() {
         //Printing Introductory Information
         System.out.println(BUFFER);
-        System.out.println("TEST CASE #10C     : Binary Search String Array");
-        System.out.println("PRE CONDITION      : Unsorted Array, Random Strings, no duplicates");
+        System.out.println("TEST CASE #11B     : Binary Search Double Array");
+        System.out.println("PRE CONDITION      : Descending sorted Array, Random Doubles, no duplicates");
         System.out.println("POST CONDITION     : Index of search value is printed");
+        double[] x = ArrayUtils.generateArray(11, -100.0, 100.0);
+        Double[] y = new Double[x.length];
+        double temp;
         try {
-            String searchVal;
-            int willBeFound = (int) (Math.random() * 2);
-            int ascOrDsc = (int) (Math.random() * 2);
-            String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
-            String[] y = new String[x.length];
-
-            System.arraycopy(x, 0, y, 0, x.length);
+            for (int i = 0; i < x.length; i++) {
+                y[i] = x[i];
+            }
 
             Arrays.sort(y);
+            ArrayUtils.selectionDoubleDsc(x);
 
-            if (ascOrDsc == 0) {
-                ArrayUtils.selectionStringAsc(x);
-            } else {
-                String temp;
-                ArrayUtils.selectionStringDsc(x);
-                for (int i = 0; i < y.length / 2; i++) {
-                    temp = y[i];
-                    y[i] = y[y.length - 1 - i];
-                    y[y.length - 1 - i] = temp;
-                }
-            }
-            if (willBeFound == 0) {
-                searchVal = "";
-            } else {
-                searchVal = x[(int) (Math.random() * x.length)];
+            for (int i = 0; i < y.length / 2; i++) {
+                temp = y[i];
+                y[i] = y[y.length - 1 - i];
+                y[y.length - 1 - i] = temp;
             }
 
             System.out.println("DATA BEFORE        : (See Below)");
             ArrayUtils.display(x);
 
-            System.out.println("DATA AFTER: " + ArrayUtils.binarySearch(x, searchVal));
-
-            assert (ArrayUtils.binarySearch(x, searchVal) == Arrays.asList(y).indexOf(searchVal));
-            System.out.println("Binary Search String Test Passed");
+            for (int i = 0; i < x.length; i++) {
+                System.out.println("Search: " + i + " --> " + ArrayUtils.linearSearch(x, x[i]));
+                assert (ArrayUtils.linearSearch(x, x[i]) == Arrays.asList(y).indexOf(x[i]));
+            }
+            System.out.println("Binary Search Double Descending Test Passed");
             System.out.println(BUFFER);
         } catch (AssertionError e) {
             System.out.println(BUFFER);
-            System.err.println("Binary Search String Test Failed");
+            System.err.println("Binary Search Double Descending Test Failed");
+            System.out.println(BUFFER);
+        }
+    }
+
+    private static void binarySearchStringDsc() {
+        //Printing Introductory Information
+        System.out.println(BUFFER);
+        System.out.println("TEST CASE #11C     : Binary Search String Array");
+        System.out.println("PRE CONDITION      : Descending Sorted Array, Random Strings, no duplicates");
+        System.out.println("POST CONDITION     : Index of search value is printed");
+        String[] x = ArrayUtils.generateArray(11, 4, 'A', '[');
+        String[] y = new String[x.length];
+        String temp;
+        System.arraycopy(x, 0, y, 0, x.length);
+        try {
+            Arrays.sort(y);
+            ArrayUtils.selectionStringDsc(x);
+
+            for (int i = 0; i < y.length / 2; i++) {
+                temp = y[i];
+                y[i] = y[y.length - 1 - i];
+                y[y.length - 1 - i] = temp;
+            }
+
+            System.out.println("DATA BEFORE        : (See Below)");
+            ArrayUtils.display(x);
+
+            for (int i = 0; i < x.length; i++) {
+                System.out.println("Search: " + i + " --> " + ArrayUtils.linearSearch(x, x[i]));
+                assert (ArrayUtils.linearSearch(x, x[i]) == Arrays.asList(y).indexOf(x[i]));
+            }
+            System.out.println("Binary Search String Descending Test Passed");
+            System.out.println(BUFFER);
+        } catch (AssertionError e) {
+            System.out.println(BUFFER);
+            System.err.println("Binary Search String Descending Test Failed");
             System.out.println(BUFFER);
         }
     }
