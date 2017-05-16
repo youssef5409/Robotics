@@ -21,6 +21,7 @@ public class UnitTest {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
         maxInt();
         maxDouble();
 
@@ -60,6 +61,7 @@ public class UnitTest {
         binarySearchIntDsc();
         binarySearchDoubleDsc();
         binarySearchStringDsc();
+
     }
 
     private static void maxInt() {
@@ -767,7 +769,7 @@ public class UnitTest {
         System.out.println("TEST CASE #10A     : Binary Search Integer Array");
         System.out.println("PRE CONDITION      : Ascending sorted Array, Random Integers, no duplicates");
         System.out.println("POST CONDITION     : Index of search value is printed");
-        int[] x = ArrayUtils.generateArray(11, -100, 100);
+        int[] x = ArrayUtils.generateArray(10, -100, 100);
         Integer[] y = new Integer[x.length];
         try {
             for (int i = 0; i < x.length; i++) {
@@ -799,7 +801,7 @@ public class UnitTest {
         System.out.println("TEST CASE #10B     : Binary Search Double Array");
         System.out.println("PRE CONDITION      : Ascending sorted Array, Random Doubles, no duplicates");
         System.out.println("POST CONDITION     : Index of search value is printed");
-        double[] x = ArrayUtils.generateArray(11, -100.0, 100.0);
+        double[] x = ArrayUtils.generateArray(10, -100.0, 100.0);
         Double[] y = new Double[x.length];
         try {
             for (int i = 0; i < x.length; i++) {
@@ -831,7 +833,7 @@ public class UnitTest {
         System.out.println("TEST CASE #10C     : Binary Search String Array");
         System.out.println("PRE CONDITION      : Ascending Sorted Array, Random Strings, no duplicates");
         System.out.println("POST CONDITION     : Index of search value is printed");
-        String[] x = ArrayUtils.generateArray(11, 4, 'A', '[');
+        String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
         String[] y = new String[x.length];
         System.arraycopy(x, 0, y, 0, x.length);
         try {
@@ -860,7 +862,7 @@ public class UnitTest {
         System.out.println("TEST CASE #11A     : Binary Search Integer Array");
         System.out.println("PRE CONDITION      : Descending sorted Array, Random Integers, no duplicates");
         System.out.println("POST CONDITION     : Index of search value is printed");
-        int[] x = ArrayUtils.generateArray(11, -100, 100);
+        int[] x = ArrayUtils.generateArray(10, -100, 100);
         Integer[] y = new Integer[x.length];
         int temp;
         try {
@@ -899,7 +901,7 @@ public class UnitTest {
         System.out.println("TEST CASE #11B     : Binary Search Double Array");
         System.out.println("PRE CONDITION      : Descending sorted Array, Random Doubles, no duplicates");
         System.out.println("POST CONDITION     : Index of search value is printed");
-        double[] x = ArrayUtils.generateArray(11, -100.0, 100.0);
+        double[] x = ArrayUtils.generateArray(10, -100.0, 100.0);
         Double[] y = new Double[x.length];
         double temp;
         try {
@@ -938,7 +940,7 @@ public class UnitTest {
         System.out.println("TEST CASE #11C     : Binary Search String Array");
         System.out.println("PRE CONDITION      : Descending Sorted Array, Random Strings, no duplicates");
         System.out.println("POST CONDITION     : Index of search value is printed");
-        String[] x = ArrayUtils.generateArray(11, 4, 'A', '[');
+        String[] x = ArrayUtils.generateArray(10, 4, 'A', '[');
         String[] y = new String[x.length];
         String temp;
         System.arraycopy(x, 0, y, 0, x.length);

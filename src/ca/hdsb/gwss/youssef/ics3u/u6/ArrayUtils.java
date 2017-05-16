@@ -45,6 +45,7 @@ public class ArrayUtils {
             n = (int) (Math.random() * (max - min) + min);
             data[i] = n;
             for (int j = 0; j < i; j++) {
+                //If data is in array, take 1 away from i and try again.
                 if (data[j] == n) {
                     i--;
                 } else {
@@ -63,6 +64,7 @@ public class ArrayUtils {
             n = Math.random() * (max - min) + min;
             data[i] = n;
             for (int j = 0; j < i; j++) {
+                //If data is in array, take 1 away from i and try again.
                 if (data[j] == n) {
                     i--;
                 } else {
@@ -85,6 +87,7 @@ public class ArrayUtils {
             }
             data[i] = str;
             for (int j = 0; j < i; j++) {
+                //If data is in array, take 1 away from i and try again.
                 if (data[j].equals(str)) {
                     i--;
                 } else {
@@ -179,6 +182,7 @@ public class ArrayUtils {
         int j; //This is so that j is only initialized once
         for (int i = 0; i < x.length; i++) {
             for (j = 1; j < x.length - i; j++) {
+                //If data before is greater than data after, swap.
                 if (x[j - 1] > x[j]) {
                     swap = x[j - 1];
                     x[j - 1] = x[j];
@@ -190,8 +194,10 @@ public class ArrayUtils {
 
     public static void bubbleDoubleAsc(double[] x) {
         double temp;
+        int j;
         for (int i = 0; i < x.length; i++) {
-            for (int j = 1; j < x.length - i; j++) {
+            for (j = 1; j < x.length - i; j++) {
+                //If data before is greater than data after, swap.
                 if (x[j - 1] > x[j]) {
                     temp = x[j - 1];
                     x[j - 1] = x[j];
@@ -203,8 +209,11 @@ public class ArrayUtils {
 
     public static void bubbleStringAsc(String[] x) {
         String temp;
+        int j;
         for (int i = 0; i < x.length; i++) {
-            for (int j = 1; j < x.length - i; j++) {
+            for (j = 1; j < x.length - i; j++) {
+                //If the difference between the data before and after, is greater than 1.
+                //then swap
                 if (x[j - 1].compareTo(x[j]) > 0) {
                     temp = x[j - 1];
                     x[j - 1] = x[j];
@@ -218,6 +227,7 @@ public class ArrayUtils {
         int swap;
         for (int i = 0; i < array.length; i++) {
             for (int j = 1; j < array.length - i; j++) {
+                //If data before is smaller than data after, swap.
                 if (array[j - 1] < array[j]) {
                     swap = array[j - 1];
                     array[j - 1] = array[j];
@@ -232,6 +242,7 @@ public class ArrayUtils {
         double temp;
         for (int i = 0; i < x.length; i++) {
             for (int j = 1; j < x.length - i; j++) {
+                //If data before is smaller than data after, swap.
                 if (x[j - 1] < x[j]) {
                     temp = x[j - 1];
                     x[j - 1] = x[j];
@@ -245,6 +256,7 @@ public class ArrayUtils {
         String temp;
         for (int i = 0; i < x.length; i++) {
             for (int j = 1; j < x.length - i; j++) {
+                //If data before is smaller than data after, swap.
                 if (x[j - 1].compareTo(x[j]) < 0) {
                     temp = x[j - 1];
                     x[j - 1] = x[j];
@@ -262,6 +274,8 @@ public class ArrayUtils {
         for (int i = 0; i < x.length - 1; i++) {
             maxIndex = x.length - 1 - i;
             for (j = 0; j < x.length - i; j++) {
+                //If data at the maxIndex is smaller than data after, record the index
+                //of the data after.
                 if (x[j] > x[maxIndex]) {
                     maxIndex = j;
                 }
@@ -280,6 +294,8 @@ public class ArrayUtils {
         for (int i = 0; i < x.length - 1; i++) {
             maxIndex = x.length - 1 - i;
             for (j = 0; j < x.length - i; j++) {
+                //If data at the maxIndex is smaller than data after, record the index
+                //of the data after.
                 if (x[j] > x[maxIndex]) {
                     maxIndex = j;
                 }
