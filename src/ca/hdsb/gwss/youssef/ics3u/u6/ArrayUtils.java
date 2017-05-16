@@ -14,6 +14,12 @@ package ca.hdsb.gwss.youssef.ics3u.u6;
  */
 public class ArrayUtils {
 
+    public static int bubbleComparisons;
+    public static int bubbleSwaps;
+
+    public static int selectionComparisons;
+    public static int selectionSwaps;
+
     public static void display(int[] array) {
         System.out.println("------------------------------------------------------");
         for (int i : array) {
@@ -178,60 +184,76 @@ public class ArrayUtils {
     //Repeating all methods, for doubles.
 
     public static void bubbleIntAsc(int[] x) {
+        bubbleComparisons = 0;
+        bubbleSwaps = 0;
         int swap;
         int j; //This is so that j is only initialized once
         for (int i = 0; i < x.length; i++) {
             for (j = 1; j < x.length - i; j++) {
                 //If data before is greater than data after, swap.
+                bubbleComparisons++;
                 if (x[j - 1] > x[j]) {
                     swap = x[j - 1];
                     x[j - 1] = x[j];
                     x[j] = swap;
+                    bubbleSwaps++;
                 }
             }
         }
     }
 
     public static void bubbleDoubleAsc(double[] x) {
+        bubbleComparisons = 0;
+        bubbleSwaps = 0;
         double temp;
         int j;
         for (int i = 0; i < x.length; i++) {
             for (j = 1; j < x.length - i; j++) {
                 //If data before is greater than data after, swap.
+                bubbleComparisons++;
                 if (x[j - 1] > x[j]) {
                     temp = x[j - 1];
                     x[j - 1] = x[j];
                     x[j] = temp;
+                    bubbleSwaps++;
                 }
             }
         }
     }
 
     public static void bubbleStringAsc(String[] x) {
+        bubbleComparisons = 0;
+        bubbleSwaps = 0;
         String temp;
         int j;
         for (int i = 0; i < x.length; i++) {
             for (j = 1; j < x.length - i; j++) {
                 //If the difference between the data before and after, is greater than 1.
                 //then swap
+                bubbleComparisons++;
                 if (x[j - 1].compareTo(x[j]) > 0) {
                     temp = x[j - 1];
                     x[j - 1] = x[j];
                     x[j] = temp;
+                    bubbleSwaps++;
                 }
             }
         }
     }
 
-    public static void bubbleIntDsc(int[] array) {
+    public static void bubbleIntDsc(int[] x) {
+        bubbleComparisons = 0;
+        bubbleSwaps = 0;
         int swap;
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 1; j < array.length - i; j++) {
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 1; j < x.length - i; j++) {
                 //If data before is smaller than data after, swap.
-                if (array[j - 1] < array[j]) {
-                    swap = array[j - 1];
-                    array[j - 1] = array[j];
-                    array[j] = swap;
+                bubbleComparisons++;
+                if (x[j - 1] < x[j]) {
+                    swap = x[j - 1];
+                    x[j - 1] = x[j];
+                    x[j] = swap;
+                    bubbleSwaps++;
                 }
             }
 
@@ -239,34 +261,44 @@ public class ArrayUtils {
     }
 
     public static void bubbleDoubleDsc(double[] x) {
+        bubbleComparisons = 0;
+        bubbleSwaps = 0;
         double temp;
         for (int i = 0; i < x.length; i++) {
             for (int j = 1; j < x.length - i; j++) {
                 //If data before is smaller than data after, swap.
+                bubbleComparisons++;
                 if (x[j - 1] < x[j]) {
                     temp = x[j - 1];
                     x[j - 1] = x[j];
                     x[j] = temp;
+                    bubbleSwaps++;
                 }
             }
         }
     }
 
     public static void bubbleStringDsc(String[] x) {
+        bubbleComparisons = 0;
+        bubbleSwaps = 0;
         String temp;
         for (int i = 0; i < x.length; i++) {
             for (int j = 1; j < x.length - i; j++) {
                 //If data before is smaller than data after, swap.
+                bubbleComparisons++;
                 if (x[j - 1].compareTo(x[j]) < 0) {
                     temp = x[j - 1];
                     x[j - 1] = x[j];
                     x[j] = temp;
+                    bubbleSwaps++;
                 }
             }
         }
     }
 
     public static void selectionIntAsc(int[] x) {
+        selectionComparisons = 0;
+        selectionSwaps = 0;
         int j;
         int maxIndex;
         int temp;
@@ -276,6 +308,7 @@ public class ArrayUtils {
             for (j = 0; j < x.length - i; j++) {
                 //If data at the maxIndex is smaller than data after, record the index
                 //of the data after.
+                selectionComparisons++;
                 if (x[j] > x[maxIndex]) {
                     maxIndex = j;
                 }
@@ -283,10 +316,13 @@ public class ArrayUtils {
             temp = x[x.length - i - 1];
             x[x.length - i - 1] = x[maxIndex];
             x[maxIndex] = temp;
+            selectionSwaps++;
         }
     }
 
     public static void selectionDoubleAsc(double[] x) {
+        selectionComparisons = 0;
+        selectionSwaps = 0;
         int j;
         int maxIndex;
         double temp;
@@ -296,6 +332,7 @@ public class ArrayUtils {
             for (j = 0; j < x.length - i; j++) {
                 //If data at the maxIndex is smaller than data after, record the index
                 //of the data after.
+                selectionComparisons++;
                 if (x[j] > x[maxIndex]) {
                     maxIndex = j;
                 }
@@ -303,10 +340,13 @@ public class ArrayUtils {
             temp = x[x.length - i - 1];
             x[x.length - i - 1] = x[maxIndex];
             x[maxIndex] = temp;
+            selectionSwaps++;
         }
     }
 
     public static void selectionStringAsc(String[] x) {
+        selectionComparisons = 0;
+        selectionSwaps = 0;
         int j;
         int maxIndex;
         String temp;
@@ -317,6 +357,7 @@ public class ArrayUtils {
                 //If the difference of the data at the maxIndex
                 //and the data after is greater than 0, record the index
                 //of the data after.
+                selectionComparisons++;
                 if (x[j].compareTo(x[maxIndex]) > 0) {
                     maxIndex = j;
                 }
@@ -324,10 +365,13 @@ public class ArrayUtils {
             temp = x[x.length - i - 1];
             x[x.length - i - 1] = x[maxIndex];
             x[maxIndex] = temp;
+            selectionSwaps++;
         }
     }
 
     public static void selectionIntDsc(int[] x) {
+        selectionComparisons = 0;
+        selectionSwaps = 0;
         int j;
         int maxIndex;
         int temp;
@@ -337,6 +381,7 @@ public class ArrayUtils {
             for (j = 0; j < x.length - i; j++) {
                 //If data at the maxIndex is greater than data after, record the index
                 //of the data after.
+                selectionComparisons++;
                 if (x[j] < x[maxIndex]) {
                     maxIndex = j;
                 }
@@ -344,10 +389,13 @@ public class ArrayUtils {
             temp = x[x.length - i - 1];
             x[x.length - i - 1] = x[maxIndex];
             x[maxIndex] = temp;
+            selectionSwaps++;
         }
     }
 
     public static void selectionDoubleDsc(double[] x) {
+        selectionComparisons = 0;
+        selectionSwaps = 0;
         int j;
         int maxIndex;
         double temp;
@@ -357,6 +405,7 @@ public class ArrayUtils {
             for (j = 0; j < x.length - i; j++) {
                 //If data at the maxIndex is greater than data after, record the index
                 //of the data after.
+                selectionComparisons++;
                 if (x[j] < x[maxIndex]) {
                     maxIndex = j;
                 }
@@ -364,10 +413,13 @@ public class ArrayUtils {
             temp = x[x.length - i - 1];
             x[x.length - i - 1] = x[maxIndex];
             x[maxIndex] = temp;
+            selectionSwaps++;
         }
     }
 
     public static void selectionStringDsc(String[] x) {
+        selectionComparisons = 0;
+        selectionSwaps = 0;
         int j;
         int maxIndex;
         String temp;
@@ -378,6 +430,7 @@ public class ArrayUtils {
                 //If the difference of the data at the maxIndex
                 //and the data after is smaller than 0, record the index
                 //of the data after.
+                selectionComparisons++;
                 if (x[j].compareTo(x[maxIndex]) < 0) {
                     maxIndex = j;
                 }
@@ -385,6 +438,7 @@ public class ArrayUtils {
             temp = x[x.length - i - 1];
             x[x.length - i - 1] = x[maxIndex];
             x[maxIndex] = temp;
+            selectionSwaps++;
         }
     }
 
