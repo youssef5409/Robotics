@@ -314,6 +314,9 @@ public class ArrayUtils {
         for (int i = 0; i < x.length - 1; i++) {
             maxIndex = x.length - 1 - i;
             for (j = 0; j < x.length - i; j++) {
+                //If the difference of the data at the maxIndex
+                //and the data after is greater than 0, record the index
+                //of the data after.
                 if (x[j].compareTo(x[maxIndex]) > 0) {
                     maxIndex = j;
                 }
@@ -332,6 +335,8 @@ public class ArrayUtils {
         for (int i = 0; i < x.length - 1; i++) {
             maxIndex = x.length - 1 - i;
             for (j = 0; j < x.length - i; j++) {
+                //If data at the maxIndex is greater than data after, record the index
+                //of the data after.
                 if (x[j] < x[maxIndex]) {
                     maxIndex = j;
                 }
@@ -350,6 +355,8 @@ public class ArrayUtils {
         for (int i = 0; i < x.length - 1; i++) {
             maxIndex = x.length - 1 - i;
             for (j = 0; j < x.length - i; j++) {
+                //If data at the maxIndex is greater than data after, record the index
+                //of the data after.
                 if (x[j] < x[maxIndex]) {
                     maxIndex = j;
                 }
@@ -368,6 +375,9 @@ public class ArrayUtils {
         for (int i = 0; i < x.length - 1; i++) {
             maxIndex = x.length - 1 - i;
             for (j = 0; j < x.length - i; j++) {
+                //If the difference of the data at the maxIndex
+                //and the data after is smaller than 0, record the index
+                //of the data after.
                 if (x[j].compareTo(x[maxIndex]) < 0) {
                     maxIndex = j;
                 }
@@ -382,8 +392,9 @@ public class ArrayUtils {
         int index = -1;
         int i = 0;
         boolean indexFound = false;
-
-        while (!indexFound && i < x.length) {
+        //if the data is not unique, it will return the first index of said data.
+        //this is why a while loop is made instead of a for loop.
+        while ((!indexFound) && i < x.length) {
             if (x[i] == val) {
                 index = i;
                 indexFound = true;
@@ -397,8 +408,9 @@ public class ArrayUtils {
         int index = -1;
         int i = 0;
         boolean indexFound = false;
-
-        while (!indexFound && i < x.length) {
+        //if the data is not unique, it will return the first index of said data.
+        //this is why a while loop is made instead of a for loop.
+        while ((!indexFound) && i < x.length) {
             if (x[i] == val) {
                 index = i;
                 indexFound = true;
@@ -412,7 +424,8 @@ public class ArrayUtils {
         int index = -1;
         int i = 0;
         boolean indexFound = false;
-
+        //if the data is not unique, it will return the first index of said data.
+        //this is why a while loop is made instead of a for loop.
         while (!indexFound && i < x.length) {
             if (x[i].equals(val)) {
                 index = i;
@@ -428,7 +441,7 @@ public class ArrayUtils {
         int r = x.length - 1;
         int mid;
         int index = -1;
-
+        //if last index is smaller than first, reverse thinking of binary search
         if (x[x.length - 1] < x[0]) {
             while (r >= l) {
                 mid = (l + r) / 2;
@@ -442,6 +455,10 @@ public class ArrayUtils {
                 }
             }
         } else {
+            //while the right post is at a greater index than the left,
+            //change the mid, to the middle, check if that is the correct index, 
+            //then continue moving the posts whether the value read is greater or smaller than
+            //the search value
             while (r >= l) {
                 mid = (l + r) / 2;
                 if (x[mid] == val) {
@@ -463,7 +480,7 @@ public class ArrayUtils {
         int r = x.length - 1;
         int mid;
         int index = -1;
-
+        //if last index is smaller than first, reverse thinking of binary search
         if (x[x.length - 1] < x[0]) {
             while (r >= l) {
                 mid = (l + r) / 2;
@@ -477,6 +494,10 @@ public class ArrayUtils {
                 }
             }
         } else {
+            //while the right post is at a greater index than the left,
+            //change the mid, to the middle, check if that is the correct index, 
+            //then continue moving the posts whether the value read is greater or smaller than
+            //the search value
             while (r >= l) {
                 mid = (l + r) / 2;
                 if (x[mid] == val) {
@@ -498,7 +519,7 @@ public class ArrayUtils {
         int r = x.length - 1;
         int mid;
         int index = -1;
-
+        //if last index is smaller than first, reverse thinking of binary search
         if (x[x.length - 1].compareTo(x[0]) < 0) {
             while (r >= l) {
                 mid = (l + r) / 2;
@@ -512,6 +533,10 @@ public class ArrayUtils {
                 }
             }
         } else {
+            //while the right post is at a greater index than the left,
+            //change the mid, to the middle, check if that is the correct index, 
+            //then continue moving the posts whether the value read is greater or smaller than
+            //the search value
             while (r >= l) {
                 mid = (l + r) / 2;
                 if (x[mid].equals(val)) {
