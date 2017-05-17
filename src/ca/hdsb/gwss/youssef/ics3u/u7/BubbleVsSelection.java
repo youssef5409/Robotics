@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ca.hdsb.gwss.youssef.ics3u1.u7;
+package ca.hdsb.gwss.youssef.ics3u.u7;
 
 import ca.hdsb.gwss.youssef.ics3u.u6.ArrayUtils;
 import java.io.File;
@@ -22,18 +22,19 @@ public class BubbleVsSelection {
      * @throws java.io.FileNotFoundException
      */
     public static void main(String[] args) throws FileNotFoundException {
-        int[] x = new int[100000];
-        int[] y = new int[100000];
+        int[] x = new int[0x3e8]; //Hexadecimal because hexadecimal looks cool
+        int[] y = new int[0b1111101000]; //In binary because why not
         int n;
 
         File textFile = new File("data.txt");
-        PrintWriter output = new PrintWriter(textFile);
-        Scanner input = new Scanner(textFile);
-
-        for (int i = 0; i < x.length; i++) {
-            output.println((int) (Math.random() * 100 + 1));
+        Scanner input;
+        
+        try (PrintWriter output = new PrintWriter(textFile)) {
+            input = new Scanner(textFile);
+            for (int i = 0; i < x.length; i++) {
+                output.println((int) (Math.random() * 100 + 1));
+            }
         }
-        output.close();
 
         for (int i = 0; i < y.length; i++) {
             n = Integer.parseInt(input.nextLine());
