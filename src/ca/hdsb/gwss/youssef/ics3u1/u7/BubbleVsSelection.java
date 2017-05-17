@@ -22,8 +22,8 @@ public class BubbleVsSelection {
      * @throws java.io.FileNotFoundException
      */
     public static void main(String[] args) throws FileNotFoundException {
-        int[] x = new int[1000];
-        int[] y = new int[1000];
+        int[] x = new int[100000];
+        int[] y = new int[100000];
         int n;
 
         File textFile = new File("data.txt");
