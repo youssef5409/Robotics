@@ -19,15 +19,11 @@ public class HelloWorld {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner read = new Scanner(System.in);
-        String number = read.nextLine();
-        char [] numberarray = number.toCharArray();
+        Scanner input = new Scanner(System.in);
+
+        String name = input.next();
         
-        for (char i : numberarray) {
-            System.out.println(i);
-        }
-        // in-line comment
-        
+        System.out.println(name);
     }
     
 }
