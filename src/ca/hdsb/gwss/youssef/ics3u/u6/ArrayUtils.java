@@ -150,19 +150,11 @@ public class ArrayUtils {
 
     //Finds the average of the numbers in an array, by adding them all up and dividing by length.
     public static double averageValue(int x[]) {
-        double total = 0;
-        for (int i = 0; i < x.length; i++) {
-            total += x[i];
-        }
-        return total / x.length;
+        return ((double) totalValue(x) / x.length);
     }
 
     public static double averageValue(double x[]) {
-        double total = 0;
-        for (int i = 0; i < x.length; i++) {
-            total += x[i];
-        }
-        return total / x.length;
+        return (totalValue(x) / x.length);
     }
 
     //Finds the total of the numbers by adding them up.
@@ -189,15 +181,19 @@ public class ArrayUtils {
         int swap;
         int j; //This is so that j is only initialized once
         for (int i = 0; i < x.length; i++) {
-            for (j = 1; j < x.length - i; j++) {
-                //If data before is greater than data after, swap.
-                bubbleComparisons++;
-                if (x[j - 1] > x[j]) {
-                    swap = x[j - 1];
-                    x[j - 1] = x[j];
-                    x[j] = swap;
-                    bubbleSwaps++;
+            if (!(i > 0 && (bubbleSwaps + bubbleSwaps == bubbleSwaps))) {
+                for (j = 1; j < x.length - i; j++) {
+                    //If data before is greater than data after, swap.
+                    bubbleComparisons++;
+                    if (x[j - 1] > x[j]) {
+                        swap = x[j - 1];
+                        x[j - 1] = x[j];
+                        x[j] = swap;
+                        bubbleSwaps++;
+                    }
                 }
+            } else {
+                break;
             }
         }
     }
@@ -208,15 +204,19 @@ public class ArrayUtils {
         double temp;
         int j;
         for (int i = 0; i < x.length; i++) {
-            for (j = 1; j < x.length - i; j++) {
-                //If data before is greater than data after, swap.
-                bubbleComparisons++;
-                if (x[j - 1] > x[j]) {
-                    temp = x[j - 1];
-                    x[j - 1] = x[j];
-                    x[j] = temp;
-                    bubbleSwaps++;
+            if (!(i > 0 && (bubbleSwaps + bubbleSwaps == bubbleSwaps))) {
+                for (j = 1; j < x.length - i; j++) {
+                    //If data before is greater than data after, swap.
+                    bubbleComparisons++;
+                    if (x[j - 1] > x[j]) {
+                        temp = x[j - 1];
+                        x[j - 1] = x[j];
+                        x[j] = temp;
+                        bubbleSwaps++;
+                    }
                 }
+            } else {
+                break;
             }
         }
     }

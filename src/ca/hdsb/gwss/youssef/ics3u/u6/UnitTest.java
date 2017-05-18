@@ -212,7 +212,7 @@ public class UnitTest {
         //Printing Introductory Information
         System.out.println(BUFFER);
         System.out.println("TEST CASE #4A      : Average Value Of Integer");
-        System.out.println("PRE CONDITION      : Array, + and - Integer");
+        System.out.println("PRE CONDITION      : Array, + and - Integers");
         System.out.println("POST CONDITION     : Average Value of Array is printed");
         int[] x = ArrayUtils.generateArray(10, -100, 100);
         try {
