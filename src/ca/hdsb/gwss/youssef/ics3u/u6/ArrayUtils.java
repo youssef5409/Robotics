@@ -227,16 +227,20 @@ public class ArrayUtils {
         String temp;
         int j;
         for (int i = 0; i < x.length; i++) {
-            for (j = 1; j < x.length - i; j++) {
-                //If the difference between the data before and after, is greater than 1.
-                //then swap
-                bubbleComparisons++;
-                if (x[j - 1].compareTo(x[j]) > 0) {
-                    temp = x[j - 1];
-                    x[j - 1] = x[j];
-                    x[j] = temp;
-                    bubbleSwaps++;
+            if (!(i > 0 && (bubbleSwaps + bubbleSwaps == bubbleSwaps))) {
+                for (j = 1; j < x.length - i; j++) {
+                    //If the difference between the data before and after, is greater than 1.
+                    //then swap
+                    bubbleComparisons++;
+                    if (x[j - 1].compareTo(x[j]) > 0) {
+                        temp = x[j - 1];
+                        x[j - 1] = x[j];
+                        x[j] = temp;
+                        bubbleSwaps++;
+                    }
                 }
+            } else {
+                break;
             }
         }
     }
@@ -246,17 +250,20 @@ public class ArrayUtils {
         bubbleSwaps = 0;
         int swap;
         for (int i = 0; i < x.length; i++) {
-            for (int j = 1; j < x.length - i; j++) {
-                //If data before is smaller than data after, swap.
-                bubbleComparisons++;
-                if (x[j - 1] < x[j]) {
-                    swap = x[j - 1];
-                    x[j - 1] = x[j];
-                    x[j] = swap;
-                    bubbleSwaps++;
+            if (!(i > 0 && (bubbleSwaps + bubbleSwaps == bubbleSwaps))) {
+                for (int j = 1; j < x.length - i; j++) {
+                    //If data before is smaller than data after, swap.
+                    bubbleComparisons++;
+                    if (x[j - 1] < x[j]) {
+                        swap = x[j - 1];
+                        x[j - 1] = x[j];
+                        x[j] = swap;
+                        bubbleSwaps++;
+                    }
                 }
+            } else {
+                break;
             }
-
         }
     }
 
@@ -265,15 +272,19 @@ public class ArrayUtils {
         bubbleSwaps = 0;
         double temp;
         for (int i = 0; i < x.length; i++) {
-            for (int j = 1; j < x.length - i; j++) {
-                //If data before is smaller than data after, swap.
-                bubbleComparisons++;
-                if (x[j - 1] < x[j]) {
-                    temp = x[j - 1];
-                    x[j - 1] = x[j];
-                    x[j] = temp;
-                    bubbleSwaps++;
+            if (!(i > 0 && (bubbleSwaps + bubbleSwaps == bubbleSwaps))) {
+                for (int j = 1; j < x.length - i; j++) {
+                    //If data before is smaller than data after, swap.
+                    bubbleComparisons++;
+                    if (x[j - 1] < x[j]) {
+                        temp = x[j - 1];
+                        x[j - 1] = x[j];
+                        x[j] = temp;
+                        bubbleSwaps++;
+                    }
                 }
+            } else {
+                break;
             }
         }
     }
@@ -283,15 +294,19 @@ public class ArrayUtils {
         bubbleSwaps = 0;
         String temp;
         for (int i = 0; i < x.length; i++) {
-            for (int j = 1; j < x.length - i; j++) {
-                //If data before is smaller than data after, swap.
-                bubbleComparisons++;
-                if (x[j - 1].compareTo(x[j]) < 0) {
-                    temp = x[j - 1];
-                    x[j - 1] = x[j];
-                    x[j] = temp;
-                    bubbleSwaps++;
+            if (!(i > 0 && (bubbleSwaps + bubbleSwaps == bubbleSwaps))) {
+                for (int j = 1; j < x.length - i; j++) {
+                    //If data before is smaller than data after, swap.
+                    bubbleComparisons++;
+                    if (x[j - 1].compareTo(x[j]) < 0) {
+                        temp = x[j - 1];
+                        x[j - 1] = x[j];
+                        x[j] = temp;
+                        bubbleSwaps++;
+                    }
                 }
+            } else {
+                break;
             }
         }
     }
