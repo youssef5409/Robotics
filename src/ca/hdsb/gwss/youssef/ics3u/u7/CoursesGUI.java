@@ -5,8 +5,14 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u7;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import nu.xom.Document;
 import nu.xom.Element;
+import nu.xom.Serializer;
 
 /**
  *
@@ -124,7 +130,39 @@ public class CoursesGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        Element course = new Element("course");
+
+        Element code = new Element("code");
+        Element description = new Element("description");
+        Element teacher = new Element("teacher");
+        Element schoolBoard = new Element("schoolBoard");
+
+        code.appendChild(jTextField1.getText());
+        description.appendChild(jTextField2.getText());
+        teacher.appendChild(jTextField3.getText());
+        schoolBoard.appendChild(jTextField4.getText());
+
+        root.appendChild(course);
+        course.appendChild(code);
+        course.appendChild(description);
+        course.appendChild(teacher);
+        course.appendChild(schoolBoard);
+        try {
+            Serializer serializer = new Serializer(System.out);
+            serializer.setIndent(4);
+            serializer.setMaxLength(64);
+            serializer.write(doc);
+        } catch (IOException ex) {
+            System.err.println(ex);
+        }
+        try {
+            FileWriter fw = new FileWriter("schools.xml");
+            try (BufferedWriter output = new BufferedWriter(fw)) {
+                output.write(doc.toXML());
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(XMLCourses.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
