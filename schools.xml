@@ -1,15 +1,2 @@
 <?xml version="1.0"?>
-<courses>
-    <course>
-        <code>456</code>
-        <description>gfh</description>
-        <teacher>bvn</teacher>
-        <schoolBoard>23</schoolBoard>
-    </course>
-    <course>
-        <code>345</code>
-        <description>gfhggfh</description>
-        <teacher>sdfsdf</teacher>
-        <schoolBoard>2332334</schoolBoard>
-    </course>
-</courses>
+<courses><course><code>4556</code><description>45645</description><teacher>hyrthr</teacher><schoolBoard>rthrt</schoolBoard></course></courses>

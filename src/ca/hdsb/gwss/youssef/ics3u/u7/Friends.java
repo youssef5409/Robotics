@@ -20,7 +20,7 @@ import nu.xom.Serializer;
  *
  * @author 1mohamedyou
  */
-public class CoursesGUI extends javax.swing.JFrame {
+public class Friends extends javax.swing.JFrame {
 
     Element root;
     Document doc;
@@ -28,7 +28,7 @@ public class CoursesGUI extends javax.swing.JFrame {
     /**
      * Creates new form CoursesGUI
      */
-    public CoursesGUI() {
+    public Friends() {
         initComponents();
 
         File file = new File("courses.xml");
@@ -40,7 +40,7 @@ public class CoursesGUI extends javax.swing.JFrame {
                 doc = builder.build(file);
                 root = doc.getRootElement();
             } catch (Exception ex) {
-                Logger.getLogger(CoursesGUI.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Friends.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             root = new Element("courses");
@@ -174,8 +174,14 @@ public class CoursesGUI extends javax.swing.JFrame {
         } catch (IOException ex) {
             System.err.println(ex);
         }
+        
+        //elemet friend = root.getchildelemetns().get(1);
+        //sout friend.getFirstChildelemennt("name").getValue
+        //model.addelement(friends.get(i).getfirstchildelement("name").getValue;
+        //jcombobox.getselectedindex;
+        
         try {
-            FileWriter fw = new FileWriter("schools.xml");
+            FileWriter fw = new FileWriter("courses.xml");
             try (BufferedWriter output = new BufferedWriter(fw)) {
                 output.write(doc.toXML());
             }
@@ -201,19 +207,20 @@ public class CoursesGUI extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CoursesGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Friends.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CoursesGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Friends.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CoursesGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Friends.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CoursesGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Friends.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new CoursesGUI().setVisible(true);
+            new Friends().setVisible(true);
         });
     }
 
