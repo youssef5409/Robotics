@@ -15,7 +15,7 @@ and open the template in the editor.
     </friend>
     <friend>
         <name>Steve Wozniak</name>
-        <address>12 Woz Way</address>
+        <address>Steve Wozniak</address>
         <phone>239-555-4321</phone>
         <email>thewoz@apple.com</email>
     </friend>
