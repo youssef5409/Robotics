@@ -20,7 +20,7 @@ import nu.xom.Serializer;
  *
  * @author 1mohamedyou
  */
-public class Friends extends javax.swing.JFrame {
+public class CourseGUI extends javax.swing.JFrame {
 
     Element root;
     Document doc;
@@ -28,7 +28,7 @@ public class Friends extends javax.swing.JFrame {
     /**
      * Creates new form CoursesGUI
      */
-    public Friends() {
+    public CourseGUI() {
         initComponents();
 
         File file = new File("courses.xml");
@@ -40,7 +40,7 @@ public class Friends extends javax.swing.JFrame {
                 doc = builder.build(file);
                 root = doc.getRootElement();
             } catch (Exception ex) {
-                Logger.getLogger(Friends.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(CourseGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             root = new Element("courses");
@@ -102,9 +102,9 @@ public class Friends extends javax.swing.JFrame {
                 .addGap(86, 86, 86)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel3)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel3))
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -149,9 +149,9 @@ public class Friends extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Element course = new Element("course");
+        Element course = new Element("friend");
 
-        Element code = new Element("code");
+        Element code = new Element("name");
         Element description = new Element("description");
         Element teacher = new Element("teacher");
         Element schoolBoard = new Element("schoolBoard");
@@ -175,10 +175,7 @@ public class Friends extends javax.swing.JFrame {
             System.err.println(ex);
         }
         
-        //elemet friend = root.getchildelemetns().get(1);
-        //sout friend.getFirstChildelemennt("name").getValue
-        //model.addelement(friends.get(i).getfirstchildelement("name").getValue;
-        //jcombobox.getselectedindex;
+
         
         try {
             FileWriter fw = new FileWriter("courses.xml");
@@ -207,20 +204,22 @@ public class Friends extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Friends.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CourseGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Friends.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CourseGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Friends.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CourseGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Friends.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CourseGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Friends().setVisible(true);
+            new CourseGUI().setVisible(true);
         });
     }
 
