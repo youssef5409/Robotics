@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<songs>
+    <song>
+        <title>Mambo Italiano</title>
+        <artist>Rosemary Clooney</artist>
+        <year>1956</year>
+        <category>classic</category>
+    </song>
+    <song>
+        <title>Soon It's Gonna Rain</title>
+        <artist>Mandy Patinkin</artist>
+        <year>2001</year>
+        <category>Contemporary</category>
+    </song>
+    <song>
+        <title>Cold Water</title>
+        <artist>Tom Waits</artist>
+        <year>1999</year>
+        <category>Alternative</category>
+    </song>
+    <song>
+        <title>Eyeball Kid</title>
+        <artist>Tom Waits</artist>
+        <year>1999</year>
+        <category>Alternative</category>
+    </song>
+    <song>
+        <title>Istanbul</title>
+        <artist>The Four Lads</artist>
+        <year>1956</year>
+        <category>Classic</category>
+    </song>
+</songs>

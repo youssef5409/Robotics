@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<animals>
+    <animal>
+        <animalName>Moose</animalName>
+        <animalClass>Mammalia</animalClass>
+        <habitat>North America</habitat>
+        <diet>Herbivore</diet>
+        <flying>No</flying>
+    </animal>
+    <animal>
+        <animalName>Platypus</animalName>
+        <animalClass>Mammalia</animalClass>
+        <habitat>Australia</habitat>
+        <diet>Carnivore</diet>
+        <flying>No</flying>
+    </animal>
+    <animal>
+        <animalName>Bald Eagle</animalName>
+        <animalClass>Aves</animalClass>
+        <habitat>North America</habitat>
+        <diet>Carnivore</diet>
+        <flying>Yes</flying>
+    </animal>
+    <animal>
+        <animalName>Aardvark</animalName>
+        <animalClass>Mammalia</animalClass>
+        <habitat>Africa</habitat>
+        <diet>Omnivore</diet>
+        <flying>No</flying>
+    </animal>
+    <animal>
+        <animalName>Toucan</animalName>
+        <animalClass>Aves</animalClass>
+        <habitat>South America</habitat>
+        <diet>Omnivore</diet>
+        <flying>Yes</flying>
+    </animal>
+    <animal>
+        <animalName>Lion</animalName>
+        <animalClass>Mammalia</animalClass>
+        <habitat>Africa</habitat>
+        <diet>Carnivore</diet>
+        <flying>No</flying>
+    </animal>
+</animals>
