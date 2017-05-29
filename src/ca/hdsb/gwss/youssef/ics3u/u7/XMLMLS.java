@@ -14,7 +14,7 @@ import nu.xom.Serializer;
  *
  * @author 1mohamedyou
  */
-public class XML {
+public class XMLMLS {
 
     /**
      * @param args the command line arguments
