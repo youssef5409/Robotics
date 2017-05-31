@@ -5,23 +5,53 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u8;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import nu.xom.Builder;
+import nu.xom.Document;
+import nu.xom.Element;
+import nu.xom.Serializer;
+
 /**
  *
  * @author 1mohamedyou
  */
 public class AddPage extends javax.swing.JFrame {
 
+    Element root;
+    Document doc;
+
     SplashPage parent;
     DisplayPage sibling;
 
     /**
      * Creates new form AddPage
+     *
      * @param parent
      */
-
     public AddPage(SplashPage parent) {
         initComponents();
         this.parent = parent;
+
+        File file = new File("marks.xml");
+
+        if (file.exists()) {
+
+            Builder builder = new Builder();
+            try {
+                doc = builder.build(file);
+                root = doc.getRootElement();
+            } catch (Exception ex) {
+                Logger.getLogger(AddPage.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            root = new Element("year");
+            doc = new Document(root);
+        }
     }
 
     public void setSibling(DisplayPage d) {
@@ -37,7 +67,7 @@ public class AddPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        semester = new javax.swing.ButtonGroup();
+        sem = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
         title = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -45,7 +75,6 @@ public class AddPage extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -54,7 +83,6 @@ public class AddPage extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jSpinner1 = new javax.swing.JSpinner();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jSpinner2 = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,8 +110,6 @@ public class AddPage extends javax.swing.JFrame {
 
         jLabel5.setText("Grade:");
 
-        jLabel6.setText("Weight:");
-
         jLabel7.setText("Type:");
 
         jTextField4.setText("Data Structures");
@@ -96,7 +122,7 @@ public class AddPage extends javax.swing.JFrame {
             }
         });
 
-        semester.add(jRadioButton1);
+        sem.add(jRadioButton1);
         jRadioButton1.setText("1");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +130,7 @@ public class AddPage extends javax.swing.JFrame {
             }
         });
 
-        semester.add(jRadioButton2);
+        sem.add(jRadioButton2);
         jRadioButton2.setSelected(true);
         jRadioButton2.setText("2");
 
@@ -125,8 +151,6 @@ public class AddPage extends javax.swing.JFrame {
             }
         });
 
-        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 100.0d, 0.1d));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -136,7 +160,6 @@ public class AddPage extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(88, 88, 88)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
                             .addComponent(jLabel2)
@@ -161,9 +184,8 @@ public class AddPage extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGap(17, 17, 17)
                                 .addComponent(title))
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSpinner2, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                         .addComponent(jButton2)))
                 .addContainerGap())
         );
@@ -193,11 +215,7 @@ public class AddPage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1)
@@ -210,6 +228,49 @@ public class AddPage extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+        Element semester = new Element("semester");
+        
+        Element computerScience = new Element("computerScience");
+        Element functions = new Element("functions");
+        Element accounting = new Element("accounting");
+        Element chemistry = new Element("chemistry");
+        
+        
+        
+        Element unitTests = new Element("unitTests");
+        Element quizzes = new Element("quizzes");
+        Element assignments = new Element("assignments");
+        Element other = new Element("other");
+                
+        Element name = new Element("name");
+        Element grade = new Element("grade");
+
+        semester.appendChild(subject);
+        subject.appendChild(type);
+        subject.appendChild(subjectName);
+        type.appendChild(name);
+        name.appendChild(grade);
+
+        root.appendChild(semester);
+        subjectName.appendChild("Computer Science");
+
+        try {
+            Serializer serializer = new Serializer(System.out);
+            serializer.setIndent(4);
+            serializer.setMaxLength(64);
+            serializer.write(doc);
+        } catch (IOException ex) {
+            System.err.println(ex);
+        }
+
+        try {
+            FileWriter fw = new FileWriter("courses.xml");
+            try (BufferedWriter output = new BufferedWriter(fw)) {
+                output.write(doc.toXML());
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(AddPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -244,14 +305,12 @@ public class AddPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.ButtonGroup semester;
+    private javax.swing.ButtonGroup sem;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }

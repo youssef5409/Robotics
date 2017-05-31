@@ -5,6 +5,8 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u8;
 
+
+
 /**
  *
  * @author 1mohamedyou
@@ -25,6 +27,8 @@ public class SplashPage extends javax.swing.JFrame {
 
         add.setSibling(display);
         display.setSibling(add);
+
+
     }
 
     /**
