@@ -19,6 +19,12 @@ public class SplashPage extends javax.swing.JFrame {
      */
     public SplashPage() {
         initComponents();
+
+        add = new AddPage(this);
+        display = new DisplayPage(this);
+
+        add.setSibling(display);
+        display.setSibling(add);
     }
 
     /**
@@ -104,17 +110,13 @@ public class SplashPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (add == null) {
-            add = new AddPage(this);
-        }
+        display.setVisible(false);
         add.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if (display == null) {
-            display = new DisplayPage(this);
-        }
+        add.setVisible(false);
         display.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
