@@ -37,15 +37,15 @@ public class SlotMachine {
             System.out.println(first);
             System.out.println(second);
             System.out.println(third);
-            
+
             if (first == second && first == third) {
-                if (first > 3 && second > 3 && third > 3) {
+                if (first > 3) {
                     coins += 10;
                     System.out.println("You won 10 Tokens!");
-                } else if (first > 2 && second > 2 && third > 2) {
+                } else if (first > 2) {
                     coins += 8;
                     System.out.println("You won 8 Tokens!");
-                } else if (first > 1 && second > 1 && third > 1) {
+                } else if (first > 1) {
                     coins += 6;
                     System.out.println("You won 6 Tokens!");
                 } else {
