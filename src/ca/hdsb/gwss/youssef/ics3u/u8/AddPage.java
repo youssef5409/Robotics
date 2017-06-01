@@ -55,71 +55,71 @@ public class AddPage extends javax.swing.JFrame {
         } else {
             root = new Element("year");
             doc = new Document(root);
+
+            Element semester;
+
+            semester = new Element("semester");
+            root.appendChild(semester);
+
+            Element subject = new Element("computerScience");
+            Element subjectName = new Element("subjectName");
+            organizeSubject(subject);
+            subject.appendChild(subjectName);
+            subjectName.appendChild("Computer Science");
+            semester.appendChild(subject);
+
+            subject = new Element("chemistry");
+            subjectName = new Element("subjectName");
+            organizeSubject(subject);
+            subject.appendChild(subjectName);
+            subjectName.appendChild("Chemistry");
+            semester.appendChild(subject);
+
+            subject = new Element("functions");
+            subjectName = new Element("subjectName");
+            organizeSubject(subject);
+            subject.appendChild(subjectName);
+            subjectName.appendChild("Functions");
+            semester.appendChild(subject);
+
+            subject = new Element("accounting");
+            subjectName = new Element("subjectName");
+            organizeSubject(subject);
+            subject.appendChild(subjectName);
+            subjectName.appendChild("Accounting");
+            semester.appendChild(subject);
+
+            semester = new Element("semester");
+            root.appendChild(semester);
+
+            subject = new Element("english");
+            subjectName = new Element("subjectName");
+            organizeSubject(subject);
+            subject.appendChild(subjectName);
+            subjectName.appendChild("English");
+            semester.appendChild(subject);
+
+            subject = new Element("manufacturing");
+            subjectName = new Element("subjectName");
+            organizeSubject(subject);
+            subject.appendChild(subjectName);
+            subjectName.appendChild("Manufacturing");
+            semester.appendChild(subject);
+
+            subject = new Element("physics");
+            subjectName = new Element("subjectName");
+            organizeSubject(subject);
+            subject.appendChild(subjectName);
+            subjectName.appendChild("Physics");
+            semester.appendChild(subject);
+
+            subject = new Element("computerEngineering");
+            subjectName = new Element("subjectName");
+            organizeSubject(subject);
+            subject.appendChild(subjectName);
+            subjectName.appendChild("Computer Engineering");
+            semester.appendChild(subject);
         }
-
-        Element semester;
-
-        semester = new Element("semester");
-        root.appendChild(semester);
-
-        Element subject = new Element("computerScience");
-        Element subjectName = new Element("subjectName");
-        organizeSubject(subject);
-        subject.appendChild(subjectName);
-        subjectName.appendChild("Computer Science");
-        semester.appendChild(subject);
-
-        subject = new Element("chemistry");
-        subjectName = new Element("subjectName");
-        organizeSubject(subject);
-        subject.appendChild(subjectName);
-        subjectName.appendChild("Chemistry");
-        semester.appendChild(subject);
-
-        subject = new Element("functions");
-        subjectName = new Element("subjectName");
-        organizeSubject(subject);
-        subject.appendChild(subjectName);
-        subjectName.appendChild("Functions");
-        semester.appendChild(subject);
-
-        subject = new Element("accounting");
-        subjectName = new Element("subjectName");
-        organizeSubject(subject);
-        subject.appendChild(subjectName);
-        subjectName.appendChild("Accounting");
-        semester.appendChild(subject);
-
-        semester = new Element("semester");
-        root.appendChild(semester);
-
-        subject = new Element("english");
-        subjectName = new Element("subjectName");
-        organizeSubject(subject);
-        subject.appendChild(subjectName);
-        subjectName.appendChild("English");
-        semester.appendChild(subject);
-
-        subject = new Element("manufacturing");
-        subjectName = new Element("subjectName");
-        organizeSubject(subject);
-        subject.appendChild(subjectName);
-        subjectName.appendChild("Manufacturing");
-        semester.appendChild(subject);
-
-        subject = new Element("physics");
-        subjectName = new Element("subjectName");
-        organizeSubject(subject);
-        subject.appendChild(subjectName);
-        subjectName.appendChild("Physics");
-        semester.appendChild(subject);
-
-        subject = new Element("computerEngineering");
-        subjectName = new Element("subjectName");
-        organizeSubject(subject);
-        subject.appendChild(subjectName);
-        subjectName.appendChild("Computer Engineering");
-        semester.appendChild(subject);
 
         setUpComboBox();
         setUpComboBox2();
@@ -303,7 +303,7 @@ public class AddPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void setUpComboBox() {
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>());
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>());
         Element subject;
         String name;
 
@@ -312,16 +312,16 @@ public class AddPage extends javax.swing.JFrame {
         for (int i = 0; i < subjects.size(); i++) {
             subject = subjects.get(i);
             name = subject.getFirstChildElement("subjectName").getValue();
-            jComboBox1.addItem(name);
+            jComboBox2.addItem(name);
         }
     }
 
     private void setUpComboBox2() {
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>());
-        jComboBox2.addItem("Unit Test");
-        jComboBox2.addItem("Quiz");
-        jComboBox2.addItem("Assignment");
-        jComboBox2.addItem("Other");
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>());
+        jComboBox1.addItem("Unit Test");
+        jComboBox1.addItem("Quiz");
+        jComboBox1.addItem("Assignment");
+        jComboBox1.addItem("Other");
     }
 
     private void organizeSubject(Element subject) {
@@ -345,12 +345,23 @@ public class AddPage extends javax.swing.JFrame {
         }
 
         if (lettersOnly) {
-            Element name = new Element(jTextField4.getText().replaceAll(" ", ""));
-            Element grade = new Element("grade");
+            //This is also hard coded as I had begun to be very tight on time
+            String[] typesAvailable = {"unitTests", "quizzes", "assignments", "other"};
+            String[] subjectsSem1 = {"computerScience", "chemistry", "functions", "accounting"};
+            String[] subjectsSem2 = {"english", "manufacturing", "physics", "computerEngineering"};
 
-            type.appendChild(name);
-            name.appendChild(grade);
-            grade.appendChild(jSpinner1.getValue().toString());
+            Elements year = root.getChildElements();
+            Element name = new Element(jTextField4.getText().replaceAll(" ", ""));
+
+            if (jRadioButton1.isSelected()) {
+                year.get(0).getFirstChildElement(subjectsSem1[jComboBox2.getSelectedIndex()])
+                        .getFirstChildElement(typesAvailable[jComboBox1.getSelectedIndex()]).appendChild(name);
+                name.appendChild(jSpinner1.getValue().toString());
+            } else {
+                year.get(1).getFirstChildElement(subjectsSem2[jComboBox2.getSelectedIndex()])
+                        .getFirstChildElement(typesAvailable[jComboBox1.getSelectedIndex()]).appendChild(name);
+                name.appendChild(jSpinner1.getValue().toString());
+            }
 
             try {
                 Serializer serializer = new Serializer(System.out);
@@ -393,7 +404,7 @@ public class AddPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jRadioButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton1MouseClicked
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>());
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>());
         Element subject;
         String name;
 
@@ -402,12 +413,12 @@ public class AddPage extends javax.swing.JFrame {
         for (int i = 0; i < subjects.size(); i++) {
             subject = subjects.get(i);
             name = subject.getFirstChildElement("subjectName").getValue();
-            jComboBox1.addItem(name);
+            jComboBox2.addItem(name);
         }
     }//GEN-LAST:event_jRadioButton1MouseClicked
 
     private void jRadioButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton2MouseClicked
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>());
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>());
         Element subject;
         String name;
 
@@ -416,7 +427,7 @@ public class AddPage extends javax.swing.JFrame {
         for (int i = 0; i < subjects.size(); i++) {
             subject = subjects.get(i);
             name = subject.getFirstChildElement("subjectName").getValue();
-            jComboBox1.addItem(name);
+            jComboBox2.addItem(name);
         }
     }//GEN-LAST:event_jRadioButton2MouseClicked
 
