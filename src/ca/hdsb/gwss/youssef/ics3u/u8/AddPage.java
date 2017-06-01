@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import nu.xom.Builder;
 import nu.xom.Document;
 import nu.xom.Element;
+import nu.xom.Elements;
 import nu.xom.Serializer;
 
 /**
@@ -21,6 +22,9 @@ import nu.xom.Serializer;
  * @author 1mohamedyou
  */
 public class AddPage extends javax.swing.JFrame {
+
+    Element semester = new Element("semester");
+    Element type;
 
     Element root;
     Document doc;
@@ -52,6 +56,34 @@ public class AddPage extends javax.swing.JFrame {
             root = new Element("year");
             doc = new Document(root);
         }
+
+        root.appendChild(semester);
+        semester = new Element("semester");
+        root.appendChild(semester);
+
+        Element subject = new Element("computerScience");
+        organizeSubject(subject);
+
+        subject = new Element("chemistry");
+        organizeSubject(subject);
+
+        subject = new Element("functions");
+        organizeSubject(subject);
+
+        subject = new Element("accounting");
+        organizeSubject(subject);
+
+        subject = new Element("english");
+        organizeSubject(subject);
+
+        subject = new Element("manufacturing");
+        organizeSubject(subject);
+
+        subject = new Element("physics");
+        organizeSubject(subject);
+
+        subject = new Element("computerEngineering");
+        organizeSubject(subject);
     }
 
     public void setSibling(DisplayPage d) {
@@ -123,6 +155,7 @@ public class AddPage extends javax.swing.JFrame {
         });
 
         sem.add(jRadioButton1);
+        jRadioButton1.setSelected(true);
         jRadioButton1.setText("1");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +164,6 @@ public class AddPage extends javax.swing.JFrame {
         });
 
         sem.add(jRadioButton2);
-        jRadioButton2.setSelected(true);
         jRadioButton2.setText("2");
 
         jButton3.setText("Display");
@@ -226,50 +258,61 @@ public class AddPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void organizeSubject(Element subject) {
 
-        Element semester = new Element("semester");
-        
-        Element computerScience = new Element("computerScience");
-        Element functions = new Element("functions");
-        Element accounting = new Element("accounting");
-        Element chemistry = new Element("chemistry");
-        
-        
-        
-        Element unitTests = new Element("unitTests");
-        Element quizzes = new Element("quizzes");
-        Element assignments = new Element("assignments");
-        Element other = new Element("other");
-                
-        Element name = new Element("name");
-        Element grade = new Element("grade");
-
-        semester.appendChild(subject);
+        Element type = new Element("unitTests");
         subject.appendChild(type);
-        subject.appendChild(subjectName);
-        type.appendChild(name);
-        name.appendChild(grade);
+        type = new Element("quizzes");
+        subject.appendChild(type);
+        type = new Element("assignments");
+        subject.appendChild(type);
+        type = new Element("other");
+        subject.appendChild(type);
 
-        root.appendChild(semester);
-        subjectName.appendChild("Computer Science");
-
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        boolean lettersOnly = true;
         try {
-            Serializer serializer = new Serializer(System.out);
-            serializer.setIndent(4);
-            serializer.setMaxLength(64);
-            serializer.write(doc);
-        } catch (IOException ex) {
-            System.err.println(ex);
+            Element name = new Element(jTextField4.getText().replaceAll(" ", ""));
+        } catch (Exception e) {
+            lettersOnly = false;
         }
 
-        try {
-            FileWriter fw = new FileWriter("courses.xml");
-            try (BufferedWriter output = new BufferedWriter(fw)) {
-                output.write(doc.toXML());
+        if (lettersOnly) {
+            int semSelected;
+            Elements year = root.getChildElements();
+            Element name = new Element(jTextField4.getText().replaceAll(" ", ""));
+            Element grade = new Element("grade");
+
+            type.appendChild(name);
+            name.appendChild(grade);
+            grade.appendChild(jSpinner1.getValue().toString());
+
+            if (jRadioButton1.isSelected()) {//condense to 1 if without an else.
+                semSelected = 0;
+            } else {
+                semSelected = 1;
             }
-        } catch (IOException ex) {
-            Logger.getLogger(AddPage.class.getName()).log(Level.SEVERE, null, ex);
+            year.get(semSelected).appendChild(subject);
+            try {
+                Serializer serializer = new Serializer(System.out);
+                serializer.setIndent(4);
+                serializer.setMaxLength(64);
+                serializer.write(doc);
+            } catch (IOException ex) {
+                System.err.println(ex);
+            }
+
+            try {
+                FileWriter fw = new FileWriter("marks.xml");
+                try (BufferedWriter output = new BufferedWriter(fw)) {
+                    output.write(doc.toXML());
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(AddPage.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            jTextField4.setText("Letters Only.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -314,3 +357,24 @@ public class AddPage extends javax.swing.JFrame {
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
+
+//        Element computerScience = new Element("computerScience");
+//        Element functions = new Element("functions");
+//        Element accounting = new Element("accounting");
+//        Element chemistry = new Element("chemistry");
+//        
+//        
+//        
+//        Element unitTests = new Element("unitTests");
+//        Element quizzes = new Element("quizzes");
+//        Element assignments = new Element("assignments");
+//        Element other = new Element("other");
+//                
+//        Element name = new Element("name");
+//        Element grade = new Element("grade");
+//
+//        semester.appendChild(subject);
+//        subject.appendChild(type);
+//        subject.appendChild(subjectName);
+//        type.appendChild(name);
+//        name.appendChild(grade);

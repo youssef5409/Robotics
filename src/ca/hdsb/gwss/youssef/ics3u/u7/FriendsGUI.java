@@ -40,7 +40,7 @@ public class FriendsGUI extends javax.swing.JFrame {
                 Logger.getLogger(FriendsGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            root = new Element("courses");
+            root = new Element("friends");
             doc = new Document(root);
         }
 

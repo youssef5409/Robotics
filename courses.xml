@@ -1,2 +1,2 @@
 <?xml version="1.0"?>
-<year><semester><subject><type><name><grade /></name></type><subjectName>Computer Science</subjectName></subject></semester></year>
+<year><semester /><semester><computerScience><unitTests /><quizzes /><assignments /><other><DataStructures><grade>0.0</grade></DataStructures></other></computerScience><chemistry><unitTests /><quizzes /><assignments /><other><DataStructures><grade>0.0</grade></DataStructures></other></chemistry><computerScience><unitTests /><quizzes /><assignments /><other><DataStructures><grade>0.0</grade></DataStructures></other></computerScience><chemistry><unitTests /><quizzes /><assignments /><other><DataStructures><grade>0.0</grade></DataStructures></other></chemistry></semester></year>
