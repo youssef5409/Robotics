@@ -122,6 +122,8 @@ public class AddPage extends javax.swing.JFrame {
         semester.appendChild(subject);
 
         setUpComboBox();
+        setUpComboBox2();
+
     }
 
     public void setSibling(DisplayPage d) {
@@ -312,6 +314,14 @@ public class AddPage extends javax.swing.JFrame {
             name = subject.getFirstChildElement("subjectName").getValue();
             jComboBox1.addItem(name);
         }
+    }
+
+    private void setUpComboBox2() {
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>());
+        jComboBox2.addItem("Unit Test");
+        jComboBox2.addItem("Quiz");
+        jComboBox2.addItem("Assignment");
+        jComboBox2.addItem("Other");
     }
 
     private void organizeSubject(Element subject) {
