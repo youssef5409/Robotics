@@ -71,18 +71,22 @@ public class AmericanLeague {
 
         Element writeRoot = new Element("americanLeagueEastTeams");
         Document writeDoc = new Document(writeRoot);
-        writeRoot = writeDoc.getRootElement();
 
+        Element writeTeam;
+        Element writeName;
+        Element writeDivision;
+        Element writeRecord;
+        
         for (int i = 0; i < teams.size(); i++) {
             team = teams.get(i);
             divisionFound = team.getFirstChildElement("division").getValue();
 
             if ("East".equals(divisionFound)) {
 
-                Element writeTeam = new Element("team");
-                Element writeName = new Element("name");
-                Element writeDivision = new Element("division");
-                Element writeRecord = new Element("record");
+                writeTeam = new Element("team");
+                writeName = new Element("name");
+                writeDivision = new Element("division");
+                writeRecord = new Element("record");
 
                 writeRoot.appendChild(writeTeam);
                 writeTeam.appendChild(writeName);
