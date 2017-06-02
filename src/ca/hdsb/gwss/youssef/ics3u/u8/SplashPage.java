@@ -28,7 +28,6 @@ public class SplashPage extends javax.swing.JFrame {
         add.setSibling(display);
         display.setSibling(add);
 
-        jButton2.setEnabled(false);
     }
 
     /**
@@ -117,7 +116,6 @@ public class SplashPage extends javax.swing.JFrame {
         display.setVisible(false);
         add.setVisible(true);
         this.setVisible(false);
-        jButton2.setEnabled(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

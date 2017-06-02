@@ -40,7 +40,6 @@ public class AddPage extends javax.swing.JFrame {
     public AddPage(SplashPage parent) {
         
         initComponents();
-        jButton3.setEnabled(false);
         this.parent = parent;
 
         File file = new File("marks.xml");
@@ -339,7 +338,7 @@ public class AddPage extends javax.swing.JFrame {
 
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jButton3.setEnabled(true);
+
         boolean lettersOnly = true;
         try {
             Element name = new Element(jTextField4.getText().replaceAll(" ", ""));

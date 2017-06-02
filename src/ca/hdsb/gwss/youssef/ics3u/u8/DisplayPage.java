@@ -29,6 +29,9 @@ public class DisplayPage extends javax.swing.JFrame {
 
     File file = new File("marks.xml");
 
+    double total = 0;
+    int divideBy = 0;
+
     /**
      * Creates new form DisplayPage
      *
@@ -500,6 +503,8 @@ public class DisplayPage extends javax.swing.JFrame {
         for (int i = 0; i < infoRequired.size(); i++) {
             dataRequired = infoRequired.get(i);
             name += dataRequired.getFirstChildElement("nameOfWork").getValue() + ": " + dataRequired.getFirstChildElement("grade").getValue() + "\n";
+            total += Double.parseDouble(dataRequired.getFirstChildElement("grade").getValue());
+            divideBy++;
         }
         return name;
     }
@@ -522,54 +527,65 @@ public class DisplayPage extends javax.swing.JFrame {
                                     information += "Unit Tests: \n";
                                     break;
                                 case 1:
-                                    information += "Quizzes: \n";
+                                    information += "\nQuizzes: \n";
                                     break;
                                 case 2:
-                                    information += "Assignments: \n";
+                                    information += "\nAssignments: \n";
                                     break;
                                 case 3:
-                                    information += "Other: \n";
+                                    information += "\nOther: \n";
                             }
 
                             information += getInfo(i, j, k);
+                            System.out.println(total);
+                            System.out.println(divideBy);
                             if (i == 0) {
                                 switch (j) {
                                     case 0:
                                         jTextArea2.setText(information);
+                                        sem1Mark1.setText(String.valueOf(total / divideBy));
                                         break;
                                     case 1:
                                         jTextArea3.setText(information);
+                                        sem1Mark2.setText(String.valueOf(total / divideBy));
                                         break;
                                     case 2:
                                         jTextArea4.setText(information);
+                                        sem1Mark3.setText(String.valueOf(total / divideBy));
                                         break;
                                     case 3:
                                         jTextArea5.setText(information);
+                                        sem1Mark4.setText(Double.toString(total / divideBy));
                                 }
                             } else {
                                 switch (j) {
                                     case 0:
                                         jTextArea6.setText(information);
+                                        sem2Mark1.setText(Double.toString(total / divideBy));
                                         break;
                                     case 1:
                                         jTextArea7.setText(information);
+                                        sem2Mark2.setText(Double.toString(total / divideBy));
                                         break;
                                     case 2:
                                         jTextArea8.setText(information);
+                                        sem2Mark3.setText(Double.toString(total / divideBy));
                                         break;
                                     case 3:
                                         jTextArea9.setText(information);
+                                        sem2Mark4.setText(Double.toString(total / divideBy));
                                 }
                             }
                         }
+                        total = 0;
+                        divideBy = 0;
                     }
                 }
             } catch (IOException | ParsingException ex) {
                 Logger.getLogger(AddPage.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            System.out.println("File not found.");
-            jButton3.setEnabled(false);
+            System.out.println("No data found.");
         }
 
 
