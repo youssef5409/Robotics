@@ -305,6 +305,7 @@ public class AddPage extends javax.swing.JFrame {
     }
 
     private void setUpComboBox2() {
+        //This bit is hard coded to save on time
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>());
         jComboBox1.addItem("Unit Test");
         jComboBox1.addItem("Quiz");
@@ -313,7 +314,6 @@ public class AddPage extends javax.swing.JFrame {
     }
 
     private void organizeSubject(Element subject) {
-
         type = new Element("unitTests");
         subject.appendChild(type);
         type = new Element("quizzes");
@@ -322,7 +322,6 @@ public class AddPage extends javax.swing.JFrame {
         subject.appendChild(type);
         type = new Element("other");
         subject.appendChild(type);
-
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
