@@ -38,14 +38,13 @@ public class AddPage extends javax.swing.JFrame {
      * @param parent
      */
     public AddPage(SplashPage parent) {
-        
+
         initComponents();
         this.parent = parent;
 
         File file = new File("marks.xml");
 
         if (file.exists()) {
-
             Builder builder = new Builder();
             try {
                 doc = builder.build(file);
@@ -121,10 +120,8 @@ public class AddPage extends javax.swing.JFrame {
             subjectName.appendChild("Computer Engineering");
             semester.appendChild(subject);
         }
-
         setUpComboBox();
         setUpComboBox2();
-
     }
 
     public void setSibling(DisplayPage d) {
@@ -189,11 +186,6 @@ public class AddPage extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.setToolTipText("");
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
 
         sem.add(jRadioButton1);
         jRadioButton1.setSelected(true);
@@ -223,11 +215,6 @@ public class AddPage extends javax.swing.JFrame {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox2.setToolTipText("");
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -364,7 +351,7 @@ public class AddPage extends javax.swing.JFrame {
                 grade.appendChild(jSpinner1.getValue().toString());
                 nameOfWork.appendChild(jTextField4.getText().replaceAll(" ", ""));
                 name.appendChild(nameOfWork);
-                                name.appendChild(grade);
+                name.appendChild(grade);
             } else {
                 year.get(1).getFirstChildElement(subjectsSem2[jComboBox2.getSelectedIndex()])
                         .getFirstChildElement(typesAvailable[jComboBox1.getSelectedIndex()]).appendChild(name);
@@ -372,7 +359,7 @@ public class AddPage extends javax.swing.JFrame {
                 grade.appendChild(jSpinner1.getValue().toString());
                 nameOfWork.appendChild(jTextField4.getText().replaceAll(" ", ""));
                 name.appendChild(nameOfWork);
-                                name.appendChild(grade);
+                name.appendChild(grade);
             }
 
             try {
@@ -397,10 +384,6 @@ public class AddPage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.setVisible(false);
         this.parent.setVisible(true);
@@ -410,10 +393,6 @@ public class AddPage extends javax.swing.JFrame {
         this.setVisible(false);
         this.sibling.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jRadioButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton1MouseClicked
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>());

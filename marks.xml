@@ -27,7 +27,7 @@
         <functions>
             <unitTests />
             <quizzes />
-            <assignments />
+            <assignments><uwot><nameOfWork>uwot</nameOfWork><grade>76.0</grade></uwot></assignments>
             <other />
             <subjectName>Functions</subjectName>
         </functions>

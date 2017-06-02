@@ -39,14 +39,11 @@ public class DisplayPage extends javax.swing.JFrame {
      */
     public DisplayPage(SplashPage parent) {
         initComponents();
-
         this.parent = parent;
-
     }
 
     public void setSibling(AddPage a) {
         this.sibling = a;
-
     }
 
     /**
@@ -511,7 +508,6 @@ public class DisplayPage extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
         if (file.exists()) {
-
             Builder builder = new Builder();
             try {
                 doc = builder.build(file);
@@ -521,7 +517,6 @@ public class DisplayPage extends javax.swing.JFrame {
                     for (int j = 0; j < root.getChildElements().get(i).getChildElements().size(); j++) {
                         information = "";
                         for (int k = 0; k < root.getChildElements().get(i).getChildElements().get(j).getChildElements().size(); k++) {
-
                             switch (k) {
                                 case 0:
                                     information += "Unit Tests: \n";
@@ -535,7 +530,6 @@ public class DisplayPage extends javax.swing.JFrame {
                                 case 3:
                                     information += "\nOther: \n";
                             }
-
                             information += getInfo(i, j, k);
                             System.out.println(total);
                             System.out.println(divideBy);
@@ -587,8 +581,6 @@ public class DisplayPage extends javax.swing.JFrame {
         } else {
             System.out.println("No data found.");
         }
-
-
     }//GEN-LAST:event_jButton3ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -640,29 +632,3 @@ public class DisplayPage extends javax.swing.JFrame {
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
-//                            switch (j) {
-//                                case 0: {
-//                                    jTextArea2.setText(information);
-//                                }
-//                                case 1: {
-//                                    jTextArea3.setText(information);
-//                                }
-//                                case 2: {
-//                                    jTextArea4.setText(information);
-//                                }
-//                                case 3: {
-//                                    jTextArea5.setText(information);
-//                                }
-//                                case 4: {
-//                                    jTextArea6.setText(information);
-//                                }
-//                                case 5: {
-//                                    jTextArea7.setText(information);
-//                                }
-//                                case 6: {
-//                                    jTextArea8.setText(information);
-//                                }
-//                                case 7: {
-//                                    jTextArea9.setText(information);
-//                                }
-//                            }
