@@ -11,7 +11,7 @@
                     <nameOfWork>DataStructures</nameOfWork>
                     <grade>0.4</grade>
                 </DataStructures>
-            </unitTests>
+            <DataStructures><nameOfWork>DataStructures</nameOfWork><grade>0.0</grade></DataStructures></unitTests>
             <quizzes />
             <assignments />
             <other />
