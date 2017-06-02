@@ -1,2 +1,72 @@
 <?xml version="1.0"?>
-<year><semester><computerScience><unitTests><DataStructures><nameOfWork>DataStructures</nameOfWork><grade>0.0</grade></DataStructures><DataStructures><nameOfWork>DataStructures</nameOfWork><grade>0.4</grade></DataStructures></unitTests><quizzes /><assignments /><other /><subjectName>Computer Science</subjectName></computerScience><chemistry><unitTests /><quizzes /><assignments /><other /><subjectName>Chemistry</subjectName></chemistry><functions><unitTests /><quizzes /><assignments /><other /><subjectName>Functions</subjectName></functions><accounting><unitTests /><quizzes /><assignments /><other /><subjectName>Accounting</subjectName></accounting></semester><semester><english><unitTests /><quizzes /><assignments /><other /><subjectName>English</subjectName></english><manufacturing><unitTests /><quizzes /><assignments /><other /><subjectName>Manufacturing</subjectName></manufacturing><physics><unitTests /><quizzes /><assignments /><other /><subjectName>Physics</subjectName></physics><computerEngineering><unitTests /><quizzes /><assignments /><other /><subjectName>Computer Engineering</subjectName></computerEngineering></semester></year>
+<year>
+    <semester>
+        <computerScience>
+            <unitTests>
+                <DataStructures>
+                    <nameOfWork>DataStructures</nameOfWork>
+                    <grade>0.0</grade>
+                </DataStructures>
+                <DataStructures>
+                    <nameOfWork>DataStructures</nameOfWork>
+                    <grade>0.4</grade>
+                </DataStructures>
+            </unitTests>
+            <quizzes />
+            <assignments />
+            <other />
+            <subjectName>Computer Science</subjectName>
+        </computerScience>
+        <chemistry>
+            <unitTests />
+            <quizzes />
+            <assignments />
+            <other />
+            <subjectName>Chemistry</subjectName>
+        </chemistry>
+        <functions>
+            <unitTests />
+            <quizzes />
+            <assignments />
+            <other />
+            <subjectName>Functions</subjectName>
+        </functions>
+        <accounting>
+            <unitTests />
+            <quizzes />
+            <assignments />
+            <other />
+            <subjectName>Accounting</subjectName>
+        </accounting>
+    </semester>
+    <semester>
+        <english>
+            <unitTests />
+            <quizzes />
+            <assignments />
+            <other />
+            <subjectName>English</subjectName>
+        </english>
+        <manufacturing>
+            <unitTests />
+            <quizzes />
+            <assignments />
+            <other />
+            <subjectName>Manufacturing</subjectName>
+        </manufacturing>
+        <physics>
+            <unitTests />
+            <quizzes />
+            <assignments />
+            <other />
+            <subjectName>Physics</subjectName>
+        </physics>
+        <computerEngineering>
+            <unitTests />
+            <quizzes />
+            <assignments />
+            <other />
+            <subjectName>Computer Engineering</subjectName>
+        </computerEngineering>
+    </semester>
+</year>

@@ -543,15 +543,15 @@ public class DisplayPage extends javax.swing.JFrame {
                                 switch (j) {
                                     case 0:
                                         jTextArea2.setText(information);
-                                        sem1Mark1.setText(String.valueOf(total / divideBy));
+                                        sem1Mark1.setText(Double.toString(total / divideBy));
                                         break;
                                     case 1:
                                         jTextArea3.setText(information);
-                                        sem1Mark2.setText(String.valueOf(total / divideBy));
+                                        sem1Mark2.setText(Double.toString(total / divideBy));
                                         break;
                                     case 2:
                                         jTextArea4.setText(information);
-                                        sem1Mark3.setText(String.valueOf(total / divideBy));
+                                        sem1Mark3.setText(Double.toString(total / divideBy));
                                         break;
                                     case 3:
                                         jTextArea5.setText(information);
