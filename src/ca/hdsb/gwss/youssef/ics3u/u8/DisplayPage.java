@@ -5,6 +5,16 @@
  */
 package ca.hdsb.gwss.youssef.ics3u.u8;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import nu.xom.Builder;
+import nu.xom.Document;
+import nu.xom.Element;
+import nu.xom.Elements;
+import nu.xom.ParsingException;
+
 /**
  *
  * @author 1mohamedyou
@@ -14,18 +24,26 @@ public class DisplayPage extends javax.swing.JFrame {
     SplashPage parent;
     AddPage sibling;
 
+    Element root;
+    Document doc;
+
+    File file = new File("marks.xml");
+
     /**
      * Creates new form DisplayPage
+     *
      * @param parent
      */
-
     public DisplayPage(SplashPage parent) {
         initComponents();
+
         this.parent = parent;
+
     }
 
     public void setSibling(AddPage a) {
         this.sibling = a;
+
     }
 
     /**
@@ -74,6 +92,7 @@ public class DisplayPage extends javax.swing.JFrame {
         sem2Mark3 = new javax.swing.JLabel();
         sem2Course3 = new javax.swing.JLabel();
         sem2 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,19 +128,17 @@ public class DisplayPage extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(sem1Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(sem1Course1)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sem1Course1)
+                            .addComponent(sem1Mark1))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(sem1Mark1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,19 +200,17 @@ public class DisplayPage extends javax.swing.JFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(sem1Data3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(sem1Course3)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sem1Course3)
+                            .addComponent(sem1Mark3))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(sem1Mark3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,19 +338,17 @@ public class DisplayPage extends javax.swing.JFrame {
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(sem2Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(sem2Course1)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sem2Course1)
+                            .addComponent(sem2Mark1))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(sem2Mark1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,19 +373,17 @@ public class DisplayPage extends javax.swing.JFrame {
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(sem2Data3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(sem2Course3)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sem2Course3)
+                            .addComponent(sem2Mark3))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(sem2Mark3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -387,6 +398,13 @@ public class DisplayPage extends javax.swing.JFrame {
 
         sem2.setText("Semester 2");
 
+        jButton3.setText("Refresh");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -395,6 +413,8 @@ public class DisplayPage extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(198, 198, 198)
                 .addComponent(jButton1)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -452,7 +472,8 @@ public class DisplayPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
                 .addContainerGap())
         );
 
@@ -469,9 +490,44 @@ public class DisplayPage extends javax.swing.JFrame {
         this.sibling.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        if (file.exists()) {
+
+            Builder builder = new Builder();
+            try {
+                doc = builder.build(file);
+                root = doc.getRootElement();
+
+                Element unitTest;
+                String name;
+
+                Elements year = root.getChildElements();
+                Elements subjects = year.get(0).getChildElements();
+                Elements subjectInside = subjects.get(0).getChildElements();
+                Elements unitTests = subjectInside.get(0).getChildElements();
+                
+                for (int i = 0; i < unitTests.size(); i++) {
+                    unitTest = unitTests.get(i);
+                    name = unitTest.getFirstChildElement("nameOfWork").getValue();
+                    System.out.println(name);
+                    System.out.println("-------------------------------------------------");
+                }
+            } catch (IOException | ParsingException ex) {
+                Logger.getLogger(AddPage.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            System.out.println("File not found.");
+            jButton3.setEnabled(false);
+        }
+
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -509,3 +565,47 @@ public class DisplayPage extends javax.swing.JFrame {
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
+
+//                Elements subject;
+//                Element work;
+//                
+//                String print;
+//                
+//                Element unitTest;
+//                String quizzes;
+//                String assignments;
+//                String other;
+//
+//                Elements year = root.getChildElements();
+//                Elements subjects = year.get(0).getChildElements();
+//
+//                for (int i = 0; i < subjects.size(); i++) {
+//                    subject = subjects.get(0).getChildElements();
+//                    
+//                    Elements tests = subject.get(0).getChildElements();
+//                    Elements quiz = subjects.get(1).getChildElements();
+//                    Elements assign = subjects.get(2).getChildElements();
+//                    Elements besides = subjects.get(3).getChildElements();
+//                    
+//                    for (int j = 0; j < tests.size(); j++) {
+//                        unitTest = subject.getFirstChildElement("unitTests");
+//                        Element unitTest = unitTests.getFirstChildElement("nameOfWork");
+//                        print = unitTests.getValue();
+//                        System.out.println(unitTests);
+//                    }
+//                    for (int j = 0; j < quiz.size(); j++) {
+//                        work = subject.getFirstChildElement("quizzes");
+//                        print = work.getValue();
+//                        System.out.println(unitTests);
+//                    }
+//                    for (int j = 0; j < assign.size(); j++) {
+//                        work = subject.getFirstChildElement("assignments");
+//                        print = work.getValue();
+//                        System.out.println(unitTests);
+//                    }
+//                    for (int j = 0; j < besides.size(); j++) {
+//                        work = subject.getFirstChildElement("other");
+//                        print = work.getValue();
+//                        System.out.println(unitTests);
+//                    }
+//                }

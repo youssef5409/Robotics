@@ -38,7 +38,9 @@ public class AddPage extends javax.swing.JFrame {
      * @param parent
      */
     public AddPage(SplashPage parent) {
+        
         initComponents();
+        jButton3.setEnabled(false);
         this.parent = parent;
 
         File file = new File("marks.xml");
@@ -337,6 +339,7 @@ public class AddPage extends javax.swing.JFrame {
 
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jButton3.setEnabled(true);
         boolean lettersOnly = true;
         try {
             Element name = new Element(jTextField4.getText().replaceAll(" ", ""));
@@ -352,15 +355,25 @@ public class AddPage extends javax.swing.JFrame {
 
             Elements year = root.getChildElements();
             Element name = new Element(jTextField4.getText().replaceAll(" ", ""));
+            Element nameOfWork = new Element("nameOfWork");
+            Element grade = new Element("grade");
 
             if (jRadioButton1.isSelected()) {
                 year.get(0).getFirstChildElement(subjectsSem1[jComboBox2.getSelectedIndex()])
                         .getFirstChildElement(typesAvailable[jComboBox1.getSelectedIndex()]).appendChild(name);
-                name.appendChild(jSpinner1.getValue().toString());
+
+                grade.appendChild(jSpinner1.getValue().toString());
+                nameOfWork.appendChild(jTextField4.getText().replaceAll(" ", ""));
+                name.appendChild(nameOfWork);
+                                name.appendChild(grade);
             } else {
                 year.get(1).getFirstChildElement(subjectsSem2[jComboBox2.getSelectedIndex()])
                         .getFirstChildElement(typesAvailable[jComboBox1.getSelectedIndex()]).appendChild(name);
-                name.appendChild(jSpinner1.getValue().toString());
+
+                grade.appendChild(jSpinner1.getValue().toString());
+                nameOfWork.appendChild(jTextField4.getText().replaceAll(" ", ""));
+                name.appendChild(nameOfWork);
+                                name.appendChild(grade);
             }
 
             try {

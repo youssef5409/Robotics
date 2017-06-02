@@ -3,9 +3,20 @@
     <semester>
         <computerScience>
             <unitTests>
-                <DataStructures>0.0</DataStructures>
-            <DataStructures>0.0</DataStructures><DataStructures>0.0</DataStructures><DataStructures>0.0</DataStructures></unitTests>
-            <quizzes><DataStructures>0.0</DataStructures></quizzes>
+                <DataStructures>
+                    <nameOfWork>DataStructures</nameOfWork>
+                    <grade>0.0</grade>
+                </DataStructures>
+                <DataStructures>
+                    <nameOfWork>DataStructures</nameOfWork>
+                    <grade>0.0</grade>
+                </DataStructures>
+                <DataStructures>
+                    <nameOfWork>DataStructures</nameOfWork>
+                    <grade>0.0</grade>
+                </DataStructures>
+            </unitTests>
+            <quizzes />
             <assignments />
             <other />
             <subjectName>Computer Science</subjectName>
@@ -18,14 +29,24 @@
             <subjectName>Chemistry</subjectName>
         </chemistry>
         <functions>
-            <unitTests />
+            <unitTests>
+                <DataStructures>
+                    <nameOfWork>DataStructures</nameOfWork>
+                    <grade>0.0</grade>
+                </DataStructures>
+            </unitTests>
             <quizzes />
             <assignments />
             <other />
             <subjectName>Functions</subjectName>
         </functions>
         <accounting>
-            <unitTests />
+            <unitTests>
+                <dfgdfgfdfdg>
+                    <nameOfWork>dfgdfgfdfdg</nameOfWork>
+                    <grade>0.0</grade>
+                </dfgdfgfdfdg>
+            </unitTests>
             <quizzes />
             <assignments />
             <other />
