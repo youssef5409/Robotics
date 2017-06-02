@@ -173,7 +173,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="sem1Course1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="English"/>
+            <Property name="text" type="java.lang.String" value="Computer Science"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
@@ -232,7 +232,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="sem1Course2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Manufacturing"/>
+            <Property name="text" type="java.lang.String" value="Chemistry"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
@@ -295,7 +295,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="sem1Course3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Physics"/>
+            <Property name="text" type="java.lang.String" value="Functions"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
@@ -354,7 +354,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="sem1Course4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Computer Engineering"/>
+            <Property name="text" type="java.lang.String" value="Accounting"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
@@ -413,7 +413,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="sem2Course2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Computer Science"/>
+            <Property name="text" type="java.lang.String" value="Manufacturing"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
@@ -472,7 +472,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="sem2Course4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Chemistry"/>
+            <Property name="text" type="java.lang.String" value="Computer Engineering"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane9">
@@ -534,7 +534,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="sem2Course1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Accounting"/>
+            <Property name="text" type="java.lang.String" value="English"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>
@@ -593,7 +593,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="sem2Course3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Functions"/>
+            <Property name="text" type="java.lang.String" value="Physics"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane8">

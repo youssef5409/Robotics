@@ -125,7 +125,7 @@ public class DisplayPage extends javax.swing.JFrame {
 
         sem1Mark1.setText("100%");
 
-        sem1Course1.setText("English");
+        sem1Course1.setText("Computer Science");
         sem1Course1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jTextArea2.setEditable(false);
@@ -161,7 +161,7 @@ public class DisplayPage extends javax.swing.JFrame {
 
         sem1Mark2.setText("100%");
 
-        sem1Course2.setText("Manufacturing");
+        sem1Course2.setText("Chemistry");
         sem1Course2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jTextArea3.setEditable(false);
@@ -194,7 +194,7 @@ public class DisplayPage extends javax.swing.JFrame {
 
         sem1Mark3.setText("100%");
 
-        sem1Course3.setText("Physics");
+        sem1Course3.setText("Functions");
         sem1Course3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jTextArea4.setEditable(false);
@@ -230,7 +230,7 @@ public class DisplayPage extends javax.swing.JFrame {
 
         sem1Mark4.setText("100%");
 
-        sem1Course4.setText("Computer Engineering");
+        sem1Course4.setText("Accounting");
         sem1Course4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jTextArea5.setEditable(false);
@@ -263,7 +263,7 @@ public class DisplayPage extends javax.swing.JFrame {
 
         sem2Mark2.setText("100%");
 
-        sem2Course2.setText("Computer Science");
+        sem2Course2.setText("Manufacturing");
         sem2Course2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jTextArea7.setEditable(false);
@@ -296,7 +296,7 @@ public class DisplayPage extends javax.swing.JFrame {
 
         sem2Mark4.setText("100%");
 
-        sem2Course4.setText("Chemistry");
+        sem2Course4.setText("Computer Engineering");
 
         jTextArea9.setEditable(false);
         jTextArea9.setColumns(20);
@@ -328,7 +328,7 @@ public class DisplayPage extends javax.swing.JFrame {
 
         sem2Mark1.setText("100%");
 
-        sem2Course1.setText("Accounting");
+        sem2Course1.setText("English");
         sem2Course1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jTextArea6.setEditable(false);
@@ -364,7 +364,7 @@ public class DisplayPage extends javax.swing.JFrame {
 
         sem2Mark3.setText("100%");
 
-        sem2Course3.setText("Functions");
+        sem2Course3.setText("Physics");
 
         jTextArea8.setEditable(false);
         jTextArea8.setColumns(20);
@@ -511,54 +511,56 @@ public class DisplayPage extends javax.swing.JFrame {
             try {
                 doc = builder.build(file);
                 root = doc.getRootElement();
-                String information = "";
+                String information;
                 for (int i = 0; i < root.getChildElements().size(); i++) {
                     for (int j = 0; j < root.getChildElements().get(i).getChildElements().size(); j++) {
+                        information = "";
                         for (int k = 0; k < root.getChildElements().get(i).getChildElements().get(j).getChildElements().size(); k++) {
+
                             switch (k) {
-                                case 0: {
+                                case 0:
                                     information += "Unit Tests: \n";
-                                }
-                                case 1: {
+                                    break;
+                                case 1:
                                     information += "Quizzes: \n";
-                                }
-                                case 2: {
+                                    break;
+                                case 2:
                                     information += "Assignments: \n";
-                                }
-                                case 3: {
+                                    break;
+                                case 3:
                                     information += "Other: \n";
-                                }
                             }
 
                             information += getInfo(i, j, k);
-
-                            switch (j) {
-                                case 0: {
-                                    jTextArea2.setText(information);
+                            if (i == 0) {
+                                switch (j) {
+                                    case 0:
+                                        jTextArea2.setText(information);
+                                        break;
+                                    case 1:
+                                        jTextArea3.setText(information);
+                                        break;
+                                    case 2:
+                                        jTextArea4.setText(information);
+                                        break;
+                                    case 3:
+                                        jTextArea5.setText(information);
                                 }
-                                case 1: {
-                                    jTextArea3.setText(information);
-                                }
-                                case 2: {
-                                    jTextArea4.setText(information);
-                                }
-                                case 3: {
-                                    jTextArea5.setText(information);
-                                }
-                                case 4: {
-                                    jTextArea6.setText(information);
-                                }
-                                case 5: {
-                                    jTextArea7.setText(information);
-                                }
-                                case 6: {
-                                    jTextArea8.setText(information);
-                                }
-                                case 7: {
-                                    jTextArea9.setText(information);
+                            } else {
+                                switch (j) {
+                                    case 0:
+                                        jTextArea6.setText(information);
+                                        break;
+                                    case 1:
+                                        jTextArea7.setText(information);
+                                        break;
+                                    case 2:
+                                        jTextArea8.setText(information);
+                                        break;
+                                    case 3:
+                                        jTextArea9.setText(information);
                                 }
                             }
-
                         }
                     }
                 }
@@ -622,47 +624,29 @@ public class DisplayPage extends javax.swing.JFrame {
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }
-
-//                Elements subject;
-//                Element work;
-//                
-//                String print;
-//                
-//                Element unitTest;
-//                String quizzes;
-//                String assignments;
-//                String other;
-//
-//                Elements year = root.getChildElements();
-//                Elements subjects = year.get(0).getChildElements();
-//
-//                for (int i = 0; i < subjects.size(); i++) {
-//                    subject = subjects.get(0).getChildElements();
-//                    
-//                    Elements tests = subject.get(0).getChildElements();
-//                    Elements quiz = subjects.get(1).getChildElements();
-//                    Elements assign = subjects.get(2).getChildElements();
-//                    Elements besides = subjects.get(3).getChildElements();
-//                    
-//                    for (int j = 0; j < tests.size(); j++) {
-//                        unitTest = subject.getFirstChildElement("unitTests");
-//                        Element unitTest = unitTests.getFirstChildElement("nameOfWork");
-//                        print = unitTests.getValue();
-//                        System.out.println(unitTests);
-//                    }
-//                    for (int j = 0; j < quiz.size(); j++) {
-//                        work = subject.getFirstChildElement("quizzes");
-//                        print = work.getValue();
-//                        System.out.println(unitTests);
-//                    }
-//                    for (int j = 0; j < assign.size(); j++) {
-//                        work = subject.getFirstChildElement("assignments");
-//                        print = work.getValue();
-//                        System.out.println(unitTests);
-//                    }
-//                    for (int j = 0; j < besides.size(); j++) {
-//                        work = subject.getFirstChildElement("other");
-//                        print = work.getValue();
-//                        System.out.println(unitTests);
-//                    }
-//                }
+//                            switch (j) {
+//                                case 0: {
+//                                    jTextArea2.setText(information);
+//                                }
+//                                case 1: {
+//                                    jTextArea3.setText(information);
+//                                }
+//                                case 2: {
+//                                    jTextArea4.setText(information);
+//                                }
+//                                case 3: {
+//                                    jTextArea5.setText(information);
+//                                }
+//                                case 4: {
+//                                    jTextArea6.setText(information);
+//                                }
+//                                case 5: {
+//                                    jTextArea7.setText(information);
+//                                }
+//                                case 6: {
+//                                    jTextArea8.setText(information);
+//                                }
+//                                case 7: {
+//                                    jTextArea9.setText(information);
+//                                }
+//                            }
