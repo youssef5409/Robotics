@@ -60,37 +60,45 @@ public class DisplayPage extends javax.swing.JFrame {
         title = new javax.swing.JLabel();
         sem1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        sem1Data1 = new javax.swing.JTextField();
         sem1Mark1 = new javax.swing.JLabel();
         sem1Course1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
-        sem1Data2 = new javax.swing.JTextField();
         sem1Mark2 = new javax.swing.JLabel();
         sem1Course2 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
         jPanel11 = new javax.swing.JPanel();
-        sem1Data3 = new javax.swing.JTextField();
         sem1Mark3 = new javax.swing.JLabel();
         sem1Course3 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
         jPanel12 = new javax.swing.JPanel();
-        sem1Data4 = new javax.swing.JTextField();
         sem1Mark4 = new javax.swing.JLabel();
         sem1Course4 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea5 = new javax.swing.JTextArea();
         jPanel15 = new javax.swing.JPanel();
-        sem2Data2 = new javax.swing.JTextField();
         sem2Mark2 = new javax.swing.JLabel();
         sem2Course2 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTextArea7 = new javax.swing.JTextArea();
         jPanel13 = new javax.swing.JPanel();
-        sem2Data4 = new javax.swing.JTextField();
         sem2Mark4 = new javax.swing.JLabel();
         sem2Course4 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTextArea9 = new javax.swing.JTextArea();
         jPanel16 = new javax.swing.JPanel();
-        sem2Data1 = new javax.swing.JTextField();
         sem2Mark1 = new javax.swing.JLabel();
         sem2Course1 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea6 = new javax.swing.JTextArea();
         jPanel14 = new javax.swing.JPanel();
-        sem2Data3 = new javax.swing.JTextField();
         sem2Mark3 = new javax.swing.JLabel();
         sem2Course3 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTextArea8 = new javax.swing.JTextArea();
         sem2 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
 
@@ -115,13 +123,15 @@ public class DisplayPage extends javax.swing.JFrame {
 
         sem1.setText("Semester 1");
 
-        sem1Data1.setEditable(false);
-        sem1Data1.setText("jTextField1");
-
         sem1Mark1.setText("100%");
 
         sem1Course1.setText("English");
         sem1Course1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jTextArea2.setEditable(false);
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane2.setViewportView(jTextArea2);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -130,14 +140,12 @@ public class DisplayPage extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(sem1Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sem1Course1)
-                            .addComponent(sem1Mark1))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(sem1Course1)
+                    .addComponent(sem1Mark1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -147,17 +155,19 @@ public class DisplayPage extends javax.swing.JFrame {
                 .addComponent(sem1Course1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(sem1Mark1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(sem1Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        sem1Data2.setEditable(false);
-        sem1Data2.setText("jTextField1");
 
         sem1Mark2.setText("100%");
 
         sem1Course2.setText("Manufacturing");
         sem1Course2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jTextArea3.setEditable(false);
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane3.setViewportView(jTextArea3);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -166,15 +176,10 @@ public class DisplayPage extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(sem1Data2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sem1Course2)
-                            .addComponent(sem1Mark2))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(sem1Course2)
+                    .addComponent(sem1Mark2)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,17 +188,19 @@ public class DisplayPage extends javax.swing.JFrame {
                 .addComponent(sem1Course2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sem1Mark2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(sem1Data2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        sem1Data3.setEditable(false);
-        sem1Data3.setText("jTextField1");
 
         sem1Mark3.setText("100%");
 
         sem1Course3.setText("Physics");
         sem1Course3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jTextArea4.setEditable(false);
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        jScrollPane4.setViewportView(jTextArea4);
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -202,14 +209,12 @@ public class DisplayPage extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(sem1Data3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sem1Course3)
-                            .addComponent(sem1Mark3))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(sem1Course3)
+                    .addComponent(sem1Mark3))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
@@ -219,17 +224,19 @@ public class DisplayPage extends javax.swing.JFrame {
                 .addComponent(sem1Course3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(sem1Mark3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(sem1Data3, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        sem1Data4.setEditable(false);
-        sem1Data4.setText("jTextField1");
 
         sem1Mark4.setText("100%");
 
         sem1Course4.setText("Computer Engineering");
         sem1Course4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jTextArea5.setEditable(false);
+        jTextArea5.setColumns(20);
+        jTextArea5.setRows(5);
+        jScrollPane5.setViewportView(jTextArea5);
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -238,9 +245,9 @@ public class DisplayPage extends javax.swing.JFrame {
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sem1Data4, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sem1Course4)
-                    .addComponent(sem1Mark4))
+                    .addComponent(sem1Mark4)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
@@ -250,17 +257,19 @@ public class DisplayPage extends javax.swing.JFrame {
                 .addComponent(sem1Course4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(sem1Mark4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(sem1Data4, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        sem2Data2.setEditable(false);
-        sem2Data2.setText("jTextField1");
 
         sem2Mark2.setText("100%");
 
         sem2Course2.setText("Computer Science");
         sem2Course2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jTextArea7.setEditable(false);
+        jTextArea7.setColumns(20);
+        jTextArea7.setRows(5);
+        jScrollPane7.setViewportView(jTextArea7);
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -269,15 +278,10 @@ public class DisplayPage extends javax.swing.JFrame {
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(sem2Data2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sem2Course2)
-                            .addComponent(sem2Mark2))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(sem2Course2)
+                    .addComponent(sem2Mark2)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,16 +290,18 @@ public class DisplayPage extends javax.swing.JFrame {
                 .addComponent(sem2Course2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(sem2Mark2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(sem2Data2, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        sem2Data4.setEditable(false);
-        sem2Data4.setText("jTextField1");
 
         sem2Mark4.setText("100%");
 
         sem2Course4.setText("Chemistry");
+
+        jTextArea9.setEditable(false);
+        jTextArea9.setColumns(20);
+        jTextArea9.setRows(5);
+        jScrollPane9.setViewportView(jTextArea9);
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -304,15 +310,10 @@ public class DisplayPage extends javax.swing.JFrame {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(sem2Data4, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sem2Mark4)
-                            .addComponent(sem2Course4))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(sem2Mark4)
+                    .addComponent(sem2Course4)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,17 +322,19 @@ public class DisplayPage extends javax.swing.JFrame {
                 .addComponent(sem2Course4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(sem2Mark4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(sem2Data4, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        sem2Data1.setEditable(false);
-        sem2Data1.setText("jTextField1");
 
         sem2Mark1.setText("100%");
 
         sem2Course1.setText("Accounting");
         sem2Course1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jTextArea6.setEditable(false);
+        jTextArea6.setColumns(20);
+        jTextArea6.setRows(5);
+        jScrollPane6.setViewportView(jTextArea6);
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -340,14 +343,12 @@ public class DisplayPage extends javax.swing.JFrame {
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(sem2Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sem2Course1)
-                            .addComponent(sem2Mark1))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(sem2Course1)
+                    .addComponent(sem2Mark1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel16Layout.setVerticalGroup(
@@ -357,16 +358,18 @@ public class DisplayPage extends javax.swing.JFrame {
                 .addComponent(sem2Course1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(sem2Mark1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(sem2Data1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        sem2Data3.setEditable(false);
-        sem2Data3.setText("jTextField1");
 
         sem2Mark3.setText("100%");
 
         sem2Course3.setText("Functions");
+
+        jTextArea8.setEditable(false);
+        jTextArea8.setColumns(20);
+        jTextArea8.setRows(5);
+        jScrollPane8.setViewportView(jTextArea8);
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -375,15 +378,10 @@ public class DisplayPage extends javax.swing.JFrame {
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(sem2Data3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sem2Course3)
-                            .addComponent(sem2Mark3))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(sem2Course3)
+                    .addComponent(sem2Mark3)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -392,8 +390,8 @@ public class DisplayPage extends javax.swing.JFrame {
                 .addComponent(sem2Course3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(sem2Mark3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(sem2Data3, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         sem2.setText("Semester 2");
@@ -503,8 +501,6 @@ public class DisplayPage extends javax.swing.JFrame {
             dataRequired = infoRequired.get(i);
             name += dataRequired.getFirstChildElement("nameOfWork").getValue() + ": " + dataRequired.getFirstChildElement("grade").getValue() + "\n";
         }
-        System.out.println(name);
-        System.out.println("-------------------------------------------------");
         return name;
     }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -515,12 +511,53 @@ public class DisplayPage extends javax.swing.JFrame {
             try {
                 doc = builder.build(file);
                 root = doc.getRootElement();
-
+                String information = "";
                 for (int i = 0; i < root.getChildElements().size(); i++) {
                     for (int j = 0; j < root.getChildElements().get(i).getChildElements().size(); j++) {
                         for (int k = 0; k < root.getChildElements().get(i).getChildElements().get(j).getChildElements().size(); k++) {
+                            switch (k) {
+                                case 0: {
+                                    information += "Unit Tests: \n";
+                                }
+                                case 1: {
+                                    information += "Quizzes: \n";
+                                }
+                                case 2: {
+                                    information += "Assignments: \n";
+                                }
+                                case 3: {
+                                    information += "Other: \n";
+                                }
+                            }
 
-                            getInfo(i, j, k);
+                            information += getInfo(i, j, k);
+
+                            switch (j) {
+                                case 0: {
+                                    jTextArea2.setText(information);
+                                }
+                                case 1: {
+                                    jTextArea3.setText(information);
+                                }
+                                case 2: {
+                                    jTextArea4.setText(information);
+                                }
+                                case 3: {
+                                    jTextArea5.setText(information);
+                                }
+                                case 4: {
+                                    jTextArea6.setText(information);
+                                }
+                                case 5: {
+                                    jTextArea7.setText(information);
+                                }
+                                case 6: {
+                                    jTextArea8.setText(information);
+                                }
+                                case 7: {
+                                    jTextArea9.setText(information);
+                                }
+                            }
 
                         }
                     }
@@ -548,15 +585,27 @@ public class DisplayPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JTextArea jTextArea6;
+    private javax.swing.JTextArea jTextArea7;
+    private javax.swing.JTextArea jTextArea8;
+    private javax.swing.JTextArea jTextArea9;
     private javax.swing.JLabel sem1;
     private javax.swing.JLabel sem1Course1;
     private javax.swing.JLabel sem1Course2;
     private javax.swing.JLabel sem1Course3;
     private javax.swing.JLabel sem1Course4;
-    private javax.swing.JTextField sem1Data1;
-    private javax.swing.JTextField sem1Data2;
-    private javax.swing.JTextField sem1Data3;
-    private javax.swing.JTextField sem1Data4;
     private javax.swing.JLabel sem1Mark1;
     private javax.swing.JLabel sem1Mark2;
     private javax.swing.JLabel sem1Mark3;
@@ -566,10 +615,6 @@ public class DisplayPage extends javax.swing.JFrame {
     private javax.swing.JLabel sem2Course2;
     private javax.swing.JLabel sem2Course3;
     private javax.swing.JLabel sem2Course4;
-    private javax.swing.JTextField sem2Data1;
-    private javax.swing.JTextField sem2Data2;
-    private javax.swing.JTextField sem2Data3;
-    private javax.swing.JTextField sem2Data4;
     private javax.swing.JLabel sem2Mark1;
     private javax.swing.JLabel sem2Mark2;
     private javax.swing.JLabel sem2Mark3;
