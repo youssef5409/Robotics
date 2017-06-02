@@ -490,6 +490,23 @@ public class DisplayPage extends javax.swing.JFrame {
         this.sibling.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private String getInfo(int semester, int subject, int infoSpot) {
+        Element dataRequired;
+        String name = "";
+
+        Elements year = root.getChildElements();
+        Elements subjects = year.get(semester).getChildElements();
+        Elements subjectInside = subjects.get(subject).getChildElements();
+        Elements infoRequired = subjectInside.get(infoSpot).getChildElements();
+
+        for (int i = 0; i < infoRequired.size(); i++) {
+            dataRequired = infoRequired.get(i);
+            name += dataRequired.getFirstChildElement("nameOfWork").getValue() + ": " + dataRequired.getFirstChildElement("grade").getValue() + "\n";
+        }
+        System.out.println(name);
+        System.out.println("-------------------------------------------------");
+        return name;
+    }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
         if (file.exists()) {
@@ -499,19 +516,14 @@ public class DisplayPage extends javax.swing.JFrame {
                 doc = builder.build(file);
                 root = doc.getRootElement();
 
-                Element unitTest;
-                String name;
+                for (int i = 0; i < root.getChildElements().size(); i++) {
+                    for (int j = 0; j < root.getChildElements().get(i).getChildElements().size(); j++) {
+                        for (int k = 0; k < root.getChildElements().get(i).getChildElements().get(j).getChildElements().size(); k++) {
 
-                Elements year = root.getChildElements();
-                Elements subjects = year.get(0).getChildElements();
-                Elements subjectInside = subjects.get(0).getChildElements();
-                Elements unitTests = subjectInside.get(0).getChildElements();
-                
-                for (int i = 0; i < unitTests.size(); i++) {
-                    unitTest = unitTests.get(i);
-                    name = unitTest.getFirstChildElement("nameOfWork").getValue();
-                    System.out.println(name);
-                    System.out.println("-------------------------------------------------");
+                            getInfo(i, j, k);
+
+                        }
+                    }
                 }
             } catch (IOException | ParsingException ex) {
                 Logger.getLogger(AddPage.class.getName()).log(Level.SEVERE, null, ex);
